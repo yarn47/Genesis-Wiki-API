@@ -27,7 +27,7 @@ class Debuff(
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
-    @OneToMany(mappedBy = "debuff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "debuff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY, orphanRemoval = true)
     val levels: MutableList<DebuffLevel> = mutableListOf()
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -57,8 +57,15 @@ class DebuffLevel(
     @Column(nullable = false)
     var level: Int,
 
+    @Column(length = 100)
+    var levelName: String? = null,
+
     @Column(columnDefinition = "TEXT")
-    var effectText: String? = null
+    var effectText: String? = null,
+
+    var duration: Int? = null,
+
+    var maxStack: Int? = null
 )
 
 @Entity

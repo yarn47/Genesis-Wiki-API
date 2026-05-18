@@ -27,7 +27,7 @@ class Buff(
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
-    @OneToMany(mappedBy = "buff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "buff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY, orphanRemoval = true)
     val levels: MutableList<BuffLevel> = mutableListOf()
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -57,8 +57,14 @@ class BuffLevel(
     @Column(nullable = false)
     var level: Int,
 
+    @Column(length = 100)
+    var levelName: String? = null,
+
     @Column(columnDefinition = "TEXT")
-    var effectText: String? = null
+    var effectText: String? = null,
+
+    var duration: Int? = null,      // 추가
+    var maxStack: Int? = null        // 추가 (null이면 부모 Buff 값 사용)
 )
 
 @Entity
