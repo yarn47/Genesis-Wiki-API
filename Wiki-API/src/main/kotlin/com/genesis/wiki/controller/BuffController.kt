@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = ["http://localhost:5173"])
 class BuffController(
     private val buffService: BuffService
 ) {
