@@ -20,6 +20,8 @@ class SecurityConfig {
         http
             .csrf { it.disable() }
             .cors { it.configurationSource(corsConfigurationSource()) }
+            .formLogin { it.disable() }     // 스프링 기본 로그인 폼 꺼버리기
+            .httpBasic { it.disable() }     // 기본 HTTP Basic 인증창 끄기
             .authorizeHttpRequests { auth ->
                 auth
                     .requestMatchers("/api/auth/**").permitAll()
