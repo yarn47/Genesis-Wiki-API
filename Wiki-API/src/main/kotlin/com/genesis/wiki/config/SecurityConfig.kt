@@ -39,7 +39,7 @@ class SecurityConfig {
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val config = CorsConfiguration()
-        config.allowedOrigins = listOf("http://localhost:5173")
+        config.allowedOrigins = listOf("http://localhost:5173", "http://64.176.231.172")
         config.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
         config.allowedHeaders = listOf("*")
         config.allowCredentials = true
@@ -47,7 +47,4 @@ class SecurityConfig {
         source.registerCorsConfiguration("/**", config)
         return source
     }
-
-    @Bean
-    fun passwordEncoderBean(): PasswordEncoder = BCryptPasswordEncoder()
 }
