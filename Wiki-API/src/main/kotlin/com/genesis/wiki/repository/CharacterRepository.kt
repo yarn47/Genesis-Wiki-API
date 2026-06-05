@@ -60,7 +60,7 @@ interface CharacterRepository : JpaRepository<Character, Int> {
         LEFT JOIN FETCH c.exclusiveWeapon w
         LEFT JOIN FETCH w.effects e
         LEFT JOIN FETCH e.levels
-        WHERE c.characterId = :id 리
+        WHERE c.characterId = :id
     """)
     fun findAdminDetailById(@Param("id") id: Int): Character?
 }
