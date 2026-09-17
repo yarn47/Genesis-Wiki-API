@@ -19,3 +19,5 @@ spring:
 
 server:
   port: 8080
+  # Caddy(HTTPS) 뒤에서 X-Forwarded-Proto/Host를 반영 (내부 프록시에서 온 헤더만 신뢰)
+  forward-headers-strategy: native

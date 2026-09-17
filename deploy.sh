@@ -18,5 +18,19 @@ docker run -d --name genesis-api \
     --env-file Wiki-API/.env \
     genesis-api
 
-echo "시작 로그 (Ctrl+C 로 로그 보기만 종료, 컨테이너는 계속 실행됨)"
-docker logs -f --tail 50 genesis-api
+# 시작 완료/실패가 로그에 찍힐 때까지 최대 2분 대기
+echo "시작 대기 중..."
+for _ in $(seq 1 60); do
+    logs=$(docker logs genesis-api 2>&1)
+    if grep -q "Started WikiApiApplication" <<<"$logs"; then
+        echo "✅ genesis-api 시작 완료"
+        exit 0
+    fi
+    if grep -q "APPLICATION FAILED TO START\|Application run failed" <<<"$logs"; then
+        break
+    fi
+    sleep 2
+done
+echo "❌ genesis-api 시작 실패 또는 2분 초과. 최근 로그:"
+docker logs --tail 80 genesis-api
+exit 1

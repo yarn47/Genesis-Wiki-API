@@ -54,6 +54,17 @@ class SecurityConfigTest {
     }
 
     @Test
+    fun `위키 도메인에서 보낸 로그인 요청은 CORS로 막히지 않음`() {
+        given(authService.login("admin", "pw")).willReturn(true)
+        mockMvc.perform(
+            post("/api/auth/login")
+                .header("Origin", "https://wiki.jan-azhidahaka.com")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""{"username":"admin","password":"pw"}""")
+        ).andExpect(status().isOk)
+    }
+
+    @Test
     fun `로그인 실패 시 401`() {
         given(authService.login("admin", "wrong")).willReturn(false)
         mockMvc.perform(
