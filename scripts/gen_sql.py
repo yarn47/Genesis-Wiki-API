@@ -334,7 +334,7 @@ def item_summary_sql(prefix, items):
         f"SELECT '{prefix}' AS kind, x.{id_col} AS id, x.name,\n"
         f"  CASE x.duration WHEN {PERMANENT_DURATION} THEN '영구' ELSE x.duration END AS duration, x.max_stack,\n"
         f"  (SELECT COUNT(*) FROM {prefix}_levels l WHERE l.{id_col} = x.{id_col}) AS levels,\n"
-        f"  (SELECT GROUP_CONCAT(t.name) FROM {prefix}_tag_map m JOIN tags t ON t.tag_id = m.tag_id WHERE m.{id_col} = x.{id_col}) AS tags\n"
+        f"  (SELECT GROUP_CONCAT(t.name ORDER BY t.tag_id) FROM {prefix}_tag_map m JOIN tags t ON t.tag_id = m.tag_id WHERE m.{id_col} = x.{id_col}) AS tags\n"
         f"FROM {table} x WHERE x.name IN ({names}) ORDER BY x.{id_col};"
     )
 
@@ -354,7 +354,7 @@ def skill_summary_sql(classes):
         "SELECT c.name AS class, cs.unlock_order AS ord, s.name AS skill, s.tp_cost AS tp,\n"
         "  CASE WHEN s.range_min = 0 AND s.range_max = 0 THEN '자신' ELSE CONCAT(s.range_min, '-', s.range_max) END AS `range`,\n"
         "  s.area, COALESCE(s.attack_type, c.attack_type) AS attack, s.allowed_weapon AS weapon, s.cooldown AS cd,\n"
-        "  (SELECT GROUP_CONCAT(t.name) FROM skill_tag_map m JOIN tags t ON t.tag_id = m.tag_id WHERE m.skill_id = s.skill_id) AS tags,\n"
+        "  (SELECT GROUP_CONCAT(t.name ORDER BY t.tag_id) FROM skill_tag_map m JOIN tags t ON t.tag_id = m.tag_id WHERE m.skill_id = s.skill_id) AS tags,\n"
         "  s.icon_url IS NOT NULL AS icon\n"
         "FROM classes c JOIN class_skills cs ON cs.class_id = c.class_id JOIN skills s ON s.skill_id = cs.skill_id\n"
         f"WHERE c.name IN ({names}) ORDER BY c.tier, c.class_id, cs.unlock_order;"
