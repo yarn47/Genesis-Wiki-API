@@ -5,6 +5,7 @@ data class ClassRequest(
     val tier: Int,
     val weaponType: String? = null,
     val defenseType: String? = null,      // "light" | "medium" | "heavy"
+    val attackType: String? = null,       // "관통" | "타격" 등
     val attackRange: Int? = null,
     val moveRange: Int? = null,
     val baseHp: Int? = null,
@@ -26,6 +27,8 @@ data class SkillRequest(
     val rangeMin: Int? = null,
     val rangeMax: Int? = null,
     val area: String? = null,
+    val attackType: String? = null,       // 클래스 기본값과 다를 때만
+    val allowedWeapon: String? = null,
     val cooldown: Int? = null,
     val effectText: String? = null,
     val iconUrl: String? = null,

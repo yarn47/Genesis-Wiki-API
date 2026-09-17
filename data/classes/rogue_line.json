@@ -4,6 +4,7 @@
     "tier": 1,
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "양손에 단검을 들고 다양한 스킬로 적에게 근접해 물리 피해를 주는 기본 직업입니다.",
@@ -13,7 +14,15 @@
       "lv1": "이동 시 [도약]{green}할 수 있고 전투 공격 시 치명타 확률이 [5%]{red} 증가합니다.",
       "lv2": "이동 시 [도약]{green}할 수 있고 전투 공격 시 치명타 확률이 [10%]{red} 증가합니다.",
       "iconUrl": "/icons/classes/passive/rogue.png"
-    }
+    },
+    "skills": [
+      { "name": "은신", "range": "자신", "area": "단일", "cooldown": 3,
+        "effect": "[2]{yellow}턴 동안 [은신]{green} 상태가 되고 추가 이동을 얻습니다." },
+      { "name": "암영섬", "tpCost": 2, "range": [1, 3], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2, "tags": ["근거리", "이동공격", "전투"],
+        "effect": "지정한 적의 인접한 타일로 순간 이동 후 공격해 공격력의 [130%]{red}만큼 피해를 줍니다." },
+      { "name": "연참", "tpCost": 2, "range": [1, 1], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2, "tags": ["근거리", "전투"],
+        "effect": "적을 공격해 공격력의 [100%]{red}만큼 피해를 주고 적의 체력이 [50%]{red} 이하라면 추가타가 발동해 공격력의 [80%]{red}만큼 피해를 줍니다." }
+    ]
   },
   {
     "name": "씨프",
@@ -21,6 +30,7 @@
     "parent": "로그",
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "양손에 단검을 들고 은밀하게 접근해 훔치고 기습하는데 특화된 직업입니다.",
@@ -30,7 +40,11 @@
       "lv1": "이동 시 [도약]{green}할 수 있습니다. 캐릭터 턴 종료 시 이번 턴에 적에게 피해를 주거나 받지 않았다면 [잠행 1]{green} 상태가 됩니다.",
       "lv2": "이동 시 [도약]{green}할 수 있습니다. 캐릭터 턴 종료 시 이번 턴에 적에게 피해를 주거나 받지 않았다면 [잠행 2]{green} 상태가 됩니다.",
       "iconUrl": "/icons/classes/passive/thief.png"
-    }
+    },
+    "skills": [
+      { "name": "자도섬", "tpCost": 1, "range": [1, 1], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2, "tags": ["근거리", "TP 제거", "전투"], "iconUrl": "/icons/skills/jadoseom.png",
+        "effect": "적을 공격해 공격력의 [130%]{red}만큼 피해를 주고 [1]{yellow} TP를 훔칩니다. 치명타 적중 시 [2]{yellow} TP를 훔칩니다." }
+    ]
   },
   {
     "name": "카덴차",
@@ -38,6 +52,7 @@
     "parent": "로그",
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "검을 들고 춤추듯 우아하게 적들을 교란하고 전장을 조율하는 무희 직업입니다.",
@@ -47,7 +62,11 @@
       "lv1": "적 공격 시 치명타 확률과 치명타 피해량이 [10%]{red} 증가하고 [매혹의 템포 1]{green} 효과를 얻습니다. 이동 시 [도약]{green}할 수 있습니다.",
       "lv2": "적 공격 시 치명타 확률과 치명타 피해량이 [15%]{red} 증가하고 [매혹의 템포 2]{green} 효과를 얻습니다. 이동 시 [도약]{green}할 수 있습니다.",
       "iconUrl": "/icons/classes/passive/cadenza.png"
-    }
+    },
+    "skills": [
+      { "name": "키스 오브 미라주", "tpCost": 1, "range": "자신", "area": "광역", "cooldown": 3, "tags": ["TP 제거"], "iconUrl": "/icons/skills/kiss_of_mirage.png",
+        "effect": "주위 [2]{red}칸 내 아군의 디버프를 [2]{red}개씩 해제합니다. 주위 [2]{red}칸 내 적들의 버프 [1]{red}개와 TP를 [1]{yellow}씩 훔치고 [2]{yellow}턴 동안 [키스 오브 미라주]{orange} 효과를 부여합니다." }
+    ]
   },
   {
     "name": "섀도우댄서",
@@ -55,6 +74,7 @@
     "parent": "씨프",
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "양손에 단검을 들고 춤추듯 주위 적들에게 치명적인 피해를 주는 상급 직업입니다.",
@@ -64,7 +84,11 @@
       "lv1": "이동 시 [도약]{green}할 수 있습니다. 인접한 아군이 없다면 치명타 확률이 [20%]{red} 증가합니다. 공격 후 인접한 아군이 없다면 빠르게 회전해 주변 [1]{red}바퀴 내 적들에게 공격력의 [40%]{red}만큼 방어력을 무시해 피해를 줍니다.",
       "lv2": "이동 시 [도약]{green}할 수 있습니다. 인접한 아군이 없다면 치명타 확률이 [30%]{red} 증가합니다. 공격 후 인접한 아군이 없다면 빠르게 회전해 주변 [1]{red}바퀴 내 적들에게 공격력의 [60%]{red}만큼 방어력을 무시해 피해를 줍니다.",
       "iconUrl": "/icons/classes/passive/shadow_dancer.png"
-    }
+    },
+    "skills": [
+      { "name": "사룡참파", "tpCost": 2, "range": [1, 3], "area": "광역", "attackType": "관통", "cooldown": 3, "tags": ["근거리", "이동공격"], "iconUrl": "/icons/skills/saryongchampa.png",
+        "effect": "주위 [3]{red}칸 내 지정한 타일로 순간 이동 후 주위 [1]{red}바퀴 내 적들에게 공격력의 [80%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [탈진]{orange} 효과를 겁니다." }
+    ]
   },
   {
     "name": "얀크",
@@ -72,6 +96,7 @@
     "parent": "씨프",
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "기공을 사용해 적을 파괴하고 아군과의 긴밀한 호흡으로 시너지를 극대화하는 상급 직업입니다.",
@@ -81,7 +106,11 @@
       "lv1": "공격력/치명타 확률 [+30%]{red}. 이동 시 [도약]{green}할 수 있습니다. 적 공격 시 적에게 [파쇄 공진 1]{orange} 효과를 걸고 공격 후 대상이 살아 있다면 [파쇄 공진 1]{orange} 효과를 추가로 부여합니다. 전투 공격 후 아군과 협공하면 대상 아군에게 [합격 공진 1]{green} 효과를 부여하고 자신도 얻습니다.",
       "lv2": "공격력/치명타 확률 [+40%]{red}. 이동 시 [도약]{green}할 수 있습니다. 적 공격 시 적에게 [파쇄 공진 2]{orange} 효과를 걸고 공격 후 대상이 살아 있다면 [파쇄 공진 2]{orange} 효과를 추가로 부여합니다. 전투 공격 후 아군과 협공하면 대상 아군에게 [합격 공진 2]{green} 효과를 부여하고 자신도 얻습니다.",
       "iconUrl": "/icons/classes/passive/yanke.png"
-    }
+    },
+    "skills": [
+      { "name": "명왕성", "tpCost": 1, "range": [1, 1], "area": "단일", "attackType": "타격", "allowedWeapon": "쌍수단검", "cooldown": 3, "tags": ["근거리", "전투"], "iconUrl": "/icons/skills/myeongwangseong.png",
+        "effect": "스킬 시전 시 최대 체력의 [30%]{red}만큼 [호신 투기]{green} 효과를 획득하고 적에게 공격력의 [150%]{red}만큼 피해를 줍니다. 이 스킬은 반격당하지 않습니다." }
+    ]
   },
   {
     "name": "프리마",
@@ -89,6 +118,7 @@
     "parent": "카덴차",
     "weaponType": "쌍수단검",
     "defenseType": "미디엄",
+    "attackType": "관통",
     "attackRange": 1,
     "moveRange": 4,
     "description": "단검을 들고 화려한 독주를 펼치듯 적을 유린하며 자신만의 호흡으로 전장을 승리로 이끄는 상급 직업입니다.",
@@ -98,6 +128,10 @@
       "lv1": "아군 턴 시작 시 [우아한 리듬 1]{green} 효과를 얻습니다. 이동 시 [도약]{green}할 수 있습니다.",
       "lv2": "아군 턴 시작 시 [우아한 리듬 2]{green} 효과를 얻습니다. 이동 시 [도약]{green}할 수 있습니다.",
       "iconUrl": "/icons/classes/passive/prima.png"
-    }
+    },
+    "skills": [
+      { "name": "풍사륜", "tpCost": 3, "range": [1, 3], "area": "단일", "cooldown": 2, "tags": ["원거리", "지향성", "전투"], "iconUrl": "/icons/skills/pungsaryun.png",
+        "effect": "적에게 풍사륜을 날려 공격력의 [200%]{red}만큼 피해를 줍니다. 이 스킬로 적 처치 시 추가 행동을 얻습니다." }
+    ]
   }
 ]

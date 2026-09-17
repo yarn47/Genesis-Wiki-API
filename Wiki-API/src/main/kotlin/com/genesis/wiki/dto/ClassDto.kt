@@ -16,6 +16,7 @@ data class ClassDetailDto(
     val tier: Int,
     val weaponType: String?,
     val defenseType: String?,
+    val attackType: String?,
     val attackRange: Int?,
     val moveRange: Int?,
     val baseHp: Int?,

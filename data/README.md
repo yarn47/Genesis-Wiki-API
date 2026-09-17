@@ -71,14 +71,24 @@ git pull
   "attackRange": 1,
   "moveRange": 4,
   "description": "클래스 설명",
-  "passive": { "name": "잠행", "lv1": "...[잠행 1]{green}...", "lv2": "...[잠행 2]{green}...", "iconUrl": "/icons/classes/passive/thief.png" }
+  "attackType": "관통",
+  "passive": { "name": "잠행", "lv1": "...[잠행 1]{green}...", "lv2": "...[잠행 2]{green}...", "iconUrl": "/icons/classes/passive/thief.png" },
+  "skills": [
+    { "name": "자도섬", "tpCost": 1, "range": [1, 1], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2,
+      "tags": ["근거리", "TP 제거", "전투"], "iconUrl": "/icons/skills/jadoseom.png",
+      "effect": "적을 공격해 공격력의 [130%]{red}만큼 ..." }
+  ]
 }
 ```
 
 - 1티어는 `parent` 없음, 2·3티어는 바로 위 티어 클래스 이름 (계열 구조는 모든 캐릭터 공통)
 - `defenseType`: 라이트/미디엄/헤비
 - 아이콘 파일은 프론트 저장소 `public/icons/`에 두고 `/icons/...` 경로로 연결
-- 체력·공격력 등 수치와 스킬은 아직 JSON으로 관리하지 않음 (반영 시 건드리지 않음)
+- `attackType`: 클래스 기본 공격 타입 (관통/타격 등). 스킬이 다를 때만 스킬에 `attackType`
+- `skills`: 액티브 스킬, 배열 순서 = 습득 순서. (클래스, 스킬 이름) 기준으로 추가/갱신
+  - `tpCost`: 게임에 `TP -`면 생략 / `range`: `[최소, 최대]` 또는 `"자신"`(0-0으로 저장)
+  - `allowedWeapon`: 게임에 "허용 무기" 표시가 있을 때만 / `tags`: tags.json에 있는 스킬 태그
+- 체력·공격력 등 수치는 아직 JSON으로 관리하지 않음 (반영 시 건드리지 않음)
 
 ### 효과 텍스트 색 태그
 

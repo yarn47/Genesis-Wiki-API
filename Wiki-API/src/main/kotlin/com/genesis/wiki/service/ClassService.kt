@@ -40,6 +40,7 @@ class ClassService(
             tier = req.tier,
             weaponType = req.weaponType,
             defenseType = req.defenseType?.let { DefenseType.valueOf(it) },
+            attackType = req.attackType,
             attackRange = req.attackRange,
             moveRange = req.moveRange,
             baseHp = req.baseHp,
@@ -85,6 +86,7 @@ class ClassService(
         wikiClass.tier = req.tier
         wikiClass.weaponType = req.weaponType
         wikiClass.defenseType = req.defenseType?.let { DefenseType.valueOf(it) }
+        wikiClass.attackType = req.attackType
         wikiClass.attackRange = req.attackRange
         wikiClass.moveRange = req.moveRange
         wikiClass.baseHp = req.baseHp
@@ -139,6 +141,8 @@ class ClassService(
             rangeMin = req.rangeMin,
             rangeMax = req.rangeMax,
             area = req.area,
+            attackType = req.attackType,
+            allowedWeapon = req.allowedWeapon,
             cooldown = req.cooldown,
             effectText = req.effectText,
             iconUrl = req.iconUrl
@@ -158,6 +162,7 @@ class ClassService(
     private fun WikiClass.toDetailDto() = ClassDetailDto(
         classId = classId, name = name, tier = tier,
         weaponType = weaponType, defenseType = defenseType?.name,
+        attackType = attackType,
         attackRange = attackRange, moveRange = moveRange,
         baseHp = baseHp, baseAttack = baseAttack,
         parentClassId = parentClass?.classId,
@@ -175,6 +180,8 @@ class ClassService(
                 rangeMin = cs.skill.rangeMin,
                 rangeMax = cs.skill.rangeMax,
                 area = cs.skill.area,
+                attackType = cs.skill.attackType,
+                allowedWeapon = cs.skill.allowedWeapon,
                 cooldown = cs.skill.cooldown,
                 effectText = cs.skill.effectText,
                 iconUrl = cs.skill.iconUrl,

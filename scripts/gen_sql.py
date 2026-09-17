@@ -4,7 +4,8 @@
 - 이름으로 찾아서 없으면 추가, 있으면 갱신 → 여러 번 실행해도 결과 동일
 - 버프/디버프의 레벨·태그 매핑은 JSON 내용으로 전부 교체
 - iconUrl 키가 없으면 기존 아이콘은 건드리지 않음 (관리자 화면에서 넣은 값 유지)
-- 클래스는 기본 정보·패시브만 갱신 (수치 base_hp/base_attack, 스킬은 건드리지 않음)
+- 클래스는 기본 정보·패시브·액티브 스킬을 갱신 (수치 base_hp/base_attack은 건드리지 않음)
+- 스킬은 (클래스, 스킬 이름) 기준으로 추가/갱신, JSON에서 빠진 스킬을 지우지는 않음
 - 전체가 하나의 트랜잭션이라 중간에 에러가 나면 아무것도 반영되지 않음
 - 효과 텍스트의 {green}/{orange} 이름이 data에 없는 버프/디버프면 경고만 출력 (stderr)
 """
@@ -27,8 +28,10 @@ KINDS = [("buffs", "buff"), ("debuffs", "debuff")]
 
 ITEM_KEYS = {"name", "description", "iconUrl", "duration", "maxStack", "tags", "levels"}
 LEVEL_KEYS = {"level", "name", "effect", "duration", "maxStack"}
-CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackRange", "moveRange",
-              "description", "iconUrl", "passive"}
+CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType", "attackRange", "moveRange",
+              "description", "iconUrl", "passive", "skills"}
+SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
+SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
 PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
 DEFENSE_TYPES = {"라이트": "light", "미디엄": "medium", "헤비": "heavy",
                  "light": "light", "medium": "medium", "heavy": "heavy"}
@@ -87,6 +90,17 @@ def duration(where, value):
     raise DataError(f"{where}: duration은 1 이상의 숫자 또는 \"영구\" ({value!r})")
 
 
+def skill_range(where, value):
+    if value is None:
+        return None, None
+    if value == SELF_RANGE:
+        return 0, 0
+    if (isinstance(value, list) and len(value) == 2 and all(isinstance(v, int) for v in value)
+            and 0 < value[0] <= value[1]):
+        return value[0], value[1]
+    raise DataError(f"{where}: range는 [최소, 최대] 또는 \"자신\" ({value!r})")
+
+
 def level_name(item, lvl):
     return lvl.get("name") or f"{item['name']} {lvl['level']}"
 
@@ -133,7 +147,7 @@ def load_items(folder, tag_names):
     return items
 
 
-def load_classes():
+def load_classes(tag_names):
     classes = {}
     for rel, cls in load_folder("classes"):
         where = f"{rel} '{cls.get('name')}'"
@@ -151,6 +165,18 @@ def load_classes():
         check_text(where, cls.get("description"))
         check_text(f"{where} passive lv1", passive.get("lv1"))
         check_text(f"{where} passive lv2", passive.get("lv2"))
+        skill_names = set()
+        for skill in cls.get("skills", []):
+            skill_where = f"{where} 스킬 '{skill.get('name')}'"
+            check_keys(skill_where, skill, SKILL_KEYS)
+            if not skill.get("name") or skill["name"] in skill_names:
+                raise DataError(f"{skill_where}: 스킬 이름이 없거나 중복")
+            skill_names.add(skill["name"])
+            skill_range(skill_where, skill.get("range"))
+            check_text(skill_where, skill.get("effect"))
+            for tag in skill.get("tags", []):
+                if tag not in tag_names:
+                    raise DataError(f"{skill_where}: tags.json에 없는 태그 '{tag}'")
         classes[cls["name"]] = (rel, cls)
 
     for name, (rel, cls) in classes.items():
@@ -181,6 +207,7 @@ def warn_unknown_links(buffs, debuffs, classes):
     for c in classes:
         p = c.get("passive", {})
         texts += [(f"클래스 '{c['name']}' 패시브 lv1", p.get("lv1")), (f"클래스 '{c['name']}' 패시브 lv2", p.get("lv2"))]
+        texts += [(f"클래스 '{c['name']}' 스킬 '{sk['name']}'", sk.get("effect")) for sk in c.get("skills", [])]
 
     for where, text in texts:
         for label, color in TEXT_TAG.findall(text or ""):
@@ -245,6 +272,7 @@ def class_sql(cls):
         "parent_class_id = @parent",
         f"weapon_type = {sql(cls.get('weaponType'))}",
         f"defense_type = {sql(DEFENSE_TYPES.get(cls.get('defenseType')))}",
+        f"attack_type = {sql(cls.get('attackType'))}",
         f"attack_range = {sql(cls.get('attackRange'))}",
         f"move_range = {sql(cls.get('moveRange'))}",
         f"description = {sql(cls.get('description'))}",
@@ -258,6 +286,44 @@ def class_sql(cls):
         sets.append(f"passive1_icon_url = {sql(passive['iconUrl'])}")
     sets.append("updated_at = NOW()")
     out.append(f"UPDATE classes SET {', '.join(sets)} WHERE class_id = @id;")
+    for order, skill in enumerate(cls.get("skills", []), start=1):
+        out.append(skill_sql(skill, order))
+    return "\n".join(out)
+
+
+def skill_sql(skill, order):
+    """@id(클래스)에 연결된 같은 이름의 스킬을 찾아 추가/갱신"""
+    name = sql(skill["name"])
+    range_min, range_max = skill_range(skill["name"], skill.get("range"))
+    out = [
+        f"-- 스킬: {skill['name']}",
+        "SET @skill = (SELECT s.skill_id FROM skills s JOIN class_skills cs ON cs.skill_id = s.skill_id "
+        f"WHERE cs.class_id = @id AND s.name = {name} LIMIT 1);",
+        f"INSERT INTO skills (name, type, created_at, updated_at) SELECT {name}, 'active', NOW(), NOW() FROM DUAL WHERE @skill IS NULL;",
+        "SET @skill = COALESCE(@skill, LAST_INSERT_ID());",
+        f"INSERT INTO class_skills (class_id, skill_id, unlock_order) SELECT @id, @skill, {order} FROM DUAL "
+        "WHERE NOT EXISTS (SELECT 1 FROM class_skills WHERE class_id = @id AND skill_id = @skill);",
+        f"UPDATE class_skills SET unlock_order = {order} WHERE class_id = @id AND skill_id = @skill;",
+    ]
+    sets = [
+        "type = 'active'",
+        f"tp_cost = {sql(skill.get('tpCost'))}",
+        f"range_min = {sql(range_min)}",
+        f"range_max = {sql(range_max)}",
+        f"area = {sql(skill.get('area'))}",
+        f"attack_type = {sql(skill.get('attackType'))}",
+        f"allowed_weapon = {sql(skill.get('allowedWeapon'))}",
+        f"cooldown = {sql(skill.get('cooldown'))}",
+        f"effect_text = {sql(skill.get('effect'))}",
+    ]
+    if "iconUrl" in skill:
+        sets.append(f"icon_url = {sql(skill['iconUrl'])}")
+    sets.append("updated_at = NOW()")
+    out.append(f"UPDATE skills SET {', '.join(sets)} WHERE skill_id = @skill;")
+    out.append("DELETE FROM skill_tag_map WHERE skill_id = @skill;")
+    if skill.get("tags"):
+        tag_list = ", ".join(sql(t) for t in skill["tags"])
+        out.append(f"INSERT INTO skill_tag_map (skill_id, tag_id) SELECT @skill, tag_id FROM tags WHERE name IN ({tag_list});")
     return "\n".join(out)
 
 
@@ -277,15 +343,28 @@ def class_summary_sql(classes):
     names = ", ".join(sql(c["name"]) for c in classes)
     return (
         "SELECT c.class_id AS id, c.name, c.tier, p.name AS parent, c.weapon_type, c.defense_type,\n"
-        "  c.attack_range, c.move_range, c.passive1_name, c.passive1_icon_url\n"
+        "  c.attack_type, c.attack_range, c.move_range, c.passive1_name, c.passive1_icon_url\n"
         f"FROM classes c LEFT JOIN classes p ON p.class_id = c.parent_class_id WHERE c.name IN ({names}) ORDER BY c.tier, c.class_id;"
+    )
+
+
+def skill_summary_sql(classes):
+    names = ", ".join(sql(c["name"]) for c in classes)
+    return (
+        "SELECT c.name AS class, cs.unlock_order AS ord, s.name AS skill, s.tp_cost AS tp,\n"
+        "  CASE WHEN s.range_min = 0 AND s.range_max = 0 THEN '자신' ELSE CONCAT(s.range_min, '-', s.range_max) END AS `range`,\n"
+        "  s.area, COALESCE(s.attack_type, c.attack_type) AS attack, s.allowed_weapon AS weapon, s.cooldown AS cd,\n"
+        "  (SELECT GROUP_CONCAT(t.name) FROM skill_tag_map m JOIN tags t ON t.tag_id = m.tag_id WHERE m.skill_id = s.skill_id) AS tags,\n"
+        "  s.icon_url IS NOT NULL AS icon\n"
+        "FROM classes c JOIN class_skills cs ON cs.class_id = c.class_id JOIN skills s ON s.skill_id = cs.skill_id\n"
+        f"WHERE c.name IN ({names}) ORDER BY c.tier, c.class_id, cs.unlock_order;"
     )
 
 
 def main():
     tags, tag_names = load_tags()
     kinds = [(prefix, load_items(folder, tag_names)) for folder, prefix in KINDS]
-    classes = load_classes()
+    classes = load_classes(tag_names)
     warn_unknown_links(kinds[0][1], kinds[1][1], classes)
 
     parts = ["SET NAMES utf8mb4;", "START TRANSACTION;", "", "-- ─── 태그 ───"]
@@ -301,6 +380,7 @@ def main():
     parts.extend(item_summary_sql(prefix, items) for prefix, items in kinds if items)
     if classes:
         parts.append(class_summary_sql(classes))
+        parts.append(skill_summary_sql(classes))
     print("\n".join(parts))
 
 

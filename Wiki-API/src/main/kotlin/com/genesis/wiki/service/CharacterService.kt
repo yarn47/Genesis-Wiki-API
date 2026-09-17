@@ -292,7 +292,7 @@ class CharacterService(
         val classTree = character.classTree.sortedWith(compareBy({ it.clazz.tier }, { it.orderInTier })).map { node ->
             ClassTreeNodeDto(
                 classId = node.clazz.classId, name = node.clazz.name, tier = node.clazz.tier,
-                weaponType = node.clazz.weaponType, defenseType = node.clazz.defenseType?.name,
+                weaponType = node.clazz.weaponType, defenseType = node.clazz.defenseType?.name, attackType = node.clazz.attackType,
                 attackRange = node.clazz.attackRange, moveRange = node.clazz.moveRange,
                 baseHp = node.clazz.baseHp, baseAttack = node.clazz.baseAttack,
                 parentClassId = node.clazz.parentClass?.classId, orderInTier = node.orderInTier,
@@ -300,7 +300,7 @@ class CharacterService(
                 passive1Lv1 = node.clazz.passive1Lv1, passive1Lv2 = node.clazz.passive1Lv2,
                 passive1IconUrl = node.clazz.passive1IconUrl,
                 skills = node.clazz.classSkills.sortedBy { it.unlockOrder }.map { cs ->
-                    SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
+                    SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.attackType, cs.skill.allowedWeapon, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
                         cs.skill.tags.map { TagDto(it.tagId, it.name, it.color) })
                 }
             )

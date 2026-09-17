@@ -24,6 +24,9 @@ class WikiClass(
     @Enumerated(EnumType.STRING)
     var defenseType: DefenseType? = null,
 
+    @Column(length = 20)
+    var attackType: String? = null,
+
     var attackRange: Int? = null,
     var moveRange: Int? = null,
     var baseHp: Int? = null,
@@ -80,6 +83,12 @@ class Skill(
 
     @Column(length = 50)
     var area: String? = null,
+
+    @Column(length = 20)
+    var attackType: String? = null,
+
+    @Column(length = 100)
+    var allowedWeapon: String? = null,
 
     var cooldown: Int? = null,
 
