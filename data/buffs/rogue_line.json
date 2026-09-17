@@ -1,0 +1,51 @@
+[
+  {
+    "name": "도약",
+    "description": "일부 지형지물을 뛰어넘어 이동 가능."
+  },
+  {
+    "name": "철수",
+    "description": "턴 종료 전 추가 이동 획득.",
+    "duration": 1
+  },
+  {
+    "name": "잠행",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": 2, "maxStack": 1, "effect": "이동력 [+1]{red}. 적을 통과해 이동 가능. 타겟 불가. 적을 공격하거나 피해를 주고 받으면 상태 해제. 기본 공격 시 [1]{yellow} TP를 훔칩니다." },
+      { "level": 2, "duration": 2, "maxStack": 1, "effect": "이동력 [+2]{red}. 적을 통과해 이동 가능. 타겟 불가. 적을 공격하거나 피해를 주고 받으면 상태 해제. 기본 공격 시 [1]{yellow} TP를 훔칩니다." }
+    ]
+  },
+  {
+    "name": "매혹의 템포",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": 1, "maxStack": 1, "effect": "받는 피해 [-10%]{red}. 아군 턴 시작 시 이 효과 해제." },
+      { "level": 2, "duration": 1, "maxStack": 1, "effect": "받는 피해 [-15%]{red}. 아군 턴 시작 시 이 효과 해제." }
+    ]
+  },
+  {
+    "name": "합격 공진",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": 1, "maxStack": 1, "effect": "협공 피해량 [+30%]{red}. 아군 턴 시작 시 [1]{yellow} TP를 획득하고 이 효과 해제." },
+      { "level": 2, "duration": 1, "maxStack": 1, "effect": "협공 피해량 [+40%]{red}. 아군 턴 시작 시 [1]{yellow} TP를 획득하고 이 효과 해제." }
+    ]
+  },
+  {
+    "name": "우아한 리듬",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": "영구", "maxStack": 1, "effect": "받는 치명타 확률/받는 치명타 피해량 [-30%]{red}. 오라를 가져 주위 [2]{red}칸 내 아군들의 받는 피해를 [5%]{red} 감소시킵니다. 적 공격 시 [치명적인 비트 1]{green}과 [철수]{green} 효과를 얻고 이 효과 해제." },
+      { "level": 2, "duration": "영구", "maxStack": 1, "effect": "받는 치명타 확률/받는 치명타 피해량 [-40%]{red}. 오라를 가져 주위 [2]{red}칸 내 아군들의 받는 피해를 [10%]{red} 감소시킵니다. 적 공격 시 [치명적인 비트 2]{green}와 [철수]{green} 효과를 얻고 이 효과 해제." }
+    ]
+  },
+  {
+    "name": "치명적인 비트",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": "영구", "maxStack": 1, "effect": "물리 관통/주는 피해 [+30%]{red}. 오라를 가져 주위 [2]{red}칸 내 아군들의 치명타 확률과 치명타 피해량을 [5%]{red} 증가시킵니다. 아군 턴 시작 시 이 효과 해제." },
+      { "level": 2, "duration": "영구", "maxStack": 1, "effect": "물리 관통/주는 피해 [+40%]{red}. 오라를 가져 주위 [2]{red}칸 내 아군들의 치명타 확률과 치명타 피해량을 [10%]{red} 증가시킵니다. 아군 턴 시작 시 이 효과 해제." }
+    ]
+  }
+]

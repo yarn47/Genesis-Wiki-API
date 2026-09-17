@@ -22,6 +22,7 @@ cd ~/apps/genesis-API && git pull && ./scripts/db-sync.sh
 | `tags.json` | 태그 목록 `{ "name", "color" }` (color: gray/red/orange/yellow/green/blue/purple) |
 | `buffs/*.json` | 버프 (파일은 캐릭터별 등 자유롭게 나눔, 이름은 전체에서 중복 불가) |
 | `debuffs/*.json` | 디버프 (버프와 같은 형식) |
+| `classes/*.json` | 클래스 (클래스 계열별 파일, 이름은 전체에서 중복 불가) |
 
 ### 버프/디버프 형식
 
@@ -47,7 +48,30 @@ cd ~/apps/genesis-API && git pull && ./scripts/db-sync.sh
 - `levels`가 있으면 레벨 버프, 레벨 이름은 생략 시 `"{name} {level}"`
 - `iconUrl`을 생략하면 기존 아이콘을 유지
 - 지속/중첩/해제 불가는 본문에 쓰지 않고 `duration`/`maxStack`/`tags`로 입력
+- `duration`: 턴 수 또는 `"영구"` (DB에는 -1로 저장), 게임에 지속 표시가 없으면 생략
+
+### 클래스 형식
+
+```json
+{
+  "name": "씨프",
+  "tier": 2,
+  "parent": "로그",
+  "weaponType": "쌍수단검",
+  "defenseType": "미디엄",
+  "attackRange": 1,
+  "moveRange": 4,
+  "description": "클래스 설명",
+  "passive": { "name": "잠행", "lv1": "...[잠행 1]{green}...", "lv2": "...[잠행 2]{green}..." }
+}
+```
+
+- 1티어는 `parent` 없음, 2·3티어는 바로 위 티어 클래스 이름 (계열 구조는 모든 캐릭터 공통)
+- `defenseType`: 라이트/미디엄/헤비
+- 체력·공격력 등 수치와 스킬은 아직 JSON으로 관리하지 않음 (반영 시 건드리지 않음)
 
 ### 효과 텍스트 색 태그
 
 `[텍스트]{색}` — red: 수치, yellow: 턴·쿨타임·TP·중첩, green: 버프 이름, orange: 디버프 이름, blue/purple: 미정
+
+green/orange 이름이 data의 버프/디버프 이름(또는 `"이름 레벨"`)과 다르면 반영 시 경고가 출력됩니다.
