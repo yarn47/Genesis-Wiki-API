@@ -15,6 +15,7 @@ data class ClassRequest(
     val passive1Name: String? = null,
     val passive1Lv1: String? = null,
     val passive1Lv2: String? = null,
+    val passive1IconUrl: String? = null,
     val skills: List<SkillRequest> = emptyList()
 )
 

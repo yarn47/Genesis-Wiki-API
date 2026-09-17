@@ -49,7 +49,8 @@ class ClassService(
             iconUrl = req.iconUrl,
             passive1Name = req.passive1Name,
             passive1Lv1 = req.passive1Lv1,
-            passive1Lv2 = req.passive1Lv2
+            passive1Lv2 = req.passive1Lv2,
+            passive1IconUrl = req.passive1IconUrl
         )
 
         val saved = classRepository.save(wikiClass)
@@ -94,6 +95,7 @@ class ClassService(
         wikiClass.passive1Name = req.passive1Name
         wikiClass.passive1Lv1 = req.passive1Lv1
         wikiClass.passive1Lv2 = req.passive1Lv2
+        wikiClass.passive1IconUrl = req.passive1IconUrl
 
         // 기존 스킬 전부 삭제 후 재등록
         val oldSkills = wikiClass.classSkills.map { it.skill }
@@ -163,6 +165,7 @@ class ClassService(
         passive1Name = passive1Name,
         passive1Lv1 = passive1Lv1,
         passive1Lv2 = passive1Lv2,
+        passive1IconUrl = passive1IconUrl,
         skills = classSkills.sortedBy { it.unlockOrder }.map { cs ->
             SkillDto(
                 skillId = cs.skill.skillId,

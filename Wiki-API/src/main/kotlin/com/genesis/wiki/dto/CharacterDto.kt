@@ -95,6 +95,7 @@ data class ClassTreeNodeDto(
     val passive1Name: String?,
     val passive1Lv1: String?,
     val passive1Lv2: String?,
+    val passive1IconUrl: String?,
     val skills: List<SkillDto>
 )
 

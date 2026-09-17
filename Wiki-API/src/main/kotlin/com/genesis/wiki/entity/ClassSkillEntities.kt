@@ -48,6 +48,9 @@ class WikiClass(
     @Column(columnDefinition = "TEXT")
     var passive1Lv2: String? = null,
 
+    @Column(length = 255)
+    var passive1IconUrl: String? = null,
+
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {

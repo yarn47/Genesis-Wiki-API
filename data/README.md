@@ -10,6 +10,15 @@ ssh vultr
 cd ~/apps/genesis-API && git pull && ./scripts/db-sync.sh
 ```
 
+DB 구조가 바뀌는 커밋(`db/migrations/`에 파일 추가)이 있으면 순서가 중요합니다.
+
+```bash
+git pull
+./scripts/db-migrate.sh   # 아직 적용 안 된 마이그레이션만 적용 (schema_migrations에 기록)
+./deploy.sh               # 백엔드 재배포 (엔티티가 새 컬럼을 요구하므로 마이그레이션 뒤에)
+./scripts/db-sync.sh      # 데이터 반영
+```
+
 - 반영 전 DB 전체를 `~/db-backups/`에 백업 (최근 30개 보관)
 - 하나의 트랜잭션으로 반영 → 중간에 에러가 나면 아무것도 바뀌지 않음
 - 이름 기준으로 추가/갱신하므로 여러 번 실행해도 결과 동일
@@ -62,12 +71,13 @@ cd ~/apps/genesis-API && git pull && ./scripts/db-sync.sh
   "attackRange": 1,
   "moveRange": 4,
   "description": "클래스 설명",
-  "passive": { "name": "잠행", "lv1": "...[잠행 1]{green}...", "lv2": "...[잠행 2]{green}..." }
+  "passive": { "name": "잠행", "lv1": "...[잠행 1]{green}...", "lv2": "...[잠행 2]{green}...", "iconUrl": "/icons/classes/passive/thief.png" }
 }
 ```
 
 - 1티어는 `parent` 없음, 2·3티어는 바로 위 티어 클래스 이름 (계열 구조는 모든 캐릭터 공통)
 - `defenseType`: 라이트/미디엄/헤비
+- 아이콘 파일은 프론트 저장소 `public/icons/`에 두고 `/icons/...` 경로로 연결
 - 체력·공격력 등 수치와 스킬은 아직 JSON으로 관리하지 않음 (반영 시 건드리지 않음)
 
 ### 효과 텍스트 색 태그

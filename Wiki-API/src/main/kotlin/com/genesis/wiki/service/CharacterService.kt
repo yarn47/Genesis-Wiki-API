@@ -298,6 +298,7 @@ class CharacterService(
                 parentClassId = node.clazz.parentClass?.classId, orderInTier = node.orderInTier,
                 iconUrl = node.clazz.iconUrl, passive1Name = node.clazz.passive1Name,
                 passive1Lv1 = node.clazz.passive1Lv1, passive1Lv2 = node.clazz.passive1Lv2,
+                passive1IconUrl = node.clazz.passive1IconUrl,
                 skills = node.clazz.classSkills.sortedBy { it.unlockOrder }.map { cs ->
                     SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
                         cs.skill.tags.map { TagDto(it.tagId, it.name, it.color) })

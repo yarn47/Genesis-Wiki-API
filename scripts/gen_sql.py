@@ -29,7 +29,7 @@ ITEM_KEYS = {"name", "description", "iconUrl", "duration", "maxStack", "tags", "
 LEVEL_KEYS = {"level", "name", "effect", "duration", "maxStack"}
 CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackRange", "moveRange",
               "description", "iconUrl", "passive"}
-PASSIVE_KEYS = {"name", "lv1", "lv2"}
+PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
 DEFENSE_TYPES = {"라이트": "light", "미디엄": "medium", "헤비": "heavy",
                  "light": "light", "medium": "medium", "heavy": "heavy"}
 
@@ -254,6 +254,8 @@ def class_sql(cls):
     ]
     if "iconUrl" in cls:
         sets.append(f"icon_url = {sql(cls['iconUrl'])}")
+    if "iconUrl" in passive:
+        sets.append(f"passive1_icon_url = {sql(passive['iconUrl'])}")
     sets.append("updated_at = NOW()")
     out.append(f"UPDATE classes SET {', '.join(sets)} WHERE class_id = @id;")
     return "\n".join(out)
@@ -275,7 +277,7 @@ def class_summary_sql(classes):
     names = ", ".join(sql(c["name"]) for c in classes)
     return (
         "SELECT c.class_id AS id, c.name, c.tier, p.name AS parent, c.weapon_type, c.defense_type,\n"
-        "  c.attack_range, c.move_range, c.passive1_name\n"
+        "  c.attack_range, c.move_range, c.passive1_name, c.passive1_icon_url\n"
         f"FROM classes c LEFT JOIN classes p ON p.class_id = c.parent_class_id WHERE c.name IN ({names}) ORDER BY c.tier, c.class_id;"
     )
 
