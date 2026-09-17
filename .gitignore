@@ -3,6 +3,7 @@
 
 ### SQL ###
 *.sql
+!db/migrations/*.sql
 
 ### Env ###
 .env
