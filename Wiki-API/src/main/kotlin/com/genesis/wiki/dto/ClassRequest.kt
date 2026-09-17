@@ -28,5 +28,6 @@ data class SkillRequest(
     val cooldown: Int? = null,
     val effectText: String? = null,
     val iconUrl: String? = null,
-    val unlockOrder: Int? = null
+    val unlockOrder: Int? = null,
+    val tagIds: List<Int> = emptyList()
 )

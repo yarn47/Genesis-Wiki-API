@@ -4,6 +4,7 @@ import com.genesis.wiki.dto.*
 import com.genesis.wiki.entity.*
 import com.genesis.wiki.repository.ClassRepository
 import com.genesis.wiki.repository.SkillRepository
+import com.genesis.wiki.repository.TagRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -11,7 +12,8 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional(readOnly = true)
 class ClassService(
     private val classRepository: ClassRepository,
-    private val skillRepository: SkillRepository
+    private val skillRepository: SkillRepository,
+    private val tagRepository: TagRepository
 ) {
     // ─── 조회 ───────────────────────────────────────────────
 
@@ -53,18 +55,7 @@ class ClassService(
         val saved = classRepository.save(wikiClass)
 
         req.skills.forEachIndexed { idx, skillReq ->
-            val skill = Skill(
-                name = skillReq.name,
-                type = SkillType.valueOf(skillReq.type),
-                tpCost = skillReq.tpCost,
-                rangeMin = skillReq.rangeMin,
-                rangeMax = skillReq.rangeMax,
-                area = skillReq.area,
-                cooldown = skillReq.cooldown,
-                effectText = skillReq.effectText,
-                iconUrl = skillReq.iconUrl
-            )
-            val savedSkill = skillRepository.save(skill)
+            val savedSkill = skillRepository.save(newSkill(skillReq))
             saved.classSkills.add(
                 ClassSkill(
                     clazz = saved,
@@ -111,18 +102,7 @@ class ClassService(
         skillRepository.deleteAll(oldSkills)
 
         req.skills.forEachIndexed { idx, skillReq ->
-            val skill = Skill(
-                name = skillReq.name,
-                type = SkillType.valueOf(skillReq.type),
-                tpCost = skillReq.tpCost,
-                rangeMin = skillReq.rangeMin,
-                rangeMax = skillReq.rangeMax,
-                area = skillReq.area,
-                cooldown = skillReq.cooldown,
-                effectText = skillReq.effectText,
-                iconUrl = skillReq.iconUrl
-            )
-            val savedSkill = skillRepository.save(skill)
+            val savedSkill = skillRepository.save(newSkill(skillReq))
             wikiClass.classSkills.add(
                 ClassSkill(
                     clazz = wikiClass,
@@ -147,6 +127,22 @@ class ClassService(
         classRepository.saveAndFlush(wikiClass)
         skillRepository.deleteAll(oldSkills)
         classRepository.delete(wikiClass)
+    }
+
+    private fun newSkill(req: SkillRequest): Skill {
+        val skill = Skill(
+            name = req.name,
+            type = SkillType.valueOf(req.type),
+            tpCost = req.tpCost,
+            rangeMin = req.rangeMin,
+            rangeMax = req.rangeMax,
+            area = req.area,
+            cooldown = req.cooldown,
+            effectText = req.effectText,
+            iconUrl = req.iconUrl
+        )
+        skill.tags.addAll(tagRepository.findAllById(req.tagIds))
+        return skill
     }
 
     // ─── Entity → DTO ───────────────────────────────────────
@@ -178,7 +174,8 @@ class ClassService(
                 area = cs.skill.area,
                 cooldown = cs.skill.cooldown,
                 effectText = cs.skill.effectText,
-                iconUrl = cs.skill.iconUrl
+                iconUrl = cs.skill.iconUrl,
+                tags = cs.skill.tags.map { TagDto(it.tagId, it.name, it.color) }
             )
         }
     )

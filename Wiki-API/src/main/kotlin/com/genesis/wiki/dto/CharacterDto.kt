@@ -11,7 +11,8 @@ data class SkillDto(
     val area: String?,
     val cooldown: Int?,
     val effectText: String?,
-    val iconUrl: String?
+    val iconUrl: String?,
+    val tags: List<TagDto>
 )
 
 data class TagDto(
