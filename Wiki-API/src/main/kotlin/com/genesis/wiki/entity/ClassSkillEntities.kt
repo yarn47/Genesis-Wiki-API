@@ -88,7 +88,15 @@ class Skill(
 
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
-)
+) {
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "skill_tag_map",
+        joinColumns = [JoinColumn(name = "skill_id")],
+        inverseJoinColumns = [JoinColumn(name = "tag_id")]
+    )
+    val tags: MutableList<Tag> = mutableListOf()
+}
 
 // ─── ClassSkill ───────────────────────────────────────────
 @Entity
