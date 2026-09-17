@@ -1,0 +1,31 @@
+[
+  {
+    "name": "아찔한 회피",
+    "description": "전투 공격을 당할 시 분신을 남기고 인접한 빈 타일로 회피. 발동 후 [1]{yellow} TP를 회복하고 이 효과 중첩 감소.",
+    "duration": 2,
+    "maxStack": 3,
+    "tags": ["해제 불가"]
+  },
+  {
+    "name": "관능의 아라베스크",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": 2, "maxStack": 1, "effect": "아군이 인접한 칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 2, "duration": 2, "maxStack": 1, "effect": "선제 공격. 아군이 인접한 칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 3, "duration": 2, "maxStack": 1, "effect": "선제 공격. 받는 피해 [-10%]{red}. 아군이 인접한 칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 4, "duration": 2, "maxStack": 1, "effect": "선제 공격. 받는 피해 [-15%]{red}. 아군이 인접한 칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 5, "duration": 2, "maxStack": 1, "effect": "선제 공격. 받는 피해 [-20%]{red}. 아군이 인접한 칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 6, "duration": 2, "maxStack": 1, "effect": "선제 공격. 받는 피해 [-25%]{red}. 아군이 주위 [2]{red}칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." },
+      { "level": 7, "duration": 2, "maxStack": 1, "effect": "선제 공격. 받는 피해 [-30%]{red}. 아군이 주위 [2]{red}칸에서 턴 종료 시 추가 턴을 주고 이 효과 해제." }
+    ]
+  },
+  {
+    "name": "아브라소",
+    "tags": ["해제 불가"],
+    "levels": [
+      { "level": 1, "duration": 1, "maxStack": 1, "effect": "공격력 [+30%]{red}. 근접 전투 공격 시 공격력이 [30%]{red} 추가로 증가. 기절 면역." },
+      { "level": 2, "duration": 1, "maxStack": 1, "effect": "공격력 [+40%]{red}. 근접 전투 공격 시 공격력이 [40%]{red} 추가로 증가하고 사용한 스킬의 쿨타임 [-1]{yellow}. 기절 면역." },
+      { "level": 3, "duration": 1, "maxStack": 1, "effect": "공격력 [+50%]{red}. 근접 전투 공격 시 공격력이 [50%]{red} 추가로 증가하고 사용한 스킬의 쿨타임 [-2]{yellow}. 기절 면역." }
+    ]
+  }
+]
