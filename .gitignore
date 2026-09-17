@@ -1,0 +1,8 @@
+### IntelliJ IDEA ###
+.idea/
+
+### SQL ###
+*.sql
+
+### Env ###
+.env

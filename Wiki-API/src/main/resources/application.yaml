@@ -1,10 +1,13 @@
 spring:
+  config:
+    # 실행 위치(Wiki-API 폴더 또는 저장소 루트)의 .env를 읽음. OS 환경변수가 있으면 그쪽이 우선
+    import: optional:file:.env[.properties],optional:file:Wiki-API/.env[.properties]
   application:
     name: Wiki-API
   datasource:
-    url: jdbc:mysql://182.162.104.197:3306/genesis_mobile?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useUnicode=true
-    username: root
-    password: qjarms123!
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
