@@ -185,6 +185,18 @@
         "effect": "공격력 비례 보호막. 이동 방해 효과에 면역."
       },
       {
+        "level": 2,
+        "duration": 2,
+        "maxStack": 1,
+        "effect": "공격력 비례 보호막. 이동 방해 효과에 면역. 이동력 [+1]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "maxStack": 1,
+        "effect": "공격력 비례 보호막. 이동 방해 효과에 면역. 이동력 [+1]{red}."
+      },
+      {
         "level": 4,
         "duration": 2,
         "maxStack": 1,
