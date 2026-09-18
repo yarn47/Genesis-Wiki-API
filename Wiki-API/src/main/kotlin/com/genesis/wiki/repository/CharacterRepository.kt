@@ -19,47 +19,21 @@ interface CharacterRepository : JpaRepository<Character, Int> {
     fun findAllByNameContaining(name: String): List<Character>
 
     // 공개용 상세 (isPublished = true)
+    // 컬렉션은 fetch join 하지 않는다 — 여러 컬렉션을 한 번에 조인하면 카티션 곱이 되어
+    // (자드 기준 8만 행) 쿼리가 몇 초씩 걸린다. 컬렉션은 default_batch_fetch_size 로 묶어서 로딩.
     @Query("""
-        SELECT DISTINCT c FROM Character c
+        SELECT c FROM Character c
         LEFT JOIN FETCH c.stats
-        LEFT JOIN FETCH c.skins
-        LEFT JOIN FETCH c.classTree ct
-        LEFT JOIN FETCH ct.clazz cl
-        LEFT JOIN FETCH cl.classSkills cs
-        LEFT JOIN FETCH cs.skill
-        LEFT JOIN FETCH c.passives p
-        LEFT JOIN FETCH p.levels
-        LEFT JOIN FETCH c.artifacts a
-        LEFT JOIN FETCH a.levels
-        LEFT JOIN FETCH c.manifestations m
-        LEFT JOIN FETCH m.ultimate u
-        LEFT JOIN FETCH u.levels
-        LEFT JOIN FETCH c.exclusiveWeapon w
-        LEFT JOIN FETCH w.effects e
-        LEFT JOIN FETCH e.levels
+        LEFT JOIN FETCH c.exclusiveWeapon
         WHERE c.characterId = :id AND c.isPublished = true
     """)
     fun findDetailById(@Param("id") id: Int): Character?
 
     // 관리자용 상세 (비발행 포함)
     @Query("""
-        SELECT DISTINCT c FROM Character c
+        SELECT c FROM Character c
         LEFT JOIN FETCH c.stats
-        LEFT JOIN FETCH c.skins
-        LEFT JOIN FETCH c.classTree ct
-        LEFT JOIN FETCH ct.clazz cl
-        LEFT JOIN FETCH cl.classSkills cs
-        LEFT JOIN FETCH cs.skill
-        LEFT JOIN FETCH c.passives p
-        LEFT JOIN FETCH p.levels
-        LEFT JOIN FETCH c.artifacts a
-        LEFT JOIN FETCH a.levels
-        LEFT JOIN FETCH c.manifestations m
-        LEFT JOIN FETCH m.ultimate u
-        LEFT JOIN FETCH u.levels
-        LEFT JOIN FETCH c.exclusiveWeapon w
-        LEFT JOIN FETCH w.effects e
-        LEFT JOIN FETCH e.levels
+        LEFT JOIN FETCH c.exclusiveWeapon
         WHERE c.characterId = :id
     """)
     fun findAdminDetailById(@Param("id") id: Int): Character?

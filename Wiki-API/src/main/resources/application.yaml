@@ -16,6 +16,9 @@ spring:
     properties:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
+        # 지연 로딩 컬렉션을 IN 절로 묶어서 가져온다 (상세 조회 N+1 방지)
+        hibernate:
+          default_batch_fetch_size: 50
 
 server:
   port: 8080
