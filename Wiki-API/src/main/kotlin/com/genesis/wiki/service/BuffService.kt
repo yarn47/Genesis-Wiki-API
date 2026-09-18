@@ -3,6 +3,7 @@ package com.genesis.wiki.service
 import com.genesis.wiki.dto.*
 import com.genesis.wiki.entity.*
 import com.genesis.wiki.repository.*
+import com.genesis.wiki.util.TextTagUtil
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -14,22 +15,80 @@ class BuffService(
 ) {
 
     @Transactional(readOnly = true)
-    fun getBuffList(): List<BuffDto> =
-        buffRepository.findAll().map { mapBuffToDto(it) }
+    fun getBuffList(): List<BuffDto> {
+        val usage = buildUsage()
+        return buffRepository.findAll().map { mapBuffToDto(it, usage[EffectKey.buff(it.buffId)].orEmpty()) }
+    }
 
     @Transactional(readOnly = true)
     fun getBuffDetail(id: Int): BuffDto =
-        buffRepository.findDetailById(id)?.let { mapBuffToDto(it) }
+        buffRepository.findDetailById(id)?.let { mapBuffToDto(it, buildUsage()[EffectKey.buff(id)].orEmpty()) }
             ?: throw NoSuchElementException("버프를 찾을 수 없습니다: $id")
 
     @Transactional(readOnly = true)
-    fun getDebuffList(): List<DebuffDto> =
-        debuffRepository.findAll().map { mapDebuffToDto(it) }
+    fun getDebuffList(): List<DebuffDto> {
+        val usage = buildUsage()
+        return debuffRepository.findAll().map { mapDebuffToDto(it, usage[EffectKey.debuff(it.debuffId)].orEmpty()) }
+    }
 
     @Transactional(readOnly = true)
     fun getDebuffDetail(id: Int): DebuffDto =
-        debuffRepository.findDetailById(id)?.let { mapDebuffToDto(it) }
+        debuffRepository.findDetailById(id)?.let { mapDebuffToDto(it, buildUsage()[EffectKey.debuff(id)].orEmpty()) }
             ?: throw NoSuchElementException("디버프를 찾을 수 없습니다: $id")
+
+    // ─── 사용자(캐릭터) 찾기 ────────────────────────────────
+    // 캐릭터 텍스트에 이름이 박힌 버프뿐 아니라, 그 버프가 다시 걸어주는 버프까지 따라간다
+    // (예: 자드 → 우아한 리듬 → 치명적인 비트)
+
+    private data class EffectKey(val kind: String, val id: Int) {
+        companion object {
+            fun buff(id: Int) = EffectKey("B", id)
+            fun debuff(id: Int) = EffectKey("D", id)
+        }
+    }
+
+    private fun buildUsage(): Map<EffectKey, List<CharacterBriefDto>> {
+        val users = mutableMapOf<EffectKey, MutableSet<CharacterBriefDto>>()
+        buffRepository.findUsingCharacters().forEach {
+            users.getOrPut(EffectKey.buff(it.effectId)) { mutableSetOf() }
+                .add(CharacterBriefDto(it.characterId, it.characterName, it.thumbnailUrl))
+        }
+        debuffRepository.findUsingCharacters().forEach {
+            users.getOrPut(EffectKey.debuff(it.effectId)) { mutableSetOf() }
+                .add(CharacterBriefDto(it.characterId, it.characterName, it.thumbnailUrl))
+        }
+
+        val buffs = buffRepository.findAll()
+        val debuffs = debuffRepository.findAll()
+
+        val byName = mutableMapOf<String, EffectKey>()
+        buffs.forEach { byName[it.name] = EffectKey.buff(it.buffId) }
+        debuffs.forEach { byName[it.name] = EffectKey.debuff(it.debuffId) }
+        // "관능의 아라베스크 5" 처럼 레벨이 붙은 이름도 본체로
+        fun keyOf(label: String) = byName[label] ?: byName[label.replace(Regex("\\s*\\d+$"), "")]
+
+        val links = mutableMapOf<EffectKey, MutableSet<EffectKey>>()
+        fun addLinks(key: EffectKey, texts: List<String?>) {
+            (TextTagUtil.extractAllBuffNames(texts) + TextTagUtil.extractAllDebuffNames(texts))
+                .mapNotNull { keyOf(it) }
+                .filter { it != key }
+                .forEach { links.getOrPut(key) { mutableSetOf() }.add(it) }
+        }
+        buffs.forEach { addLinks(EffectKey.buff(it.buffId), it.levels.map { l -> l.effectText } + it.description) }
+        debuffs.forEach { addLinks(EffectKey.debuff(it.debuffId), it.levels.map { l -> l.effectText } + it.description) }
+
+        // 연쇄가 깊어야 서너 단계라 몇 번만 돌려도 충분
+        repeat(5) {
+            var changed = false
+            links.forEach { (from, tos) ->
+                val src = users[from] ?: return@forEach
+                tos.forEach { to -> if (users.getOrPut(to) { mutableSetOf() }.addAll(src)) changed = true }
+            }
+            if (!changed) return@repeat
+        }
+
+        return users.mapValues { (_, v) -> v.sortedBy { it.characterId } }
+    }
 
     @Transactional(readOnly = true)
     fun getTagList(): List<TagDto> =
@@ -148,7 +207,7 @@ class BuffService(
     @Transactional
     fun deleteTag(id: Int) = tagRepository.deleteById(id)
 
-    fun mapBuffToDto(buff: Buff): BuffDto = BuffDto(
+    fun mapBuffToDto(buff: Buff, usedBy: List<CharacterBriefDto> = emptyList()): BuffDto = BuffDto(
         buffId = buff.buffId,
         name = buff.name,
         description = buff.description,
@@ -160,10 +219,11 @@ class BuffService(
             BuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack)
         },
         tags = buff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
-        sources = buff.sources.map { BuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
+        sources = buff.sources.map { BuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) },
+        usedBy = usedBy
     )
 
-    fun mapDebuffToDto(debuff: Debuff): DebuffDto = DebuffDto(
+    fun mapDebuffToDto(debuff: Debuff, usedBy: List<CharacterBriefDto> = emptyList()): DebuffDto = DebuffDto(
         debuffId = debuff.debuffId,
         name = debuff.name,
         description = debuff.description,
@@ -175,6 +235,7 @@ class BuffService(
             DebuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack)
         },
         tags = debuff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
-        sources = debuff.sources.map { DebuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
+        sources = debuff.sources.map { DebuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) },
+        usedBy = usedBy
     )
 }
