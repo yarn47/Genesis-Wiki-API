@@ -1,24 +1,54 @@
 [
-  { "name": "해제 불가",
-    "color": "gray" },
-  { "name": "보호막",
-    "color": "gray" },
-  { "name": "쇠약",
-    "color": "gray" },
-  { "name": "근거리",
-    "color": "gray" },
-  { "name": "원거리",
-    "color": "gray" },
-  { "name": "이동공격",
-    "color": "gray" },
-  { "name": "전투",
-    "color": "gray" },
-  { "name": "TP 제거",
-    "color": "gray" },
-  { "name": "지향성",
-    "color": "gray" },
-  { "name": "행동제어",
-    "color": "gray" },
-  { "name": "이동력제어",
-    "color": "gray" }
+  {
+    "name": "해제 불가",
+    "color": "gray"
+  },
+  {
+    "name": "보호막",
+    "color": "gray"
+  },
+  {
+    "name": "쇠약",
+    "color": "gray"
+  },
+  {
+    "name": "근거리",
+    "color": "gray"
+  },
+  {
+    "name": "원거리",
+    "color": "gray"
+  },
+  {
+    "name": "이동공격",
+    "color": "gray"
+  },
+  {
+    "name": "전투",
+    "color": "gray"
+  },
+  {
+    "name": "TP 제거",
+    "color": "gray"
+  },
+  {
+    "name": "지향성",
+    "color": "gray"
+  },
+  {
+    "name": "행동제어",
+    "color": "gray"
+  },
+  {
+    "name": "이동력제어",
+    "color": "gray"
+  },
+  {
+    "name": "금단의 기술",
+    "color": "gray"
+  },
+  {
+    "name": "징표",
+    "color": "gray"
+  }
 ]
