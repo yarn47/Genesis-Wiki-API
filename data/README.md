@@ -32,6 +32,7 @@ git pull
 | `buffs/*.json` | 버프 (파일은 캐릭터별 등 자유롭게 나눔, 이름은 전체에서 중복 불가) |
 | `debuffs/*.json` | 디버프 (버프와 같은 형식) |
 | `classes/*.json` | 클래스 (클래스 계열별 파일, 이름은 전체에서 중복 불가) |
+| `weapons/*.json` | 전용무기 (이름은 전체에서 중복 불가) |
 
 ### 버프/디버프 형식
 
@@ -89,6 +90,28 @@ git pull
   - `tpCost`: 게임에 `TP -`면 생략 / `range`: `[최소, 최대]` 또는 `"자신"`(0-0으로 저장)
   - `allowedWeapon`: 게임에 "허용 무기" 표시가 있을 때만 / `tags`: tags.json에 있는 스킬 태그
 - 체력·공격력 등 수치는 아직 JSON으로 관리하지 않음 (반영 시 건드리지 않음)
+
+### 전용무기 형식
+
+```json
+{
+  "name": "라 사바흐",
+  "weaponType": "쌍수단검",
+  "grade": "전설",
+  "iconUrl": "/icons/weapons/la_sabah.png",
+  "extraStats": "치명타 확률 +10~15%, 물리 관통 +10~15% (각성 1~6단)",
+  "description": "무기 설명 (줄바꿈은 \n)",
+  "baseStats": [{ "step": 1, "maxHp": 116, "attack": 381, "critRate": 10, "physPen": 10 }],
+  "effects": [
+    { "name": "고고한 에투알", "type": "전용",
+      "levels": [{ "step": 1, "effect": "...[새벽의 빛 1]{green}..." }] }
+  ]
+}
+```
+
+- `grade`: 희귀/영웅/전설 · `type`: 일반/전용(캐릭터 전용)
+- `levels`의 `step`은 각성(=돌파) 단계
+- `baseStats`는 각성 단계별 수치 배열 (캐릭터 상세에서 표로 표시)
 
 ### 효과 텍스트 색 태그
 

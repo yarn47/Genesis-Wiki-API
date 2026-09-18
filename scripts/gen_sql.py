@@ -5,6 +5,7 @@
 - 버프/디버프의 레벨·태그 매핑은 JSON 내용으로 전부 교체
 - iconUrl 키가 없으면 기존 아이콘은 건드리지 않음 (관리자 화면에서 넣은 값 유지)
 - 클래스는 기본 정보·패시브·액티브 스킬을 갱신 (수치 base_hp/base_attack은 건드리지 않음)
+- 전용무기는 기본 정보와 효과(각성 단계별)를 갱신
 - 스킬은 (클래스, 스킬 이름) 기준으로 추가/갱신, JSON에서 빠진 스킬을 지우지는 않음
 - 전체가 하나의 트랜잭션이라 중간에 에러가 나면 아무것도 반영되지 않음
 - 효과 텍스트의 {green}/{orange} 이름이 data에 없는 버프/디버프면 경고만 출력 (stderr)
@@ -33,6 +34,12 @@ CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType
 SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
 SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
 PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
+WEAPON_KEYS = {"name", "weaponType", "grade", "baseStats", "extraStats", "description", "iconUrl", "effects"}
+WEAPON_EFFECT_KEYS = {"name", "type", "baseEffect", "iconUrl", "levels"}
+WEAPON_LEVEL_KEYS = {"step", "effect"}
+GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend",
+          "rare": "rare", "hero": "hero", "legend": "legend"}
+EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "exclusive": "exclusive"}
 DEFENSE_TYPES = {"라이트": "light", "미디엄": "medium", "헤비": "heavy",
                  "light": "light", "medium": "medium", "heavy": "heavy"}
 
@@ -194,7 +201,37 @@ def load_classes(tag_names):
     return sorted((c for _, c in classes.values()), key=lambda c: c["tier"])
 
 
-def warn_unknown_links(buffs, debuffs, classes):
+def load_weapons():
+    weapons, seen = [], set()
+    for rel, w in load_folder("weapons"):
+        where = f"{rel} '{w.get('name')}'"
+        check_keys(where, w, WEAPON_KEYS)
+        if not w.get("name") or w["name"] in seen:
+            raise DataError(f"{where}: 무기 이름이 없거나 중복")
+        seen.add(w["name"])
+        if w.get("grade") not in GRADES:
+            raise DataError(f"{where}: grade는 희귀/영웅/전설 ({w.get('grade')!r})")
+        if "baseStats" in w and not isinstance(w["baseStats"], (list, dict)):
+            raise DataError(f"{where}: baseStats는 JSON 배열/객체")
+        check_text(where, w.get("description"))
+        for eff in w.get("effects", []):
+            eff_where = f"{where} 효과 '{eff.get('name')}'"
+            check_keys(eff_where, eff, WEAPON_EFFECT_KEYS)
+            if eff.get("type") not in EFFECT_TYPES:
+                raise DataError(f"{eff_where}: type은 일반/전용 ({eff.get('type')!r})")
+            check_text(eff_where, eff.get("baseEffect"))
+            steps = set()
+            for lvl in eff.get("levels", []):
+                check_keys(f"{eff_where} {lvl.get('step')}단", lvl, WEAPON_LEVEL_KEYS)
+                if lvl["step"] in steps:
+                    raise DataError(f"{eff_where}: {lvl['step']}단 중복")
+                steps.add(lvl["step"])
+                check_text(f"{eff_where} {lvl['step']}단", lvl.get("effect"))
+        weapons.append(w)
+    return weapons
+
+
+def warn_unknown_links(buffs, debuffs, classes, weapons):
     known = {
         "green": {n for b in buffs for n in [b["name"], *(level_name(b, l) for l in b.get("levels", []))]},
         "orange": {n for d in debuffs for n in [d["name"], *(level_name(d, l) for l in d.get("levels", []))]},
@@ -208,6 +245,10 @@ def warn_unknown_links(buffs, debuffs, classes):
         p = c.get("passive", {})
         texts += [(f"클래스 '{c['name']}' 패시브 lv1", p.get("lv1")), (f"클래스 '{c['name']}' 패시브 lv2", p.get("lv2"))]
         texts += [(f"클래스 '{c['name']}' 스킬 '{sk['name']}'", sk.get("effect")) for sk in c.get("skills", [])]
+    for w in weapons:
+        for eff in w.get("effects", []):
+            texts.append((f"무기 '{w['name']}' 효과 '{eff['name']}'", eff.get("baseEffect")))
+            texts += [(f"무기 '{w['name']}' 효과 '{eff['name']}' {l['step']}단", l.get("effect")) for l in eff.get("levels", [])]
 
     for where, text in texts:
         for label, color in TEXT_TAG.findall(text or ""):
@@ -327,6 +368,60 @@ def skill_sql(skill, order):
     return "\n".join(out)
 
 
+def weapon_sql(w):
+    name = sql(w["name"])
+    out = [
+        f"-- 전용무기: {w['name']}",
+        f"SET @id = (SELECT weapon_id FROM exclusive_weapons WHERE name = {name});",
+        f"INSERT INTO exclusive_weapons (name, grade, created_at, updated_at) "
+        f"SELECT {name}, {sql(GRADES[w['grade']])}, NOW(), NOW() FROM DUAL WHERE @id IS NULL;",
+        "SET @id = COALESCE(@id, LAST_INSERT_ID());",
+    ]
+    sets = [
+        f"weapon_type = {sql(w.get('weaponType'))}",
+        f"grade = {sql(GRADES[w['grade']])}",
+        f"base_stats = {sql(json.dumps(w['baseStats'], ensure_ascii=False)) if 'baseStats' in w else 'NULL'}",
+        f"extra_stats = {sql(w.get('extraStats'))}",
+        f"description = {sql(w.get('description'))}",
+    ]
+    if "iconUrl" in w:
+        sets.append(f"icon_url = {sql(w['iconUrl'])}")
+    sets.append("updated_at = NOW()")
+    out.append(f"UPDATE exclusive_weapons SET {', '.join(sets)} WHERE weapon_id = @id;")
+
+    for eff in w.get("effects", []):
+        eff_name = sql(eff["name"])
+        eff_type = sql(EFFECT_TYPES[eff["type"]])
+        out += [
+            f"-- 효과: {eff['name']}",
+            f"SET @eff = (SELECT effect_id FROM exclusive_weapon_effects WHERE weapon_id = @id AND effect_name = {eff_name} LIMIT 1);",
+            f"INSERT INTO exclusive_weapon_effects (weapon_id, effect_name, effect_type) "
+            f"SELECT @id, {eff_name}, {eff_type} FROM DUAL WHERE @eff IS NULL;",
+            "SET @eff = COALESCE(@eff, LAST_INSERT_ID());",
+        ]
+        eff_sets = [f"effect_type = {eff_type}", f"base_effect = {sql(eff.get('baseEffect'))}"]
+        if "iconUrl" in eff:
+            eff_sets.append(f"icon_url = {sql(eff['iconUrl'])}")
+        out.append(f"UPDATE exclusive_weapon_effects SET {', '.join(eff_sets)} WHERE effect_id = @eff;")
+        out.append("DELETE FROM exclusive_weapon_effect_levels WHERE effect_id = @eff;")
+        levels = sorted(eff.get("levels", []), key=lambda l: l["step"])
+        if levels:
+            rows = ",\n".join(f"(@eff, {sql(l['step'])}, {sql(l.get('effect'))})" for l in levels)
+            out.append(f"INSERT INTO exclusive_weapon_effect_levels (effect_id, breakthrough_step, effect_text) VALUES\n{rows};")
+    return "\n".join(out)
+
+
+def weapon_summary_sql(weapons):
+    names = ", ".join(sql(w["name"]) for w in weapons)
+    return (
+        "SELECT w.weapon_id AS id, w.name, w.grade, w.weapon_type, e.effect_name, e.effect_type,\n"
+        "  (SELECT COUNT(*) FROM exclusive_weapon_effect_levels l WHERE l.effect_id = e.effect_id) AS steps,\n"
+        "  w.icon_url IS NOT NULL AS icon\n"
+        "FROM exclusive_weapons w LEFT JOIN exclusive_weapon_effects e ON e.weapon_id = w.weapon_id\n"
+        f"WHERE w.name IN ({names}) ORDER BY w.weapon_id, e.effect_id;"
+    )
+
+
 def item_summary_sql(prefix, items):
     table, id_col = f"{prefix}s", f"{prefix}_id"
     names = ", ".join(sql(i["name"]) for i in items)
@@ -365,7 +460,8 @@ def main():
     tags, tag_names = load_tags()
     kinds = [(prefix, load_items(folder, tag_names)) for folder, prefix in KINDS]
     classes = load_classes(tag_names)
-    warn_unknown_links(kinds[0][1], kinds[1][1], classes)
+    weapons = load_weapons()
+    warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons)
 
     parts = ["SET NAMES utf8mb4;", "START TRANSACTION;", "", "-- ─── 태그 ───"]
     if tags:
@@ -376,11 +472,15 @@ def main():
         parts.extend(item_sql(prefix, item) for item in items)
     parts.append(f"\n-- ─── class ({len(classes)}개) ───")
     parts.extend(class_sql(c) for c in classes)
+    parts.append(f"\n-- ─── exclusive weapon ({len(weapons)}개) ───")
+    parts.extend(weapon_sql(w) for w in weapons)
     parts += ["", "COMMIT;", ""]
     parts.extend(item_summary_sql(prefix, items) for prefix, items in kinds if items)
     if classes:
         parts.append(class_summary_sql(classes))
         parts.append(skill_summary_sql(classes))
+    if weapons:
+        parts.append(weapon_summary_sql(weapons))
     print("\n".join(parts))
 
 
