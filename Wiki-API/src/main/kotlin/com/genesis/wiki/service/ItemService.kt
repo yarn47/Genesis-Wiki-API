@@ -215,7 +215,7 @@ class ItemService(
         extraStats = extraStats, setName = setName,
         setEffect2 = setEffect2, setEffect4 = setEffect4,
         description = description, iconUrl = iconUrl,
-        effects = effects.map { effect ->
+        effects = effects.sortedBy { it.eqEffectId }.map { effect ->
             EquipmentEffectDto(
                 eqEffectId = effect.eqEffectId,
                 effectName = effect.effectName,
@@ -233,7 +233,7 @@ class ItemService(
         weaponId = weaponId, name = name, weaponType = weaponType,
         grade = grade.name, baseStats = baseStats, extraStats = extraStats,
         description = description, iconUrl = iconUrl,
-        effects = effects.map { effect ->
+        effects = effects.sortedBy { it.effectId }.map { effect ->
             ExclusiveWeaponEffectDto(
                 effectId = effect.effectId,
                 effectName = effect.effectName,

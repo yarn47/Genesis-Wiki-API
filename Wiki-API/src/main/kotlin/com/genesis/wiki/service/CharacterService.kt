@@ -286,7 +286,7 @@ class CharacterService(
         val stats = character.stats?.let { s ->
             CharacterStatsDto(s.hp, s.attack, s.defense, s.critRate, s.critDamage, s.physPen, s.magicPen, s.effectResist)
         }
-        val skins = character.skins.map { skin ->
+        val skins = character.skins.sortedBy { it.skinId }.map { skin ->
             CharacterSkinDto(skin.skinId, skin.skinName, skin.isDefault, skin.thumbnailUrl, skin.portraitUrl, skin.fullImageUrl, skin.howToObtain, skin.releaseDate?.toString())
         }
         val classTree = character.classTree.sortedWith(compareBy({ it.clazz.tier }, { it.orderInTier })).map { node ->
@@ -301,7 +301,7 @@ class CharacterService(
                 passive1IconUrl = node.clazz.passive1IconUrl,
                 skills = node.clazz.classSkills.sortedBy { it.unlockOrder }.map { cs ->
                     SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.attackType, cs.skill.allowedWeapon, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
-                        cs.skill.tags.map { TagDto(it.tagId, it.name, it.color) })
+                        cs.skill.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) })
                 }
             )
         }
@@ -322,7 +322,7 @@ class CharacterService(
         }
         val exclusiveWeapon = character.exclusiveWeapon?.let { w ->
             ExclusiveWeaponDto(w.weaponId, w.name, w.weaponType, w.grade.name, w.baseStats, w.extraStats, w.description, w.iconUrl,
-                w.effects.map { effect ->
+                w.effects.sortedBy { it.effectId }.map { effect ->
                     ExclusiveWeaponEffectDto(effect.effectId, effect.effectName, effect.effectType.name, effect.baseEffect, effect.iconUrl,
                         effect.levels.sortedBy { it.breakthroughStep }.map { WeaponEffectLevelDto(it.breakthroughStep, it.effectText) })
                 })
@@ -343,7 +343,7 @@ class CharacterService(
         buffId = buff.buffId, name = buff.name, description = buff.description, iconUrl = buff.iconUrl,
         duration = buff.duration, maxStack = buff.maxStack, hasLevels = buff.hasLevels,
         levels = buff.levels.sortedBy { it.level }.map { BuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack) },
-        tags = buff.tags.map { TagDto(it.tagId, it.name, it.color) },
+        tags = buff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
         sources = buff.sources.map { BuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
     )
 
@@ -351,7 +351,7 @@ class CharacterService(
         debuffId = debuff.debuffId, name = debuff.name, description = debuff.description, iconUrl = debuff.iconUrl,
         duration = debuff.duration, maxStack = debuff.maxStack, hasLevels = debuff.hasLevels,
         levels = debuff.levels.sortedBy { it.level }.map { DebuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack) },
-        tags = debuff.tags.map { TagDto(it.tagId, it.name, it.color) },
+        tags = debuff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
         sources = debuff.sources.map { DebuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
     )
 }

@@ -159,7 +159,7 @@ class BuffService(
         levels = buff.levels.sortedBy { it.level }.map {
             BuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack)
         },
-        tags = buff.tags.map { TagDto(it.tagId, it.name, it.color) },
+        tags = buff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
         sources = buff.sources.map { BuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
     )
 
@@ -174,7 +174,7 @@ class BuffService(
         levels = debuff.levels.sortedBy { it.level }.map {
             DebuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack)
         },
-        tags = debuff.tags.map { TagDto(it.tagId, it.name, it.color) },
+        tags = debuff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
         sources = debuff.sources.map { DebuffSourceDto(it.sourceType.name, it.sourceId, it.briefDesc) }
     )
 }

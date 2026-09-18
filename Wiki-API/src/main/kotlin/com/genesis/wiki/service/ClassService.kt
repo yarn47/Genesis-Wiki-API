@@ -185,7 +185,7 @@ class ClassService(
                 cooldown = cs.skill.cooldown,
                 effectText = cs.skill.effectText,
                 iconUrl = cs.skill.iconUrl,
-                tags = cs.skill.tags.map { TagDto(it.tagId, it.name, it.color) }
+                tags = cs.skill.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) }
             )
         }
     )
