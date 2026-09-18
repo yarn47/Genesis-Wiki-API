@@ -72,6 +72,9 @@
         }
       ]
     },
-    "artifacts": []
+    "artifacts": [],
+    "thumbnailUrl": "/icons/characters/zad_thumb.png",
+    "portraitUrl": "/icons/characters/zad_portrait.png",
+    "fullImageUrl": "/icons/characters/zad_full.png"
   }
 ]
