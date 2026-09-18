@@ -1,10 +1,12 @@
 package com.genesis.wiki.dto
 
-// 버프/디버프를 쓰는 캐릭터 (툴팁·목록의 "사용자")
-data class CharacterBriefDto(
-    val characterId: Int,
+// 버프/디버프를 쓰는 주체 (툴팁·목록의 "사용자")
+// 캐릭터가 기본이고, 무기 공용(일반) 옵션에서 나오는 버프는 그 무기로 표기한다
+data class EffectOwnerDto(
+    val kind: String,       // "character" | "weapon"
+    val id: Int,
     val name: String,
-    val thumbnailUrl: String?
+    val iconUrl: String?
 )
 
 data class BuffDto(
@@ -18,7 +20,7 @@ data class BuffDto(
     val levels: List<BuffLevelDto>,
     val tags: List<TagDto>,
     val sources: List<BuffSourceDto>,
-    val usedBy: List<CharacterBriefDto> = emptyList()
+    val usedBy: List<EffectOwnerDto> = emptyList()
 )
 
 data class BuffLevelDto(
@@ -46,7 +48,7 @@ data class DebuffDto(
     val levels: List<DebuffLevelDto>,
     val tags: List<TagDto>,
     val sources: List<DebuffSourceDto>,
-    val usedBy: List<CharacterBriefDto> = emptyList()
+    val usedBy: List<EffectOwnerDto> = emptyList()
 )
 
 data class DebuffLevelDto(

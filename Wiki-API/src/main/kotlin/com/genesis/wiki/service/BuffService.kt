@@ -47,15 +47,23 @@ class BuffService(
         }
     }
 
-    private fun buildUsage(): Map<EffectKey, List<CharacterBriefDto>> {
-        val users = mutableMapOf<EffectKey, MutableSet<CharacterBriefDto>>()
+    private fun buildUsage(): Map<EffectKey, List<EffectOwnerDto>> {
+        val users = mutableMapOf<EffectKey, MutableSet<EffectOwnerDto>>()
+        fun owner(row: EffectUserRow) = EffectOwnerDto(
+            kind = if (row.ownerKind == "W") "weapon" else "character",
+            id = row.ownerId, name = row.ownerName, iconUrl = row.iconUrl
+        )
         buffRepository.findUsingCharacters().forEach {
-            users.getOrPut(EffectKey.buff(it.effectId)) { mutableSetOf() }
-                .add(CharacterBriefDto(it.characterId, it.characterName, it.thumbnailUrl))
+            users.getOrPut(EffectKey.buff(it.effectId)) { mutableSetOf() }.add(owner(it))
         }
         debuffRepository.findUsingCharacters().forEach {
-            users.getOrPut(EffectKey.debuff(it.effectId)) { mutableSetOf() }
-                .add(CharacterBriefDto(it.characterId, it.characterName, it.thumbnailUrl))
+            users.getOrPut(EffectKey.debuff(it.effectId)) { mutableSetOf() }.add(owner(it))
+        }
+
+        // 무기 공용 옵션에서 나오는 버프는 캐릭터가 아니라 무기 소속으로만 본다
+        val weaponOwned = users.filterValues { v -> v.any { it.kind == "weapon" } }.keys
+        weaponOwned.forEach { key ->
+            users[key] = users.getValue(key).filterTo(mutableSetOf()) { it.kind == "weapon" }
         }
 
         val buffs = buffRepository.findAll()
@@ -82,12 +90,14 @@ class BuffService(
             var changed = false
             links.forEach { (from, tos) ->
                 val src = users[from] ?: return@forEach
-                tos.forEach { to -> if (users.getOrPut(to) { mutableSetOf() }.addAll(src)) changed = true }
+                tos.filterNot { it in weaponOwned }.forEach { to ->
+                    if (users.getOrPut(to) { mutableSetOf() }.addAll(src)) changed = true
+                }
             }
             if (!changed) return@repeat
         }
 
-        return users.mapValues { (_, v) -> v.sortedBy { it.characterId } }
+        return users.mapValues { (_, v) -> v.sortedWith(compareBy({ it.kind }, { it.id })) }
     }
 
     @Transactional(readOnly = true)
@@ -207,7 +217,7 @@ class BuffService(
     @Transactional
     fun deleteTag(id: Int) = tagRepository.deleteById(id)
 
-    fun mapBuffToDto(buff: Buff, usedBy: List<CharacterBriefDto> = emptyList()): BuffDto = BuffDto(
+    fun mapBuffToDto(buff: Buff, usedBy: List<EffectOwnerDto> = emptyList()): BuffDto = BuffDto(
         buffId = buff.buffId,
         name = buff.name,
         description = buff.description,
@@ -223,7 +233,7 @@ class BuffService(
         usedBy = usedBy
     )
 
-    fun mapDebuffToDto(debuff: Debuff, usedBy: List<CharacterBriefDto> = emptyList()): DebuffDto = DebuffDto(
+    fun mapDebuffToDto(debuff: Debuff, usedBy: List<EffectOwnerDto> = emptyList()): DebuffDto = DebuffDto(
         debuffId = debuff.debuffId,
         name = debuff.name,
         description = debuff.description,
