@@ -68,7 +68,7 @@ class CharacterService(
         // 스탯
         req.stats?.let { s ->
             saved.stats = CharacterStats(
-                character = saved, hp = s.hp, attack = s.attack, defense = s.defense,
+                character = saved, hp = s.hp, attack = s.attack, spellAttack = s.spellAttack, defense = s.defense,
                 critRate = s.critRate, critDamage = s.critDamage,
                 physPen = s.physPen, magicPen = s.magicPen, effectResist = s.effectResist
             )
@@ -161,7 +161,7 @@ class CharacterService(
         // 스탯
         req.stats?.let { s ->
             val stats = character.stats ?: CharacterStats(character = character).also { character.stats = it }
-            stats.hp = s.hp; stats.attack = s.attack; stats.defense = s.defense
+            stats.hp = s.hp; stats.attack = s.attack; stats.spellAttack = s.spellAttack; stats.defense = s.defense
             stats.critRate = s.critRate; stats.critDamage = s.critDamage
             stats.physPen = s.physPen; stats.magicPen = s.magicPen; stats.effectResist = s.effectResist
         }
@@ -284,7 +284,7 @@ class CharacterService(
 
     private fun mapCharacterToDetailDto(character: Character, relatedBuffs: List<BuffDto>, relatedDebuffs: List<DebuffDto>): CharacterDetailDto {
         val stats = character.stats?.let { s ->
-            CharacterStatsDto(s.hp, s.attack, s.defense, s.critRate, s.critDamage, s.physPen, s.magicPen, s.effectResist)
+            CharacterStatsDto(s.hp, s.attack, s.spellAttack, s.defense, s.critRate, s.critDamage, s.physPen, s.magicPen, s.effectResist)
         }
         val skins = character.skins.sortedBy { it.skinId }.map { skin ->
             CharacterSkinDto(skin.skinId, skin.skinName, skin.isDefault, skin.thumbnailUrl, skin.portraitUrl, skin.fullImageUrl, skin.howToObtain, skin.releaseDate?.toString())

@@ -53,6 +53,7 @@ class CharacterStats(
 
     var hp: Long? = null,
     var attack: Int? = null,
+    var spellAttack: Int? = null,
     var defense: Int? = null,
     var critRate: Int? = null,
     var critDamage: Int? = null,

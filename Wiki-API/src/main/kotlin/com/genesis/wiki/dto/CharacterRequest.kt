@@ -26,6 +26,7 @@ data class CharacterRequest(
 data class CharacterStatsRequest(
     val hp: Long? = null,
     val attack: Int? = null,
+    val spellAttack: Int? = null,
     val defense: Int? = null,
     val critRate: Int? = null,
     val critDamage: Int? = null,

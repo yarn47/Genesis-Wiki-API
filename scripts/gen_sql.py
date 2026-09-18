@@ -6,6 +6,7 @@
 - iconUrl 키가 없으면 기존 아이콘은 건드리지 않음 (관리자 화면에서 넣은 값 유지)
 - 클래스는 기본 정보·패시브·액티브 스킬을 갱신 (수치 base_hp/base_attack은 건드리지 않음)
 - 전용무기는 기본 정보와 효과(각성 단계별)를 갱신
+- 캐릭터는 기본 정보·클래스 트리·고유 패시브·필살기·아티팩트·발현 연결을 갱신 (스탯은 stats 키가 있을 때만)
 - 스킬은 (클래스, 스킬 이름) 기준으로 추가/갱신, JSON에서 빠진 스킬을 지우지는 않음
 - 전체가 하나의 트랜잭션이라 중간에 에러가 나면 아무것도 반영되지 않음
 - 효과 텍스트의 {green}/{orange} 이름이 data에 없는 버프/디버프면 경고만 출력 (stderr)
@@ -40,6 +41,27 @@ WEAPON_LEVEL_KEYS = {"step", "effect"}
 GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend",
           "rare": "rare", "hero": "hero", "legend": "legend"}
 EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "exclusive": "exclusive"}
+
+CHARACTER_KEYS = {"name", "grade", "faction", "element", "birthYear", "height", "cv", "profileText",
+                  "thumbnailUrl", "portraitUrl", "fullImageUrl", "published", "stats",
+                  "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts"}
+STATS_KEYS = {"hp", "attack", "spellAttack", "defense", "critRate", "critDamage", "physPen", "magicPen", "effectResist"}
+CHAR_PASSIVE_KEYS = {"name", "iconUrl", "levels"}
+CHAR_PASSIVE_LEVEL_KEYS = {"type", "step", "effect"}
+ULTIMATE_KEYS = {"name", "iconUrl", "tpCost", "range", "area", "cooldown", "levels"}
+ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
+ARTIFACT_KEYS = {"name", "order", "iconUrl", "levels"}
+ARTIFACT_LEVEL_KEYS = {"step", "effect"}
+FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
+            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal"}
+ELEMENTS = {"신념의빛": "light", "욕망의그림자": "dark", "자유의불꽃": "fire",
+            "지성의결정체": "crystal", "활력의나무": "nature"}
+CHAR_GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend", "아우터원": "outer"}
+UNLOCK_TYPES = {"각성": "awaken", "발현": "manifest"}
+# 고유 패시브/필살기/아티팩트가 붙는 발현 단계 (constants/manifest.ts 와 같은 규칙)
+MANIFEST_ULTIMATE_STEPS = [3, 5]
+MANIFEST_PASSIVE_STEPS = [4, 6]
+MANIFEST_HUB_STEPS = [3, 4, 5, 6]
 DEFENSE_TYPES = {"라이트": "light", "미디엄": "medium", "헤비": "heavy",
                  "light": "light", "medium": "medium", "heavy": "heavy"}
 
@@ -231,7 +253,68 @@ def load_weapons():
     return weapons
 
 
-def warn_unknown_links(buffs, debuffs, classes, weapons):
+def load_characters(class_names, weapon_names):
+    characters, seen = [], set()
+    for rel, c in load_folder("characters"):
+        where = f"{rel} '{c.get('name')}'"
+        check_keys(where, c, CHARACTER_KEYS)
+        if not c.get("name") or c["name"] in seen:
+            raise DataError(f"{where}: 캐릭터 이름이 없거나 중복")
+        seen.add(c["name"])
+        for key, table in (("grade", CHAR_GRADES), ("faction", FACTIONS), ("element", ELEMENTS)):
+            if c.get(key) not in table:
+                raise DataError(f"{where}: {key}는 {'/'.join(table)} 중 하나 ({c.get(key)!r})")
+        check_keys(f"{where} stats", c.get("stats", {}), STATS_KEYS)
+        check_text(where, c.get("profileText"))
+        for cls in c.get("classTree", []):
+            if cls not in class_names:
+                raise DataError(f"{where}: data/classes에 없는 클래스 '{cls}'")
+        if "exclusiveWeapon" in c and c["exclusiveWeapon"] not in weapon_names:
+            raise DataError(f"{where}: data/weapons에 없는 전용무기 '{c['exclusiveWeapon']}'")
+
+        passive = c.get("passive")
+        if passive:
+            check_keys(f"{where} 고유 패시브", passive, CHAR_PASSIVE_KEYS)
+            steps = set()
+            for lvl in passive.get("levels", []):
+                lw = f"{where} 고유 패시브 {lvl.get('type')} {lvl.get('step')}단"
+                check_keys(lw, lvl, CHAR_PASSIVE_LEVEL_KEYS)
+                if lvl.get("type") not in UNLOCK_TYPES:
+                    raise DataError(f"{lw}: type은 각성/발현")
+                if (lvl["type"], lvl["step"]) in steps:
+                    raise DataError(f"{lw}: 중복")
+                steps.add((lvl["type"], lvl["step"]))
+                check_text(lw, lvl.get("effect"))
+
+        ultimate = c.get("ultimate")
+        if ultimate:
+            check_keys(f"{where} 필살기", ultimate, ULTIMATE_KEYS)
+            skill_range(f"{where} 필살기", ultimate.get("range"))
+            steps = set()
+            for lvl in ultimate.get("levels", []):
+                lw = f"{where} 필살기 발현 {lvl.get('step')}단"
+                check_keys(lw, lvl, ULTIMATE_LEVEL_KEYS)
+                if lvl["step"] in steps:
+                    raise DataError(f"{lw}: 중복")
+                steps.add(lvl["step"])
+                skill_range(lw, lvl.get("range"))
+                check_text(lw, lvl.get("effect"))
+
+        orders = set()
+        for art in c.get("artifacts", []):
+            aw = f"{where} 아티팩트 '{art.get('name')}'"
+            check_keys(aw, art, ARTIFACT_KEYS)
+            if art.get("order") in orders:
+                raise DataError(f"{aw}: order 중복")
+            orders.add(art.get("order"))
+            for lvl in art.get("levels", []):
+                check_keys(f"{aw} {lvl.get('step')}단", lvl, ARTIFACT_LEVEL_KEYS)
+                check_text(f"{aw} {lvl.get('step')}단", lvl.get("effect"))
+        characters.append(c)
+    return characters
+
+
+def warn_unknown_links(buffs, debuffs, classes, weapons, characters):
     known = {
         "green": {n for b in buffs for n in [b["name"], *(level_name(b, l) for l in b.get("levels", []))]},
         "orange": {n for d in debuffs for n in [d["name"], *(level_name(d, l) for l in d.get("levels", []))]},
@@ -249,6 +332,13 @@ def warn_unknown_links(buffs, debuffs, classes, weapons):
         for eff in w.get("effects", []):
             texts.append((f"무기 '{w['name']}' 효과 '{eff['name']}'", eff.get("baseEffect")))
             texts += [(f"무기 '{w['name']}' 효과 '{eff['name']}' {l['step']}단", l.get("effect")) for l in eff.get("levels", [])]
+    for c in characters:
+        p = c.get("passive") or {}
+        texts += [(f"캐릭터 '{c['name']}' 패시브 {l['type']} {l['step']}단", l.get("effect")) for l in p.get("levels", [])]
+        u = c.get("ultimate") or {}
+        texts += [(f"캐릭터 '{c['name']}' 필살기 {l['step']}단", l.get("effect")) for l in u.get("levels", [])]
+        for art in c.get("artifacts", []):
+            texts += [(f"캐릭터 '{c['name']}' 아티팩트 '{art['name']}' {l['step']}단", l.get("effect")) for l in art.get("levels", [])]
 
     for where, text in texts:
         for label, color in TEXT_TAG.findall(text or ""):
@@ -422,6 +512,147 @@ def weapon_summary_sql(weapons):
     )
 
 
+def character_sql(c):
+    """캐릭터: 기본 정보 + 클래스 트리 + 고유 패시브 + 필살기 + 아티팩트 + 발현 연결"""
+    name = sql(c["name"])
+    out = [
+        f"-- 캐릭터: {c['name']}",
+        f"SET @id = (SELECT character_id FROM characters WHERE name = {name});",
+        f"INSERT INTO characters (name, grade, faction, element, is_published, created_at, updated_at) "
+        f"SELECT {name}, {sql(CHAR_GRADES[c['grade']])}, {sql(FACTIONS[c['faction']])}, {sql(ELEMENTS[c['element']])}, "
+        f"{sql(bool(c.get('published')))}, NOW(), NOW() FROM DUAL WHERE @id IS NULL;",
+        "SET @id = COALESCE(@id, LAST_INSERT_ID());",
+    ]
+    sets = [
+        f"grade = {sql(CHAR_GRADES[c['grade']])}",
+        f"faction = {sql(FACTIONS[c['faction']])}",
+        f"element = {sql(ELEMENTS[c['element']])}",
+        f"birth_year = {sql(c.get('birthYear'))}",
+        f"height = {sql(c.get('height'))}",
+        f"cv = {sql(c.get('cv'))}",
+        f"profile_text = {sql(c.get('profileText'))}",
+        f"is_published = {sql(bool(c.get('published')))}",
+    ]
+    for key, col in (("thumbnailUrl", "thumbnail_url"), ("portraitUrl", "portrait_url"), ("fullImageUrl", "full_image_url")):
+        if key in c:
+            sets.append(f"{col} = {sql(c[key])}")
+    if "exclusiveWeapon" in c:
+        sets.append(f"exclusive_weapon_id = (SELECT weapon_id FROM exclusive_weapons WHERE name = {sql(c['exclusiveWeapon'])})")
+    sets.append("updated_at = NOW()")
+    out.append(f"UPDATE characters SET {', '.join(sets)} WHERE character_id = @id;")
+
+    # 스탯 (stats 키가 있을 때만)
+    stats = c.get("stats")
+    if stats:
+        cols = {"hp": "hp", "attack": "attack", "spellAttack": "spell_attack", "defense": "defense",
+                "critRate": "crit_rate", "critDamage": "crit_damage", "physPen": "phys_pen",
+                "magicPen": "magic_pen", "effectResist": "effect_resist"}
+        out.append(f"DELETE FROM character_stats WHERE character_id = @id;")
+        names = ", ".join(cols[k] for k in stats)
+        values = ", ".join(sql(stats[k]) for k in stats)
+        out.append(f"INSERT INTO character_stats (character_id, {names}) VALUES (@id, {values});")
+
+    # 클래스 트리
+    out.append("DELETE FROM character_class_tree WHERE character_id = @id;")
+    for order, cls in enumerate(c.get("classTree", []), start=1):
+        out.append(f"INSERT INTO character_class_tree (character_id, class_id, order_in_tier) "
+                   f"SELECT @id, class_id, {order} FROM classes WHERE name = {sql(cls)};")
+
+    # 발현 연결은 매번 새로 만듦
+    out.append("DELETE FROM character_manifestation WHERE character_id = @id;")
+
+    passive = c.get("passive")
+    if passive:
+        out += [
+            f"SET @passive = (SELECT passive_id FROM character_passives WHERE character_id = @id AND name = {sql(passive['name'])} LIMIT 1);",
+            f"INSERT INTO character_passives (character_id, name, created_at, updated_at) "
+            f"SELECT @id, {sql(passive['name'])}, NOW(), NOW() FROM DUAL WHERE @passive IS NULL;",
+            "SET @passive = COALESCE(@passive, LAST_INSERT_ID());",
+            f"UPDATE character_passives SET name = {sql(passive['name'])}"
+            + (f", icon_url = {sql(passive['iconUrl'])}" if "iconUrl" in passive else "")
+            + ", updated_at = NOW() WHERE passive_id = @passive;",
+            "DELETE FROM character_passive_levels WHERE passive_id = @passive;",
+        ]
+        levels = sorted(passive.get("levels", []), key=lambda l: (l["type"], l["step"]))
+        if levels:
+            rows = ",\n".join(f"(@passive, {sql(UNLOCK_TYPES[l['type']])}, {sql(l['step'])}, {sql(l.get('effect'))})" for l in levels)
+            out.append(f"INSERT INTO character_passive_levels (passive_id, unlock_type, unlock_step, effect_text) VALUES\n{rows};")
+    else:
+        out.append("SET @passive = NULL;")
+
+    ultimate = c.get("ultimate")
+    if ultimate:
+        u_min, u_max = skill_range(c["name"], ultimate.get("range"))
+        out += [
+            f"SET @ult = (SELECT ultimate_id FROM ultimate_skills WHERE name = {sql(ultimate['name'])} LIMIT 1);",
+            f"INSERT INTO ultimate_skills (name, created_at, updated_at) SELECT {sql(ultimate['name'])}, NOW(), NOW() FROM DUAL WHERE @ult IS NULL;",
+            "SET @ult = COALESCE(@ult, LAST_INSERT_ID());",
+            f"UPDATE ultimate_skills SET name = {sql(ultimate['name'])}"
+            + (f", icon_url = {sql(ultimate['iconUrl'])}" if "iconUrl" in ultimate else "")
+            + ", updated_at = NOW() WHERE ultimate_id = @ult;",
+            "DELETE FROM ultimate_skill_levels WHERE ultimate_id = @ult;",
+        ]
+        levels = sorted(ultimate.get("levels", []), key=lambda l: l["step"])
+        if levels:
+            rows = []
+            for l in levels:
+                r_min, r_max = skill_range(c["name"], l.get("range")) if "range" in l else (u_min, u_max)
+                rows.append(f"(@ult, {sql(l['step'])}, {sql(l.get('tpCost', ultimate.get('tpCost')))}, "
+                            f"{sql(r_min)}, {sql(r_max)}, {sql(l.get('cooldown', ultimate.get('cooldown')))}, {sql(l.get('effect'))})")
+            out.append("INSERT INTO ultimate_skill_levels (ultimate_id, manifest_step, tp_cost, range_min, range_max, cooldown, effect_text) VALUES\n"
+                       + ",\n".join(rows) + ";")
+    else:
+        out.append("SET @ult = NULL;")
+
+    # 아티팩트
+    artifact_vars = []
+    for idx, art in enumerate(sorted(c.get("artifacts", []), key=lambda a: a.get("order", 0)), start=1):
+        var = f"@art{idx}"
+        artifact_vars.append(var)
+        out += [
+            f"SET {var} = (SELECT artifact_id FROM artifacts WHERE character_id = @id AND name = {sql(art['name'])} LIMIT 1);",
+            f"INSERT INTO artifacts (character_id, name, artifact_order, created_at, updated_at) "
+            f"SELECT @id, {sql(art['name'])}, {sql(art.get('order', idx))}, NOW(), NOW() FROM DUAL WHERE {var} IS NULL;",
+            f"SET {var} = COALESCE({var}, LAST_INSERT_ID());",
+            f"UPDATE artifacts SET artifact_order = {sql(art.get('order', idx))}"
+            + (f", icon_url = {sql(art['iconUrl'])}" if "iconUrl" in art else "")
+            + f", updated_at = NOW() WHERE artifact_id = {var};",
+            f"DELETE FROM artifact_levels WHERE artifact_id = {var};",
+        ]
+        levels = sorted(art.get("levels", []), key=lambda l: l["step"])
+        if levels:
+            rows = ",\n".join(f"({var}, {sql(l['step'])}, {sql(l.get('effect'))})" for l in levels)
+            out.append(f"INSERT INTO artifact_levels (artifact_id, manifest_step, effect_text) VALUES\n{rows};")
+    while len(artifact_vars) < 4:
+        artifact_vars.append("NULL")
+
+    # 발현 허브 (3~6단)
+    rows = []
+    for step in MANIFEST_HUB_STEPS:
+        ult = "@ult" if step in MANIFEST_ULTIMATE_STEPS else "NULL"
+        pas = "@passive" if step in MANIFEST_PASSIVE_STEPS else "NULL"
+        rows.append(f"(@id, {step}, {ult}, {pas}, {', '.join(artifact_vars)})")
+    out.append("INSERT INTO character_manifestation (character_id, manifest_level, ultimate_id, passive_id, "
+               "artifact1_id, artifact2_id, artifact3_id, artifact4_id) VALUES\n" + ",\n".join(rows) + ";")
+    return "\n".join(out)
+
+
+def character_summary_sql(characters):
+    names = ", ".join(sql(c["name"]) for c in characters)
+    return (
+        "SELECT c.character_id AS id, c.name, c.grade, c.faction, c.element, c.is_published AS published,\n"
+        "  (SELECT COUNT(*) FROM character_class_tree t WHERE t.character_id = c.character_id) AS classes,\n"
+        "  (SELECT COUNT(*) FROM character_passive_levels l JOIN character_passives p ON p.passive_id = l.passive_id "
+        "WHERE p.character_id = c.character_id) AS passive_levels,\n"
+        "  (SELECT COUNT(*) FROM artifacts a WHERE a.character_id = c.character_id) AS artifacts,\n"
+        "  (SELECT COUNT(*) FROM ultimate_skill_levels ul JOIN character_manifestation m ON m.ultimate_id = ul.ultimate_id "
+        "WHERE m.character_id = c.character_id) AS ult_levels,\n"
+        "  w.name AS weapon\n"
+        "FROM characters c LEFT JOIN exclusive_weapons w ON w.weapon_id = c.exclusive_weapon_id\n"
+        f"WHERE c.name IN ({names}) ORDER BY c.character_id;"
+    )
+
+
 def item_summary_sql(prefix, items):
     table, id_col = f"{prefix}s", f"{prefix}_id"
     names = ", ".join(sql(i["name"]) for i in items)
@@ -461,7 +692,8 @@ def main():
     kinds = [(prefix, load_items(folder, tag_names)) for folder, prefix in KINDS]
     classes = load_classes(tag_names)
     weapons = load_weapons()
-    warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons)
+    characters = load_characters({c["name"] for c in classes}, {w["name"] for w in weapons})
+    warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons, characters)
 
     parts = ["SET NAMES utf8mb4;", "START TRANSACTION;", "", "-- ─── 태그 ───"]
     if tags:
@@ -474,6 +706,8 @@ def main():
     parts.extend(class_sql(c) for c in classes)
     parts.append(f"\n-- ─── exclusive weapon ({len(weapons)}개) ───")
     parts.extend(weapon_sql(w) for w in weapons)
+    parts.append(f"\n-- ─── character ({len(characters)}개) ───")
+    parts.extend(character_sql(c) for c in characters)
     parts += ["", "COMMIT;", ""]
     parts.extend(item_summary_sql(prefix, items) for prefix, items in kinds if items)
     if classes:
@@ -481,6 +715,8 @@ def main():
         parts.append(skill_summary_sql(classes))
     if weapons:
         parts.append(weapon_summary_sql(weapons))
+    if characters:
+        parts.append(character_summary_sql(characters))
     print("\n".join(parts))
 
 

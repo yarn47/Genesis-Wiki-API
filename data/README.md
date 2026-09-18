@@ -33,6 +33,7 @@ git pull
 | `debuffs/*.json` | 디버프 (버프와 같은 형식) |
 | `classes/*.json` | 클래스 (클래스 계열별 파일, 이름은 전체에서 중복 불가) |
 | `weapons/*.json` | 전용무기 (이름은 전체에서 중복 불가) |
+| `characters/*.json` | 캐릭터 (클래스·전용무기는 이름으로 연결) |
 
 ### 버프/디버프 형식
 
@@ -112,6 +113,31 @@ git pull
 - `grade`: 희귀/영웅/전설 · `type`: 일반/전용(캐릭터 전용)
 - `levels`의 `step`은 각성(=돌파) 단계
 - `baseStats`는 각성 단계별 수치 배열 (캐릭터 상세에서 표로 표시)
+
+### 캐릭터 형식
+
+```json
+{
+  "name": "자드",
+  "grade": "전설", "faction": "무소속", "element": "욕망의그림자",
+  "birthYear": "에스겔력 1256년", "height": "165cm", "cv": "이주은",
+  "profileText": "소개글 (줄바꿈은 \n)",
+  "published": true,
+  "classTree": ["로그", "씨프", "카덴차", "섀도우댄서", "얀크", "프리마"],
+  "exclusiveWeapon": "라 사바흐",
+  "passive": { "name": "관능의 아라베스크",
+    "levels": [{ "type": "각성", "step": 3, "effect": "..." }, { "type": "발현", "step": 2, "effect": "..." }] },
+  "ultimate": { "name": "메테오 스트라이크", "tpCost": 5, "range": [1, 1], "area": "광역", "cooldown": 5,
+    "levels": [{ "step": 1, "effect": "..." }] },
+  "artifacts": [{ "name": "아티팩트 이름", "order": 1, "levels": [{ "step": 3, "effect": "..." }] }]
+}
+```
+
+- `grade` 희귀/영웅/전설/아우터원 · `faction` 게이시르/팬드래건/무소속/아스타니아/제피르팰컨/다갈 · `element` 신념의빛/욕망의그림자/자유의불꽃/지성의결정체/활력의나무
+- `passive.levels`: `type` 각성(3~6) 또는 발현(2/4/6) · `ultimate.levels`: 발현 0/1/3/5 · `artifacts[].levels`: 발현 3~6
+- `stats` 키를 넣으면 스탯도 반영 (hp/attack/spellAttack/defense/critRate/critDamage/physPen/magicPen/effectResist)
+- `published: false`면 공개 목록·상세에 안 나옴 (관리자만 확인 가능)
+- 발현 3~6단 연결(필살기 3·5, 패시브 4·6, 아티팩트)은 자동으로 생성
 
 ### 효과 텍스트 색 태그
 

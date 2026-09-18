@@ -62,6 +62,7 @@ data class CharacterDetailDto(
 data class CharacterStatsDto(
     val hp: Long?,
     val attack: Int?,
+    val spellAttack: Int?,
     val defense: Int?,
     val critRate: Int?,
     val critDamage: Int?,
