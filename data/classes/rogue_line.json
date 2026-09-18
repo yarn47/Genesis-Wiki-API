@@ -22,8 +22,6 @@
         "effect": "[2]{yellow}턴 동안 [은신]{green} 상태가 되고 추가 이동을 얻습니다." },
       { "name": "연참", "tpCost": 2, "range": [1, 1], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2, "tags": ["근거리", "전투"], "iconUrl": "/icons/skills/yeoncham.png",
         "effect": "적을 공격해 공격력의 [100%]{red}만큼 피해를 주고 적의 체력이 [50%]{red} 이하라면 추가타가 발동해 공격력의 [80%]{red}만큼 피해를 줍니다." }
-    ], "area": "단일", "allowedWeapon": "쌍수단검", "cooldown": 2, "tags": ["근거리", "전투"],
-        "effect": "적을 공격해 공격력의 [100%]{red}만큼 피해를 주고 적의 체력이 [50%]{red} 이하라면 추가타가 발동해 공격력의 [80%]{red}만큼 피해를 줍니다." }
     ]
   },
   {
