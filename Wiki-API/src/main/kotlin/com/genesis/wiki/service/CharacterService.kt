@@ -5,6 +5,7 @@ import com.genesis.wiki.entity.*
 import com.genesis.wiki.repository.*
 import com.genesis.wiki.util.TextTagUtil
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 import org.springframework.transaction.annotation.Transactional
 
 @Service
@@ -57,6 +58,8 @@ class CharacterService(
             birthYear = req.birthYear,
             height = req.height,
             cv = req.cv,
+            releaseDate = req.releaseDate?.let { LocalDate.parse(it) },
+            appearedIn = req.appearedIn,
             profileText = req.profileText,
             thumbnailUrl = req.thumbnailUrl,
             portraitUrl = req.portraitUrl,
@@ -152,6 +155,8 @@ class CharacterService(
         character.birthYear = req.birthYear
         character.height = req.height
         character.cv = req.cv
+        character.releaseDate = req.releaseDate?.let { LocalDate.parse(it) }
+        character.appearedIn = req.appearedIn
         character.profileText = req.profileText
         character.thumbnailUrl = req.thumbnailUrl
         character.portraitUrl = req.portraitUrl
@@ -266,7 +271,8 @@ class CharacterService(
 
     private fun Character.toSummaryDto() = CharacterSummaryDto(
         characterId = characterId, name = name, grade = grade.name,
-        faction = faction.name, element = element.name, thumbnailUrl = thumbnailUrl
+        faction = faction.name, element = element.name, thumbnailUrl = thumbnailUrl,
+        releaseDate = releaseDate?.toString()
     )
 
     private fun collectAllEffectTexts(character: Character): List<String?> {
@@ -331,6 +337,7 @@ class CharacterService(
             characterId = character.characterId, name = character.name,
             grade = character.grade.name, faction = character.faction.name, element = character.element.name,
             birthYear = character.birthYear, height = character.height, cv = character.cv,
+            releaseDate = character.releaseDate?.toString(), appearedIn = character.appearedIn,
             profileText = character.profileText, thumbnailUrl = character.thumbnailUrl,
             portraitUrl = character.portraitUrl, fullImageUrl = character.fullImageUrl,
             stats = stats, skins = skins, classTree = classTree, passive = passive,

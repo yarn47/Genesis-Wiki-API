@@ -11,6 +11,8 @@ data class CharacterRequest(
     val birthYear: String? = null,
     val height: String? = null,
     val cv: String? = null,
+    val releaseDate: String? = null,
+    val appearedIn: String? = null,
     val profileText: String? = null,
     val thumbnailUrl: String? = null,
     val portraitUrl: String? = null,

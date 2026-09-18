@@ -43,6 +43,7 @@ GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend",
 EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "exclusive": "exclusive"}
 
 CHARACTER_KEYS = {"name", "grade", "faction", "element", "birthYear", "height", "cv", "profileText",
+                  "releaseDate", "appearedIn",
                   "thumbnailUrl", "portraitUrl", "fullImageUrl", "published", "stats",
                   "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts"}
 STATS_KEYS = {"hp", "attack", "spellAttack", "defense", "critRate", "critDamage", "physPen", "magicPen", "effectResist"}
@@ -530,6 +531,8 @@ def character_sql(c):
         f"birth_year = {sql(c.get('birthYear'))}",
         f"height = {sql(c.get('height'))}",
         f"cv = {sql(c.get('cv'))}",
+        f"release_date = {sql(c.get('releaseDate'))}",
+        f"appeared_in = {sql(c.get('appearedIn'))}",
         f"profile_text = {sql(c.get('profileText'))}",
         f"is_published = {sql(bool(c.get('published')))}",
     ]

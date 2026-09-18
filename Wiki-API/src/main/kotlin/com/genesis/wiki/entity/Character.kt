@@ -1,6 +1,7 @@
 package com.genesis.wiki.entity
 
 import jakarta.persistence.*
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Entity
@@ -38,6 +39,12 @@ class Character(
 
     @Column(length = 100)
     var cv: String? = null,
+
+    @Column(name = "release_date")
+    var releaseDate: LocalDate? = null,
+
+    @Column(length = 100)
+    var appearedIn: String? = null,
 
     @Column(columnDefinition = "TEXT")
     var profileText: String? = null,
