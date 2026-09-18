@@ -37,7 +37,7 @@ class ExclusiveWeapon(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "weapon", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val effects: MutableList<ExclusiveWeaponEffect> = mutableListOf()
+    val effects: MutableSet<ExclusiveWeaponEffect> = mutableSetOf()
 }
 
 @Entity
@@ -65,7 +65,7 @@ class ExclusiveWeaponEffect(
     var iconUrl: String? = null
 ) {
     @OneToMany(mappedBy = "effect", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val levels: MutableList<ExclusiveWeaponEffectLevel> = mutableListOf()
+    val levels: MutableSet<ExclusiveWeaponEffectLevel> = mutableSetOf()
 }
 
 @Entity

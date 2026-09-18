@@ -28,7 +28,7 @@ class Debuff(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "debuff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY, orphanRemoval = true)
-    val levels: MutableList<DebuffLevel> = mutableListOf()
+    val levels: MutableSet<DebuffLevel> = mutableSetOf()
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -36,10 +36,10 @@ class Debuff(
         joinColumns = [JoinColumn(name = "debuff_id")],
         inverseJoinColumns = [JoinColumn(name = "tag_id")]
     )
-    val tags: MutableList<Tag> = mutableListOf()
+    val tags: MutableSet<Tag> = mutableSetOf()
 
     @OneToMany(mappedBy = "debuff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val sources: MutableList<DebuffSource> = mutableListOf()
+    val sources: MutableSet<DebuffSource> = mutableSetOf()
 }
 
 @Entity

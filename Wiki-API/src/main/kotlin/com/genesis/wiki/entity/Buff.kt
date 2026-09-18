@@ -28,7 +28,7 @@ class Buff(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "buff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY, orphanRemoval = true)
-    val levels: MutableList<BuffLevel> = mutableListOf()
+    val levels: MutableSet<BuffLevel> = mutableSetOf()
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -36,10 +36,10 @@ class Buff(
         joinColumns = [JoinColumn(name = "buff_id")],
         inverseJoinColumns = [JoinColumn(name = "tag_id")]
     )
-    val tags: MutableList<Tag> = mutableListOf()
+    val tags: MutableSet<Tag> = mutableSetOf()
 
     @OneToMany(mappedBy = "buff", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val sources: MutableList<BuffSource> = mutableListOf()
+    val sources: MutableSet<BuffSource> = mutableSetOf()
 }
 
 @Entity

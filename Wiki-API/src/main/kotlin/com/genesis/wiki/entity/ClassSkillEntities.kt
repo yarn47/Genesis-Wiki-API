@@ -58,7 +58,7 @@ class WikiClass(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "clazz", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val classSkills: MutableList<ClassSkill> = mutableListOf()
+    val classSkills: MutableSet<ClassSkill> = mutableSetOf()
 }
 
 // ─── Skill ────────────────────────────────────────────────
@@ -107,7 +107,7 @@ class Skill(
         joinColumns = [JoinColumn(name = "skill_id")],
         inverseJoinColumns = [JoinColumn(name = "tag_id")]
     )
-    val tags: MutableList<Tag> = mutableListOf()
+    val tags: MutableSet<Tag> = mutableSetOf()
 }
 
 // ─── ClassSkill ───────────────────────────────────────────
@@ -149,7 +149,7 @@ class UltimateSkill(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "ultimate", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val levels: MutableList<UltimateSkillLevel> = mutableListOf()
+    val levels: MutableSet<UltimateSkillLevel> = mutableSetOf()
 }
 
 @Entity

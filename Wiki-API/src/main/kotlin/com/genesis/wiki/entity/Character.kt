@@ -60,20 +60,20 @@ class Character(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val skins: MutableList<CharacterSkin> = mutableListOf()
+    val skins: MutableSet<CharacterSkin> = mutableSetOf()
 
     @OneToOne(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     var stats: CharacterStats? = null
 
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val classTree: MutableList<CharacterClassTree> = mutableListOf()
+    val classTree: MutableSet<CharacterClassTree> = mutableSetOf()
 
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val passives: MutableList<CharacterPassive> = mutableListOf()
+    val passives: MutableSet<CharacterPassive> = mutableSetOf()
 
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val artifacts: MutableList<Artifact> = mutableListOf()
+    val artifacts: MutableSet<Artifact> = mutableSetOf()
 
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val manifestations: MutableList<CharacterManifestation> = mutableListOf()
+    val manifestations: MutableSet<CharacterManifestation> = mutableSetOf()
 }

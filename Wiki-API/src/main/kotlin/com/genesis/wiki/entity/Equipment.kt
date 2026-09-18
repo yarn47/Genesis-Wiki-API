@@ -50,7 +50,7 @@ class Equipment(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "equipment", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val effects: MutableList<EquipmentEffect> = mutableListOf()
+    val effects: MutableSet<EquipmentEffect> = mutableSetOf()
 }
 
 @Entity
@@ -78,7 +78,7 @@ class EquipmentEffect(
     var iconUrl: String? = null
 ) {
     @OneToMany(mappedBy = "effect", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val levels: MutableList<EquipmentEffectLevel> = mutableListOf()
+    val levels: MutableSet<EquipmentEffectLevel> = mutableSetOf()
 }
 
 @Entity

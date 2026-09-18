@@ -104,7 +104,7 @@ class CharacterPassive(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "passive", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val levels: MutableList<CharacterPassiveLevel> = mutableListOf()
+    val levels: MutableSet<CharacterPassiveLevel> = mutableSetOf()
 }
 
 @Entity
@@ -157,7 +157,7 @@ class Artifact(
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "artifact", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val levels: MutableList<ArtifactLevel> = mutableListOf()
+    val levels: MutableSet<ArtifactLevel> = mutableSetOf()
 }
 
 @Entity

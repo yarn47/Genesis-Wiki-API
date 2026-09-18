@@ -188,7 +188,7 @@ class CharacterService(
         }
 
         // 필살기: 기존 manifestations에서 ultimate 추출해서 교체
-        val existingUltimate = character.manifestations.firstOrNull()?.ultimate
+        val existingUltimate = character.manifestations.mapNotNull { it.ultimate }.firstOrNull()
         val ultimate = req.ultimate?.let { u ->
             val ult = existingUltimate ?: UltimateSkill(name = u.name, iconUrl = u.iconUrl)
             ult.name = u.name; ult.iconUrl = u.iconUrl
@@ -240,7 +240,7 @@ class CharacterService(
         val character = characterRepository.findById(id)
             .orElseThrow { NoSuchElementException("캐릭터를 찾을 수 없습니다: $id") }
         // UltimateSkill은 cascade 없으니 따로 삭제
-        character.manifestations.firstOrNull()?.ultimate?.let {
+        character.manifestations.mapNotNull { m -> m.ultimate }.firstOrNull()?.let {
             ultimateSkillRepository.delete(it)
         }
         characterRepository.delete(character)
@@ -309,7 +309,7 @@ class CharacterService(
             CharacterPassiveDto(p.passiveId, p.name, p.iconUrl,
                 p.levels.sortedWith(compareBy({ it.unlockType.name }, { it.unlockStep })).map { CharacterPassiveLevelDto(it.unlockType.name, it.unlockStep, it.effectText) })
         }
-        val ultimateSkill = character.manifestations.firstOrNull()?.ultimate?.let { u ->
+        val ultimateSkill = character.manifestations.mapNotNull { m -> m.ultimate }.firstOrNull()?.let { u ->
             UltimateSkillDto(u.ultimateId, u.name, u.iconUrl,
                 u.levels.sortedBy { it.manifestStep }.map { UltimateSkillLevelDto(it.manifestStep, it.tpCost, it.rangeMin, it.rangeMax, it.cooldown, it.effectText) })
         }
