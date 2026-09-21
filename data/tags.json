@@ -50,5 +50,29 @@
   {
     "name": "징표",
     "color": "gray"
+  },
+  {
+    "name": "스킬제어",
+    "color": "gray"
+  },
+  {
+    "name": "기절",
+    "color": "gray"
+  },
+  {
+    "name": "위치제어",
+    "color": "gray"
+  },
+  {
+    "name": "합성",
+    "color": "gray"
+  },
+  {
+    "name": "결투",
+    "color": "gray"
+  },
+  {
+    "name": "치유",
+    "color": "gray"
   }
 ]

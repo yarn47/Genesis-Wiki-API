@@ -141,18 +141,18 @@ class Artifact(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val artifactId: Int = 0,
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "character_id", nullable = false)
-    var character: Character,
-
+    // 아티팩트는 공용 목록 — 같은 것을 여러 캐릭터가 쓴다 (연결은 CharacterArtifact)
     @Column(nullable = false, length = 100)
     var name: String,
 
-    @Column(nullable = false)
-    var artifactOrder: Int,
+    @Column(length = 20)
+    var grade: String? = null,
 
     @Column(length = 255)
     var iconUrl: String? = null,
+
+    @Column(columnDefinition = "TEXT")
+    var description: String? = null,
 
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
@@ -178,6 +178,27 @@ class ArtifactLevel(
 
     @Column(columnDefinition = "TEXT")
     var effectText: String? = null
+)
+
+// ─── CharacterArtifact (캐릭터 ↔ 아티팩트) ─────────────────
+@Entity
+@Table(name = "character_artifacts")
+class CharacterArtifact(
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Int = 0,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "character_id", nullable = false)
+    var character: Character,
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "artifact_id", nullable = false)
+    var artifact: Artifact,
+
+    @Column(nullable = false)
+    var artifactOrder: Int
 )
 
 // ─── CharacterManifestation ───────────────────────────────

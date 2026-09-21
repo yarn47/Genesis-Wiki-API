@@ -33,7 +33,8 @@ git pull
 | `debuffs/*.json` | 디버프 (버프와 같은 형식) |
 | `classes/*.json` | 클래스 (클래스 계열별 파일, 이름은 전체에서 중복 불가) |
 | `weapons/*.json` | 전용무기 (이름은 전체에서 중복 불가) |
-| `characters/*.json` | 캐릭터 (클래스·전용무기는 이름으로 연결) |
+| `artifacts/*.json` | 아티팩트 (캐릭터 공용, 이름은 전체에서 중복 불가) |
+| `characters/*.json` | 캐릭터 (클래스·전용무기·아티팩트는 이름으로 연결) |
 
 ### 버프/디버프 형식
 
@@ -114,6 +115,21 @@ git pull
 - `levels`의 `step`은 각성(=돌파) 단계
 - `baseStats`는 각성 단계별 수치 배열 (캐릭터 상세에서 표로 표시)
 
+### 아티팩트 형식
+
+```json
+{
+  "name": "속성 과부하",
+  "grade": "영웅",
+  "iconUrl": "/icons/artifacts/element_overload.png",
+  "description": "플레이버 텍스트",
+  "levels": [{ "step": 3, "effect": "유리한 속성일 때 주는 속성 피해량 [+10%]{red}." }]
+}
+```
+
+- 아티팩트는 **캐릭터 공용** — 같은 것을 여러 캐릭터가 쓴다
+- `levels`의 `step`은 발현 단계 3~6 (게임의 아티팩트 ★1~★4)
+
 ### 캐릭터 형식
 
 ```json
@@ -129,12 +145,13 @@ git pull
     "levels": [{ "type": "각성", "step": 3, "effect": "..." }, { "type": "발현", "step": 2, "effect": "..." }] },
   "ultimate": { "name": "메테오 스트라이크", "tpCost": 5, "range": [1, 1], "area": "광역", "cooldown": 5,
     "levels": [{ "step": 1, "effect": "..." }] },
-  "artifacts": [{ "name": "아티팩트 이름", "order": 1, "levels": [{ "step": 3, "effect": "..." }] }]
+  "artifacts": ["속성 과부하", "최상의 상태", "바람 걸음"]
 }
 ```
 
 - `grade` 희귀/영웅/전설/아우터원 · `faction` 게이시르/팬드래건/무소속/아스타니아/제피르팰컨/다갈 · `element` 신념의빛/욕망의그림자/자유의불꽃/지성의결정체/활력의나무
-- `passive.levels`: `type` 각성(3~6) 또는 발현(2/4/6) · `ultimate.levels`: 발현 0/1/3/5 · `artifacts[].levels`: 발현 3~6
+- `passive.levels`: `type` 각성(3~6) 또는 발현(2/4/6) · `ultimate.levels`: 발현 0/1/3/5
+- `artifacts`는 `data/artifacts`의 이름을 순서대로 (최대 4개). 아티팩트 효과는 거기서 관리
 - `stats` 키를 넣으면 스탯도 반영 (hp/attack/spellAttack/defense/critRate/critDamage/physPen/magicPen/effectResist)
 - `published: false`면 공개 목록·상세에 안 나옴 (관리자만 확인 가능)
 - 발현 3~6단 연결(필살기 3·5, 패시브 4·6, 아티팩트)은 자동으로 생성

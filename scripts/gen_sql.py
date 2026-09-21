@@ -6,7 +6,7 @@
 - iconUrl 키가 없으면 기존 아이콘은 건드리지 않음 (관리자 화면에서 넣은 값 유지)
 - 클래스는 기본 정보·패시브·액티브 스킬을 갱신 (수치 base_hp/base_attack은 건드리지 않음)
 - 전용무기는 기본 정보와 효과(각성 단계별)를 갱신
-- 캐릭터는 기본 정보·클래스 트리·고유 패시브·필살기·아티팩트·발현 연결을 갱신 (스탯은 stats 키가 있을 때만)
+- 아티팩트는 캐릭터 공용 목록 (data/artifacts) — 캐릭터는 이름으로 연결만 한다\n- 캐릭터는 기본 정보·클래스 트리·고유 패시브·필살기·아티팩트 연결·발현을 갱신 (스탯은 stats 키가 있을 때만)
 - 스킬은 (클래스, 스킬 이름) 기준으로 추가/갱신, JSON에서 빠진 스킬을 지우지는 않음
 - 전체가 하나의 트랜잭션이라 중간에 에러가 나면 아무것도 반영되지 않음
 - 효과 텍스트의 {green}/{orange} 이름이 data에 없는 버프/디버프면 경고만 출력 (stderr)
@@ -51,7 +51,7 @@ CHAR_PASSIVE_KEYS = {"name", "iconUrl", "levels"}
 CHAR_PASSIVE_LEVEL_KEYS = {"type", "step", "effect"}
 ULTIMATE_KEYS = {"name", "iconUrl", "tpCost", "range", "area", "cooldown", "levels"}
 ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
-ARTIFACT_KEYS = {"name", "order", "iconUrl", "levels"}
+ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
 FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
             "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal"}
@@ -254,7 +254,31 @@ def load_weapons():
     return weapons
 
 
-def load_characters(class_names, weapon_names):
+def load_artifacts():
+    """아티팩트는 캐릭터 공용 목록 (발현 3~6단 = 아티팩트 ★1~★4)"""
+    artifacts, seen = [], set()
+    for rel, a in load_folder("artifacts"):
+        where = f"{rel} '{a.get('name')}'"
+        check_keys(where, a, ARTIFACT_KEYS)
+        if not a.get("name") or a["name"] in seen:
+            raise DataError(f"{where}: 아티팩트 이름이 없거나 중복")
+        seen.add(a["name"])
+        if "grade" in a and a["grade"] not in GRADES:
+            raise DataError(f"{where}: grade는 희귀/영웅/전설 ({a.get('grade')!r})")
+        check_text(where, a.get("description"))
+        steps = set()
+        for lvl in a.get("levels", []):
+            lw = f"{where} {lvl.get('step')}단"
+            check_keys(lw, lvl, ARTIFACT_LEVEL_KEYS)
+            if lvl["step"] in steps:
+                raise DataError(f"{lw}: 중복")
+            steps.add(lvl["step"])
+            check_text(lw, lvl.get("effect"))
+        artifacts.append(a)
+    return artifacts
+
+
+def load_characters(class_names, weapon_names, artifact_names):
     characters, seen = [], set()
     for rel, c in load_folder("characters"):
         where = f"{rel} '{c.get('name')}'"
@@ -301,21 +325,21 @@ def load_characters(class_names, weapon_names):
                 skill_range(lw, lvl.get("range"))
                 check_text(lw, lvl.get("effect"))
 
-        orders = set()
-        for art in c.get("artifacts", []):
-            aw = f"{where} 아티팩트 '{art.get('name')}'"
-            check_keys(aw, art, ARTIFACT_KEYS)
-            if art.get("order") in orders:
-                raise DataError(f"{aw}: order 중복")
-            orders.add(art.get("order"))
-            for lvl in art.get("levels", []):
-                check_keys(f"{aw} {lvl.get('step')}단", lvl, ARTIFACT_LEVEL_KEYS)
-                check_text(f"{aw} {lvl.get('step')}단", lvl.get("effect"))
+        arts = c.get("artifacts", [])
+        if len(arts) > 4:
+            raise DataError(f"{where}: 아티팩트는 최대 4개")
+        if len(set(arts)) != len(arts):
+            raise DataError(f"{where}: 아티팩트 중복")
+        for art in arts:
+            if not isinstance(art, str):
+                raise DataError(f"{where}: 아티팩트는 data/artifacts의 이름만 적는다 ({art!r})")
+            if art not in artifact_names:
+                raise DataError(f"{where}: data/artifacts에 없는 아티팩트 '{art}'")
         characters.append(c)
     return characters
 
 
-def warn_unknown_links(buffs, debuffs, classes, weapons, characters):
+def warn_unknown_links(buffs, debuffs, classes, weapons, artifacts, characters):
     known = {
         "green": {n for b in buffs for n in [b["name"], *(level_name(b, l) for l in b.get("levels", []))]},
         "orange": {n for d in debuffs for n in [d["name"], *(level_name(d, l) for l in d.get("levels", []))]},
@@ -333,13 +357,14 @@ def warn_unknown_links(buffs, debuffs, classes, weapons, characters):
         for eff in w.get("effects", []):
             texts.append((f"무기 '{w['name']}' 효과 '{eff['name']}'", eff.get("baseEffect")))
             texts += [(f"무기 '{w['name']}' 효과 '{eff['name']}' {l['step']}단", l.get("effect")) for l in eff.get("levels", [])]
+    for a in artifacts:
+        texts += [(f"아티팩트 '{a['name']}' {l['step']}단", l.get("effect")) for l in a.get("levels", [])]
     for c in characters:
         p = c.get("passive") or {}
         texts += [(f"캐릭터 '{c['name']}' 패시브 {l['type']} {l['step']}단", l.get("effect")) for l in p.get("levels", [])]
         u = c.get("ultimate") or {}
         texts += [(f"캐릭터 '{c['name']}' 필살기 {l['step']}단", l.get("effect")) for l in u.get("levels", [])]
-        for art in c.get("artifacts", []):
-            texts += [(f"캐릭터 '{c['name']}' 아티팩트 '{art['name']}' {l['step']}단", l.get("effect")) for l in art.get("levels", [])]
+
 
     for where, text in texts:
         for label, color in TEXT_TAG.findall(text or ""):
@@ -513,6 +538,37 @@ def weapon_summary_sql(weapons):
     )
 
 
+def artifact_sql(a):
+    """아티팩트: 공용 목록 + 단계별 효과 (발현 3~6단)"""
+    name = sql(a["name"])
+    out = [
+        f"-- 아티팩트: {a['name']}",
+        f"SET @art = (SELECT artifact_id FROM artifacts WHERE name = {name});",
+        f"INSERT INTO artifacts (name, created_at, updated_at) "
+        f"SELECT {name}, NOW(), NOW() FROM DUAL WHERE @art IS NULL;",
+        "SET @art = COALESCE(@art, LAST_INSERT_ID());",
+    ]
+    sets = [f"grade = {sql(GRADES[a['grade']])}" if "grade" in a else None,
+            f"description = {sql(a.get('description'))}" if "description" in a else None,
+            f"icon_url = {sql(a['iconUrl'])}" if "iconUrl" in a else None]
+    sets = [x for x in sets if x] + ["updated_at = NOW()"]
+    out.append(f"UPDATE artifacts SET {', '.join(sets)} WHERE artifact_id = @art;")
+    out.append("DELETE FROM artifact_levels WHERE artifact_id = @art;")
+    levels = sorted(a.get("levels", []), key=lambda l: l["step"])
+    if levels:
+        rows = ",\n".join(f"(@art, {sql(l['step'])}, {sql(l.get('effect'))})" for l in levels)
+        out.append(f"INSERT INTO artifact_levels (artifact_id, manifest_step, effect_text) VALUES\n{rows};")
+    return "\n".join(out)
+
+
+def artifact_summary_sql(artifacts):
+    names = ", ".join(sql(a["name"]) for a in artifacts)
+    return (f"SELECT a.artifact_id AS id, a.name, a.grade,\n"
+            f"  (SELECT COUNT(*) FROM artifact_levels l WHERE l.artifact_id = a.artifact_id) AS levels,\n"
+            f"  (SELECT COUNT(*) FROM character_artifacts ca WHERE ca.artifact_id = a.artifact_id) AS used_by\n"
+            f"FROM artifacts a WHERE a.name IN ({names}) ORDER BY a.artifact_id;")
+
+
 def character_sql(c):
     """캐릭터: 기본 정보 + 클래스 트리 + 고유 패시브 + 필살기 + 아티팩트 + 발현 연결"""
     name = sql(c["name"])
@@ -607,25 +663,17 @@ def character_sql(c):
     else:
         out.append("SET @ult = NULL;")
 
-    # 아티팩트
+    # 아티팩트 연결 (아티팩트 자체는 data/artifacts에서 관리)
+    out.append("DELETE FROM character_artifacts WHERE character_id = @id;")
     artifact_vars = []
-    for idx, art in enumerate(sorted(c.get("artifacts", []), key=lambda a: a.get("order", 0)), start=1):
+    for idx, art_name in enumerate(c.get("artifacts", []), start=1):
         var = f"@art{idx}"
         artifact_vars.append(var)
         out += [
-            f"SET {var} = (SELECT artifact_id FROM artifacts WHERE character_id = @id AND name = {sql(art['name'])} LIMIT 1);",
-            f"INSERT INTO artifacts (character_id, name, artifact_order, created_at, updated_at) "
-            f"SELECT @id, {sql(art['name'])}, {sql(art.get('order', idx))}, NOW(), NOW() FROM DUAL WHERE {var} IS NULL;",
-            f"SET {var} = COALESCE({var}, LAST_INSERT_ID());",
-            f"UPDATE artifacts SET artifact_order = {sql(art.get('order', idx))}"
-            + (f", icon_url = {sql(art['iconUrl'])}" if "iconUrl" in art else "")
-            + f", updated_at = NOW() WHERE artifact_id = {var};",
-            f"DELETE FROM artifact_levels WHERE artifact_id = {var};",
+            f"SET {var} = (SELECT artifact_id FROM artifacts WHERE name = {sql(art_name)});",
+            f"INSERT INTO character_artifacts (character_id, artifact_id, artifact_order) "
+            f"VALUES (@id, {var}, {idx});",
         ]
-        levels = sorted(art.get("levels", []), key=lambda l: l["step"])
-        if levels:
-            rows = ",\n".join(f"({var}, {sql(l['step'])}, {sql(l.get('effect'))})" for l in levels)
-            out.append(f"INSERT INTO artifact_levels (artifact_id, manifest_step, effect_text) VALUES\n{rows};")
     while len(artifact_vars) < 4:
         artifact_vars.append("NULL")
 
@@ -695,8 +743,10 @@ def main():
     kinds = [(prefix, load_items(folder, tag_names)) for folder, prefix in KINDS]
     classes = load_classes(tag_names)
     weapons = load_weapons()
-    characters = load_characters({c["name"] for c in classes}, {w["name"] for w in weapons})
-    warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons, characters)
+    artifacts = load_artifacts()
+    characters = load_characters({c["name"] for c in classes}, {w["name"] for w in weapons},
+                                 {a["name"] for a in artifacts})
+    warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons, artifacts, characters)
 
     parts = ["SET NAMES utf8mb4;", "START TRANSACTION;", "", "-- ─── 태그 ───"]
     if tags:
@@ -709,6 +759,8 @@ def main():
     parts.extend(class_sql(c) for c in classes)
     parts.append(f"\n-- ─── exclusive weapon ({len(weapons)}개) ───")
     parts.extend(weapon_sql(w) for w in weapons)
+    parts.append(f"\n-- ─── artifact ({len(artifacts)}개) ───")
+    parts.extend(artifact_sql(a) for a in artifacts)
     parts.append(f"\n-- ─── character ({len(characters)}개) ───")
     parts.extend(character_sql(c) for c in characters)
     parts += ["", "COMMIT;", ""]
@@ -718,6 +770,8 @@ def main():
         parts.append(skill_summary_sql(classes))
     if weapons:
         parts.append(weapon_summary_sql(weapons))
+    if artifacts:
+        parts.append(artifact_summary_sql(artifacts))
     if characters:
         parts.append(character_summary_sql(characters))
     print("\n".join(parts))

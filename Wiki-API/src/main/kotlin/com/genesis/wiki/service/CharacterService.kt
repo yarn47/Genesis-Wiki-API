@@ -16,7 +16,8 @@ class CharacterService(
     private val exclusiveWeaponRepository: ExclusiveWeaponRepository,
     private val ultimateSkillRepository: UltimateSkillRepository,
     private val buffRepository: BuffRepository,
-    private val debuffRepository: DebuffRepository
+    private val debuffRepository: DebuffRepository,
+    private val artifactRepository: ArtifactRepository
 ) {
 
     // ─── 조회 ───────────────────────────────────────────────
@@ -103,14 +104,11 @@ class CharacterService(
             ultimateSkillRepository.save(ult)
         }
 
-        // 아티팩트
+        // 아티팩트 (공용 목록에서 찾아 연결)
         val artifactMap = mutableMapOf<Int, Artifact>()
         req.artifacts.forEach { artReq ->
-            val art = Artifact(character = saved, name = artReq.name, artifactOrder = artReq.artifactOrder, iconUrl = artReq.iconUrl)
-            artReq.levels.forEach { lvl ->
-                art.levels.add(ArtifactLevel(artifact = art, manifestStep = lvl.manifestStep, effectText = lvl.effectText))
-            }
-            saved.artifacts.add(art)
+            val art = upsertArtifact(artReq)
+            saved.characterArtifacts.add(CharacterArtifact(character = saved, artifact = art, artifactOrder = artReq.artifactOrder))
             artifactMap[artReq.artifactOrder] = art
         }
 
@@ -204,18 +202,15 @@ class CharacterService(
             ultimateSkillRepository.save(ult)
         }
 
-        // 아티팩트 교체
-        character.artifacts.clear()
+        // 아티팩트 연결 교체 (아티팩트 자체는 공용이라 지우지 않는다)
+        character.characterArtifacts.clear()
         character.manifestations.clear()
         characterRepository.saveAndFlush(character)
 
         val artifactMap = mutableMapOf<Int, Artifact>()
         req.artifacts.forEach { artReq ->
-            val art = Artifact(character = character, name = artReq.name, artifactOrder = artReq.artifactOrder, iconUrl = artReq.iconUrl)
-            artReq.levels.forEach { lvl ->
-                art.levels.add(ArtifactLevel(artifact = art, manifestStep = lvl.manifestStep, effectText = lvl.effectText))
-            }
-            character.artifacts.add(art)
+            val art = upsertArtifact(artReq)
+            character.characterArtifacts.add(CharacterArtifact(character = character, artifact = art, artifactOrder = artReq.artifactOrder))
             artifactMap[artReq.artifactOrder] = art
         }
 
@@ -236,6 +231,18 @@ class CharacterService(
 
         characterRepository.saveAndFlush(character)
         return getAdminCharacterDetail(id)
+    }
+
+    // 아티팩트는 공용 목록 — 이름으로 찾아 없으면 만들고, 레벨 효과는 요청 내용으로 갱신
+    private fun upsertArtifact(req: ArtifactRequest): Artifact {
+        val art = artifactRepository.findByName(req.name)
+            ?: Artifact(name = req.name)
+        req.iconUrl?.let { art.iconUrl = it }
+        art.levels.clear()
+        req.levels.forEach { lvl ->
+            art.levels.add(ArtifactLevel(artifact = art, manifestStep = lvl.manifestStep, effectText = lvl.effectText))
+        }
+        return artifactRepository.saveAndFlush(art)
     }
 
     // ─── 삭제 ───────────────────────────────────────────────
@@ -279,7 +286,7 @@ class CharacterService(
         val texts = mutableListOf<String?>()
         character.passives.forEach { passive -> passive.levels.forEach { texts.add(it.effectText) } }
         character.manifestations.forEach { manifest -> manifest.ultimate?.levels?.forEach { texts.add(it.effectText) } }
-        character.artifacts.forEach { artifact -> artifact.levels.forEach { texts.add(it.effectText) } }
+        character.characterArtifacts.forEach { link -> link.artifact.levels.forEach { texts.add(it.effectText) } }
         character.exclusiveWeapon?.effects?.forEach { effect ->
             texts.add(effect.baseEffect)
             effect.levels.forEach { texts.add(it.effectText) }
@@ -319,8 +326,9 @@ class CharacterService(
             UltimateSkillDto(u.ultimateId, u.name, u.iconUrl,
                 u.levels.sortedBy { it.manifestStep }.map { UltimateSkillLevelDto(it.manifestStep, it.tpCost, it.rangeMin, it.rangeMax, it.cooldown, it.effectText) })
         }
-        val artifacts = character.artifacts.sortedBy { it.artifactOrder }.map { art ->
-            ArtifactDto(art.artifactId, art.name, art.artifactOrder, art.iconUrl,
+        val artifacts = character.characterArtifacts.sortedBy { it.artifactOrder }.map { link ->
+            val art = link.artifact
+            ArtifactDto(art.artifactId, art.name, link.artifactOrder, art.iconUrl,
                 art.levels.sortedBy { it.manifestStep }.map { ArtifactLevelDto(it.manifestStep, it.effectText) })
         }
         val manifestations = character.manifestations.sortedBy { it.manifestLevel }.map { m ->

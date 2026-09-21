@@ -1,0 +1,206 @@
+[
+  {
+    "name": "파이터",
+    "tier": 1,
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검을 무기로 적에게 근접해 전투를 수행하는 기본 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/fighter.png",
+    "passive": {
+      "name": "공세",
+      "lv1": "전투 공격 시 반격 피해를 [25%]{red} 적게 받습니다.",
+      "lv2": "전투 공격 시 반격 피해를 [25%]{red} 적게 받고 치명타 발동 시 반격 피해를 [50%]{red} 적게 받습니다.",
+      "iconUrl": "/icons/classes/passive/fighter.png"
+    },
+    "skills": [
+      {
+        "name": "연섬",
+        "tpCost": 1,
+        "range": [1, 1],
+        "area": "단일",
+        "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서, 도끼",
+        "cooldown": 2,
+        "tags": ["근거리", "전투"],
+        "iconUrl": "/icons/skills/yeonseom.png",
+        "effect": "적에게 공격력의 [130%]{red}만큼 피해를 주고 반격 당하면 추가타가 발동해 공격력의 [30%]{red}만큼 피해를 줍니다."
+      },
+      {
+        "name": "무쌍관파",
+        "tpCost": 2,
+        "range": [1, 2],
+        "area": "단일",
+        "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서, 도끼",
+        "cooldown": 3,
+        "tags": ["근거리", "치유", "이동공격", "전투"],
+        "iconUrl": "/icons/skills/musanggwanpa.png",
+        "effect": "전방으로 [1]{red}칸 이동하며 적에게 공격력의 [170%]{red}만큼 피해를 주고 치명타 발동 시 공격력의 [50%]{red}만큼 체력을 회복합니다."
+      },
+      {
+        "name": "질주",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 2,
+        "iconUrl": "/icons/skills/jilju.png",
+        "effect": "스킬 사용 직후 추가 행동을 얻고 이번 턴 동안 치명타 확률이 [15%]{red} 증가합니다."
+      }
+    ]
+  },
+  {
+    "name": "소드맨",
+    "tier": 2,
+    "parent": "파이터",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검술을 전문적으로 수련해 근접 전투에 특화된 전사 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/swordman.png",
+    "passive": {
+      "name": "우세",
+      "lv1": "전투 공격 시 공격력이 [20%]{red}만큼 증가하고 반격 피해를 [25%]{red} 적게 받습니다. 치명타 발동 시 반격 피해를 [50%]{red} 적게 받습니다.",
+      "lv2": "전투 공격 시 공격력이 [25%]{red}만큼 증가하고 반격 피해를 [25%]{red} 적게 받습니다. 치명타 발동 시 반격 피해를 [50%]{red} 적게 받습니다.",
+      "iconUrl": "/icons/classes/passive/swordman.png"
+    },
+    "skills": [
+      {
+        "name": "단월섬",
+        "tpCost": 1,
+        "range": [1, 2],
+        "area": "단일",
+        "allowedWeapon": "검, 대검, 검/방패",
+        "cooldown": 2,
+        "tags": ["원거리", "지향성", "전투"],
+        "iconUrl": "/icons/skills/danwolseom.png",
+        "effect": "적에게 단월섬을 날려 공격력의 [150%]{red}만큼 피해를 줍니다."
+      }
+    ]
+  },
+  {
+    "name": "나이트",
+    "tier": 2,
+    "parent": "파이터",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "고급 검술과 정규 전술을 오랜 기간 훈련받아 집단 전투에 능한 기사 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/knight.png",
+    "passive": {
+      "name": "고양",
+      "lv1": "자신을 포함해 인접한 아군이 받는 피해가 [10%]{red} 감소하고 전투 시 인접한 아군이 있다면 공격력이 [20%]{red} 증가합니다.",
+      "lv2": "자신을 포함해 인접한 아군이 받는 피해가 [10%]{red} 감소하고 전투 시 인접한 아군이 있다면 공격력이 [25%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/knight.png"
+    },
+    "skills": [
+      {
+        "name": "활기의 함성",
+        "tpCost": 4,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "tags": ["합성"],
+        "iconUrl": "/icons/skills/hwalgi_shout.png",
+        "effect": "자신을 포함해 인접한 아군에게 [2]{yellow}턴 동안 [활기]{green} 효과를 부여합니다."
+      }
+    ]
+  },
+  {
+    "name": "소드마스터",
+    "tier": 3,
+    "parent": "소드맨",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "오랜 시간 검을 전문적으로 수련한 빠르고 치명적인 검술의 달인입니다.",
+    "iconUrl": "/icons/classes/emblem/sword_master.png",
+    "passive": {
+      "name": "검술의 달인",
+      "lv1": "전투 공격 시 공격력이 [40%]{red}만큼 증가하고 치명타 확률이 [10%]{red} 증가하며 받는 피해가 [30%]{red}만큼 감소합니다. 전투 시 치명타 발동 후 공격력의 [20%]{red}만큼 체력을 회복합니다. (쿨타임 [1]{yellow})",
+      "lv2": "전투 공격 시 공격력이 [50%]{red}만큼 증가하고 치명타 확률이 [15%]{red} 증가하며 받는 피해가 [50%]{red}만큼 감소합니다. 전투 시 치명타 발동 후 공격력의 [40%]{red}만큼 체력을 회복합니다. (쿨타임 [1]{yellow})",
+      "iconUrl": "/icons/classes/passive/sword_master.png"
+    },
+    "skills": [
+      {
+        "name": "공아섬",
+        "tpCost": 3,
+        "range": [1, 1],
+        "area": "단일",
+        "allowedWeapon": "검, 대검, 검/방패",
+        "cooldown": 3,
+        "tags": ["근거리", "전투"],
+        "iconUrl": "/icons/skills/gongaseom.png",
+        "effect": "적에게 공격력의 [170%]{red}만큼 피해를 줍니다. 공격 시 치명타 확률이 [30%]{red} 증가합니다. 전투 후 [2]{yellow}턴 동안 [질풍]{green} 효과를 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "로얄나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 아군을 진두지휘하는 뛰어난 전술 능력을 지닌 상급 기사입니다.",
+    "iconUrl": "/icons/classes/emblem/royal_knight.png",
+    "passive": {
+      "name": "격려",
+      "lv1": "자신을 포함해 인접한 아군은 공격력이 [15%]{red} 증가하고 받는 피해가 [15%]{red} 감소합니다. 전투 시 인접한 아군이 있다면 공격력이 [25%]{red} 증가합니다.",
+      "lv2": "자신을 포함해 인접한 아군은 공격력이 [20%]{red} 증가하고 받는 피해가 [15%]{red} 감소합니다. 전투 시 인접한 아군이 있다면 공격력이 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/royal_knight.png"
+    },
+    "skills": [
+      {
+        "name": "원섬파",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "allowedWeapon": "검, 대검, 검/방패",
+        "cooldown": 3,
+        "tags": ["근거리", "위치제어"],
+        "iconUrl": "/icons/skills/wonseompa.png",
+        "effect": "인접한 적들을 강타해 공격력의 [60%]{red}만큼 피해를 주고 [2]{red}칸까지 강하게 밀쳐 냅니다. 밀쳐진 적이 벽이나 다른 적과 부딪힌다면 [1]{yellow}턴 동안 [기절]{orange}시킵니다."
+      }
+    ]
+  },
+  {
+    "name": "아크나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "숙련된 검술과 강한 기사 정신으로 전장의 선봉에서 전투를 승리로 이끄는 상급 기사입니다.",
+    "iconUrl": "/icons/classes/emblem/arc_knight.png",
+    "passive": {
+      "name": "억제",
+      "lv1": "스킬 사용 전 공격력이 [30%]{red}만큼 증가하고 다음 턴 시작까지 오라를 가져 인접한 적에게 [억제]{orange} 효과를 줍니다.",
+      "lv2": "스킬 사용 전 공격력이 [40%]{red}만큼 증가하고 다음 턴 시작까지 오라를 가져 인접한 적에게 [억제]{orange} 효과를 줍니다.",
+      "iconUrl": "/icons/classes/passive/arc_knight.png"
+    },
+    "skills": [
+      {
+        "name": "회륜섬",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서",
+        "cooldown": 2,
+        "tags": ["근거리", "치유", "TP 제거"],
+        "iconUrl": "/icons/skills/hoeryunseom.png",
+        "effect": "검으로 휩쓸어 주변 [1]{red}바퀴 내 적들에게 공격력의 [60%]{red}만큼 피해를 주고 TP를 [1]{yellow}씩 낮춥니다. 피해를 준 적 [1]{red}명당 공격력의 [10%]{red}만큼 체력을 회복합니다."
+      }
+    ]
+  }
+]

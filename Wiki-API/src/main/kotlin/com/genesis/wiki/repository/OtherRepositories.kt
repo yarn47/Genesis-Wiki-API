@@ -22,7 +22,7 @@ interface CharacterPassiveRepository : JpaRepository<CharacterPassive, Int> {
 }
 
 interface ArtifactRepository : JpaRepository<Artifact, Int> {
-    fun findAllByCharacterCharacterIdOrderByArtifactOrder(characterId: Int): List<Artifact>
+    fun findByName(name: String): Artifact?
 }
 
 interface CharacterManifestationRepository : JpaRepository<CharacterManifestation, Int> {

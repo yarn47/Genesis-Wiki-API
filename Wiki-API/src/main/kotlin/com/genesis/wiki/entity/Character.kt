@@ -78,8 +78,9 @@ class Character(
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val passives: MutableSet<CharacterPassive> = mutableSetOf()
 
-    @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
-    val artifacts: MutableSet<Artifact> = mutableSetOf()
+    // 아티팩트는 공용 목록이라 연결만 들고 있는다
+    @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY, orphanRemoval = true)
+    val characterArtifacts: MutableSet<CharacterArtifact> = mutableSetOf()
 
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val manifestations: MutableSet<CharacterManifestation> = mutableSetOf()
