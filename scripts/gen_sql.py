@@ -695,7 +695,7 @@ def character_summary_sql(characters):
         "  (SELECT COUNT(*) FROM character_class_tree t WHERE t.character_id = c.character_id) AS classes,\n"
         "  (SELECT COUNT(*) FROM character_passive_levels l JOIN character_passives p ON p.passive_id = l.passive_id "
         "WHERE p.character_id = c.character_id) AS passive_levels,\n"
-        "  (SELECT COUNT(*) FROM artifacts a WHERE a.character_id = c.character_id) AS artifacts,\n"
+        "  (SELECT COUNT(*) FROM character_artifacts ca WHERE ca.character_id = c.character_id) AS artifacts,\n"
         "  (SELECT COUNT(*) FROM ultimate_skill_levels ul JOIN character_manifestation m ON m.ultimate_id = ul.ultimate_id "
         "WHERE m.character_id = c.character_id) AS ult_levels,\n"
         "  w.name AS weapon\n"
