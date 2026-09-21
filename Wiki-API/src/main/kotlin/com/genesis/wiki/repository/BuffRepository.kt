@@ -24,8 +24,8 @@ private const val EFFECT_TEXT_OWNERS = """
     SELECT 'C', cm.character_id, usl.effect_text
       FROM character_manifestation cm JOIN ultimate_skill_levels usl ON usl.ultimate_id = cm.ultimate_id
     UNION ALL
-    SELECT 'C', a.character_id, al.effect_text
-      FROM artifacts a JOIN artifact_levels al ON al.artifact_id = a.artifact_id
+    SELECT 'C', ca.character_id, al.effect_text
+      FROM character_artifacts ca JOIN artifact_levels al ON al.artifact_id = ca.artifact_id
     UNION ALL
     SELECT 'C', ch.character_id, wel.effect_text
       FROM characters ch
