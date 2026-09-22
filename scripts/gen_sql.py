@@ -34,7 +34,7 @@ CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType
               "description", "iconUrl", "passive", "skills"}
 SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "element", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
 SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
-ELEMENT_TYPES = {"빙한", "화염", "전격"}            # 게임 업데이트로 늘어날 수 있음
+ELEMENT_TYPES = {"빙한", "화염", "전격", "암흑"}    # 게임 업데이트로 늘어날 수 있음
 ATTACK_TYPES = {"참격", "관통", "타격", "마법", "절단"}
 PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
 WEAPON_KEYS = {"name", "weaponType", "grade", "baseStats", "extraStats", "description", "iconUrl", "effects"}

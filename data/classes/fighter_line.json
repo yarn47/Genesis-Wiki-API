@@ -300,6 +300,7 @@
         ],
         "area": "광역",
         "attackType": "마법",
+        "element": "암흑",
         "cooldown": 2,
         "tags": [
           "원거리",
