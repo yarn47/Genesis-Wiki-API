@@ -1,0 +1,240 @@
+[
+  {
+    "name": "솔져",
+    "tier": 1,
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "description": "다른 근접 무기에 비해 사거리의 이점을 가진 창과 방패를 들고 적을 방어하는 기본 직업입니다.",
+    "passive": {
+      "name": "연합 방어",
+      "lv1": "인접한 아군이 있다면 방어력이 [10%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "인접한 아군이 있다면 방어력이 [15%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/soldier.png"
+    },
+    "skills": [
+      {
+        "name": "방어 태세",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [],
+        "iconUrl": "/icons/skills/defensive_stance.png",
+        "effect": "주위 [2]{red}칸 내 아군에게 다음 턴 시작까지 [전우 보호]{green} 효과를 부여하고 자신은 [방어 태세]{green}를 취합니다."
+      },
+      {
+        "name": "나선창",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "근거리",
+          "지향성",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/spiral_spear.png",
+        "effect": "적을 공격해 공격력의 [130%]{red}만큼 피해를 줍니다. 대상 후방의 적에게는 [50%]{red}만큼 피해를 추가로 줍니다. 피해를 받은 적들에게 [2]{yellow}턴 동안 [갑옷 파괴]{orange} 효과를 겁니다."
+      },
+      {
+        "name": "돌진 도발",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "근거리",
+          "이동공격",
+          "위치제어"
+        ],
+        "iconUrl": "/icons/skills/charging_taunt.png",
+        "effect": "방향을 지정해 돌진하여 해당 지점에 있는 캐릭터를 밀쳐 냅니다. 대상이 적이었다면 방어력의 [60%]{red}만큼 물리 고정 피해를 줍니다. 돌진 후 주변 [1]{red}바퀴 내 적들에게 [도발]{orange} 효과를 겁니다. 이 스킬은 쿨타임 제어 또는 감소 효과에 영향을 받지 않습니다."
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/soldier.png"
+  },
+  {
+    "name": "가드",
+    "tier": 2,
+    "parent": "솔져",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "description": "창과 방패를 들고 높은 체력과 방어력을 바탕으로 적의 공격을 단단히 막아내는 팀의 방패입니다.",
+    "passive": {
+      "name": "방어 숙련",
+      "lv1": "인접한 아군이 있다면 방어력이 [25%]{red} 증가하고 치명타 공격에 당할 확률이 [25%]{red} 감소합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "인접한 아군이 있다면 방어력이 [30%]{red} 증가하고 치명타 공격에 당할 확률이 [30%]{red} 감소합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/guard.png"
+    },
+    "skills": [
+      {
+        "name": "위치 사수",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [],
+        "iconUrl": "/icons/skills/hold_position.png",
+        "effect": "다음 턴 시작까지 [위치 사수]{green} 효과를 얻습니다."
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/guard.png"
+  },
+  {
+    "name": "제너럴",
+    "tier": 2,
+    "parent": "솔져",
+    "weaponType": "창",
+    "defenseType": "미디엄",
+    "description": "고급 창술과 정규 전술을 오랜 기간 훈련받아 집단 전투에 능한 전장의 지휘관입니다.",
+    "passive": {
+      "name": "전술 지휘",
+      "lv1": "범위 스킬 사용 시 [1]{yellow}턴 동안 오라를 얻어 주위 [3]{red}칸 내 아군에게 [전술 지휘 1]{green} 효과를 줍니다.",
+      "lv2": "범위 스킬 사용 시 [1]{yellow}턴 동안 오라를 얻어 주위 [3]{red}칸 내 아군에게 [전술 지휘 2]{green} 효과를 줍니다.",
+      "iconUrl": "/icons/classes/passive/general.png"
+    },
+    "skills": [
+      {
+        "name": "지휘의 외침",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "함성"
+        ],
+        "iconUrl": "/icons/skills/commanding_shout.png",
+        "effect": "자신의 주위 [3]{red}칸 내 아군들에게 [2]{yellow}턴 동안 [전의]{green} 효과를 부여합니다."
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/general.png"
+  },
+  {
+    "name": "로얄가드",
+    "tier": 3,
+    "parent": "가드",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "description": "최전선에서 적의 공격을 견고하게 막아내고 제압하는 상급 기사입니다. 창과 방패를 무기로 사용합니다.",
+    "passive": {
+      "name": "견고한 수비",
+      "lv1": "방어력/저항력이 [20%]{red} 증가하고 치명타 공격에 당할 확률이 [20%]{red} 감소합니다. 캐릭터 턴 종료 시 방어력의 [30%]{red}만큼 체력을 회복합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "방어력/저항력이 [30%]{red} 증가하고 치명타 공격에 당할 확률이 [30%]{red} 감소합니다. 캐릭터 턴 종료 시 방어력의 [50%]{red}만큼 체력을 회복합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/royal_guard.png"
+    },
+    "skills": [
+      {
+        "name": "붕격",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "allowedWeapon": "창/방패",
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/shield_smite.png",
+        "effect": "방패로 적을 강타해 방어력의 [100%]{red}만큼 물리 고정 피해를 주고 [기절]{orange}시킵니다.",
+        "attackType": "타격"
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/royal_guard.png"
+  },
+  {
+    "name": "어스퀘이커",
+    "tier": 3,
+    "parent": "가드",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "description": "전장의 중심에서 적들을 끊임없이 괴롭히고 혼란시키는 상급 기사입니다. 창을 무기로 사용합니다.",
+    "passive": {
+      "name": "전술적 견제",
+      "lv1": "오라를 가져 주위 [2]{red}칸 내 적들에게 [전술적 견제 1]{orange} 효과를 줍니다. 오라 범위 밖의 공격을 받으면 받는 피해가 [5%]{red} 감소합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "오라를 가져 주위 [2]{red}칸 내 적들에게 [전술적 견제 2]{orange} 효과를 줍니다. 오라 범위 밖의 공격을 받으면 받는 피해가 [10%]{red} 감소합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/earthquaker.png"
+    },
+    "skills": [
+      {
+        "name": "일갈",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "함성"
+        ],
+        "iconUrl": "/icons/skills/rebuke.png",
+        "effect": "자신의 주위 [3]{red}칸 내 적들의 버프를 모두 제거하고 [2]{yellow}턴 동안 [사기 저하]{orange} 효과를 겁니다."
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/earthquaker.png"
+  },
+  {
+    "name": "마샬",
+    "tier": 3,
+    "parent": "제너럴",
+    "weaponType": "창",
+    "defenseType": "미디엄",
+    "description": "고급 창술과 아군을 독려해 전투를 승리로 이끄는 지휘 능력을 갖춘 상급 지휘관입니다.",
+    "passive": {
+      "name": "전술의 달인",
+      "lv1": "범위 스킬 사용 시 [1]{yellow}턴 동안 오라를 얻어 주위 [3]{red}칸 내 아군에게 [전술의 달인 1]{green} 효과를 줍니다.",
+      "lv2": "범위 스킬 사용 시 [1]{yellow}턴 동안 오라를 얻어 주위 [3]{red}칸 내 아군에게 [전술의 달인 2]{green} 효과를 줍니다.",
+      "iconUrl": "/icons/classes/passive/marshal.png"
+    },
+    "skills": [
+      {
+        "name": "나선관창",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "근거리",
+          "지향성"
+        ],
+        "iconUrl": "/icons/skills/spiral_piercing_spear.png",
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [100%]{red}만큼 피해를 줍니다. 피해를 받은 적들에게 [2]{yellow}턴 동안 [갑옷 파괴]{orange} 효과를 겁니다."
+      }
+    ],
+    "attackRange": 1,
+    "moveRange": 3,
+    "attackType": "관통",
+    "iconUrl": "/icons/classes/emblem/marshal.png"
+  }
+]

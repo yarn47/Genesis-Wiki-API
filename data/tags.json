@@ -82,5 +82,9 @@
   {
     "name": "출혈",
     "color": "gray"
+  },
+  {
+    "name": "함성",
+    "color": "gray"
   }
 ]
