@@ -74,5 +74,13 @@
   {
     "name": "치유",
     "color": "gray"
+  },
+  {
+    "name": "지속 피해",
+    "color": "gray"
+  },
+  {
+    "name": "출혈",
+    "color": "gray"
   }
 ]

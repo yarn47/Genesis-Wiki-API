@@ -239,5 +239,112 @@
         "effect": "검으로 휩쓸어 주변 [1]{red}바퀴 내 적들에게 공격력의 [60%]{red}만큼 피해를 주고 TP를 [1]{yellow}씩 낮춥니다. 피해를 준 적 [1]{red}명당 공격력의 [10%]{red}만큼 체력을 회복합니다."
       }
     ]
+  },
+  {
+    "name": "글라디에이터",
+    "tier": 2,
+    "parent": "파이터",
+    "weaponType": "대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "대검을 무기로 사용하고 실전에서 단련된 강력하고 용맹한 전장의 투사입니다.",
+    "iconUrl": "/icons/classes/emblem/gladiator.png",
+    "passive": {
+      "name": "용맹",
+      "lv1": "전투 공격 시 공격력이 [20%]{red} 증가하고 체력이 [50%]{red} 이하라면 치명타 확률이 [10%]{red} 증가합니다.",
+      "lv2": "전투 공격 시 공격력이 [25%]{red} 증가하고 체력이 [50%]{red} 이하라면 치명타 확률이 [15%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/gladiator.png"
+    },
+    "skills": [
+      {
+        "name": "풍열섬",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "allowedWeapon": "검, 대검",
+        "cooldown": 3,
+        "tags": [
+          "근거리"
+        ],
+        "iconUrl": "/icons/skills/pungyeolseom.png",
+        "effect": "검으로 휩쓸어 주변 [1]{red}바퀴 내 적들에게 공격력의 [110%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [파열]{orange} 효과를 겁니다."
+      }
+    ]
+  },
+  {
+    "name": "다크나이트",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "weaponType": "대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 어둠의 힘을 포용해 특별한 능력과 기술을 가진 하이브리드 기사입니다.",
+    "iconUrl": "/icons/classes/emblem/dark_knight.png",
+    "passive": {
+      "name": "심연의 저주",
+      "lv1": "범위 스킬 사용 시 공격력이 [30%]{red} 증가하고 피해를 준 적들에게 [40%]{red} 확률로 [2]{yellow}턴 동안 [약화]{orange} 효과를 겁니다. 캐릭터 턴 종료 시 인접한 적들에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. 디버프를 보유한 적과 전투 시 받는 피해가 [5%]{red}만큼 감소합니다. 쇠약 효과를 보유한 적과 전투 시 받는 피해가 [5%]{red} 추가로 감소합니다.",
+      "lv2": "범위 스킬 사용 시 공격력이 [40%]{red} 증가하고 피해를 준 적들에게 [50%]{red} 확률로 [2]{yellow}턴 동안 [약화]{orange} 효과를 겁니다. 캐릭터 턴 종료 시 인접한 적들에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. 디버프를 보유한 적과 전투 시 받는 피해가 [10%]{red}만큼 감소합니다. 쇠약 효과를 보유한 적과 전투 시 받는 피해가 [10%]{red} 추가로 감소합니다.",
+      "iconUrl": "/icons/classes/passive/dark_knight.png"
+    },
+    "skills": [
+      {
+        "name": "다크 임브레스",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "attackType": "마법",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "위치제어"
+        ],
+        "iconUrl": "/icons/skills/dark_embrace.png",
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [50%]{red}만큼 피해를 주고 가능한 가까운 타일까지 끌어당기면서 공격력의 [50%]{red}만큼 피해를 줍니다."
+      }
+    ]
+  },
+  {
+    "name": "드래곤슬레이어",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "weaponType": "대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "대검을 무기로 사용해 폭발적인 기술과 전투 능력으로 적의 숨통을 끊는 상급 전사 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/dragon_slayer.png",
+    "passive": {
+      "name": "광란",
+      "lv1": "전투 공격 시 공격력이 [40%]{red} 증가하고 치명타 확률이 [15%]{red} 증가합니다. 체력이 [50%]{red} 이하라면 초필살기 피해량이 [40%]{red} 증가하고 받는 피해가 [25%]{red} 감소합니다.",
+      "lv2": "전투 공격 시 공격력이 [50%]{red} 증가하고 치명타 확률이 [20%]{red} 증가합니다. 체력이 [50%]{red} 이하라면 초필살기 피해량이 [50%]{red} 증가하고 받는 피해가 [25%]{red} 감소합니다.",
+      "iconUrl": "/icons/classes/passive/dragon_slayer.png"
+    },
+    "skills": [
+      {
+        "name": "열살섬",
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "allowedWeapon": "검, 대검",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/yeolsalseom.png",
+        "effect": "잃은 체력 비율만큼 치명타 확률이 증가하고 TP를 모두 소모해 적에게 공격력의 [110%]{red}에 TP 당 공격력의 [25%]{red}만큼 추가된 피해를 줍니다. 치명타 적중 시 [2]{yellow}턴 동안 [전의]{green} 효과를 얻고 주위 [4]{red}칸 내 타일을 선택해 순간 이동합니다."
+      }
+    ]
   }
 ]
