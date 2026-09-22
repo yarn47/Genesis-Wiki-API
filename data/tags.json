@@ -86,5 +86,9 @@
   {
     "name": "함성",
     "color": "gray"
+  },
+  {
+    "name": "치유방해",
+    "color": "gray"
   }
 ]
