@@ -61,6 +61,10 @@ data class PassiveLevelRequest(
 data class UltimateRequest(
     val name: String,
     val iconUrl: String? = null,
+    val area: String? = null,
+    val attackType: String? = null,       // 참격/관통/타격/마법/절단
+    val element: String? = null,          // 빙한/화염/전격
+    val tagIds: List<Int> = emptyList(),
     val levels: List<UltimateLevelRequest> = emptyList()
 )
 

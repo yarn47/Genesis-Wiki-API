@@ -20,6 +20,7 @@
   {
     "name": "빙결",
     "description": "행동 불가.",
+    "element": "빙한",
     "duration": 1,
     "tags": [
       "기절",
@@ -29,6 +30,7 @@
   {
     "name": "냉기 둔화",
     "description": "이동력 [-1]{red}. 중첩 시 [빙결]{orange}로 대체.",
+    "element": "빙한",
     "duration": 2,
     "maxStack": 2,
     "tags": [

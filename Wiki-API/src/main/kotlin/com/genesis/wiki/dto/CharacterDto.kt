@@ -10,6 +10,7 @@ data class SkillDto(
     val rangeMax: Int?,
     val area: String?,
     val attackType: String?,
+    val element: String?,
     val allowedWeapon: String?,
     val cooldown: Int?,
     val effectText: String?,
@@ -123,6 +124,10 @@ data class UltimateSkillDto(
     val ultimateId: Int,
     val name: String,
     val iconUrl: String?,
+    val area: String?,
+    val attackType: String?,
+    val element: String?,
+    val tags: List<TagDto>,
     val levels: List<UltimateSkillLevelDto>
 )
 

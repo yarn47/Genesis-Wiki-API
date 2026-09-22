@@ -70,6 +70,9 @@
       ],
       "area": "광역",
       "cooldown": 5,
+      "tags": [
+        "근거리"
+      ],
       "levels": [
         {
           "step": 0,

@@ -17,7 +17,8 @@ class CharacterService(
     private val ultimateSkillRepository: UltimateSkillRepository,
     private val buffRepository: BuffRepository,
     private val debuffRepository: DebuffRepository,
-    private val artifactRepository: ArtifactRepository
+    private val artifactRepository: ArtifactRepository,
+    private val tagRepository: TagRepository
 ) {
 
     // ─── 조회 ───────────────────────────────────────────────
@@ -97,7 +98,9 @@ class CharacterService(
 
         // 필살기
         val ultimate = req.ultimate?.let { u ->
-            val ult = UltimateSkill(name = u.name, iconUrl = u.iconUrl)
+            val ult = UltimateSkill(name = u.name, iconUrl = u.iconUrl,
+                area = u.area, attackType = u.attackType, element = u.element)
+            ult.tags.addAll(tagRepository.findAllById(u.tagIds))
             u.levels.forEach { lvl ->
                 ult.levels.add(UltimateSkillLevel(ultimate = ult, manifestStep = lvl.manifestStep, tpCost = lvl.tpCost, rangeMin = lvl.rangeMin, rangeMax = lvl.rangeMax, cooldown = lvl.cooldown, effectText = lvl.effectText))
             }
@@ -195,6 +198,9 @@ class CharacterService(
         val ultimate = req.ultimate?.let { u ->
             val ult = existingUltimate ?: UltimateSkill(name = u.name, iconUrl = u.iconUrl)
             ult.name = u.name; ult.iconUrl = u.iconUrl
+            ult.area = u.area; ult.attackType = u.attackType; ult.element = u.element
+            ult.tags.clear()
+            ult.tags.addAll(tagRepository.findAllById(u.tagIds))
             ult.levels.clear()
             u.levels.forEach { lvl ->
                 ult.levels.add(UltimateSkillLevel(ultimate = ult, manifestStep = lvl.manifestStep, tpCost = lvl.tpCost, rangeMin = lvl.rangeMin, rangeMax = lvl.rangeMax, cooldown = lvl.cooldown, effectText = lvl.effectText))
@@ -313,7 +319,7 @@ class CharacterService(
                 passive1Lv1 = node.clazz.passive1Lv1, passive1Lv2 = node.clazz.passive1Lv2,
                 passive1IconUrl = node.clazz.passive1IconUrl,
                 skills = node.clazz.classSkills.sortedBy { it.unlockOrder }.map { cs ->
-                    SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.attackType, cs.skill.allowedWeapon, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
+                    SkillDto(cs.skill.skillId, cs.skill.name, cs.skill.type.name, cs.skill.tpCost, cs.skill.rangeMin, cs.skill.rangeMax, cs.skill.area, cs.skill.attackType, cs.skill.element, cs.skill.allowedWeapon, cs.skill.cooldown, cs.skill.effectText, cs.skill.iconUrl,
                         cs.skill.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) })
                 }
             )
@@ -323,7 +329,8 @@ class CharacterService(
                 p.levels.sortedWith(compareBy({ it.unlockType.name }, { it.unlockStep })).map { CharacterPassiveLevelDto(it.unlockType.name, it.unlockStep, it.effectText) })
         }
         val ultimateSkill = character.manifestations.mapNotNull { m -> m.ultimate }.firstOrNull()?.let { u ->
-            UltimateSkillDto(u.ultimateId, u.name, u.iconUrl,
+            UltimateSkillDto(u.ultimateId, u.name, u.iconUrl, u.area, u.attackType, u.element,
+                u.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
                 u.levels.sortedBy { it.manifestStep }.map { UltimateSkillLevelDto(it.manifestStep, it.tpCost, it.rangeMin, it.rangeMax, it.cooldown, it.effectText) })
         }
         val artifacts = character.characterArtifacts.sortedBy { it.artifactOrder }.map { link ->
@@ -355,7 +362,7 @@ class CharacterService(
     }
 
     fun mapBuffToDto(buff: Buff): BuffDto = BuffDto(
-        buffId = buff.buffId, name = buff.name, description = buff.description, iconUrl = buff.iconUrl,
+        buffId = buff.buffId, name = buff.name, description = buff.description, iconUrl = buff.iconUrl, element = buff.element,
         duration = buff.duration, maxStack = buff.maxStack, hasLevels = buff.hasLevels,
         levels = buff.levels.sortedBy { it.level }.map { BuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack) },
         tags = buff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
@@ -363,7 +370,7 @@ class CharacterService(
     )
 
     fun mapDebuffToDto(debuff: Debuff): DebuffDto = DebuffDto(
-        debuffId = debuff.debuffId, name = debuff.name, description = debuff.description, iconUrl = debuff.iconUrl,
+        debuffId = debuff.debuffId, name = debuff.name, description = debuff.description, iconUrl = debuff.iconUrl, element = debuff.element,
         duration = debuff.duration, maxStack = debuff.maxStack, hasLevels = debuff.hasLevels,
         levels = debuff.levels.sortedBy { it.level }.map { DebuffLevelDto(it.level, it.levelName, it.effectText, it.duration, it.maxStack) },
         tags = debuff.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },

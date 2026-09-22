@@ -28,6 +28,7 @@ data class SkillRequest(
     val rangeMax: Int? = null,
     val area: String? = null,
     val attackType: String? = null,       // 클래스 기본값과 다를 때만
+    val element: String? = null,          // 빙한/화염/전격
     val allowedWeapon: String? = null,
     val cooldown: Int? = null,
     val effectText: String? = null,

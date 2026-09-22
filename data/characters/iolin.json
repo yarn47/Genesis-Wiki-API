@@ -67,7 +67,12 @@
       "tpCost": 5,
       "range": "자신",
       "area": "광역",
+      "attackType": "마법",
+      "element": "빙한",
       "cooldown": 5,
+      "tags": [
+        "원거리"
+      ],
       "levels": [
         {
           "step": 0,

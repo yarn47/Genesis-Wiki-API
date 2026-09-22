@@ -28,12 +28,14 @@ PERMANENT_DURATION = -1
 # (data 폴더, 테이블 접두어)
 KINDS = [("buffs", "buff"), ("debuffs", "debuff")]
 
-ITEM_KEYS = {"name", "description", "iconUrl", "duration", "maxStack", "tags", "levels"}
+ITEM_KEYS = {"name", "description", "iconUrl", "element", "duration", "maxStack", "tags", "levels"}
 LEVEL_KEYS = {"level", "name", "effect", "duration", "maxStack"}
 CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType", "attackRange", "moveRange",
               "description", "iconUrl", "passive", "skills"}
-SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
+SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "element", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
 SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
+ELEMENT_TYPES = {"빙한", "화염", "전격"}            # 게임 업데이트로 늘어날 수 있음
+ATTACK_TYPES = {"참격", "관통", "타격", "마법", "절단"}
 PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
 WEAPON_KEYS = {"name", "weaponType", "grade", "baseStats", "extraStats", "description", "iconUrl", "effects"}
 WEAPON_EFFECT_KEYS = {"name", "type", "baseEffect", "iconUrl", "levels"}
@@ -49,7 +51,7 @@ CHARACTER_KEYS = {"name", "grade", "faction", "element", "birthYear", "height", 
 STATS_KEYS = {"hp", "attack", "spellAttack", "defense", "critRate", "critDamage", "physPen", "magicPen", "effectResist"}
 CHAR_PASSIVE_KEYS = {"name", "iconUrl", "levels"}
 CHAR_PASSIVE_LEVEL_KEYS = {"type", "step", "effect"}
-ULTIMATE_KEYS = {"name", "iconUrl", "tpCost", "range", "area", "cooldown", "levels"}
+ULTIMATE_KEYS = {"name", "iconUrl", "tpCost", "range", "area", "attackType", "element", "cooldown", "tags", "levels"}
 ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
 ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
@@ -104,6 +106,11 @@ def check_keys(where, obj, allowed):
         raise DataError(f"{where}: 알 수 없는 항목 {sorted(unknown)}")
 
 
+def check_enum(where, field, value, allowed):
+    if value is not None and value not in allowed:
+        raise DataError(f"{where}: 알 수 없는 {field} '{value}' (가능: {', '.join(sorted(allowed))})")
+
+
 def check_text(where, text):
     if text is None:
         return
@@ -154,6 +161,7 @@ def load_items(folder, tag_names):
     for rel, item in load_folder(folder):
         where = f"{rel} '{item.get('name')}'"
         check_keys(where, item, ITEM_KEYS)
+        check_enum(where, "속성", item.get("element"), ELEMENT_TYPES)
         if not item.get("name"):
             raise DataError(f"{rel}: name 없는 항목")
         if item["name"] in seen:
@@ -193,6 +201,7 @@ def load_classes(tag_names):
         passive = cls.get("passive", {})
         check_keys(f"{where} passive", passive, PASSIVE_KEYS)
         check_text(where, cls.get("description"))
+        check_enum(where, "공격 타입", cls.get("attackType"), ATTACK_TYPES)
         check_text(f"{where} passive lv1", passive.get("lv1"))
         check_text(f"{where} passive lv2", passive.get("lv2"))
         skill_names = set()
@@ -203,6 +212,8 @@ def load_classes(tag_names):
                 raise DataError(f"{skill_where}: 스킬 이름이 없거나 중복")
             skill_names.add(skill["name"])
             skill_range(skill_where, skill.get("range"))
+            check_enum(skill_where, "공격 타입", skill.get("attackType"), ATTACK_TYPES)
+            check_enum(skill_where, "속성", skill.get("element"), ELEMENT_TYPES)
             check_text(skill_where, skill.get("effect"))
             for tag in skill.get("tags", []):
                 if tag not in tag_names:
@@ -278,7 +289,7 @@ def load_artifacts():
     return artifacts
 
 
-def load_characters(class_names, weapon_names, artifact_names):
+def load_characters(class_names, weapon_names, artifact_names, tag_names):
     characters, seen = [], set()
     for rel, c in load_folder("characters"):
         where = f"{rel} '{c.get('name')}'"
@@ -313,8 +324,14 @@ def load_characters(class_names, weapon_names, artifact_names):
 
         ultimate = c.get("ultimate")
         if ultimate:
-            check_keys(f"{where} 필살기", ultimate, ULTIMATE_KEYS)
-            skill_range(f"{where} 필살기", ultimate.get("range"))
+            uw = f"{where} 필살기"
+            check_keys(uw, ultimate, ULTIMATE_KEYS)
+            skill_range(uw, ultimate.get("range"))
+            check_enum(uw, "공격 타입", ultimate.get("attackType"), ATTACK_TYPES)
+            check_enum(uw, "속성", ultimate.get("element"), ELEMENT_TYPES)
+            for tag in ultimate.get("tags", []):
+                if tag not in tag_names:
+                    raise DataError(f"{uw}: tags.json에 없는 태그 '{tag}'")
             steps = set()
             for lvl in ultimate.get("levels", []):
                 lw = f"{where} 필살기 발현 {lvl.get('step')}단"
@@ -394,6 +411,7 @@ def item_sql(prefix, item):
     out = upsert_head(table, id_col, item["name"], {"max_stack": 1, "has_levels": has_levels})
     sets = [
         f"description = {sql(item.get('description'))}",
+        f"element = {sql(item.get('element'))}",
         f"duration = {sql(duration(item['name'], item.get('duration')))}",
         f"max_stack = {sql(item.get('maxStack', 1))}",
         f"has_levels = {sql(has_levels)}",
@@ -469,6 +487,7 @@ def skill_sql(skill, order):
         f"range_max = {sql(range_max)}",
         f"area = {sql(skill.get('area'))}",
         f"attack_type = {sql(skill.get('attackType'))}",
+        f"element = {sql(skill.get('element'))}",
         f"allowed_weapon = {sql(skill.get('allowedWeapon'))}",
         f"cooldown = {sql(skill.get('cooldown'))}",
         f"effect_text = {sql(skill.get('effect'))}",
@@ -647,10 +666,17 @@ def character_sql(c):
             f"INSERT INTO ultimate_skills (name, created_at, updated_at) SELECT {sql(ultimate['name'])}, NOW(), NOW() FROM DUAL WHERE @ult IS NULL;",
             "SET @ult = COALESCE(@ult, LAST_INSERT_ID());",
             f"UPDATE ultimate_skills SET name = {sql(ultimate['name'])}"
+            + f", area = {sql(ultimate.get('area'))}"
+            + f", attack_type = {sql(ultimate.get('attackType'))}"
+            + f", element = {sql(ultimate.get('element'))}"
             + (f", icon_url = {sql(ultimate['iconUrl'])}" if "iconUrl" in ultimate else "")
             + ", updated_at = NOW() WHERE ultimate_id = @ult;",
             "DELETE FROM ultimate_skill_levels WHERE ultimate_id = @ult;",
+            "DELETE FROM ultimate_skill_tag_map WHERE ultimate_id = @ult;",
         ]
+        if ultimate.get("tags"):
+            tag_list = ", ".join(sql(t) for t in ultimate["tags"])
+            out.append(f"INSERT INTO ultimate_skill_tag_map (ultimate_id, tag_id) SELECT @ult, tag_id FROM tags WHERE name IN ({tag_list});")
         levels = sorted(ultimate.get("levels", []), key=lambda l: l["step"])
         if levels:
             rows = []
@@ -745,7 +771,7 @@ def main():
     weapons = load_weapons()
     artifacts = load_artifacts()
     characters = load_characters({c["name"] for c in classes}, {w["name"] for w in weapons},
-                                 {a["name"] for a in artifacts})
+                                 {a["name"] for a in artifacts}, tag_names)
     warn_unknown_links(kinds[0][1], kinds[1][1], classes, weapons, artifacts, characters)
 
     parts = ["SET NAMES utf8mb4;", "START TRANSACTION;", "", "-- ─── 태그 ───"]

@@ -20,6 +20,9 @@ class Buff(
     @Column(length = 255)
     var iconUrl: String? = null,
 
+    @Column(length = 20)
+    var element: String? = null,
+
     var duration: Int? = null,
     var maxStack: Int = 1,
     var hasLevels: Boolean = false,

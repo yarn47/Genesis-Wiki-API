@@ -87,6 +87,9 @@ class Skill(
     @Column(length = 20)
     var attackType: String? = null,
 
+    @Column(length = 20)
+    var element: String? = null,
+
     @Column(length = 100)
     var allowedWeapon: String? = null,
 
@@ -145,11 +148,28 @@ class UltimateSkill(
     @Column(length = 255)
     var iconUrl: String? = null,
 
+    @Column(length = 20)
+    var area: String? = null,
+
+    @Column(length = 20)
+    var attackType: String? = null,
+
+    @Column(length = 20)
+    var element: String? = null,
+
     val createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
     @OneToMany(mappedBy = "ultimate", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val levels: MutableSet<UltimateSkillLevel> = mutableSetOf()
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "ultimate_skill_tag_map",
+        joinColumns = [JoinColumn(name = "ultimate_id")],
+        inverseJoinColumns = [JoinColumn(name = "tag_id")]
+    )
+    val tags: MutableSet<Tag> = mutableSetOf()
 }
 
 @Entity

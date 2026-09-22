@@ -19,22 +19,36 @@
       {
         "name": "연섬",
         "tpCost": 1,
-        "range": [1, 1],
+        "range": [
+          1,
+          1
+        ],
         "area": "단일",
         "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서, 도끼",
         "cooldown": 2,
-        "tags": ["근거리", "전투"],
+        "tags": [
+          "근거리",
+          "전투"
+        ],
         "iconUrl": "/icons/skills/yeonseom.png",
         "effect": "적에게 공격력의 [130%]{red}만큼 피해를 주고 반격 당하면 추가타가 발동해 공격력의 [30%]{red}만큼 피해를 줍니다."
       },
       {
         "name": "무쌍관파",
         "tpCost": 2,
-        "range": [1, 2],
+        "range": [
+          1,
+          2
+        ],
         "area": "단일",
         "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서, 도끼",
         "cooldown": 3,
-        "tags": ["근거리", "치유", "이동공격", "전투"],
+        "tags": [
+          "근거리",
+          "치유",
+          "이동공격",
+          "전투"
+        ],
         "iconUrl": "/icons/skills/musanggwanpa.png",
         "effect": "전방으로 [1]{red}칸 이동하며 적에게 공격력의 [170%]{red}만큼 피해를 주고 치명타 발동 시 공격력의 [50%]{red}만큼 체력을 회복합니다."
       },
@@ -70,11 +84,18 @@
       {
         "name": "단월섬",
         "tpCost": 1,
-        "range": [1, 2],
+        "range": [
+          1,
+          2
+        ],
         "area": "단일",
         "allowedWeapon": "검, 대검, 검/방패",
         "cooldown": 2,
-        "tags": ["원거리", "지향성", "전투"],
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
         "iconUrl": "/icons/skills/danwolseom.png",
         "effect": "적에게 단월섬을 날려 공격력의 [150%]{red}만큼 피해를 줍니다."
       }
@@ -104,7 +125,9 @@
         "range": "자신",
         "area": "광역",
         "cooldown": 2,
-        "tags": ["합성"],
+        "tags": [
+          "합성"
+        ],
         "iconUrl": "/icons/skills/hwalgi_shout.png",
         "effect": "자신을 포함해 인접한 아군에게 [2]{yellow}턴 동안 [활기]{green} 효과를 부여합니다."
       }
@@ -131,11 +154,17 @@
       {
         "name": "공아섬",
         "tpCost": 3,
-        "range": [1, 1],
+        "range": [
+          1,
+          1
+        ],
         "area": "단일",
         "allowedWeapon": "검, 대검, 검/방패",
         "cooldown": 3,
-        "tags": ["근거리", "전투"],
+        "tags": [
+          "근거리",
+          "전투"
+        ],
         "iconUrl": "/icons/skills/gongaseom.png",
         "effect": "적에게 공격력의 [170%]{red}만큼 피해를 줍니다. 공격 시 치명타 확률이 [30%]{red} 증가합니다. 전투 후 [2]{yellow}턴 동안 [질풍]{green} 효과를 얻습니다."
       }
@@ -164,9 +193,13 @@
         "tpCost": 3,
         "range": "자신",
         "area": "광역",
+        "attackType": "타격",
         "allowedWeapon": "검, 대검, 검/방패",
         "cooldown": 3,
-        "tags": ["근거리", "위치제어"],
+        "tags": [
+          "근거리",
+          "위치제어"
+        ],
         "iconUrl": "/icons/skills/wonseompa.png",
         "effect": "인접한 적들을 강타해 공격력의 [60%]{red}만큼 피해를 주고 [2]{red}칸까지 강하게 밀쳐 냅니다. 밀쳐진 적이 벽이나 다른 적과 부딪힌다면 [1]{yellow}턴 동안 [기절]{orange}시킵니다."
       }
@@ -197,7 +230,11 @@
         "area": "광역",
         "allowedWeapon": "검, 대검, 검/방패, 건 슬라이서",
         "cooldown": 2,
-        "tags": ["근거리", "치유", "TP 제거"],
+        "tags": [
+          "근거리",
+          "치유",
+          "TP 제거"
+        ],
         "iconUrl": "/icons/skills/hoeryunseom.png",
         "effect": "검으로 휩쓸어 주변 [1]{red}바퀴 내 적들에게 공격력의 [60%]{red}만큼 피해를 주고 TP를 [1]{yellow}씩 낮춥니다. 피해를 준 적 [1]{red}명당 공격력의 [10%]{red}만큼 체력을 회복합니다."
       }
