@@ -69,6 +69,7 @@
         1
       ],
       "area": "광역",
+      "attackType": "타격",
       "cooldown": 5,
       "tags": [
         "근거리"
