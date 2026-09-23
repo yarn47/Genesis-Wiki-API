@@ -69,6 +69,7 @@
       "tpCost": 5,
       "range": "자신",
       "area": "광역",
+      "attackType": "관통",
       "cooldown": 5,
       "levels": [
         {
