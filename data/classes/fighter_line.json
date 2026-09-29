@@ -396,6 +396,7 @@
     "attackRange": 1,
     "moveRange": 3,
     "description": "대검을 전문적으로 다뤄 근접 전투를 수행하고 뛰어난 생존 능력을 가진 상급 전사입니다.",
+    "iconUrl": "/icons/classes/emblem/highlander.png",
     "passive": {
       "name": "정비",
       "lv1": "전투 공격 시 공격력이 [30%]{red} 증가합니다. 전투 공격 시 체력이 [50%]{red} 이하라면 치명타 확률이 [15%]{red} 증가하고 공격력의 [30%]{red}만큼 체력을 회복합니다.",
