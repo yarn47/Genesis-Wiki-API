@@ -1,4 +1,6 @@
 [
+  { "name": "혈마법", "color": "gray" },
+  { "name": "침묵", "color": "gray" },
   {
     "name": "해제 불가",
     "color": "gray"

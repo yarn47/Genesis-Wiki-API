@@ -34,7 +34,7 @@ CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType
               "description", "iconUrl", "passive", "skills"}
 SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "element", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
 SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
-ELEMENT_TYPES = {"빙한", "화염", "전격", "암흑"}    # 게임 업데이트로 늘어날 수 있음
+ELEMENT_TYPES = {"빙한", "화염", "전격", "암흑", "광휘"}    # 게임 업데이트로 늘어날 수 있음
 ATTACK_TYPES = {"참격", "관통", "타격", "마법", "절단"}
 PASSIVE_KEYS = {"name", "lv1", "lv2", "iconUrl"}
 WEAPON_KEYS = {"name", "weaponType", "grade", "baseStats", "extraStats", "description", "iconUrl", "effects"}
@@ -56,7 +56,7 @@ ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
 ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
 FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
-            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis"}
+            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis", "가라드": "garad"}
 ELEMENTS = {"신념의빛": "light", "욕망의그림자": "dark", "자유의불꽃": "fire",
             "지성의결정체": "crystal", "활력의나무": "nature"}
 CHAR_GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend", "아우터원": "outer"}

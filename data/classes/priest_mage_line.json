@@ -1,0 +1,281 @@
+[
+  {
+    "name": "시스터",
+    "tier": 1,
+    "description": "광휘 마법을 시전해 아군을 치유하고 보호하는 기본 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/sister.png",
+    "passive": {
+      "name": "자애",
+      "lv1": "아군을 대상으로 스킬 사용 시 체력을 [10%]{red} 회복합니다.",
+      "lv2": "아군을 대상으로 스킬 사용 시 체력을 [15%]{red} 회복합니다.",
+      "iconUrl": "/icons/classes/passive/sister.png"
+    },
+    "skills": [
+      {
+        "name": "힐",
+        "iconUrl": "/icons/skills/heal.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 1,
+        "tags": [
+          "치유"
+        ],
+        "effect": "아군을 지정해 주문력의 [100%]{red}만큼 체력을 회복시킵니다.",
+        "element": "광휘"
+      },
+      {
+        "name": "파워 업",
+        "iconUrl": "/icons/skills/power_up.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [],
+        "effect": "아군을 지정해 [2]{yellow}턴 동안 [파워 업]{green} 효과를 부여합니다.",
+        "element": "광휘"
+      },
+      {
+        "name": "힐 윈드",
+        "iconUrl": "/icons/skills/heal_wind.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "치유"
+        ],
+        "effect": "아군을 지정해 대상과 주위 [3]{red}칸 내 아군의 체력을 주문력의 [70%]{red}만큼 회복시키고 [2]{yellow}턴 동안 저항력을 [20%]{red} 증가시킵니다.",
+        "element": "광휘"
+      }
+    ]
+  },
+  {
+    "name": "클레릭",
+    "tier": 2,
+    "parent": "시스터",
+    "description": "광휘 마법을 시전해 적에게 피해를 주고 아군의 해로운 효과를 정화하는 성직자 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/cleric.png",
+    "passive": {
+      "name": "정화",
+      "lv1": "아군을 대상으로 스킬 사용 시 주문력의 [25%]{red}만큼 체력을 회복하고 주위 [2]{red}칸 내 무작위 아군 [1]{red}명의 디버프를 [1]{red}개씩 해제합니다.",
+      "lv2": "아군을 대상으로 스킬 사용 시 주문력의 [25%]{red}만큼 체력을 회복하고 주위 [2]{red}칸 내 무작위 아군 [2]{red}명의 디버프를 [1]{red}개씩 해제합니다.",
+      "iconUrl": "/icons/classes/passive/cleric.png"
+    },
+    "skills": [
+      {
+        "name": "워런트 배리어",
+        "iconUrl": "/icons/skills/warrant_barrier.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "보호막"
+        ],
+        "effect": "아군을 지정해 [2]{yellow}턴 동안 주문력의 [120%]{red}만큼 보호막을 걸고 [1 TP]{yellow}를 줍니다.",
+        "element": "광휘"
+      }
+    ]
+  },
+  {
+    "name": "카발리스트",
+    "tier": 3,
+    "parent": "클레릭",
+    "description": "광휘 마법을 시전해 아군을 보조하고 보호하는데 특화된 상급 성직자 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/kabbalist.png",
+    "passive": {
+      "name": "신성한 힘",
+      "lv1": "광휘 속성 스킬 사용 시 [내면의 열정 1]{green} 효과를 획득하고 체력이 [50%]{red} 이하인 아군이 받는 보호막 효과/받는 치유효과가 [20%]{red} 증가합니다.",
+      "lv2": "광휘 속성 스킬 사용 시 [내면의 열정 2]{green} 효과를 획득하고 체력이 [50%]{red} 이하인 아군이 받는 보호막 효과/받는 치유효과가 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/kabbalist.png"
+    },
+    "skills": [
+      {
+        "name": "노바 레이",
+        "iconUrl": "/icons/skills/nova_ray.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "치유"
+        ],
+        "effect": "자신의 사방으로 신성한 빛을 발사해 빛에 닿은 적들에게 주문력의 [80%]{red}만큼 광휘 피해를 주고 아군이라면 주문력의 [80%]{red}만큼 체력을 회복시킵니다.",
+        "element": "광휘"
+      }
+    ]
+  },
+  {
+    "name": "위치",
+    "tier": 1,
+    "description": "암흑 마법을 사용해 적에게 피해를 주고 해로운 효과를 부여하는 기본 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/witch.png",
+    "passive": {
+      "name": "부정한 이득",
+      "lv1": "스킬로 적에게 디버프를 건 후 주문력의 [10%]{red}만큼 체력을 회복합니다.",
+      "lv2": "스킬로 적에게 디버프를 건 후 주문력의 [15%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/witch.png"
+    },
+    "skills": [
+      {
+        "name": "다크 블래스트",
+        "iconUrl": "/icons/skills/dark_blast.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "전투"
+        ],
+        "effect": "적에게 다크 블래스트를 날려 주문력의 [100%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [다크밤]{orange} 효과를 겁니다.",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드"
+      },
+      {
+        "name": "엑스터시",
+        "iconUrl": "/icons/skills/ecstasy.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "혈마법"
+        ],
+        "effect": "아군을 지정해 [2]{yellow}턴 동안 [엑스터시]{green} 효과를 부여하는 혈마법을 시전합니다.",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드"
+      },
+      {
+        "name": "사일런트 클라우드",
+        "iconUrl": "/icons/skills/silent_cloud.png",
+        "tpCost": 3,
+        "range": [
+          3,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "주위 [3]{red}칸 내 사일런트 클라우드를 생성해 타일 주위 [2]{red}칸 내 적들에게 주문력의 [60%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [침묵]{orange}시킵니다.",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  },
+  {
+    "name": "다크메이지",
+    "tier": 2,
+    "parent": "위치",
+    "description": "암흑 마법을 사용해 적에게 해로운 효과를 부여하고 자신의 생명을 회복시키는 흑마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/dark_mage.png",
+    "passive": {
+      "name": "타락",
+      "lv1": "스킬로 적에게 디버프를 건 후 적의 버프를 [1]{red}개 지우고 주문력의 [30%]{red}만큼 체력을 회복합니다.",
+      "lv2": "스킬로 적에게 디버프를 건 후 적의 버프를 [1]{red}개 지우고 주문력의 [40%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/dark_mage.png"
+    },
+    "skills": [
+      {
+        "name": "커즈바운드 소울",
+        "iconUrl": "/icons/skills/cursebound_soul.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "혈마법",
+          "전투"
+        ],
+        "effect": "적에게 커즈바운드 소울을 날려 주문력의 [80%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [커즈드 소울]{orange} 효과를 거는 혈마법을 시전합니다.",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  },
+  {
+    "name": "블러드메이지",
+    "tier": 3,
+    "parent": "다크메이지",
+    "description": "암흑 마법을 사용해 적에게 저주를 걸어 자신의 욕망을 충족시키는 타락한 흑마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/blood_mage.png",
+    "passive": {
+      "name": "탐식",
+      "lv1": "주문력/최대체력이 [10%]{red}만큼 증가합니다. 스킬로 적에게 디버프를 건 후 적의 버프를 [2]{red}개까지 빼앗고 주문력의 [40%]{red}만큼 체력을 회복합니다.",
+      "lv2": "주문력/최대체력이 [20%]{red}만큼 증가합니다. 스킬로 적에게 디버프를 건 후 적의 버프를 [2]{red}개까지 빼앗고 주문력의 [60%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/blood_mage.png"
+    },
+    "skills": [
+      {
+        "name": "에센스 드레인",
+        "iconUrl": "/icons/skills/essence_drain.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "혈마법",
+          "보호막",
+          "전투"
+        ],
+        "effect": "적에게 에센스 드레인을 날려 주문력의 [100%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 주문력의 [50%]{red}만큼 [블러드팩트]{green} 효과를 얻는 혈마법을 시전합니다.",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  }
+]

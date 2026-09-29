@@ -4,6 +4,18 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class CharacterRequestTest {
+    @Test
+    fun `supports manifestation without an ultimate`() {
+        val req = CharacterRequest(
+            name = "아이린 사르데스", grade = "legend", faction = "garad", element = "light",
+            passive = PassiveRequest("장막 뒤의 여인", levels = listOf(PassiveLevelRequest("manifest", 4))),
+            artifacts = listOf(ArtifactRequest("핏빛 마력 구슬", 1))
+        )
+        assertTrue(req.hasManifestation)
+        assertNull(req.ultimate)
+        assertEquals(com.genesis.wiki.entity.Faction.garad, com.genesis.wiki.entity.Faction.valueOf(req.faction))
+    }
+
     private fun junior() = CharacterRequest(
         name = "아리아나 위버 Jr.", grade = "rare", faction = "curtis", element = "crystal",
         hasManifestation = false,
