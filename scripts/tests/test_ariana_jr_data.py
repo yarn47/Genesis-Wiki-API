@@ -48,5 +48,11 @@ class ArianaJrTests(unittest.TestCase):
         self.assertIn('[40%]{red}',cls['passive']['lv2'])
         self.assertEqual(c['artifacts'],[])
 
+    def test_ultimate_is_scoped_to_owner_not_name(self):
+        generated = gen.character_sql(read('characters/ariana_jr.json'))
+        self.assertIn('other.character_id <> @id', generated)
+        self.assertNotIn('SELECT ultimate_id FROM ultimate_skills WHERE name', generated)
+        self.assertLess(generated.index('SET @ult ='), generated.index('DELETE FROM character_manifestation'))
+
 if __name__ == '__main__':
     unittest.main()

@@ -643,6 +643,12 @@ def character_sql(c):
         out.append(f"INSERT INTO character_class_tree (character_id, class_id, order_in_tier) "
                    f"SELECT @id, class_id, {order} FROM classes WHERE name = {sql(cls)};")
 
+    # 동명 필살기도 캐릭터마다 단계가 다르다. 기존 소유권을 삭제 전에 확인하고,
+    # 다른 캐릭터와 공유 중인 행은 재사용하지 않는다.
+    out.append("SET @ult = (SELECT m.ultimate_id FROM character_manifestation m "
+               "WHERE m.character_id = @id AND m.ultimate_id IS NOT NULL "
+               "AND NOT EXISTS (SELECT 1 FROM character_manifestation other "
+               "WHERE other.ultimate_id = m.ultimate_id AND other.character_id <> @id) LIMIT 1);")
     # 발현 연결은 매번 새로 만듦
     out.append("DELETE FROM character_manifestation WHERE character_id = @id;")
 
@@ -669,7 +675,6 @@ def character_sql(c):
     if ultimate:
         u_min, u_max = skill_range(c["name"], ultimate.get("range"))
         out += [
-            f"SET @ult = (SELECT ultimate_id FROM ultimate_skills WHERE name = {sql(ultimate['name'])} LIMIT 1);",
             f"INSERT INTO ultimate_skills (name, created_at, updated_at) SELECT {sql(ultimate['name'])}, NOW(), NOW() FROM DUAL WHERE @ult IS NULL;",
             "SET @ult = COALESCE(@ult, LAST_INSERT_ID());",
             f"UPDATE ultimate_skills SET name = {sql(ultimate['name'])}"
