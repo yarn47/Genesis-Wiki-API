@@ -156,6 +156,21 @@
         "level": 1,
         "effect": "공격력 [+10%]{red}.",
         "maxStack": 4
+      },
+      {
+        "level": 2,
+        "effect": "공격력 [+15%]{red}.",
+        "maxStack": 4
+      },
+      {
+        "level": 3,
+        "effect": "공격력 [+20%]{red}.",
+        "maxStack": 4
+      },
+      {
+        "level": 4,
+        "effect": "공격력 [+25%]{red}.",
+        "maxStack": 4
       }
     ]
   }
