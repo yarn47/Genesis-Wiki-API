@@ -276,7 +276,7 @@
   {
     "name": "다크나이트",
     "tier": 3,
-    "parent": "나이트",
+    "parent": "글라디에이터",
     "weaponType": "대검",
     "defenseType": "미디엄",
     "attackType": "참격",
