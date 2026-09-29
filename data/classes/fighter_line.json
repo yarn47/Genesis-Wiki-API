@@ -385,5 +385,41 @@
         "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [80%]{red}만큼 피해를 주면서 가장 멀리 떨어진 빈칸까지 적들을 뚫고 이동합니다. 이동 후 다시 무기를 휘둘러 주변 [1]{red}바퀴 내 적들에게 공격력의 [80%]{red}만큼 피해를 줍니다."
       }
     ]
+  },
+  {
+    "name": "하이랜더",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "weaponType": "대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "대검을 전문적으로 다뤄 근접 전투를 수행하고 뛰어난 생존 능력을 가진 상급 전사입니다.",
+    "passive": {
+      "name": "정비",
+      "lv1": "전투 공격 시 공격력이 [30%]{red} 증가합니다. 전투 공격 시 체력이 [50%]{red} 이하라면 치명타 확률이 [15%]{red} 증가하고 공격력의 [30%]{red}만큼 체력을 회복합니다.",
+      "lv2": "전투 공격 시 공격력이 [40%]{red} 증가합니다. 전투 공격 시 체력이 [50%]{red} 이하라면 치명타 확률이 [15%]{red} 증가하고 공격력의 [50%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/highlander.png"
+    },
+    "skills": [
+      {
+        "name": "역린섬",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "allowedWeapon": "검, 대검, 검/방패",
+        "cooldown": 4,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/yeongrinseom.png",
+        "effect": "적에게 공격력의 [170%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [약점 파악]{orange} 효과를 겁니다."
+      }
+    ]
   }
 ]

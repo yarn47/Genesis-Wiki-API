@@ -1,0 +1,38 @@
+[
+  {
+    "name": "생명의 맥동",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/pulse_of_life.png",
+    "description": "전투의 열기 속에서 착용자에게 끊임없는 재생의 힘을 부여합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "턴 종료 시 주변 [1]{red}바퀴 내 다른 아군이 없고 보호막을 가지고 있지 않다면 [2]{yellow}턴 동안 [생명의 맥동 1]{green} 보호막 획득."
+      }
+    ]
+  },
+  {
+    "name": "응보의 문장",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/crest_of_retribution.png",
+    "description": "그 문양은 침묵 속에 새겨진 외침이다. 모욕당한 정의, 지나친 인내, 그리고 되돌려줘야 할 고통이 하나의 형상으로 굳어졌다. 그 누구도 먼저 손을 대지 않은 자를 두려워하지 않는다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "반격 피해량 [+20%]{red}. 공격 후 [응보의 문장 1]{green} 효과 획득. 쿨타임 [2]{yellow}."
+      }
+    ]
+  },
+  {
+    "name": "파멸의 파편",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/shard_of_ruin.png",
+    "description": "이 조각은 존재의 끝자락에서 피어나는 불꽃이다. 생명이 꺼져가는 고통의 심연 속에서 기꺼이 적과 함께 파멸을 맞이한다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+15%]{red}. 게임 시작 시 [파멸의 파편 1]{green} 효과를 얻습니다."
+      }
+    ]
+  }
+]

@@ -55,6 +55,7 @@ class CharacterService(
             name = req.name,
             grade = Grade.valueOf(req.grade),
             faction = Faction.valueOf(req.faction),
+            subFaction = req.subFaction?.let { Faction.valueOf(it) },
             element = Element.valueOf(req.element),
             exclusiveWeapon = weapon,
             birthYear = req.birthYear,
@@ -151,6 +152,7 @@ class CharacterService(
         character.name = req.name
         character.grade = Grade.valueOf(req.grade)
         character.faction = Faction.valueOf(req.faction)
+        character.subFaction = req.subFaction?.let { Faction.valueOf(it) }
         character.element = Element.valueOf(req.element)
         character.exclusiveWeapon = weapon
         character.birthYear = req.birthYear
@@ -284,7 +286,7 @@ class CharacterService(
 
     private fun Character.toSummaryDto() = CharacterSummaryDto(
         characterId = characterId, name = name, grade = grade.name,
-        faction = faction.name, element = element.name, thumbnailUrl = thumbnailUrl,
+        faction = faction.name, subFaction = subFaction?.name, element = element.name, thumbnailUrl = thumbnailUrl,
         releaseDate = releaseDate?.toString()
     )
 
@@ -350,7 +352,8 @@ class CharacterService(
         }
         return CharacterDetailDto(
             characterId = character.characterId, name = character.name,
-            grade = character.grade.name, faction = character.faction.name, element = character.element.name,
+            grade = character.grade.name, faction = character.faction.name,
+            subFaction = character.subFaction?.name, element = character.element.name,
             birthYear = character.birthYear, height = character.height, cv = character.cv,
             releaseDate = character.releaseDate?.toString(), appearedIn = character.appearedIn,
             profileText = character.profileText, thumbnailUrl = character.thumbnailUrl,

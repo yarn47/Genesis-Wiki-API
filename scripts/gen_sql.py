@@ -44,7 +44,7 @@ GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend",
           "rare": "rare", "hero": "hero", "legend": "legend"}
 EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "exclusive": "exclusive"}
 
-CHARACTER_KEYS = {"name", "grade", "faction", "element", "birthYear", "height", "cv", "profileText",
+CHARACTER_KEYS = {"name", "grade", "faction", "subFaction", "element", "birthYear", "height", "cv", "profileText",
                   "releaseDate", "appearedIn",
                   "thumbnailUrl", "portraitUrl", "fullImageUrl", "published", "stats",
                   "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts", "hasManifestation"}
@@ -56,7 +56,8 @@ ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
 ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
 FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
-            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis", "가라드": "garad"}
+            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis", "가라드": "garad",
+            "암흑신": "darkgod"}
 ELEMENTS = {"신념의빛": "light", "욕망의그림자": "dark", "자유의불꽃": "fire",
             "지성의결정체": "crystal", "활력의나무": "nature"}
 CHAR_GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend", "아우터원": "outer"}
@@ -300,6 +301,11 @@ def load_characters(class_names, weapon_names, artifact_names, tag_names):
         for key, table in (("grade", CHAR_GRADES), ("faction", FACTIONS), ("element", ELEMENTS)):
             if c.get(key) not in table:
                 raise DataError(f"{where}: {key}는 {'/'.join(table)} 중 하나 ({c.get(key)!r})")
+        if c.get("subFaction") is not None:
+            if c["subFaction"] not in FACTIONS:
+                raise DataError(f"{where}: subFaction은 {'/'.join(FACTIONS)} 중 하나 ({c['subFaction']!r})")
+            if c["subFaction"] == c["faction"]:
+                raise DataError(f"{where}: subFaction이 faction과 같습니다")
         check_keys(f"{where} stats", c.get("stats", {}), STATS_KEYS)
         check_text(where, c.get("profileText"))
         if not isinstance(c.get("hasManifestation", True), bool):
@@ -609,6 +615,7 @@ def character_sql(c):
     sets = [
         f"grade = {sql(CHAR_GRADES[c['grade']])}",
         f"faction = {sql(FACTIONS[c['faction']])}",
+        f"sub_faction = {sql(FACTIONS[c['subFaction']] if c.get('subFaction') else None)}",
         f"element = {sql(ELEMENTS[c['element']])}",
         f"birth_year = {sql(c.get('birthYear'))}",
         f"height = {sql(c.get('height'))}",

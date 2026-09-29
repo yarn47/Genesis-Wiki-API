@@ -23,6 +23,11 @@ class Character(
     @Column(nullable = false)
     var faction: Faction,
 
+    // 진영이 두 개인 캐릭터(예: 이루스 = 게이시르, 암흑신)의 두 번째 진영
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sub_faction")
+    var subFaction: Faction? = null,
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     var element: Element,

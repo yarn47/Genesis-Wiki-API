@@ -30,6 +30,7 @@ data class CharacterSummaryDto(
     val name: String,
     val grade: String,
     val faction: String,
+    val subFaction: String?,
     val element: String,
     val thumbnailUrl: String?,
     val releaseDate: String?      // 목록 정렬(최신순)용
@@ -41,6 +42,7 @@ data class CharacterDetailDto(
     val name: String,
     val grade: String,
     val faction: String,
+    val subFaction: String?,
     val element: String,
     val birthYear: String?,
     val height: String?,
