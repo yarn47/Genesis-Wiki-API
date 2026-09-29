@@ -1,6 +1,7 @@
 [
   {
     "name": "명왕검",
+    "iconUrl": "/icons/weapons/myeongwang_sword.png",
     "weaponType": "대검",
     "grade": "전설",
     "extraStats": "물리 관통 +15~20% / 방어력 +10~15% (각성 1~6단)",

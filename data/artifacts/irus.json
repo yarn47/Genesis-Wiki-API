@@ -35,15 +35,15 @@
       },
       {
         "step": 4,
-        "effect": "공격 후 [응보의 문장 2]{green} 효과 획득. 쿨타임 [2]{yellow}."
+        "effect": "반격 피해량 [+30%]{red}. 공격 후 [응보의 문장 2]{green} 효과 획득. 쿨타임 [2]{yellow}."
       },
       {
         "step": 5,
-        "effect": "공격 후 [응보의 문장 3]{green} 효과 획득. 쿨타임 [1]{yellow}."
+        "effect": "반격 피해량 [+40%]{red}. 공격 후 [응보의 문장 3]{green} 효과 획득. 쿨타임 [1]{yellow}."
       },
       {
         "step": 6,
-        "effect": "공격 후 [응보의 문장 4]{green} 효과 획득. 쿨타임 [1]{yellow}."
+        "effect": "반격 피해량 [+50%]{red}. 공격 후 [응보의 문장 4]{green} 효과 획득. 쿨타임 [1]{yellow}."
       }
     ]
   },
