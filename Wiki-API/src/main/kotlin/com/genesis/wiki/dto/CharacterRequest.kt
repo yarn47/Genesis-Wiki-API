@@ -18,12 +18,25 @@ data class CharacterRequest(
     val portraitUrl: String? = null,
     val fullImageUrl: String? = null,
     val isPublished: Boolean = false,
+    val hasManifestation: Boolean = true,
     val stats: CharacterStatsRequest? = null,
     val classTreeIds: List<ClassTreeNodeRequest> = emptyList(),
     val passive: PassiveRequest? = null,
     val ultimate: UltimateRequest? = null,
     val artifacts: List<ArtifactRequest> = emptyList()
-)
+) {
+    init {
+        if (!hasManifestation) {
+            require(artifacts.isEmpty()) { "발현 없는 캐릭터는 아티팩트를 등록할 수 없습니다." }
+            require(passive?.levels.orEmpty().none { it.unlockType == "manifest" }) {
+                "발현 없는 캐릭터는 발현 패시브를 등록할 수 없습니다."
+            }
+            require(ultimate?.levels.orEmpty().all { it.manifestStep == 0 }) {
+                "발현 없는 캐릭터의 필살기는 기본 단계만 등록할 수 있습니다."
+            }
+        }
+    }
+}
 
 data class CharacterStatsRequest(
     val hp: Long? = null,

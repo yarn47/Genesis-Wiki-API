@@ -47,7 +47,7 @@ EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "
 CHARACTER_KEYS = {"name", "grade", "faction", "element", "birthYear", "height", "cv", "profileText",
                   "releaseDate", "appearedIn",
                   "thumbnailUrl", "portraitUrl", "fullImageUrl", "published", "stats",
-                  "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts"}
+                  "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts", "hasManifestation"}
 STATS_KEYS = {"hp", "attack", "spellAttack", "defense", "critRate", "critDamage", "physPen", "magicPen", "effectResist"}
 CHAR_PASSIVE_KEYS = {"name", "iconUrl", "levels"}
 CHAR_PASSIVE_LEVEL_KEYS = {"type", "step", "effect"}
@@ -302,6 +302,13 @@ def load_characters(class_names, weapon_names, artifact_names, tag_names):
                 raise DataError(f"{where}: {key}는 {'/'.join(table)} 중 하나 ({c.get(key)!r})")
         check_keys(f"{where} stats", c.get("stats", {}), STATS_KEYS)
         check_text(where, c.get("profileText"))
+        if not isinstance(c.get("hasManifestation", True), bool):
+            raise DataError(f"{where}: hasManifestation은 boolean")
+        if not c.get("hasManifestation", True):
+            if c.get("artifacts") or any(l["type"] == "발현" for l in c.get("passive", {}).get("levels", [])):
+                raise DataError(f"{where}: 발현 없는 캐릭터에 발현 효과/아티팩트가 있습니다")
+            if any(l["step"] != 0 for l in c.get("ultimate", {}).get("levels", [])):
+                raise DataError(f"{where}: 발현 없는 캐릭터의 필살기는 기본 단계만 허용")
         for cls in c.get("classTree", []):
             if cls not in class_names:
                 raise DataError(f"{where}: data/classes에 없는 클래스 '{cls}'")
@@ -703,10 +710,10 @@ def character_sql(c):
     while len(artifact_vars) < 4:
         artifact_vars.append("NULL")
 
-    # 발현 허브 (3~6단)
+    # 발현 없는 캐릭터는 0단 연결만 보관하여 기본 필살기 소유권을 유지한다.
     rows = []
-    for step in MANIFEST_HUB_STEPS:
-        ult = "@ult" if step in MANIFEST_ULTIMATE_STEPS else "NULL"
+    for step in (MANIFEST_HUB_STEPS if c.get("hasManifestation", True) else [0]):
+        ult = "@ult" if step == 0 or step in MANIFEST_ULTIMATE_STEPS else "NULL"
         pas = "@passive" if step in MANIFEST_PASSIVE_STEPS else "NULL"
         rows.append(f"(@id, {step}, {ult}, {pas}, {', '.join(artifact_vars)})")
     out.append("INSERT INTO character_manifestation (character_id, manifest_level, ultimate_id, passive_id, "

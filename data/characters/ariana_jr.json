@@ -1,0 +1,86 @@
+[
+  {
+    "name": "아리아나 위버 Jr.",
+    "grade": "희귀",
+    "faction": "커티스",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1187년",
+    "height": "171cm",
+    "cv": "고성일",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "커티스의 궁수이자 아리아나의 아들. 신궁이라 불리는 아버지의 옆에 당당히 설 수 있는 궁수가 되는 게 목표이다. 온화하고 심약한 편이라 아리아나의 걱정을 사고 있지만 아르시아와 해방군에서 함께 싸우며 경험을 쌓고 있다.",
+    "thumbnailUrl": "/icons/characters/ariana_jr_thumb.png",
+    "portraitUrl": "/icons/characters/ariana_jr_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "아처",
+      "헌터",
+      "막스맨",
+      "이글",
+      "보우마스터",
+      "샤프슈터"
+    ],
+    "exclusiveWeapon": "헬파이어 아르쿠스",
+    "passive": {
+      "name": "신궁의 혈족",
+      "iconUrl": "/icons/passives/divine_archer_bloodline.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 1,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [5%]{red}씩 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [6%]{red}씩 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [6%]{red}씩 증가합니다. 이동하지 않고 캐릭터 턴 종료 시 다음 턴에 기본 공격 사거리가 [1]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [8%]{red}씩 증가합니다. 이동하지 않고 캐릭터 턴 종료 시 다음 턴에 기본 공격 사거리가 [1]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [8%]{red}씩 증가합니다. 이동하지 않고 캐릭터 턴 종료 시 다음 턴에 기본 공격 사거리가 [2]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "전투 시 사거리 [2]{red}칸부터 [1]{red}칸당 치명타 확률이 [10%]{red}씩 증가합니다. 이동하지 않고 캐릭터 턴 종료 시 다음 턴에 기본 공격 사거리가 [2]{red} 증가합니다."
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "화염인",
+      "iconUrl": "/icons/ultimates/flame_arrow.png",
+      "tpCost": 5,
+      "range": [
+        2,
+        4
+      ],
+      "area": "광역",
+      "attackType": "관통",
+      "element": "화염",
+      "cooldown": 5,
+      "tags": [
+        "원거리"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "적을 지정해 대상과 주위 [3]{red}칸 내 적들에게 공격력의 [90%]{red}만큼 피해를 주고 범위 내 [25%]{red}의 확률로 [3]{yellow}턴 동안 지속되는 [화염 지대]{orange}를 생성합니다."
+        }
+      ]
+    },
+    "artifacts": []
+  }
+]

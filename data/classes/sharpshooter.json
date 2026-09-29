@@ -1,0 +1,39 @@
+[
+  {
+    "name": "샤프슈터",
+    "tier": 3,
+    "parent": "막스맨",
+    "description": "적의 방어를 뚫고 치명적인 피해를 줄 수 있는 상급 궁병입니다. 처치 시 빠르게 다음 적을 추적합니다.",
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/sharpshooter.png",
+    "passive": {
+      "name": "이동시",
+      "lv1": "적 공격 시 물리 관통이 [30%]{red} 증가해 피해를 줍니다. 공격 후 적을 처치했다면 [2]{yellow}턴 동안 치명타 확률이 [30%]{red} 증가하고 추가 이동을 얻습니다.",
+      "lv2": "적 공격 시 물리 관통이 [40%]{red} 증가해 피해를 줍니다. 공격 후 적을 처치했다면 [2]{yellow}턴 동안 치명타 확률이 [40%]{red} 증가하고 추가 이동을 얻습니다.",
+      "iconUrl": "/icons/classes/passive/sharpshooter.png"
+    },
+    "skills": [
+      {
+        "name": "유성시",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/meteor_arrow.png",
+        "effect": "지정한 방향으로 화살을 난사해 범위 내 적들에게 공격력의 [70%]{red}만큼 피해를 주고 버프를 [1]{red}개씩 지웁니다."
+      }
+    ]
+  }
+]

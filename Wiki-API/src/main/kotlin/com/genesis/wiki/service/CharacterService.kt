@@ -118,12 +118,12 @@ class CharacterService(
         characterRepository.saveAndFlush(saved)
 
         // 발현 허브 (3~6단)
-        listOf(3, 4, 5, 6).forEach { level ->
+        (if (req.hasManifestation) listOf(3, 4, 5, 6) else listOf(0)).forEach { level ->
             saved.manifestations.add(
                 CharacterManifestation(
                     character = saved,
                     manifestLevel = level,
-                    ultimate = if (level == 3 || level == 5) ultimate else null,
+                    ultimate = if (level == 0 || level == 3 || level == 5) ultimate else null,
                     passive = if (level == 4 || level == 6) passive else null,
                     artifact1 = artifactMap[1],
                     artifact2 = artifactMap[2],
@@ -223,11 +223,11 @@ class CharacterService(
         characterRepository.saveAndFlush(character)
 
         // 발현 허브 재생성
-        listOf(3, 4, 5, 6).forEach { level ->
+        (if (req.hasManifestation) listOf(3, 4, 5, 6) else listOf(0)).forEach { level ->
             character.manifestations.add(
                 CharacterManifestation(
                     character = character, manifestLevel = level,
-                    ultimate = if (level == 3 || level == 5) ultimate else null,
+                    ultimate = if (level == 0 || level == 3 || level == 5) ultimate else null,
                     passive = if (level == 4 || level == 6) passive else null,
                     artifact1 = artifactMap[1], artifact2 = artifactMap[2],
                     artifact3 = artifactMap[3], artifact4 = artifactMap[4]
