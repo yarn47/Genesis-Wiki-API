@@ -1,0 +1,106 @@
+[
+  {
+    "name": "아리아나 위버",
+    "grade": "전설",
+    "faction": "커티스",
+    "element": "활력의나무",
+    "birthYear": "에스겔력 1155년",
+    "height": "180cm",
+    "cv": "한복현",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "커티스의 궁수. 게이시르에게 점령당한 커티스를 구하기 위해 홀로 전장을 돌며 싸우고 있다.\n커티스 해방군에 속해 있진 않지만 아르시아와 잘 알고 지내며, 서로 협력하는 관계이다. 놀라운 활솜씨를 가져 신궁으로 불린다.",
+    "thumbnailUrl": "/icons/characters/ariana_thumb.png",
+    "portraitUrl": "/icons/characters/ariana_portrait.png",
+    "published": true,
+    "classTree": [
+      "아처",
+      "헌터",
+      "막스맨",
+      "이글",
+      "보우마스터",
+      "스나이퍼"
+    ],
+    "exclusiveWeapon": "헬파이어 아르쿠스",
+    "passive": {
+      "name": "커티스의 신궁",
+      "iconUrl": "/icons/passives/curtis_divine_archer.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "치명타 피해량 [+10%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 1]{green} 효과를 가집니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "치명타 피해량 [+15%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 2]{green} 효과를 가집니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "치명타 피해량 [+15%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 3]{green} 효과를 가집니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "치명타 피해량 [+20%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 4]{green} 효과를 가집니다."
+        },
+        {
+          "type": "발현",
+          "step": 2,
+          "effect": "치명타 피해량 [+30%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 5]{green} 효과를 가집니다."
+        },
+        {
+          "type": "발현",
+          "step": 4,
+          "effect": "치명타 피해량 [+35%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 6]{green} 효과를 가집니다."
+        },
+        {
+          "type": "발현",
+          "step": 6,
+          "effect": "치명타 피해량 [+40%]{red}. 캐릭터 턴 종료 시 다음 턴 시작까지 [마무리 사격 7]{green} 효과를 가집니다."
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "화염인",
+      "iconUrl": "/icons/ultimates/flame_arrow.png",
+      "tpCost": 5,
+      "range": [
+        2,
+        4
+      ],
+      "area": "광역",
+      "attackType": "관통",
+      "element": "화염",
+      "cooldown": 5,
+      "tags": [
+        "원거리"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "적을 지정해 대상과 주위 [3]{red}칸 내 적들에게 공격력의 [90%]{red}만큼 피해를 주고 범위 내 [25%]{red}의 확률로 [3]{yellow}턴 동안 지속되는 [화염 지대]{orange}를 생성합니다."
+        },
+        {
+          "step": 1,
+          "effect": "적을 지정해 대상과 주위 [3]{red}칸 내 적들에게 공격력의 [100%]{red}만큼 피해를 주고 범위 내 [30%]{red}의 확률로 [3]{yellow}턴 동안 지속되는 [화염 지대]{orange}를 생성합니다."
+        },
+        {
+          "step": 3,
+          "effect": "적을 지정해 대상과 주위 [3]{red}칸 내 적들에게 공격력의 [110%]{red}만큼 피해를 주고 범위 내 [30%]{red}의 확률로 [3]{yellow}턴 동안 지속되는 [화염 지대]{orange}를 생성합니다."
+        },
+        {
+          "step": 5,
+          "effect": "적을 지정해 대상과 주위 [3]{red}칸 내 적들에게 공격력의 [120%]{red}만큼 피해를 주고 범위 내 [35%]{red}의 확률로 [3]{yellow}턴 동안 지속되는 [화염 지대]{orange}를 생성합니다."
+        }
+      ]
+    },
+    "artifacts": [
+      "속성 과부하",
+      "최상의 상태",
+      "질풍의 깃"
+    ]
+  }
+]

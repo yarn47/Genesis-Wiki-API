@@ -56,7 +56,7 @@ ULTIMATE_LEVEL_KEYS = {"step", "tpCost", "range", "cooldown", "effect"}
 ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
 FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
-            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal"}
+            "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis"}
 ELEMENTS = {"신념의빛": "light", "욕망의그림자": "dark", "자유의불꽃": "fire",
             "지성의결정체": "crystal", "활력의나무": "nature"}
 CHAR_GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend", "아우터원": "outer"}

@@ -1,0 +1,255 @@
+[
+  {
+    "name": "아처",
+    "tier": 1,
+    "description": "활이나 석궁을 무기로 사용해 원거리에서 적에게 물리 피해를 주는 기본 직업입니다.",
+    "skills": [
+      {
+        "name": "궁수의 징표",
+        "tpCost": 1,
+        "range": [
+          2,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "징표"
+        ],
+        "effect": "적을 지정해 [2]{yellow}턴 동안 [궁수의 징표]{orange}를 걸고 추가로 공격하거나 스킬을 사용합니다.",
+        "iconUrl": "/icons/skills/archers_mark.png"
+      },
+      {
+        "name": "귀살인",
+        "tpCost": 3,
+        "range": [
+          2,
+          5
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 귀살인을 날려 공격력의 [150%]{red}만큼 피해를 줍니다. 적 처치 시 [2]{yellow}턴 동안 [귀살]{green} 효과를 얻습니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/ghostslayer_arrow.png"
+      },
+      {
+        "name": "경계 사격",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [],
+        "effect": "지정한 방향으로 경계 태세를 취해 범위 내에서 적이 행동을 종료한다면 공격력의 [80%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [약점 파악]{orange} 효과를 겁니다. 경계 태세 중에는 반격할 수 없습니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/overwatch_shot.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/archer.png",
+    "passive": {
+      "name": "궁술",
+      "lv1": "이동하지 않고 전투 공격 시 치명타 확률이 [5%]{red} 증가합니다.",
+      "lv2": "이동하지 않고 전투 공격 시 치명타 확률이 [10%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/archer.png"
+    }
+  },
+  {
+    "name": "헌터",
+    "tier": 2,
+    "parent": "아처",
+    "description": "활이나 석궁을 무기로 사용해 원거리에서 적을 추적하고 쓰러뜨리는 숙련된 사냥꾼입니다.",
+    "skills": [
+      {
+        "name": "유성우",
+        "tpCost": 3,
+        "range": [
+          2,
+          4
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "적을 지정해 대상의 주위 [3]{red}칸 내 적들에게 공격력의 [60%]{red}만큼 피해를 주고 [30%]{red}의 확률로 [1]{yellow}턴 동안 [둔화]{orange}시킵니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/meteor_shower.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/hunter.png",
+    "passive": {
+      "name": "매의 눈",
+      "lv1": "이동하지 않고 전투 공격 시 치명타 확률이 [15%]{red} 증가하고 이동력 제어 효과에 걸린 적 전투 공격 시 공격력이 [20%]{red} 증가합니다.",
+      "lv2": "이동하지 않고 전투 공격 시 치명타 확률이 [20%]{red} 증가하고 이동력 제어 효과에 걸린 적 전투 공격 시 공격력이 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/hunter.png"
+    }
+  },
+  {
+    "name": "막스맨",
+    "tier": 2,
+    "parent": "아처",
+    "description": "활이나 석궁을 능숙하게 다루는 명사수입니다. 다수의 화살을 빠르게 발사해 적들에게 치명상을 줍니다.",
+    "skills": [
+      {
+        "name": "연발시",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [100%]{red}만큼 피해를 줍니다. 치명타 적중 시 [갑옷 파괴]{orange} 효과를 겁니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/rapid_arrows.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/marksman.png",
+    "passive": {
+      "name": "명중",
+      "lv1": "적 공격 시 물리 관통이 [20%]{red} 증가해 피해를 주고 공격 후 적을 처치했다면 [2]{yellow}턴 동안 치명타 확률이 [20%]{red} 증가합니다.",
+      "lv2": "적 공격 시 물리 관통이 [25%]{red} 증가해 피해를 주고 공격 후 적을 처치했다면 [2]{yellow}턴 동안 치명타 확률이 [25%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/marksman.png"
+    }
+  },
+  {
+    "name": "이글",
+    "tier": 3,
+    "parent": "헌터",
+    "description": "활이나 석궁을 무기로 사용하고 스킬로 원거리에서 적을 잠재우는 능숙한 사냥의 달인입니다.",
+    "skills": [
+      {
+        "name": "수면시",
+        "tpCost": 2,
+        "range": [
+          2,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 수면시를 날려 공격력의 [60%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [수면]{orange}을 겁니다. 이 스킬엔 추가타가 발동하지 않고 아군이 협공하지 않습니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/sleep_arrow.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/eagle.png",
+    "passive": {
+      "name": "사냥의 명수",
+      "lv1": "이동하지 않고 전투 공격 시 치명타 확률이 [25%]{red} 증가하고 이동력 제어 효과에 걸린 적 전투 공격 시 공격력이 [40%]{red} 증가하고 공격력의 [25%]{red}만큼 체력을 회복합니다.",
+      "lv2": "이동하지 않고 전투 공격 시 치명타 확률이 [30%]{red} 증가하고 이동력 제어 효과에 걸린 적 전투 공격 시 공격력이 [50%]{red} 증가하고 공격력의 [30%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/eagle.png"
+    }
+  },
+  {
+    "name": "보우마스터",
+    "tier": 3,
+    "parent": "헌터",
+    "description": "활이나 석궁을 빠르고 정확한 솜씨로 다루는 원거리 무기의 전문가입니다.",
+    "skills": [
+      {
+        "name": "축열탄",
+        "tpCost": 2,
+        "range": [
+          2,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "위치제어"
+        ],
+        "effect": "적에게 축열탄을 날려 공격력의 [100%]{red}만큼 피해를 줍니다. 적이 죽지 않았다면 [1]{red}칸 뒤로 밀쳐내고 대상에게 폭발을 일으켜 대상과 인접한 모든 적들에게 공격력의 [30%]{red}만큼 추가 피해를 줍니다. 이 스킬은 호위할 수 없습니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/heat_round.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/bow_master.png",
+    "passive": {
+      "name": "기습 사격",
+      "lv1": "전투 공격 시 치명타 확률이 [30%]{red} 증가하고 [30%]{red} 확률로 추가타가 발동해 공격력의 [30%]{red}만큼 피해를 줍니다.",
+      "lv2": "전투 공격 시 치명타 확률이 [40%]{red} 증가하고 [50%]{red} 확률로 추가타가 발동해 공격력의 [30%]{red}만큼 피해를 줍니다.",
+      "iconUrl": "/icons/classes/passive/bow_master.png"
+    }
+  },
+  {
+    "name": "스나이퍼",
+    "tier": 3,
+    "parent": "막스맨",
+    "description": "활이나 석궁을 무기로 사용해 원거리에서 정밀하게 적을 처치하는 뛰어난 저격수입니다.",
+    "skills": [
+      {
+        "name": "일격시",
+        "tpCost": 2,
+        "range": [
+          2,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "치명타 확률이 [30%]{red} 증가하고 적에게 일격시를 날려 공격력의 [130%]{red}만큼 피해를 줍니다.",
+        "allowedWeapon": "활, 석궁",
+        "iconUrl": "/icons/skills/single_strike_arrow.png"
+      }
+    ],
+    "weaponType": "활,석궁",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/sniper.png",
+    "passive": {
+      "name": "고립된 표적",
+      "lv1": "적 공격 시 물리 관통이 [30%]{red} 증가해 피해를 줍니다. 적이 고립된 상태라면 치명타 확률이 [30%]{red} 증가하고 치명타 피해량이 [10%]{red}만큼 증가합니다.",
+      "lv2": "적 공격 시 물리 관통이 [40%]{red} 증가해 피해를 줍니다. 적이 고립된 상태라면 치명타 확률이 [30%]{red} 증가하고 치명타 피해량이 [15%]{red}만큼 증가합니다.",
+      "iconUrl": "/icons/classes/passive/sniper.png"
+    }
+  }
+]

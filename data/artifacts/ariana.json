@@ -1,0 +1,25 @@
+[
+  {
+    "name": "질풍의 깃",
+    "iconUrl": "/icons/artifacts/gale_feather.png",
+    "description": "화살을 쏘는 순간, 바람과 하나가 됩니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+15%]{red}. 적 공격 후 [철수]{green} 효과 획득."
+      },
+      {
+        "step": 4,
+        "effect": "물리 관통 [+30%]{red}. 적 공격 후 [철수]{green} 효과 획득."
+      },
+      {
+        "step": 5,
+        "effect": "물리 관통 [+45%]{red}. 적 공격 후 [철수]{green} 효과 획득."
+      },
+      {
+        "step": 6,
+        "effect": "물리 관통 [+60%]{red}. 적 공격 후 [철수]{green} 효과 획득."
+      }
+    ]
+  }
+]
