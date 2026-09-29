@@ -1,0 +1,14 @@
+[
+  {
+    "name": "학살의 징표",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/mark_of_slaughter.png",
+    "description": "연속된 학살은 점진적으로 강화되어 착용자를 전장의 지배자로 만듭니다. 착용자는 폭력의 심연에 빠지지 않도록 끊임없이 자신과 싸워야 합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "적 처치 시 [학살의 징표 1]{green} 효과 획득."
+      }
+    ]
+  }
+]

@@ -347,5 +347,43 @@
         "effect": "잃은 체력 비율만큼 치명타 확률이 증가하고 TP를 모두 소모해 적에게 공격력의 [110%]{red}에 TP 당 공격력의 [25%]{red}만큼 추가된 피해를 줍니다. 치명타 적중 시 [2]{yellow}턴 동안 [전의]{green} 효과를 얻고 주위 [4]{red}칸 내 타일을 선택해 순간 이동합니다."
       }
     ]
+  },
+  {
+    "name": "스트라이커",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "weaponType": "대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "대검을 무기로 사용하고 강력하게 적들을 몰아붙이는 치명적인 공격수입니다.",
+    "iconUrl": "/icons/classes/emblem/striker.png",
+    "passive": {
+      "name": "투지",
+      "lv1": "적 공격 시 물리 관통/치명타 확률이 [25%]{red} 증가합니다. 범위 스킬 사용 시 공격력이 [25%]{red} 증가합니다.",
+      "lv2": "적 공격 시 물리 관통/치명타 확률이 [30%]{red} 증가합니다. 범위 스킬 사용 시 공격력이 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/striker.png"
+    },
+    "skills": [
+      {
+        "name": "풍파열섬",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "allowedWeapon": "검, 대검",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "지향성",
+          "이동공격"
+        ],
+        "iconUrl": "/icons/skills/pungpayeolseom.png",
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [80%]{red}만큼 피해를 주면서 가장 멀리 떨어진 빈칸까지 적들을 뚫고 이동합니다. 이동 후 다시 무기를 휘둘러 주변 [1]{red}바퀴 내 적들에게 공격력의 [80%]{red}만큼 피해를 줍니다."
+      }
+    ]
   }
 ]
