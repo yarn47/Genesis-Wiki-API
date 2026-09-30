@@ -1,0 +1,50 @@
+[
+  {
+    "name": "나선 문장",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/spiral_crest.png",
+    "description": "고대의 명령이 소용돌이치며 사용자의 의지와 일체가 되어, 적을 꿰뚫고 진형을 파괴하는 힘을 선사합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+10%]{red}. 관통 속성 공격 적중 시 [3]{yellow}턴 동안 [출혈]{orange} 효과 부여."
+      },
+      {
+        "step": 4,
+        "effect": "물리 관통 [+20%]{red}. 관통 속성 공격 적중 시 [3]{yellow}턴 동안 [출혈]{orange} 효과 부여."
+      },
+      {
+        "step": 5,
+        "effect": "물리 관통 [+30%]{red}. 관통 속성 공격 적중 시 [3]{yellow}턴 동안 [출혈]{orange} 효과 부여."
+      },
+      {
+        "step": 6,
+        "effect": "물리 관통 [+40%]{red}. 관통 속성 공격 적중 시 [3]{yellow}턴 동안 [출혈]{orange} 효과 부여."
+      }
+    ]
+  },
+  {
+    "name": "광란의 파동",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/frenzy_wave.png",
+    "description": "억눌린 힘이 요동치듯 터져나와 땅을 가르고 하늘을 찢는 원초적 분노를 휘두릅니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "범위 스킬 피해량 [+15%]{red}. 범위 스킬 사용 후 추가 이동 획득."
+      },
+      {
+        "step": 4,
+        "effect": "범위 스킬 피해량 [+20%]{red}. 범위 스킬 사용 후 추가 이동 획득."
+      },
+      {
+        "step": 5,
+        "effect": "범위 스킬 피해량 [+25%]{red}. 범위 스킬 사용 후 추가 이동 획득."
+      },
+      {
+        "step": 6,
+        "effect": "범위 스킬 피해량 [+30%]{red}. 범위 스킬 사용 후 추가 이동 획득."
+      }
+    ]
+  }
+]

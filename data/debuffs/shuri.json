@@ -1,0 +1,15 @@
+[
+  {
+    "name": "경직",
+    "duration": 1,
+    "tags": [
+      "행동제어"
+    ],
+    "description": "반격 불가."
+  },
+  {
+    "name": "영광의 부름",
+    "duration": 2,
+    "description": "공격력/주문력 [-25%]{red}. 저항력 [-30%]{red}."
+  }
+]

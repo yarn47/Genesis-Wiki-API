@@ -1,0 +1,108 @@
+[
+  {
+    "name": "슈리 스탐가르드",
+    "grade": "전설",
+    "faction": "아스타니아",
+    "element": "활력의나무",
+    "birthYear": "에스겔력 1187년",
+    "height": "180cm",
+    "cv": "김명준",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "아스타니아의 법왕기사로 아직은 수습 기사이다. 친절하고 다정한 성격에 미남이라 여성들에게 인기가 많다. 아스타니아 사제인 유릭스 마하와 함께 경험을 쌓기 위해 수행을 다니던 중 동방항로를 찾는 카자를 만나 카자의 여정에 동행하게 된다.",
+    "thumbnailUrl": "/icons/characters/shuri_thumb.png",
+    "portraitUrl": "/icons/characters/shuri_portrait.png",
+    "published": true,
+    "hasManifestation": true,
+    "classTree": [
+      "파이크",
+      "템플러",
+      "랜서",
+      "하이템플러",
+      "법왕기사",
+      "로얄랜서"
+    ],
+    "exclusiveWeapon": "드래곤 버스터",
+    "passive": {
+      "name": "신전의 청룡",
+      "iconUrl": "/icons/passives/temple_azure_dragon.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [신전의 청룡 1]{green} 효과를 얻습니다. 범위 피해를 당하면 [신전의 청룡 1]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [신전의 청룡 2]{green} 효과를 얻습니다. 범위 피해를 당하면 [신전의 청룡 2]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "적 공격 시 [신전의 청룡 3]{green} 효과를 얻고 [2]{red}명 이상의 적에게 피해를 주면 효과를 추가로 얻습니다. 범위 피해를 당하면 [신전의 청룡 3]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "적 공격 시 [신전의 청룡 4]{green} 효과를 얻고 [2]{red}명 이상의 적에게 피해를 주면 효과를 추가로 얻습니다. 범위 피해를 당하면 [신전의 청룡 4]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "발현",
+          "step": 2,
+          "effect": "체력이 [10%]{red} 증가하고 받는 범위 피해가 [10%]{red} 감소합니다. 적 공격 시 [신전의 청룡 5]{green} 효과를 얻고 [2]{red}명 이상의 적에게 피해를 주면 효과를 추가로 얻습니다. 범위 피해나 디버프 피해를 당하면 [신전의 청룡 5]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "발현",
+          "step": 4,
+          "effect": "체력이 [20%]{red} 증가하고 받는 범위 피해가 [30%]{red} 감소합니다. 적 공격 시 [신전의 청룡 6]{green} 효과를 얻고 [2]{red}명 이상의 적에게 피해를 주면 효과를 추가로 얻습니다. 범위 피해나 디버프 피해를 당하면 [신전의 청룡 6]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "발현",
+          "step": 6,
+          "effect": "체력이 [30%]{red} 증가하고 받는 범위 피해가 [50%]{red} 감소합니다. 적 공격 시 [신전의 청룡 7]{green} 효과를 얻고 [2]{red}명 이상의 적에게 피해를 주면 효과를 추가로 얻습니다. 범위 피해나 디버프 피해를 당하면 [신전의 청룡 7]{green} 효과를 얻습니다."
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "광룡탄",
+      "iconUrl": "/icons/ultimates/dragon_blast.png",
+      "tpCost": 5,
+      "range": [
+        1,
+        1
+      ],
+      "area": "광역",
+      "attackType": "마법",
+      "element": "전격",
+      "cooldown": 5,
+      "tags": [
+        "원거리",
+        "지향성"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "범위 내 적들에게 공격력의 [130%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [경직]{orange}시킵니다."
+        },
+        {
+          "step": 1,
+          "effect": "범위 내 적들에게 공격력의 [140%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [경직]{orange}시킵니다."
+        },
+        {
+          "step": 3,
+          "effect": "범위 내 적들에게 공격력의 [150%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [경직]{orange}시킵니다."
+        },
+        {
+          "step": 5,
+          "effect": "범위 내 적들에게 공격력의 [160%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [경직]{orange}시킵니다."
+        }
+      ]
+    },
+    "artifacts": [
+      "최상의 상태",
+      "나선 문장",
+      "광란의 파동"
+    ]
+  }
+]
