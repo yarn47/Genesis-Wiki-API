@@ -1,0 +1,178 @@
+[
+  {
+    "name": "마력 중첩",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": "영구",
+        "maxStack": 2,
+        "effect": "주문력 [+10%]{red}. [2]{yellow}중첩 시 [1 TP]{yellow}를 얻고 [마력 나선 1]{green} 효과로 대체."
+      },
+      {
+        "level": 2,
+        "duration": "영구",
+        "maxStack": 2,
+        "effect": "주문력 [+10%]{red}. [2]{yellow}중첩 시 [1 TP]{yellow}를 얻고 [마력 나선 2]{green} 효과로 대체."
+      }
+    ]
+  },
+  {
+    "name": "마력 나선",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력 [+25%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력 [+30%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "결정화",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "name": "결정화 (결정의 마력 1)",
+        "duration": 1,
+        "effect": "피해나 스킬 또는 효과에 영향을 받지 않고 행동 불가. 해제될 때 체력이 [70%]{red}로 복구."
+      },
+      {
+        "level": 2,
+        "name": "결정화 (결정의 마력 2)",
+        "duration": 1,
+        "effect": "피해나 스킬 또는 효과에 영향을 받지 않고 행동 불가. 해제될 때 체력이 [100%]{red}로 복구."
+      }
+    ]
+  },
+  {
+    "name": "서리방패",
+    "element": "빙한",
+    "duration": 2,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "주문력의 [25%]{red}만큼 방어력 증가. 받는 관통 피해 [-30%]{red}. 공격 받은 후 적에게 [냉기 둔화]{orange} 부여 후 해제."
+  },
+  {
+    "name": "통찰",
+    "tags": [
+      "보호막"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력의 [30%]{red} 보호막. 적 공격 시 적의 버프 [1]{red}개 제거."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력의 [40%]{red} 보호막. 적 공격 시 적의 버프 [1]{red}개 제거."
+      }
+    ]
+  },
+  {
+    "name": "파멸의 고리",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": "영구",
+        "maxStack": 9,
+        "effect": "방어력/저항력 [+3%]{red}. [9]{yellow}중첩 시 추가 행동. 추가 행동 발동 시 해제."
+      },
+      {
+        "level": 2,
+        "duration": "영구",
+        "maxStack": 8,
+        "effect": "방어력/저항력 [+4%]{red}. [8]{yellow}중첩 시 추가 행동. 추가 행동 발동 시 해제."
+      },
+      {
+        "level": 3,
+        "duration": "영구",
+        "maxStack": 7,
+        "effect": "방어력/저항력 [+5%]{red}. [7]{yellow}중첩 시 추가 행동. 추가 행동 발동 시 해제."
+      },
+      {
+        "level": 4,
+        "duration": "영구",
+        "maxStack": 6,
+        "effect": "방어력/저항력 [+6%]{red}. [6]{yellow}중첩 시 추가 행동. 추가 행동 발동 시 해제."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "maxStack": 6,
+        "effect": "방어력/저항력 [+8%]{red}. [6]{yellow}중첩 시 즉시 추가 행동. 추가 행동 발동 시 해제."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "maxStack": 6,
+        "effect": "방어력/저항력 [+10%]{red}. [6]{yellow}중첩 시 즉시 추가 행동. 추가 행동 발동 시 [1 TP]{yellow}를 회복하고 해제."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "maxStack": 6,
+        "effect": "방어력/저항력 [+12%]{red}. [6]{yellow}중첩 시 즉시 추가 행동. 추가 행동 발동 시 [2 TP]{yellow}를 회복하고 해제."
+      }
+    ]
+  },
+  {
+    "name": "불멸의 안식",
+    "duration": 1,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "체력이 [1]{red} 미만으로 내려가지 않습니다. 스킬 시전 불가. 반격 불가. 이 효과가 만료될 때 모든 일반 스킬의 쿨타임이 [1]{yellow} 감소하고 [1 TP]{yellow} 획득."
+  },
+  {
+    "name": "가호의 잔영",
+    "duration": 2,
+    "description": "행동 제어 면역."
+  },
+  {
+    "name": "치밀한 준비",
+    "levels": [
+      {
+        "level": 1,
+        "effect": "공격력/주문력 [+15%]{red}. 적 공격 후 해제."
+      },
+      {
+        "level": 2,
+        "effect": "공격력/주문력 [+20%]{red}. 적 공격 후 해제."
+      },
+      {
+        "level": 3,
+        "effect": "공격력/주문력 [+25%]{red}. 적 공격 후 해제."
+      },
+      {
+        "level": 4,
+        "effect": "공격력/주문력 [+30%]{red}. 적 공격 후 해제."
+      }
+    ]
+  },
+  {
+    "name": "헤이스트",
+    "duration": 2,
+    "description": "이동 거리 [+2]{red}."
+  },
+  {
+    "name": "레인지 업",
+    "duration": 2,
+    "description": "스킬 사거리 [+1]{red}."
+  }
+]

@@ -1,0 +1,247 @@
+[
+  {
+    "name": "메이지",
+    "tier": 1,
+    "description": "원소 마법을 시전해 적들에게 피해를 주는 기본 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/mage.png",
+    "passive": {
+      "name": "평정",
+      "lv1": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [5%]{red} 증가합니다.",
+      "lv2": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [10%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/mage.png"
+    },
+    "skills": [
+      {
+        "name": "플레임 볼",
+        "iconUrl": "/icons/skills/flame_ball.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "effect": "적에게 주문력의 [100%]{red}만큼 화염 피해를 주고 인접한 적들에게 주문력의 [60%]{red}만큼 화염 피해를 줍니다. 피해를 입은 적들에게 [2]{yellow}턴 동안 [화상]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드",
+        "element": "화염"
+      },
+      {
+        "name": "아이스 미사일",
+        "iconUrl": "/icons/skills/ice_missile.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 주문력의 [130%]{red}만큼 빙한 피해를 주고 [2]{yellow}턴 동안 [냉기 둔화]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드",
+        "element": "빙한"
+      },
+      {
+        "name": "마나 블레이드",
+        "iconUrl": "/icons/skills/mana_blade.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "주위 [2]{red}칸 내 적들에게 주문력의 [80%]{red}만큼 피해를 주고 피해를 준 적 한명 당 주문력의 [40%]{red}에 해당하는 보호막을 [2]{yellow}턴 동안 얻습니다.",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  },
+  {
+    "name": "매지션",
+    "tier": 2,
+    "parent": "메이지",
+    "description": "원소 마법으로 주문력을 강화해 적들에게 강력한 피해를 주는 마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/magician.png",
+    "passive": {
+      "name": "마력 중첩",
+      "lv1": "공격으로 동시에 [2]{red}명 이상의 적에게 피해를 주면 [마력 중첩 1]{green} 효과를 얻습니다.",
+      "lv2": "공격으로 동시에 [2]{red}명 이상의 적에게 피해를 주면 [마력 중첩 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/magician.png"
+    },
+    "skills": [
+      {
+        "name": "매직 스피어",
+        "iconUrl": "/icons/skills/magic_spear.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 주문력의 [150%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [침묵]{orange}시킵니다. 적을 처치하면 주문력의 [60%]{red}만큼 보호막을 [2]{yellow}턴 동안 얻습니다.",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  },
+  {
+    "name": "위자드",
+    "tier": 2,
+    "parent": "메이지",
+    "description": "원소 마법으로 적들에게 피해를 주고 전장을 통제하는 숙련된 마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/wizard.png",
+    "passive": {
+      "name": "영감",
+      "lv1": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [20%]{red} 증가합니다. 스킬로 적에게 행동제어 효과를 부여하면 주문력의 [20%]{red}만큼 보호막을 [2]{yellow}턴 동안 얻습니다.",
+      "lv2": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [25%]{red} 증가합니다. 스킬로 적에게 행동제어 효과를 부여하면 주문력의 [25%]{red}만큼 보호막을 [2]{yellow}턴 동안 얻습니다.",
+      "iconUrl": "/icons/classes/passive/wizard.png"
+    },
+    "skills": [
+      {
+        "name": "일렉트릭 웨이브",
+        "iconUrl": "/icons/skills/electric_wave.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "대상과 주위 [3]{red}칸 내 적들에게 주문력의 [60%]{red}만큼 전격 피해를 주고 [50%]{red} 확률로 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드",
+        "element": "전격"
+      }
+    ]
+  },
+  {
+    "name": "프로스트메이지",
+    "tier": 3,
+    "parent": "매지션",
+    "description": "적을 통제하고 위험을 회피하는 등 다양한 빙한 마법을 전문적으로 수련한 상급 마법사입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/frost_mage.png",
+    "passive": {
+      "name": "결정의 마력",
+      "lv1": "빙한 속성 스킬 사용 시 주문력이 [20%]{red} 증가하고 [서리방패]{green} 효과를 얻습니다. 치명적인 공격을 받으면 모든 버프와 디버프를 해제하고 [결정화 (결정의 마력 1)]{green} 상태가 됩니다. 게임 당 [1]{red}회 발동합니다.",
+      "lv2": "빙한 속성 스킬 사용 시 주문력이 [30%]{red} 증가하고 [서리방패]{green} 효과를 얻습니다. 치명적인 공격을 받으면 모든 버프와 디버프를 해제하고 [결정화 (결정의 마력 2)]{green} 상태가 됩니다. 게임 당 [1]{red}회 발동합니다.",
+      "iconUrl": "/icons/classes/passive/frost_mage.png"
+    },
+    "skills": [
+      {
+        "name": "문 라이트",
+        "iconUrl": "/icons/skills/moon_light.png",
+        "tpCost": 4,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "적에게 주문력의 [100%]{red}만큼 빙한 피해를 주고 [1]{yellow}턴 동안 [빙결]{orange}시킵니다. 대상 주위 [3]{red}칸 내 폭발로 주문력의 [50%]{red}만큼 빙한 피해를 추가로 주고 [2]{yellow}턴 동안 [냉기 둔화]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드",
+        "element": "빙한"
+      }
+    ]
+  },
+  {
+    "name": "로얄위자드",
+    "tier": 3,
+    "parent": "위자드",
+    "description": "원소 마법에 대해 깊은 통찰을 가지고 오랜 세월 연구한 원소 마법의 대가입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/royal_wizard.png",
+    "passive": {
+      "name": "통찰",
+      "lv1": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [30%]{red} 증가합니다. 스킬로 적에게 행동제어 효과를 부여하면 [2]{yellow}턴 동안 [통찰 1]{green} 효과를 얻습니다.",
+      "lv2": "공격 또는 스킬 사용 시 인접한 아군이 있으면 주문력이 [40%]{red} 증가합니다. 스킬로 적에게 행동제어 효과를 부여하면 [2]{yellow}턴 동안 [통찰 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/royal_wizard.png"
+    },
+    "skills": [
+      {
+        "name": "프로즌 필러",
+        "iconUrl": "/icons/skills/frozen_pillar.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "사방 직선 상 타일을 선택해 [2]{yellow}턴 동안 유지되는 얼음 기둥을 생성합니다. 범위 내 적들에게 주문력의 [50%]{red}만큼 빙한 피해를 주고 [1]{yellow}턴 동안 [얼음 속박]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드",
+        "element": "빙한"
+      }
+    ]
+  },
+  {
+    "name": "다크위자드",
+    "tier": 3,
+    "parent": "위자드",
+    "description": "원소 마법에 어둠의 힘을 접목시켜 독자적인 마법 체계를 구축한 상급 마법사입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/dark_wizard.png",
+    "passive": {
+      "name": "혼돈의 속삭임",
+      "lv1": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 무작위 적 [1]{red}명에게 [마법 취약]{orange}, [혼란]{orange} 효과를 겁니다.",
+      "lv2": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 무작위 적 [2]{red}명에게 [마법 취약]{orange}, [혼란]{orange} 효과를 겁니다.",
+      "iconUrl": "/icons/classes/passive/dark_wizard.png"
+    },
+    "skills": [
+      {
+        "name": "트리플 엘리멘탈 블래스트",
+        "iconUrl": "/icons/skills/triple_elemental_blast.png",
+        "tpCost": 5,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "자신의 주위 [3]{red}칸 내 적들에게 화염, 빙한, 전격 [3]{red}가지 마법을 동시에 사용해 주문력의 [130%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [냉기 둔화]{orange}, [감전]{orange}, [화상]{orange} 효과를 겁니다.",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ]
+  }
+]

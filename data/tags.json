@@ -1,4 +1,5 @@
 [
+  { "name": "이동불가", "color": "gray" },
   { "name": "혈마법", "color": "gray" },
   { "name": "침묵", "color": "gray" },
   {
