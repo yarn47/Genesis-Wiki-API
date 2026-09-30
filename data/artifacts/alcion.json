@@ -1,0 +1,26 @@
+[
+  {
+    "name": "협공 연계",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/cooperative_attack.png",
+    "description": "더는 혼자가 아닙니다. 동료와 함께할 때 어떤 역경도 극복할 수 있다는 굳건한 신념을 불어넣습니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "협공 피해량 [+40%]{red}."
+      },
+      {
+        "step": 4,
+        "effect": "협공 피해량 [+60%]{red}."
+      },
+      {
+        "step": 5,
+        "effect": "협공 피해량 [+80%]{red}."
+      },
+      {
+        "step": 6,
+        "effect": "협공 피해량 [+100%]{red}."
+      }
+    ]
+  }
+]

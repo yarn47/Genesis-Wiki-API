@@ -1,0 +1,71 @@
+[
+  {
+    "name": "기쉬네 드리포드",
+    "grade": "전설",
+    "faction": "게이시르",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1171년",
+    "height": "180cm",
+    "cv": "안장혁",
+    "profileText": "게이시르 제국의 암흑 마법사. 제국 학술원 출신이라 안타리아의 역사에 대해 해박한 지식을 갖고 있다. 제국 칠용사 중 하나인 비쉬누의 제자로 비쉬누의 지시를 받고 섭정 베라딘을 몰래 조사하고 있다.",
+    "thumbnailUrl": "/icons/characters/gishne_thumb.png",
+    "portraitUrl": "/icons/characters/gishne_portrait.png",
+    "published": true,
+    "hasManifestation": true,
+    "classTree": [
+      "워록",
+      "메이지",
+      "다크메이지",
+      "매지션",
+      "오컬티스트",
+      "아크메이지"
+    ],
+    "exclusiveWeapon": "시간기록자",
+    "passive": {
+      "name": "지식 전승",
+      "iconUrl": "/icons/passives/knowledge_inheritance.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "범위 스킬로 적 공격 시 주문력이 [15%]{red}만큼 증가합니다. 캐릭터 턴 종료 시 TP가 [0]{yellow}인 아군이 있다면 TP를 [1]{yellow} 증가시킵니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "범위 스킬로 적 공격 시 주문력이 [20%]{red}만큼 증가합니다. 캐릭터 턴 종료 시 TP가 [0]{yellow}인 아군이 있다면 TP를 [1]{yellow} 증가시킵니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "범위 스킬로 적 공격 시 주문력이 [20%]{red}만큼 증가합니다. 캐릭터 턴 종료 시 TP가 [0]{yellow}인 아군이 있다면 TP를 [2]{yellow} 증가시킵니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "범위 스킬로 적 공격 시 주문력이 [30%]{red}만큼 증가합니다. 캐릭터 턴 종료 시 TP가 [0]{yellow}인 아군이 있다면 TP를 [2]{yellow} 증가시킵니다."
+        },
+        {
+          "type": "발현",
+          "step": 2,
+          "effect": "주문력이 [30%]{red}만큼 증가하고 체력이 [10%]{red}만큼 증가합니다. 아군 캐릭터 턴 종료 시 TP가 [0]{yellow}이라면 TP를 [2]{yellow} 증가시키고 주문력의 [40%]{red}만큼 [필살 전승 1]{green} 보호막을 부여합니다."
+        },
+        {
+          "type": "발현",
+          "step": 4,
+          "effect": "주문력이 [35%]{red}만큼 증가하고 체력이 [15%]{red}만큼 증가합니다. 아군 캐릭터 턴 종료 시 TP가 [0]{yellow}이라면 TP를 [2]{yellow} 증가시키고 주문력의 [50%]{red}만큼 [필살 전승 2]{green} 보호막을 부여합니다. 행동 종료 시 자신의 TP가 [1]{yellow} 이상이라면 턴 당 한 번 추가 행동을 얻습니다. (쿨타임: [3]{yellow})"
+        },
+        {
+          "type": "발현",
+          "step": 6,
+          "effect": "주문력이 [40%]{red}만큼 증가하고 체력이 [20%]{red}만큼 증가합니다. 아군 캐릭터 턴 종료 시 TP가 [0]{yellow}이라면 TP를 [2]{yellow} 증가시키고 주문력의 [60%]{red}만큼 [필살 전승 3]{green} 보호막을 부여합니다. 행동 종료 시 자신의 TP가 [1]{yellow} 이상이라면 턴 당 한 번 추가 행동을 얻습니다. (쿨타임: [2]{yellow})"
+        }
+      ]
+    },
+    "artifacts": [
+      "간이 보호 부적",
+      "깜빡이는 보주",
+      "주문 가속"
+    ]
+  }
+]

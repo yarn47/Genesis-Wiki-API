@@ -31,7 +31,7 @@ KINDS = [("buffs", "buff"), ("debuffs", "debuff")]
 ITEM_KEYS = {"name", "description", "iconUrl", "element", "duration", "maxStack", "tags", "levels"}
 LEVEL_KEYS = {"level", "name", "effect", "duration", "maxStack"}
 CLASS_KEYS = {"name", "tier", "parent", "weaponType", "defenseType", "attackType", "attackRange", "moveRange",
-              "description", "iconUrl", "passive", "skills"}
+              "description", "iconUrl", "passive", "skills", "skillsFrom"}
 SKILL_KEYS = {"name", "tpCost", "range", "area", "attackType", "element", "allowedWeapon", "cooldown", "effect", "tags", "iconUrl"}
 SELF_RANGE = "자신"  # 사거리 "자신"은 0-0으로 저장
 ELEMENT_TYPES = {"빙한", "화염", "전격", "암흑", "광휘"}    # 게임 업데이트로 늘어날 수 있음
@@ -57,7 +57,7 @@ ARTIFACT_KEYS = {"name", "grade", "iconUrl", "description", "levels"}
 ARTIFACT_LEVEL_KEYS = {"step", "effect"}
 FACTIONS = {"게이시르": "geysir", "팬드래건": "pendragon", "무소속": "independent",
             "아스타니아": "astania", "제피르팰컨": "zephyrfalcon", "다갈": "dagal", "커티스": "curtis", "가라드": "garad",
-            "암흑신": "darkgod"}
+            "암흑신": "darkgod", "카슈미르": "kashmir"}
 ELEMENTS = {"신념의빛": "light", "욕망의그림자": "dark", "자유의불꽃": "fire",
             "지성의결정체": "crystal", "활력의나무": "nature"}
 CHAR_GRADES = {"희귀": "rare", "영웅": "hero", "전설": "legend", "아우터원": "outer"}
@@ -223,6 +223,14 @@ def load_classes(tag_names):
 
     for name, (rel, cls) in classes.items():
         where = f"{rel} '{name}'"
+        source = cls.get("skillsFrom")
+        if source is not None:
+            if source not in classes or source == name:
+                raise DataError(f"{where}: skillsFrom '{source}' 클래스가 없거나 자기 자신임")
+            if cls.get("skills") or classes[source][1].get("skillsFrom"):
+                raise DataError(f"{where}: skillsFrom은 직접 스킬을 가진 클래스만 참조하며 skills와 함께 쓸 수 없음")
+            if not classes[source][1].get("skills"):
+                raise DataError(f"{where}: skillsFrom '{source}'에 스킬이 없음")
         parent = cls.get("parent")
         if cls["tier"] == 1:
             if parent:
@@ -477,6 +485,21 @@ def class_sql(cls):
     for order, skill in enumerate(cls.get("skills", []), start=1):
         out.append(skill_sql(skill, order))
     return "\n".join(out)
+
+
+def shared_class_skills_sql(cls):
+    """모든 원본 스킬 upsert 후 연결. 스킬을 복제하지 않고 같은 ID를 공유한다."""
+    source = cls.get("skillsFrom")
+    if not source:
+        return ""
+    return "\n".join([
+        f"-- 공용 스킬: {cls['name']} ← {source}",
+        f"SET @target_class = (SELECT class_id FROM classes WHERE name = {sql(cls['name'])});",
+        f"SET @source_class = (SELECT class_id FROM classes WHERE name = {sql(source)});",
+        "DELETE FROM class_skills WHERE class_id = @target_class;",
+        "INSERT INTO class_skills (class_id, skill_id, unlock_order) "
+        "SELECT @target_class, skill_id, unlock_order FROM class_skills WHERE class_id = @source_class;",
+    ])
 
 
 def skill_sql(skill, order):
@@ -802,6 +825,7 @@ def main():
         parts.extend(item_sql(prefix, item) for item in items)
     parts.append(f"\n-- ─── class ({len(classes)}개) ───")
     parts.extend(class_sql(c) for c in classes)
+    parts.extend(shared_class_skills_sql(c) for c in classes if c.get("skillsFrom"))
     parts.append(f"\n-- ─── exclusive weapon ({len(weapons)}개) ───")
     parts.extend(weapon_sql(w) for w in weapons)
     parts.append(f"\n-- ─── artifact ({len(artifacts)}개) ───")

@@ -310,13 +310,14 @@ class CharacterService(
         val skins = character.skins.sortedBy { it.skinId }.map { skin ->
             CharacterSkinDto(skin.skinId, skin.skinName, skin.isDefault, skin.thumbnailUrl, skin.portraitUrl, skin.fullImageUrl, skin.howToObtain, skin.releaseDate?.toString())
         }
+        val treeClasses = character.classTree.map { it.clazz }
         val classTree = character.classTree.sortedWith(compareBy({ it.clazz.tier }, { it.orderInTier })).map { node ->
             ClassTreeNodeDto(
                 classId = node.clazz.classId, name = node.clazz.name, tier = node.clazz.tier,
                 weaponType = node.clazz.weaponType, defenseType = node.clazz.defenseType?.name, attackType = node.clazz.attackType,
                 attackRange = node.clazz.attackRange, moveRange = node.clazz.moveRange,
                 baseHp = node.clazz.baseHp, baseAttack = node.clazz.baseAttack,
-                parentClassId = node.clazz.parentClass?.classId, orderInTier = node.orderInTier,
+                parentClassId = resolveClassTreeParent(node.clazz, treeClasses), orderInTier = node.orderInTier,
                 iconUrl = node.clazz.iconUrl, passive1Name = node.clazz.passive1Name,
                 passive1Lv1 = node.clazz.passive1Lv1, passive1Lv2 = node.clazz.passive1Lv2,
                 passive1IconUrl = node.clazz.passive1IconUrl,

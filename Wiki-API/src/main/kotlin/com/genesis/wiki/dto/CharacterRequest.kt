@@ -5,7 +5,7 @@ package com.genesis.wiki.dto
 data class CharacterRequest(
     val name: String,
     val grade: String,              // rare/hero/legend/outer
-    val faction: String,            // geysir/pendragon/independent/astania/zephyrfalcon/dagal/curtis/garad/darkgod
+    val faction: String,            // Faction enum (카슈미르: kashmir)
     val subFaction: String? = null, // 진영이 두 개인 캐릭터의 두 번째 진영
     val element: String,            // light/dark/fire/crystal/nature
     val exclusiveWeaponId: Int? = null,

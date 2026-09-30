@@ -1,0 +1,58 @@
+[
+  {
+    "name": "워록",
+    "tier": 1,
+    "description": "암흑 마법을 사용해 적에게 피해를 주고 해로운 효과를 부여하는 기본 직업입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/warlock.png",
+    "passive": {
+      "name": "부정한 이득",
+      "iconUrl": "/icons/classes/passive/warlock.png",
+      "lv1": "스킬로 적에게 디버프를 건 후 주문력의 [10%]{red}만큼 체력을 회복합니다.",
+      "lv2": "스킬로 적에게 디버프를 건 후 주문력의 [15%]{red}만큼 체력을 회복합니다."
+    },
+    "skillsFrom": "위치"
+  },
+  {
+    "name": "오컬티스트",
+    "tier": 3,
+    "parent": "다크메이지",
+    "description": "암흑 마법을 사용해 적에게 해로운 효과를 부여하고 혼란시키는 상급 흑마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/occultist.png",
+    "passive": {
+      "name": "잊혀진 계약",
+      "iconUrl": "/icons/classes/passive/occultist.png",
+      "lv1": "적 공격 후 버프를 [2]{red}개씩 지우고 적의 체력이 [50%]{red} 이하가 됐다면 [혼란]{orange}시켜 이동 가능 범위 내에서 무작위로 도망가게 만듭니다.",
+      "lv2": "적 공격 후 버프를 [3]{red}개씩 지우고 적의 체력이 [50%]{red} 이하가 됐다면 [혼란]{orange}시켜 이동 가능 범위 내에서 무작위로 도망가게 만듭니다."
+    },
+    "skills": [
+      {
+        "name": "디스페어 존",
+        "iconUrl": "/icons/skills/despair_zone.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "광역",
+        "attackType": "마법",
+        "element": "암흑",
+        "allowedWeapon": "스태프, 로드",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "주위 [3]{red}칸 내 디스페어 존을 생성해 타일 주위 [2]{red}칸 내 적들에게 주문력의 [60%]{red}만큼 피해를 주고 피해를 입은 적들에게 [2]{yellow}턴 동안 [마법 취약]{orange} 효과를 겁니다."
+      }
+    ]
+  }
+]
