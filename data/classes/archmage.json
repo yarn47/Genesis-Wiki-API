@@ -5,6 +5,7 @@
     "parent": "매지션",
     "description": "마법의 본질에 대한 깊은 이해를 가진 강력하고 다재다능한 대마법사입니다.",
     "weaponType": "스태프,로드",
+    "attackType": "마법",
     "defenseType": "라이트",
     "attackRange": 3,
     "moveRange": 3,

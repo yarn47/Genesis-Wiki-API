@@ -6,6 +6,9 @@ import org.springframework.data.jpa.repository.Query
 
 interface ClassRepository : JpaRepository<WikiClass, Int> {
 
+    @Query("SELECT DISTINCT c FROM WikiClass c LEFT JOIN FETCH c.classSkills cs LEFT JOIN FETCH cs.skill")
+    fun findAllWithSkills(): List<WikiClass>
+
     // Tier별 조회
     fun findAllByTierOrderByClassId(tier: Int): List<WikiClass>
 
