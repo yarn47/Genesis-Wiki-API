@@ -1,0 +1,39 @@
+[
+  {
+    "name": "아크메이지",
+    "tier": 3,
+    "parent": "매지션",
+    "description": "마법의 본질에 대한 깊은 이해를 가진 강력하고 다재다능한 대마법사입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/archmage.png",
+    "passive": {
+      "name": "침식",
+      "lv1": "주문력이 [25%]{red}만큼 증가하고 턴 종료 시 이번 턴 동안 적에게 피해를 입혔다면 [침식 1]{green} 효과를 획득합니다. 전투 공격 후 적이 죽지 않았다면 [1 TP]{yellow}를 빼앗습니다.",
+      "lv2": "주문력이 [30%]{red}만큼 증가하고 턴 종료 시 이번 턴 동안 적에게 피해를 입혔다면 [침식 2]{green} 효과를 획득합니다. 전투 공격 후 적이 죽지 않았다면 [1 TP]{yellow}를 빼앗습니다.",
+      "iconUrl": "/icons/classes/passive/archmage.png"
+    },
+    "skills": [
+      {
+        "name": "썬더볼트",
+        "iconUrl": "/icons/skills/thunderbolt.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "element": "전격",
+        "allowedWeapon": "스태프, 로드",
+        "effect": "방향을 지정해 마법으로 범위 내 적들에게 주문력의 [70%]{red}만큼 전격 피해를 주고 [1]{yellow}턴 동안 [감전]{orange}시킵니다. [50%]{red} 확률로 피해를 받은 적과 인접한 적들에게 주문력의 [50%]{red}만큼 추가로 저항력을 무시해 전격 피해를 주고 [1]{yellow}턴 동안 [감전]{orange}시킵니다."
+      }
+    ]
+  }
+]

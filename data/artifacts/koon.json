@@ -1,0 +1,26 @@
+[
+  {
+    "name": "주문 가속",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/spell_acceleration.png",
+    "description": "격렬한 전투 속, 끊임없이 몰아치는 주문은 시간의 흐름을 비틉니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "스킬 사용 후 [주문 가속 1]{green} 효과 획득."
+      },
+      {
+        "step": 4,
+        "effect": "스킬 사용 후 [주문 가속 2]{green} 효과 획득."
+      },
+      {
+        "step": 5,
+        "effect": "스킬 사용 후 [주문 가속 3]{green} 효과 획득."
+      },
+      {
+        "step": 6,
+        "effect": "스킬 사용 후 [주문 가속 4]{green} 효과 획득."
+      }
+    ]
+  }
+]

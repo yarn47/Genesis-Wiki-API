@@ -1,0 +1,238 @@
+[
+  {
+    "name": "디펜더",
+    "tier": 1,
+    "description": "검과 방패를 들고 근접해 방어적인 역할을 수행하는 기본 직업입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/defender.png",
+    "passive": {
+      "name": "수비 강화",
+      "lv1": "인접한 적에게 공격받으면 방어력이 [10%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "인접한 적에게 공격받으면 방어력이 [15%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/defender.png"
+    },
+    "skills": [
+      {
+        "name": "부동섬",
+        "iconUrl": "/icons/skills/budongseom.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적에게 공격력의 [130%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [속박]{orange}을 겁니다.",
+        "allowedWeapon": "검/방패"
+      },
+      {
+        "name": "진격섬",
+        "iconUrl": "/icons/skills/jingyeokseom.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "이동공격",
+          "위치제어",
+          "전투"
+        ],
+        "effect": "적에게 방어력의 [80%]{red}만큼 물리 고정 피해를 주고 [2]{red}칸까지 강하게 밀쳐 냅니다. 밀쳐진 적이 벽이나 다른 적과 부딪힌다면 [1]{yellow}턴 동안 [기절]{orange}시키고 빠르게 접근해 공격력의 [50%]{red}만큼 추가 피해를 줍니다. 추가 피해를 가하지 않았다면 TP를 [1]{yellow}만큼 회복합니다.",
+        "allowedWeapon": "검/방패"
+      },
+      {
+        "name": "이충공파",
+        "iconUrl": "/icons/skills/ichung_gongpa.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "이동공격"
+        ],
+        "effect": "주위 [3]{red}칸 내 지정한 타일로 이동해 주변 [1]{red}바퀴 내 적들에게 방어력의 [80%]{red}만큼 물리 고정 피해를 주고 [느려짐 1]{orange} 효과를 겁니다.",
+        "allowedWeapon": "검/방패"
+      }
+    ]
+  },
+  {
+    "name": "아머나이트",
+    "tier": 2,
+    "parent": "디펜더",
+    "description": "검과 방패를 들고 높은 체력과 방어력으로 적들의 공격을 받아내는 팀의 방패입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/armor_knight.png",
+    "passive": {
+      "name": "불굴의 수비",
+      "lv1": "인접한 적에게 공격받으면 방어력이 [20%]{red} 증가하고 이동 방해 효과에 [50%]{red} 확률로 저항합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "인접한 적에게 공격받으면 방어력이 [30%]{red} 증가하고 이동 방해 효과에 [50%]{red} 확률로 저항합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/armor_knight.png"
+    },
+    "skills": [
+      {
+        "name": "도발의 외침",
+        "iconUrl": "/icons/skills/taunting_shout.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "함성"
+        ],
+        "effect": "자신의 주위 [2]{red}칸 내 적들을 [1]{yellow}턴 동안 [도발]{orange}하고 대상으로부터 받는 피해가 [20%]{red} 줄어듭니다."
+      }
+    ]
+  },
+  {
+    "name": "팔라딘",
+    "tier": 2,
+    "parent": "디펜더",
+    "description": "검과 방패를 무기로 근접해 싸우고 광휘 마법으로 아군을 지원하는 신성한 성기사입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/paladin.png",
+    "passive": {
+      "name": "신앙심",
+      "lv1": "오라를 가져 자신을 포함해 주위 [2]{red}칸 내 아군에게 [신앙심 1]{green} 효과를 주고 저항력의 [40%]{red}만큼 주문력이 올라갑니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "오라를 가져 자신을 포함해 주위 [2]{red}칸 내 아군에게 [신앙심 2]{green} 효과를 주고 저항력의 [50%]{red}만큼 주문력이 올라갑니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/paladin.png"
+    },
+    "skills": [
+      {
+        "name": "인챈트 소드",
+        "iconUrl": "/icons/skills/enchant_sword.png",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. [2]{yellow}턴 동안 [인챈트 소드]{green} 효과를 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "포트리스",
+    "tier": 3,
+    "parent": "아머나이트",
+    "description": "검과 방패를 들고 높은 방어력과 체력을 바탕으로 최전선에서 적의 공격을 단단히 버텨내는 중무장한 전사입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/fortress.png",
+    "passive": {
+      "name": "철벽",
+      "lv1": "방어력/저항력이 [40%]{red} 증가하고 물리/마법 관통 저항이 [10%]{red} 증가합니다. 이동 방해 효과에 면역됩니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "방어력/저항력이 [50%]{red} 증가하고 물리/마법 관통 저항이 [15%]{red} 증가합니다. 이동 방해 효과에 면역됩니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/fortress.png"
+    },
+    "skills": [
+      {
+        "name": "허공열파",
+        "iconUrl": "/icons/skills/heogong_yeolpa.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "지향성"
+        ],
+        "effect": "방향을 지정해 [3x3]{red} 범위 내 적들에게 방어력의 [100%]{red}만큼 물리 고정 피해를 주고 자신은 방어력의 [100%]{red}에 해당하는 보호막을 [2]{yellow}턴 동안 얻습니다. 설치물에게는 [3]{red}의 피해를 주고 범위 내 타일 효과를 제거합니다.",
+        "allowedWeapon": "검/방패"
+      }
+    ]
+  },
+  {
+    "name": "센츄리온",
+    "tier": 3,
+    "parent": "아머나이트",
+    "description": "검과 방패를 들고 단단한 방어력과 날카로운 반격으로 능숙하게 싸우는 숙련된 상급 전사입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/centurion.png",
+    "passive": {
+      "name": "격돌",
+      "lv1": "방어력/저항력이 [20%]{red}, 공격력이 방어력의 [20%]{red}만큼 증가합니다. 반격 피해량이 [20%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "방어력/저항력이 [30%]{red}, 공격력이 방어력의 [30%]{red}만큼 증가합니다. 반격 피해량이 [30%]{red} 증가합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/centurion.png"
+    },
+    "skills": [
+      {
+        "name": "공파진섬",
+        "iconUrl": "/icons/skills/gongpa_jinseom.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 1,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적에게 공격력의 [75%]{red}만큼 피해를 주고 주변 [1]{red}바퀴 내 적들에게 공격력의 [75%]{red}만큼 추가 피해를 줍니다. 피해를 준 적들에게 [2]{yellow}턴 동안 [약점 노출]{orange} 효과를 겁니다.",
+        "allowedWeapon": "검/방패"
+      }
+    ]
+  },
+  {
+    "name": "크루세이더",
+    "tier": 3,
+    "parent": "팔라딘",
+    "description": "신성한 검과 방패를 들고 아군을 지원하는 강력한 보조 능력을 지닌 믿음의 성기사입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/crusader.png",
+    "passive": {
+      "name": "신성 개입",
+      "lv1": "오라를 가져 자신을 포함해 주위 [2]{red}칸 내 아군에게 [신성 개입 1]{green} 효과를 주고 저항력의 [80%]{red}만큼 주문력이 올라갑니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "오라를 가져 자신을 포함해 주위 [2]{red}칸 내 아군에게 [신성 개입 2]{green} 효과를 주고 저항력의 [100%]{red}만큼 주문력이 올라갑니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/crusader.png"
+    },
+    "skills": [
+      {
+        "name": "썬 라이트",
+        "iconUrl": "/icons/skills/sun_light.png",
+        "tpCost": 4,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "치유"
+        ],
+        "effect": "자신의 주위 [3]{red}칸 내 광휘의 폭발을 일으켜 공격력 또는 주문력 중 높은 수치의 [100%]{red}만큼 적에게 피해를 주고 아군을 치유합니다. 효과 대상이 적이면 버프를, 아군이라면 디버프를 [2]{red}개 해제합니다.",
+        "element": "광휘"
+      }
+    ]
+  }
+]

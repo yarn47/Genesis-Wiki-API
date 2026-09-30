@@ -1,0 +1,104 @@
+[
+  {
+    "name": "트리니티 포스",
+    "weaponType": "스태프",
+    "grade": "전설",
+    "iconUrl": "/icons/weapons/trinity_force.png",
+    "extraStats": "주문력 +10/11/12/13/14/15% (각성 1~6단)",
+    "description": "원소 마법의 힘을 증폭시켜주는 스태프.\n제국학술원의 강력한 마법이 걸려 있어, 서로 다른 원소가 섞여도 강력한 위력을 발휘한다.\n쿤이 장착하면 무기의 잠재력을 끌어낼 수 있다.",
+    "baseStats": [
+      {
+        "step": 1,
+        "maxHp": 116,
+        "spellAttack": 381
+      },
+      {
+        "step": 2,
+        "maxHp": 117,
+        "spellAttack": 384
+      },
+      {
+        "step": 3,
+        "maxHp": 118,
+        "spellAttack": 388
+      },
+      {
+        "step": 4,
+        "maxHp": 120,
+        "spellAttack": 392
+      },
+      {
+        "step": 5,
+        "maxHp": 121,
+        "spellAttack": 395
+      },
+      {
+        "step": 6,
+        "maxHp": 122,
+        "spellAttack": 399
+      }
+    ],
+    "effects": [
+      {
+        "name": "삼색 지배",
+        "type": "전용",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 2,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 3,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 4,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 5,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 6,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 지배]{green}, [빙한 지배]{green}, [전격 지배]{green} 중 [1]{red}개를 부여합니다."
+          }
+        ]
+      },
+      {
+        "name": "삼색 나선",
+        "type": "일반",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 2,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 3,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 4,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 5,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          },
+          {
+            "step": 6,
+            "effect": "첫 아군 턴 시작 시, 착용자에게 [화염 나선]{green}, [빙한 나선]{green}, [전격 나선]{green} 중 [1]{red}개를 부여합니다."
+          }
+        ]
+      }
+    ]
+  }
+]
