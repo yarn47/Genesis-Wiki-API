@@ -1,0 +1,27 @@
+[
+  {
+    "name": "진동",
+    "tags": [
+      "해제 불가",
+      "행동제어",
+      "이동력제어"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "받는 피해 [+5%]{red}. 이동력 [-1]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "받는 피해 [+7.5%]{red}. 이동력 [-1]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "받는 피해 [+10%]{red}. 이동력 [-1]{red}."
+      }
+    ]
+  }
+]
