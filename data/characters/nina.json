@@ -1,0 +1,58 @@
+[
+  {
+    "name": "니나 필로테스",
+    "grade": "영웅",
+    "faction": "가라드",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1185년",
+    "height": "168cm",
+    "cv": "송하림",
+    "releaseDate": "2024-01-09",
+    "appearedIn": null,
+    "profileText": "가라드 공국의 사제. 밝고 쾌활한 성격의 소유자이며 전장에서도 웃음을 잃지 않으려고 노력한다. 그녀의 이러한 면모 덕분인지 전장의 오랜 싸움에 지친 병사들도 그녀를 보며 밝고 긍정적인 에너지를 얻어간다고 한다.",
+    "thumbnailUrl": "/icons/characters/nina_thumb.png",
+    "portraitUrl": "/icons/characters/nina_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "시스터",
+      "서머너",
+      "클레릭",
+      "서먼로드",
+      "세인트",
+      "카발리스트"
+    ],
+    "passive": {
+      "name": "빛의 노래",
+      "iconUrl": "/icons/passives/song_of_light.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "주위 [2]{red}칸 내에서 아군 캐릭터가 턴 종료 시 체력이 [100%]{red}가 아니라면 주문력의 [20%]{red}만큼 체력을 회복 시키고 디버프를 [1]{red}개 해제합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "주위 [2]{red}칸 내에서 아군 캐릭터가 턴 종료 시 체력이 [100%]{red}가 아니라면 주문력의 [30%]{red}만큼 체력을 회복 시키고 디버프를 [1]{red}개 해제합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "주위 [3]{red}칸 내에서 아군 캐릭터가 턴 종료 시 체력이 [100%]{red}가 아니라면 주문력의 [35%]{red}만큼 체력을 회복 시키고 디버프를 [1]{red}개 해제합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "주위 [3]{red}칸 내에서 아군 캐릭터가 턴 종료 시 체력이 [100%]{red}가 아니라면 주문력의 [45%]{red}만큼 체력을 회복 시키고 디버프를 [1]{red}개 해제합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "아군 캐릭터가 턴 종료 시 체력이 [100%]{red}가 아니라면 주문력의 [50%]{red}만큼 체력을 회복 시키고 디버프를 [1]{red}개 해제합니다."
+        }
+      ]
+    },
+    "artifacts": []
+  }
+]
