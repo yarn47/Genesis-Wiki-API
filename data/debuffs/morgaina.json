@@ -1,0 +1,27 @@
+[
+  {
+    "name": "마력 공명",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "받는 마법 피해량/받는 치명타 확률 [+8%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "받는 마법 피해량/받는 치명타 확률 [+12%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "받는 마법 피해량/받는 치명타 확률 [+16%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "받는 마법 피해량/받는 치명타 확률 [+20%]{red}."
+      }
+    ]
+  }
+]

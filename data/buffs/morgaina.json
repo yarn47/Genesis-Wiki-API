@@ -1,0 +1,321 @@
+[
+  {
+    "name": "달의 의지",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": "영구",
+        "effect": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 [60%]{red} 확률로 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 2,
+        "duration": "영구",
+        "effect": "치유 효과 [+10%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 [80%]{red} 확률로 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 3,
+        "duration": "영구",
+        "effect": "치유 효과 [+20%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 4,
+        "duration": "영구",
+        "effect": "치유 효과 [+30%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "effect": "치유 효과 [+40%]{red}. 받는 피해 [-10%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "effect": "치유 효과 [+50%]{red}. 받는 피해 [-20%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 무작위 효과 [1]{red}개를 부여."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "effect": "치유 효과 [+60%]{red}. 받는 피해 [-30%]{red}. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 아군 [1]{red}명에게 무작위 효과 [1]{red}개를 부여."
+      }
+    ]
+  },
+  {
+    "name": "달의 이면",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": "영구",
+        "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 [60%]{red} 확률로 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 2,
+        "duration": "영구",
+        "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 [80%]{red} 확률로 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 3,
+        "duration": "영구",
+        "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 4,
+        "duration": "영구",
+        "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "effect": "치명타 확률/마법 관통 [+10%]{red}. 캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "effect": "치명타 확률/마법 관통 [+20%]{red}. 캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 무작위 디버프 [1]{red}개를 부여."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "effect": "치명타 확률/마법 관통 [+30%]{red}. 캐릭터 턴 종료 시 주위 [2]{red}칸 내 적 [1]{red}명에게 무작위 디버프 [1]{red}개를 부여."
+      }
+    ]
+  },
+  {
+    "name": "축복",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "방어력 [+10%]{red}. 행동 종료 시 최대 체력의 [15%]{red}만큼 체력 회복."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "방어력 [+15%]{red}. 행동 종료 시 최대 체력의 [15%]{red}만큼 체력 회복."
+      }
+    ]
+  },
+  {
+    "name": "신성한 갑옷",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "방어력/저항력 [+20%]{red}. 행동 종료 시 최대 체력의 [20%]{red}만큼 체력 회복."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "방어력/저항력 [+25%]{red}. 행동 종료 시 최대 체력의 [25%]{red}만큼 체력 회복."
+      }
+    ]
+  },
+  {
+    "name": "그림자의 빛",
+    "tags": [
+      "보호막"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력 비례 보호막. 보호막을 가지고 있다면 받는 피해 [20%]{red}만큼 감소."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력 비례 보호막. 보호막을 가지고 있다면 받는 피해 [30%]{red}만큼 감소."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "주문력 비례 보호막. 보호막을 가지고 있다면 받는 피해 [40%]{red}만큼 감소."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "주문력 비례 보호막. 보호막을 가지고 있다면 받는 피해 [50%]{red}만큼 감소."
+      }
+    ]
+  },
+  {
+    "name": "치유 의지",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "치유량 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "치유량 [+11%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "치유량 [+12%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "치유량 [+13%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "치유량 [+14%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "치유량 [+15%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "맹공 의지",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력 [+11%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "주문력 [+12%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "주문력 [+13%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "주문력 [+14%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "주문력 [+15%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "보호 의지",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "치유량 [+5%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "치유량 [+6%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "치유량 [+7%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "치유량 [+8%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "치유량 [+9%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "치유량 [+10%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "공격 의지",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력 [+5%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력 [+6%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "주문력 [+7%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "주문력 [+8%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "주문력 [+9%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "주문력 [+10%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "월광",
+    "levels": [
+      {
+        "level": 1,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [10%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [25%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      },
+      {
+        "level": 2,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [11%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [30%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      },
+      {
+        "level": 3,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [12%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [35%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      },
+      {
+        "level": 4,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [13%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [40%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      },
+      {
+        "level": 5,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [14%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [45%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      },
+      {
+        "level": 6,
+        "duration": 3,
+        "effect": "행동 종료 시 착용자 주문력의 [15%]{red}만큼 체력을 회복. 월광 효과가 만료되거나 해제될 때, 착용자 주문력의 [50%]{red}만큼 보호막을 [2]{yellow}턴 동안 획득."
+      }
+    ]
+  }
+]
