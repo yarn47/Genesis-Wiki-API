@@ -21,6 +21,8 @@ class LandamTests(unittest.TestCase):
 
     def test_passive_and_manifest_values(self):
         c = read('characters')[0]
+        self.assertEqual(c['releaseDate'], '2024-01-09')
+        self.assertEqual(c['appearedIn'], '창세기전2')
         self.assertEqual((c['birthYear'], c['height'], c['cv']), ('에스겔력 1162년', '190cm', '최낙윤'))
         ls = c['passive']['levels']
         self.assertEqual([(l['type'], l['step']) for l in ls], [('각성', n) for n in [3,4,5,6]] + [('발현', n) for n in [2,4,6]])
@@ -63,6 +65,7 @@ class LandamTests(unittest.TestCase):
 
     def test_weapon_and_ring(self):
         w = read('weapons')[0]
+        self.assertEqual(w['description'], '아스타니아 법국의 국보이자 주신이 만든 무기라 전해지는 성스러운 창. 마장기 가리우스를 기동시키는 열쇠이기도 하다.\n랜담이 장착하면 무기의 잠재력을 끌어낼 수 있다.')
         self.assertEqual([s['maxHp'] for s in w['baseStats']], [127,128,129,131,132,133])
         self.assertEqual([s['attack'] for s in w['baseStats']], [347,350,354,358,361,365])
         for e, start in zip(w['effects'], [30,20]):

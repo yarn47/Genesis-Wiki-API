@@ -4,6 +4,7 @@
     "weaponType": "창",
     "grade": "전설",
     "iconUrl": "/icons/weapons/gae_bolg.png",
+    "description": "아스타니아 법국의 국보이자 주신이 만든 무기라 전해지는 성스러운 창. 마장기 가리우스를 기동시키는 열쇠이기도 하다.\n랜담이 장착하면 무기의 잠재력을 끌어낼 수 있다.",
     "extraStats": "공격력 +15/16/17/18/19/20% (각성 1~6단)",
     "baseStats": [
       {
