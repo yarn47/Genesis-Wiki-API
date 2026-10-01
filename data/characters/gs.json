@@ -1,0 +1,58 @@
+[
+  {
+    "name": "G.S",
+    "grade": "영웅",
+    "faction": "비프로스트",
+    "element": "욕망의그림자",
+    "birthYear": "불명",
+    "height": "180cm",
+    "cv": "장민혁",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "비프로스트의 레인저. 차분하고 냉정한 성격으로 좀처럼 감정의 동요를 보이지 않는 편이다. 다만 몇 년 전 사고로 기억을 잃었기에 자신의 과거는 물론 진짜 이름조차 기억하지 못하고 있다. 자신을 구해준 레인저 아나기에게 그레이 스케빈저란 이름을 받은 뒤 레인저로 살아가고 있다.",
+    "thumbnailUrl": "/icons/characters/gs_thumb.png",
+    "portraitUrl": "/icons/characters/gs_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "레인저",
+      "파이터",
+      "스카우트",
+      "소드맨",
+      "하이마스터",
+      "소드마스터"
+    ],
+    "passive": {
+      "name": "잿빛 새벽",
+      "iconUrl": "/icons/passives/gray_dawn.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "적 공격 시 적의 디버프 하나당 치명타 확률이 [5%]{red} 증가하고 [2]{yellow}턴 동안 [느려짐 1]{orange}을 겁니다. 적을 공격해 치명타 발생 시 [잿빛 새벽 1]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "적 공격 시 적의 디버프 하나당 치명타 확률이 [6%]{red} 증가하고 [2]{yellow}턴 동안 [느려짐 1]{orange}을 겁니다. 적을 공격해 치명타 발생 시 [잿빛 새벽 2]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "적 공격 시 적의 디버프 하나당 치명타 확률이 [7%]{red} 증가하고 [2]{yellow}턴 동안 [느려짐 1]{orange}을 겁니다. 적을 공격해 치명타 발생 시 [잿빛 새벽 3]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "적 공격 시 적의 디버프 하나당 치명타 확률이 [8%]{red} 증가하고 [2]{yellow}턴 동안 [느려짐 2]{orange}을 겁니다. 적을 공격해 치명타 발생 시 [잿빛 새벽 4]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "적 공격 시 적의 디버프 하나당 치명타 확률이 [9%]{red} 증가하고 [2]{yellow}턴 동안 [느려짐 2]{orange}을 겁니다. 적을 공격해 치명타 발생 시 [잿빛 새벽 5]{green} 효과를 얻습니다."
+        }
+      ]
+    },
+    "artifacts": []
+  }
+]

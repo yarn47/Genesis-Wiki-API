@@ -1,0 +1,142 @@
+[
+  {
+    "name": "레인저",
+    "tier": 1,
+    "description": "민첩한 움직임으로 적에게 근접해 전투를 수행하는 기본 직업입니다.",
+    "weaponType": "검",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/ranger.png",
+    "passive": {
+      "name": "재빠름",
+      "iconUrl": "/icons/classes/passive/ranger.png",
+      "lv1": "적의 통제 영역을 무시해 이동하고 고립된 적을 전투 공격 시 반격 피해를 [15%]{red} 적게 받습니다.",
+      "lv2": "적의 통제 영역을 무시해 이동하고 고립된 적을 전투 공격 시 반격 피해를 [30%]{red} 적게 받습니다."
+    },
+    "skills": [
+      {
+        "name": "제식연",
+        "iconUrl": "/icons/skills/jesikyeon.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "치유",
+          "전투"
+        ],
+        "effect": "적에게 공격력의 [130%]{red}만큼 피해를 주고 공격력의 [50%]{red}만큼 체력을 회복합니다.",
+        "allowedWeapon": "검, 대검, 세검"
+      },
+      {
+        "name": "무극일섬혼",
+        "iconUrl": "/icons/skills/mugeukilseomhon.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "지향성",
+          "이동공격"
+        ],
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [80%]{red}만큼 피해를 주면서 가장 멀리 떨어진 빈칸까지 적들을 뚫고 이동합니다. 피해를 준 적들에게 [2]{yellow}턴 동안 [약점 파악]{orange} 효과를 겁니다."
+      },
+      {
+        "name": "응급 처치",
+        "iconUrl": "/icons/skills/first_aid.png",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "치유"
+        ],
+        "effect": "자신의 체력을 공격력의 [30%]{red}만큼 회복하고 [3]{yellow}턴 동안 [응급 처치]{green} 효과를 얻습니다. 추가 스킬 사용이나 공격기회를 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "스카우트",
+    "tier": 2,
+    "parent": "레인저",
+    "description": "적의 약점을 파악하고 민첩한 움직임으로 적에게 근접해 전투를 수행하는 전장의 정찰자입니다.",
+    "weaponType": "검",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/scout.png",
+    "passive": {
+      "name": "간파",
+      "iconUrl": "/icons/classes/passive/scout.png",
+      "lv1": "적의 통제 영역을 무시해 이동합니다. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 적이 있다면 무작위 적 [1]{red}명에게 [2]{yellow}턴 동안 [간파 1]{orange}를 겁니다.",
+      "lv2": "적의 통제 영역을 무시해 이동합니다. 캐릭터 턴 종료 시 주위 [3]{red}칸 내 적이 있다면 무작위 적 [1]{red}명에게 [2]{yellow}턴 동안 [간파 2]{orange}를 겁니다."
+    },
+    "skills": [
+      {
+        "name": "잠열섬",
+        "iconUrl": "/icons/skills/jamyeolseom.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적에게 공격력의 [160%]{red}만큼 피해를 주고 치명타 발동 시 [2]{yellow}턴 동안 [치유 불가]{orange} 효과를 겁니다.",
+        "allowedWeapon": "검, 대검, 세검"
+      }
+    ]
+  },
+  {
+    "name": "하이마스터",
+    "tier": 3,
+    "parent": "스카우트",
+    "description": "한손검을 무기로 사용하고 넓은 시야로 적군을 파악해 전장을 유리하게 이끄는 상급 직업입니다.",
+    "weaponType": "검",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/high_master.png",
+    "passive": {
+      "name": "심안",
+      "iconUrl": "/icons/classes/passive/high_master.png",
+      "lv1": "받는 피해량 [-15%]{red}. 적의 통제영역을 무시해 이동합니다. 턴 시작 시 가까운 무작위 적 [2]{red}명에게 [심안]{orange} 효과를 겁니다. 공격 받을 때 [심안]{orange} 효과가 없는 적으로부터 공격받으면 받는 피해가 [15%]{red} 감소.",
+      "lv2": "받는 피해량 [-20%]{red}. 적의 통제영역을 무시해 이동합니다. 턴 시작 시 가까운 무작위 적 [2]{red}명에게 [심안]{orange} 효과를 겁니다. 공격 받을 때 [심안]{orange} 효과가 없는 적으로부터 공격받으면 받는 피해가 [20%]{red} 감소."
+    },
+    "skills": [
+      {
+        "name": "일점극파",
+        "iconUrl": "/icons/skills/iljeomgeukpa.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "지향성"
+        ],
+        "effect": "방향을 지정해 전방 [3]{red}칸 내 적들에게 공격력의 [100%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [치유 불가]{orange} 효과를 겁니다.",
+        "allowedWeapon": "검, 대검, 세검"
+      }
+    ]
+  }
+]

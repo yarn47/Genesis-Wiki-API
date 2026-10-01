@@ -5,6 +5,14 @@ import org.junit.jupiter.api.Test
 
 class CharacterRequestTest {
     @Test
+    fun `supports Bifrost hero without manifestation`() {
+        val req = CharacterRequest(name = "G.S", grade = "hero", faction = "bifrost", element = "dark", hasManifestation = false)
+        assertEquals(com.genesis.wiki.entity.Faction.bifrost, com.genesis.wiki.entity.Faction.valueOf(req.faction))
+        assertFalse(req.hasManifestation)
+        assertNull(req.ultimate)
+    }
+
+    @Test
     fun `supports manifestation without an ultimate`() {
         val req = CharacterRequest(
             name = "아이린 사르데스", grade = "legend", faction = "garad", element = "light",
