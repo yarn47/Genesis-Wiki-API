@@ -1,0 +1,39 @@
+[
+  {
+    "name": "신풍조",
+    "tier": 3,
+    "parent": "어쌔신",
+    "description": "팬드래건이 만든 대 암살자 집단으로 우수한 기동력과 생존 능력을 가진 상급 직업입니다.",
+    "weaponType": "쌍수단검",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/sinpungjo.png",
+    "passive": {
+      "name": "풍비유화",
+      "iconUrl": "/icons/classes/passive/sinpungjo.png",
+      "lv1": "이동 시 [도약]{green}할 수 있고 전투 공격 시 치명타 확률이 [15%]{red} 증가합니다. 체력이 [50%]{red} 이하라면 이동력이 [1]{red} 증가하고 받는 피해가 [20%]{red} 감소합니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있고 전투 공격 시 치명타 확률이 [20%]{red} 증가합니다. 체력이 [50%]{red} 이하라면 이동력이 [1]{red} 증가하고 받는 피해가 [30%]{red} 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "낙화예섬",
+        "iconUrl": "/icons/skills/nakhwayeseom.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "allowedWeapon": "쌍수단검",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적을 공격해 공격력의 [150%]{red}만큼 피해를 주고 추가 이동을 얻습니다."
+      }
+    ]
+  }
+]

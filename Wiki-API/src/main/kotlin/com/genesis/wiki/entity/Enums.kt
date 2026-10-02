@@ -1,7 +1,7 @@
 package com.genesis.wiki.entity
 
 enum class Grade { rare, hero, legend, outer }
-enum class Faction { geysir, pendragon, independent, astania, zephyrfalcon, dagal, curtis, garad, darkgod, kashmir, bifrost }
+enum class Faction { geysir, pendragon, independent, astania, zephyrfalcon, dagal, curtis, garad, darkgod, kashmir, bifrost, cyrus }
 enum class Element { light, dark, fire, crystal, nature }
 enum class DefenseType { light, medium, heavy }
 enum class SkillType { active, passive }

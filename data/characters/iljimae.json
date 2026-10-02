@@ -14,7 +14,14 @@
     "portraitUrl": "/icons/characters/iljimae_portrait.png",
     "published": true,
     "hasManifestation": false,
-    "classTree": [],
+    "classTree": [
+      "로그",
+      "킬러",
+      "어쌔신",
+      "섀도우킬러",
+      "섀도우마스터",
+      "신풍조"
+    ],
     "passive": {
       "name": "바람의 혈족",
       "levels": [

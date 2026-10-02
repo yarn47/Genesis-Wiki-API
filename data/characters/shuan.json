@@ -1,0 +1,57 @@
+[
+  {
+    "name": "슈안 노르",
+    "grade": "영웅",
+    "faction": "사이럽스",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1183년",
+    "height": "166cm",
+    "cv": "손선영",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "사이럽스의 용병. 명랑하고 시원시원한 성격이며 돈이 되는 일이라면 뭐든 받아들여 처리하는 편이다. 그녀가 돈에 집착하게 된 건 사실 동생들 때문이다. 전쟁 중에 잃어버렸던 동생을 구하기 위해 크로우가 의뢰하는 위험한 임무에도 기꺼이 뛰어든다.",
+    "thumbnailUrl": "/icons/characters/shuan_thumb.png",
+    "portraitUrl": "/icons/characters/shuan_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "로그",
+      "킬러",
+      "씨프",
+      "섀도우킬러",
+      "클리너",
+      "섀도우댄서"
+    ],
+    "passive": {
+      "name": "죽음의 그림자",
+      "iconUrl": "/icons/passives/shadow_of_death.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "전투 시 치명타 확률 [+10%]{red}. 전투 공격으로 치명타 발생 시 적이 죽지 않았다면 적에게 [죽음의 그림자 1]{orange}를 걸고 [40%]{red} 확률로 모든 버프를 훔칩니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "전투 시 치명타 확률 [+12%]{red}. 전투 공격으로 치명타 발생 시 적이 죽지 않았다면 적에게 [죽음의 그림자 2]{orange}를 걸고 [60%]{red} 확률로 모든 버프를 훔칩니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "전투 시 치명타 확률 [+15%]{red}. 전투 공격으로 치명타 발생 시 적이 죽지 않았다면 적에게 [죽음의 그림자 3]{orange}를 걸고 [80%]{red} 확률로 모든 버프를 훔칩니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "전투 시 치명타 확률 [+17%]{red}. 전투 공격으로 치명타 발생 시 적이 죽지 않았다면 적에게 [죽음의 그림자 4]{orange}를 걸고 모든 버프를 훔칩니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "전투 시 치명타 확률 [+20%]{red}. 전투 공격으로 치명타 발생 시 적이 죽지 않았다면 적에게 [죽음의 그림자 5]{orange}를 걸고 모든 버프를 훔칩니다."
+        }
+      ]
+    }
+  }
+]

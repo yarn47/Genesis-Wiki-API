@@ -1,0 +1,37 @@
+[
+  {
+    "name": "클리너",
+    "tier": 3,
+    "parent": "씨프",
+    "description": "양손에 단검을 들고 빠르고 확실하게 적들을 처리하는 전장의 사신입니다.",
+    "weaponType": "쌍수단검",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "passive": {
+      "name": "고립무원",
+      "iconUrl": "/icons/classes/passive/cleaner.png",
+      "lv1": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [10%]{red} 증가하고 고립된 적 처치 시 추가 행동을 얻습니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [20%]{red} 증가하고 고립된 적 처치 시 추가 행동을 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "초강섬",
+        "iconUrl": "/icons/skills/chogangseom.png",
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "allowedWeapon": "쌍수단검",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "공격 시 치명타 확률 [+30%]{red}. [TP]{yellow}를 모두 소모해 적에게 공격력의 [100%]{red}에 [TP]{yellow} 당 공격력의 [20%]{red}만큼 추가된 피해를 줍니다."
+      }
+    ]
+  }
+]
