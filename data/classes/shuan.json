@@ -4,6 +4,7 @@
     "tier": 3,
     "parent": "씨프",
     "description": "양손에 단검을 들고 빠르고 확실하게 적들을 처리하는 전장의 사신입니다.",
+    "iconUrl": "/icons/classes/emblem/cleaner.png",
     "weaponType": "쌍수단검",
     "attackType": "관통",
     "defenseType": "미디엄",
@@ -12,8 +13,8 @@
     "passive": {
       "name": "고립무원",
       "iconUrl": "/icons/classes/passive/cleaner.png",
-      "lv1": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [10%]{red} 증가하고 고립된 적 처치 시 추가 행동을 얻습니다.",
-      "lv2": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [20%]{red} 증가하고 고립된 적 처치 시 추가 행동을 얻습니다."
+      "lv1": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [10%]{red} 증가하고 인접한 아군이 없는 적 처치 시 추가 행동을 얻습니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률이 [20%]{red} 증가하고 인접한 아군이 없는 적 처치 시 추가 행동을 얻습니다."
     },
     "skills": [
       {
