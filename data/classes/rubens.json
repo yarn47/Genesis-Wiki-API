@@ -1,0 +1,46 @@
+[
+  {
+    "name": "몽크",
+    "tier": 1,
+    "description": "광휘 마법을 시전해 아군을 치유하고 보호하는 기본 직업입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/monk.png"
+  },
+  {
+    "name": "비숍",
+    "tier": 3,
+    "parent": "프리스트",
+    "description": "광휘 마법을 시전해 아군을 보호하고 적을 심판하는 상급 성직자 직업입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/bishop.png",
+    "passive": {
+      "name": "징벌",
+      "iconUrl": "/icons/classes/passive/bishop.png",
+      "lv1": "인접한 아군이 있다면 주문력과 저항력이 [25%]{red} 증가하고 행동 종료 시 [3]{red}칸 내 적군 [1]{red}명에게 [2]{yellow}턴 동안 [징벌 1]{orange}을 겁니다.",
+      "lv2": "인접한 아군이 있다면 주문력과 저항력이 [30%]{red} 증가하고 행동 종료 시 [3]{red}칸 내 적군 [1]{red}명에게 [2]{yellow}턴 동안 [징벌 2]{orange}를 겁니다."
+    },
+    "skills": [
+      {
+        "name": "와이드 큐어",
+        "iconUrl": "/icons/skills/wide_cure.png",
+        "tpCost": 4,
+        "range": "자신",
+        "area": "광역",
+        "element": "광휘",
+        "cooldown": 3,
+        "tags": [
+          "보호막"
+        ],
+        "effect": "자신의 주위 [3]{red}칸 내 아군들의 모든 디버프를 제거하고 [2]{yellow}턴 동안 주문력의 [80%]{red}만큼 피해를 막아주는 보호막을 부여합니다. 보호막이 유지되는 동안 행동 제어 효과에 면역됩니다."
+      }
+    ]
+  }
+]
