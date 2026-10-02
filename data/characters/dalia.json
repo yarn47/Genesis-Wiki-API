@@ -1,0 +1,56 @@
+[
+  {
+    "name": "달리아 이그리트",
+    "grade": "영웅",
+    "faction": "가라드",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1181년",
+    "height": "171cm",
+    "cv": "손선영",
+    "releaseDate": "2024-01-09",
+    "profileText": "가라드 공국의 사제. 다크아머 연합의 참전 요구로 어쩔 수 없이 전장에 나서게 되었다. 차분하고 어른스러운 성격으로, 전장에서 트라우마를 겪게 된 병사들을 공감하고 위로해주는 데 탁월한 재능이 있다고 한다.",
+    "thumbnailUrl": "/icons/characters/dalia_thumb.png",
+    "portraitUrl": "/icons/characters/dalia_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "시스터",
+      "프리스트",
+      "클레릭",
+      "하이프리스트",
+      "엑소시스트",
+      "메이터"
+    ],
+    "passive": {
+      "name": "헌신적 기원",
+      "iconUrl": "/icons/passives/devoted_prayer.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "스킬로 아군에게 이로운 효과 부여 시 [60%]{red} 확률로 [2]{yellow}턴 동안 주문력의 [25%]{red}만큼 보호막을 부여합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "스킬로 아군에게 이로운 효과 부여 시 [80%]{red} 확률로 [2]{yellow}턴 동안 주문력의 [30%]{red}만큼 보호막을 부여합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "스킬로 아군에게 이로운 효과 부여 시 [2]{yellow}턴 동안 주문력의 [35%]{red}만큼 보호막을 부여합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "스킬로 아군에게 이로운 효과 부여 시 [2]{yellow}턴 동안 주문력의 [40%]{red}만큼 보호막을 부여합니다. 보호막이 유지되는 동안 치유 방해 효과에 면역됩니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "스킬로 아군에게 이로운 효과 부여 시 [2]{yellow}턴 동안 주문력의 [50%]{red}만큼 보호막을 부여합니다. 보호막이 유지되는 동안 치유 방해 효과에 면역됩니다."
+        }
+      ]
+    }
+  }
+]
