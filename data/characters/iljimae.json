@@ -14,14 +14,7 @@
     "portraitUrl": "/icons/characters/iljimae_portrait.png",
     "published": true,
     "hasManifestation": false,
-    "classTree": [
-      "파이터",
-      "나이트",
-      "아머나이트",
-      "로얄나이트",
-      "포트리스",
-      "센츄리온"
-    ],
+    "classTree": [],
     "passive": {
       "name": "바람의 혈족",
       "levels": [
@@ -50,7 +43,8 @@
           "step": 6,
           "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [30%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
         }
-      ]
+      ],
+      "iconUrl": "/icons/passives/wind_bloodline.png"
     }
   }
 ]
