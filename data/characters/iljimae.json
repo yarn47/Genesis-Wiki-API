@@ -1,0 +1,56 @@
+[
+  {
+    "name": "일지매",
+    "grade": "영웅",
+    "faction": "팬드래건",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1190년",
+    "height": "172cm",
+    "cv": "허성재",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "팬드래건 왕실 특무대 자예단원. 자예단원 소속으로 잠입, 추적 등 침투 임무에 특화되었으며, 제국 흑영대로부터 성기사단을 도운 뒤 성기사단의 일원이 된다. 그가 10살에 불과하던 때에 그를 제외한 자예단원이 모두 전쟁에서 전사하면서 자예단원 중 유일한 생존자가 되었다.",
+    "thumbnailUrl": "/icons/characters/iljimae_thumb.png",
+    "portraitUrl": "/icons/characters/iljimae_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "파이터",
+      "나이트",
+      "아머나이트",
+      "로얄나이트",
+      "포트리스",
+      "센츄리온"
+    ],
+    "passive": {
+      "name": "바람의 혈족",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [15%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [18%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [22%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [25%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "자신보다 체력이 더 많은 상대와 전투 시 치명타 확률이 [30%]{red} 증가합니다. 전투에서 적 처치 시 [2]{yellow}턴 동안 [분신술]{green} 효과를 얻습니다."
+        }
+      ]
+    }
+  }
+]
