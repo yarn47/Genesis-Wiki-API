@@ -1,0 +1,57 @@
+[
+  {
+    "name": "신디 로즐리",
+    "grade": "영웅",
+    "faction": "팬드래건",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1180년",
+    "height": "162cm",
+    "cv": "이은조",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "팬드래건의 성기사. 다정다감하고 밝은 성격의 보유자로 같은 성기사들에게 두터운 신임을 얻고 있다. 어릴 적 세상을 떠난 동생이 있으며, 그 때문인지 라시드 팬드래건을 보살피는 데 다른 사람보다 유난히 신경 쓰는 모습을 보인다.",
+    "thumbnailUrl": "/icons/characters/cindy_thumb.png",
+    "portraitUrl": "/icons/characters/cindy_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "파이터",
+      "나이트",
+      "아머나이트",
+      "로얄나이트",
+      "포트리스",
+      "센츄리온"
+    ],
+    "passive": {
+      "name": "철의 꽃",
+      "iconUrl": "/icons/passives/iron_flower.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "주위 [2]{red}칸 내 아군들이 근접 전투 시 받는 피해가 [10%]{red} 줄어들고 협공 피해량이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "주위 [2]{red}칸 내 아군들이 근접 전투 시 받는 피해가 [12%]{red} 줄어들고 협공 피해량이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "주위 [2]{red}칸 내 아군들이 근접 전투 시 받는 피해가 [15%]{red} 줄어들고 협공 피해량이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "주위 [2]{red}칸 내 아군들이 근접 전투 시 받는 피해가 [18%]{red} 줄어들고 협공 피해량이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "주위 [2]{red}칸 내 아군들이 근접 전투 시 받는 피해가 [20%]{red} 줄어들고 협공 피해량이 [10%]{red} 증가합니다."
+        }
+      ]
+    }
+  }
+]
