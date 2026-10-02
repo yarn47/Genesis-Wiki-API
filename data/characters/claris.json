@@ -1,0 +1,57 @@
+[
+  {
+    "name": "클라리스 아이올로스",
+    "grade": "영웅",
+    "faction": "커티스",
+    "element": "활력의나무",
+    "birthYear": "불명",
+    "height": "166cm",
+    "cv": "송하림",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "커티스 독립 운동을 돕고 있는 인물. 남들에게는 성씨를 숨긴 채 '클라리스'라고 자신을 소개한다. 사실 그녀의 정체는 커티스의 공주이며, 게이시르의 공세에 멸망해버린 커티스를 해방시키기 위해 커티스 해방군과 긴밀히 협력하고 있다.",
+    "thumbnailUrl": "/icons/characters/claris_thumb.png",
+    "portraitUrl": "/icons/characters/claris_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "파이크",
+      "아처",
+      "랜서",
+      "막스맨",
+      "로얄랜서",
+      "스나이퍼"
+    ],
+    "passive": {
+      "name": "방랑하는 공주",
+      "iconUrl": "/icons/passives/wandering_princess.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "이번 턴에 이동한 거리 [1]{red}칸 당 공격력이 [2%]{red} 증가하고 주위 [2]{red}칸 내 다른 아군이 없다면 치명타 확률이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "이번 턴에 이동한 거리 [1]{red}칸 당 공격력이 [3%]{red} 증가하고 주위 [2]{red}칸 내 다른 아군이 없다면 치명타 확률이 [10%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "이번 턴에 이동한 거리 [1]{red}칸 당 공격력이 [3%]{red} 증가하고 주위 [2]{red}칸 내 다른 아군이 없다면 치명타 확률이 [15%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "이번 턴에 이동한 거리 [1]{red}칸 당 공격력이 [4%]{red} 증가하고 주위 [2]{red}칸 내 다른 아군이 없다면 치명타 확률이 [15%]{red} 증가합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "이번 턴에 이동한 거리 [1]{red}칸 당 공격력이 [5%]{red} 증가하고 주위 [2]{red}칸 내 다른 아군이 없다면 치명타 확률이 [20%]{red} 증가합니다."
+        }
+      ]
+    }
+  }
+]
