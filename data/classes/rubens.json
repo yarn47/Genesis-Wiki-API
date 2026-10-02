@@ -8,7 +8,61 @@
     "defenseType": "라이트",
     "attackRange": 3,
     "moveRange": 3,
-    "iconUrl": "/icons/classes/emblem/monk.png"
+    "iconUrl": "/icons/classes/emblem/monk.png",
+    "passive": {
+      "name": "자애",
+      "lv1": "아군을 대상으로 스킬 사용 시 체력을 [10%]{red} 회복합니다.",
+      "lv2": "아군을 대상으로 스킬 사용 시 체력을 [15%]{red} 회복합니다.",
+      "iconUrl": "/icons/classes/passive/sister.png"
+    },
+    "skills": [
+      {
+        "name": "힐",
+        "iconUrl": "/icons/skills/heal.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 1,
+        "tags": [
+          "치유"
+        ],
+        "effect": "아군을 지정해 주문력의 [100%]{red}만큼 체력을 회복시킵니다.",
+        "element": "광휘"
+      },
+      {
+        "name": "파워 업",
+        "iconUrl": "/icons/skills/power_up.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [],
+        "effect": "아군을 지정해 [2]{yellow}턴 동안 [파워 업]{green} 효과를 부여합니다.",
+        "element": "광휘"
+      },
+      {
+        "name": "힐 윈드",
+        "iconUrl": "/icons/skills/heal_wind.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "치유"
+        ],
+        "effect": "아군을 지정해 대상과 주위 [3]{red}칸 내 아군의 체력을 주문력의 [70%]{red}만큼 회복시키고 [2]{yellow}턴 동안 저항력을 [20%]{red} 증가시킵니다.",
+        "element": "광휘"
+      }
+    ]
   },
   {
     "name": "비숍",
