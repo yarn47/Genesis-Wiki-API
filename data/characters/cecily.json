@@ -1,0 +1,57 @@
+[
+  {
+    "name": "세실리 나레쥬노",
+    "grade": "영웅",
+    "faction": "커티스",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1163년",
+    "height": "169cm",
+    "cv": "홍수정",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "커티스 해방군의 일원. 용맹하고 강인한 성격으로, 커티스를 제국으로부터 독립시키겠다는 굳건한 의지로 아르시아를 곁에서 돕고 있다. 커티스가 전란에 휩싸이게 된 것을 가슴아파하고 있으며, 언젠가는 제국에게서 해방되는 그날을 위해 오늘도 해방군 활동을 멈추지 않는다.",
+    "thumbnailUrl": "/icons/characters/cecily_thumb.png",
+    "portraitUrl": "/icons/characters/cecily_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "아처",
+      "헌터",
+      "막스맨",
+      "보우마스터",
+      "스나이퍼",
+      "샤프슈터"
+    ],
+    "passive": {
+      "name": "흔들림 없는 시선",
+      "iconUrl": "/icons/passives/unwavering_gaze.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "전투 공격 시 치명타 확률이 [10%]{red} 증가하고 치명타가 터지지 않았다면 적에게 [흔들림 없는 시선]{orange}을 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "전투 공격 시 치명타 확률이 [13%]{red} 증가하고 치명타가 터지지 않았다면 적에게 [흔들림 없는 시선]{orange}을 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "전투 공격 시 치명타 확률이 [17%]{red} 증가하고 치명타가 터지지 않았다면 적에게 [흔들림 없는 시선]{orange}을 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "전투 공격 시 치명타 확률이 [21%]{red} 증가하고 치명타가 터지지 않았다면 적에게 [흔들림 없는 시선]{orange}을 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "전투 공격 시 치명타 확률이 [25%]{red} 증가하고 치명타가 터지지 않았다면 적에게 [흔들림 없는 시선]{orange}을 겁니다."
+        }
+      ]
+    }
+  }
+]
