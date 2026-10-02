@@ -1,0 +1,57 @@
+[
+  {
+    "name": "에리히 슐츠",
+    "grade": "영웅",
+    "faction": "아스타니아",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1162년",
+    "height": "180cm",
+    "cv": "이현",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "아스타니아 법왕기사단 단장. 유약한 법왕 루벤스를 보좌하며 냉철하게 법왕기사단을 이끄는 아스타니아의 실세이다. 과거 랜담과 친분이 있었던 걸로 보이나 현재는 서로 거리를 두고 있다.",
+    "thumbnailUrl": "/icons/characters/erich_thumb.png",
+    "portraitUrl": "/icons/characters/erich_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "솔져",
+      "가드",
+      "템플러",
+      "로얄가드",
+      "어스퀘이커",
+      "법왕기사"
+    ],
+    "passive": {
+      "name": "피의 집념",
+      "iconUrl": "/icons/passives/bloody_tenacity.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "전투에서 죽음에 이르는 공격을 당하면 [1]{yellow}턴 동안 [피의 집념 1]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "전투에서 죽음에 이르는 공격을 당하면 [1]{yellow}턴 동안 [피의 집념 2]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "전투에서 죽음에 이르는 공격을 당하면 [1]{yellow}턴 동안 [피의 집념 3]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "전투에서 죽음에 이르는 공격을 당하면 [1]{yellow}턴 동안 [피의 집념 4]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "전투에서 죽음에 이르는 공격을 당하면 [1]{yellow}턴 동안 [피의 집념 5]{green} 효과를 얻습니다."
+        }
+      ]
+    }
+  }
+]
