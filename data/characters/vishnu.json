@@ -1,0 +1,57 @@
+[
+  {
+    "name": "비쉬누 만",
+    "grade": "영웅",
+    "faction": "게이시르",
+    "element": "욕망의그림자",
+    "birthYear": "에스겔력 1149년",
+    "height": "180cm",
+    "cv": "김기철",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "제국 칠용사의 일원. 현자라 불렸으며, 한때 제국 학술원장이기도 했다. 하지만 흑태자가 칩거하고 베라딘이 정권을 잡자 학술원장을 그만두고 자택으로 돌아가 조용히 제자들을 가르치며 살고 있다.\n단 비쉬누는 흑태자가 칩거했다는 베라딘의 발표에 의문을 품고 있었기에 은밀히 제자 기쉬네에게 베라딘의 뒷조사를 부탁한다.",
+    "thumbnailUrl": "/icons/characters/vishnu_thumb.png",
+    "portraitUrl": "/icons/characters/vishnu_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "메이지",
+      "매지션",
+      "서머너",
+      "아크메이지",
+      "소서러",
+      "서먼로드"
+    ],
+    "passive": {
+      "name": "현자의 지혜",
+      "iconUrl": "/icons/passives/wisdom_of_sage.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "캐릭터 턴 종료 시 [60%]{red}의 확률로 무작위 버프 [1]{red}개를 얻고 공격하거나 스킬 사용 시 보유한 버프 [1]{red}개 당 주문력이 [5%]{red} 증가합니다.\n획득 버프: [레인지 업]{green}, [헤이스트]{green}, [스펠버스트]{green}."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "캐릭터 턴 종료 시 [80%]{red}의 확률로 무작위 버프 [1]{red}개를 얻고 공격하거나 스킬 사용 시 보유한 버프 [1]{red}개 당 주문력이 [6%]{red} 증가합니다.\n획득 버프: [레인지 업]{green}, [헤이스트]{green}, [스펠버스트]{green}."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "캐릭터 턴 종료 시 무작위 버프 [1]{red}개를 얻고 공격하거나 스킬 사용 시 보유한 버프 [1]{red}개 당 주문력이 [8%]{red} 증가합니다.\n획득 버프: [레인지 업]{green}, [헤이스트]{green}, [스펠버스트]{green}, [커밋]{green}."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "캐릭터 턴 종료 시 무작위 버프 [1]{red}개를 얻고 공격하거나 스킬 사용 시 보유한 버프 [1]{red}개 당 주문력이 [9%]{red} 증가합니다.\n획득 버프: [레인지 업]{green}, [헤이스트]{green}, [스펠버스트]{green}, [커밋]{green}."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "캐릭터 턴 종료 시 무작위 버프 [1]{red}개를 얻고 공격하거나 스킬 사용 시 보유한 버프 [1]{red}개 당 주문력이 [10%]{red} 증가합니다.\n획득 버프: [레인지 업]{green}, [헤이스트]{green}, [스펠버스트]{green}, [커밋]{green}, [아케인]{green}."
+        }
+      ]
+    }
+  }
+]

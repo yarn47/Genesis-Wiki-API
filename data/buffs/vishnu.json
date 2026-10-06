@@ -1,0 +1,17 @@
+[
+  {
+    "name": "스펠버스트",
+    "duration": 2,
+    "description": "범위 스킬 사용 시 주문력 [+20%]{red}."
+  },
+  {
+    "name": "커밋",
+    "duration": 2,
+    "description": "전투 공격 시 대상이 받는 피해 [+20%]{red}."
+  },
+  {
+    "name": "아케인",
+    "duration": 2,
+    "description": "스킬 사용 시 사용한 TP를 돌려받습니다."
+  }
+]
