@@ -15,7 +15,12 @@
     "published": true,
     "hasManifestation": false,
     "classTree": [
-      "나이프마스터"
+      "로그",
+      "레인저",
+      "킬러",
+      "패스파인더",
+      "나이프마스터",
+      "스톰워커"
     ],
     "passive": {
       "name": "숨은 재능",
