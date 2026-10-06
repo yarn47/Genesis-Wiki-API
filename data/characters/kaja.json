@@ -1,0 +1,57 @@
+[
+  {
+    "name": "카자 아미고",
+    "grade": "영웅",
+    "faction": "아미고",
+    "element": "활력의나무",
+    "birthYear": "에스겔력 1189년",
+    "height": "159cm",
+    "cv": "송하림",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "바자의 딸. 활달한 말괄량이로 아미고 상단이 해적들의 상선 약탈로 곤경을 겪고 있다는 걸 알고, 동방항로를 개척할 생각에 멋대로 가출한다. 한 번 목표가 생기면 뒤를 돌아보지 않고 직진해서 사고를 칠 때도 있지만 아버지와 상단을 생각하는 마음만은 진심이다.",
+    "thumbnailUrl": "/icons/characters/kaja_thumb.png",
+    "portraitUrl": "/icons/characters/kaja_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "메이지",
+      "아처",
+      "파이로맨서",
+      "헌터",
+      "플레임콜러",
+      "이글"
+    ],
+    "passive": {
+      "name": "꿈꾸는 걸음",
+      "iconUrl": "/icons/passives/dreaming_steps.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "게임 시작 시 [꿈꾸는 걸음 1]{green} 효과를 가집니다. 전투 공격 시 체력이 [50%]{red} 이하라면 추가 행동을 얻고 [꿈꾸는 걸음 1]{green} 효과는 사라집니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "게임 시작 시 [꿈꾸는 걸음 2]{green} 효과를 가집니다. 전투 공격 시 체력이 [50%]{red} 이하라면 추가 행동을 얻고 [꿈꾸는 걸음 2]{green} 효과는 사라집니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "게임 시작 시 [꿈꾸는 걸음 3]{green} 효과를 가집니다. 전투 공격 시 체력이 [50%]{red} 이하라면 추가 행동을 얻고 [꿈꾸는 걸음 3]{green} 효과는 사라집니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "게임 시작 시 [꿈꾸는 걸음 4]{green} 효과를 가집니다. 전투 공격 시 체력이 [50%]{red} 이하라면 추가 행동을 얻고 [꿈꾸는 걸음 4]{green} 효과는 사라집니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "게임 시작 시 [꿈꾸는 걸음 5]{green} 효과를 가집니다. 전투 공격 시 체력이 [50%]{red} 이하라면 추가 행동을 얻고 [꿈꾸는 걸음 5]{green} 효과는 사라집니다."
+        }
+      ]
+    }
+  }
+]
