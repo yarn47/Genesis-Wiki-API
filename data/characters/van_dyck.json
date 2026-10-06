@@ -1,0 +1,30 @@
+[
+  {
+    "name": "반 다이크",
+    "grade": "영웅",
+    "faction": "아스타니아",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1145년",
+    "height": "166cm",
+    "cv": "임채헌",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "아스타니아의 추기경. 아스타니아 법국의 법왕사제단 소속으로, 법왕을 보좌하는 역할을 맡고 있다. 인자한 성품의 소유자로, 아스타니아가 제국군의 침공을 당하자 아스타니아를 지키기 위해 나서게 된다.",
+    "thumbnailUrl": "/icons/characters/van_dyck_thumb.png",
+    "portraitUrl": "/icons/characters/van_dyck_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": ["몽크", "프리스트", "클레릭", "비숍", "엑소시스트", "세인트"],
+    "passive": {
+      "name": "성화의 인도자",
+      "iconUrl": "/icons/passives/holy_flame_guide.png",
+      "levels": [
+        {"type": "각성", "step": 2, "effect": "캐릭터 턴 종료 시 주변 [2]{red}바퀴 내 아군들의 체력을 주문력의 [30%]{red}만큼 회복시키고 범위 내 적이 있다면 [성화의 인도자 1]{green} 효과를 얻습니다."},
+        {"type": "각성", "step": 3, "effect": "캐릭터 턴 종료 시 주변 [2]{red}바퀴 내 아군들의 체력을 주문력의 [35%]{red}만큼 회복시키고 범위 내 적이 있다면 [성화의 인도자 2]{green} 효과를 얻습니다."},
+        {"type": "각성", "step": 4, "effect": "캐릭터 턴 종료 시 주변 [2]{red}바퀴 내 아군들의 체력을 주문력의 [40%]{red}만큼 회복시키고 범위 내 적이 있다면 [성화의 인도자 3]{green} 효과를 얻습니다."},
+        {"type": "각성", "step": 5, "effect": "캐릭터 턴 종료 시 주변 [2]{red}바퀴 내 아군들의 체력을 주문력의 [45%]{red}만큼 회복시키고 범위 내 적이 있다면 [성화의 인도자 4]{green} 효과를 얻습니다."},
+        {"type": "각성", "step": 6, "effect": "캐릭터 턴 종료 시 주변 [2]{red}바퀴 내 아군들의 체력을 주문력의 [50%]{red}만큼 회복시키고 범위 내 적이 있다면 [성화의 인도자 5]{green} 효과를 얻습니다."}
+      ]
+    }
+  }
+]
