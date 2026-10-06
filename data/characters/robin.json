@@ -1,0 +1,57 @@
+[
+  {
+    "name": "로빈 보니르",
+    "grade": "영웅",
+    "faction": "사이럽스",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1190년",
+    "height": "162cm",
+    "cv": "강은애",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "사이럽스 출신의 도둑. 어릴 적 도둑 길드 앞에 버려져 도둑들 손에 자라났다. 로빈 보니르란 이름도 로빈을 키워준 도적들이 지어준 것이다. 명랑하고 밝은 성격으로 기댈 곳 없이 산전수전 겪으며 자라와 자기 잇속을 확실히 챙기는 타입이다.",
+    "thumbnailUrl": "/icons/characters/robin_thumb.png",
+    "portraitUrl": "/icons/characters/robin_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "로그",
+      "아처",
+      "씨프",
+      "헌터",
+      "클리너",
+      "보우마스터"
+    ],
+    "passive": {
+      "name": "매혹의 마가렛",
+      "iconUrl": "/icons/passives/charming_margaret.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적이 있다면 적들에게서 버프를 [1]{red}개씩 훔치고 [25%]{red} 확률로 [1]{yellow}턴 동안 [매혹 1]{orange} 효과를 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "캐릭터 턴 종료 시 주위 [2]{red}칸 내 적이 있다면 적들에게서 버프를 [1]{red}개씩 훔치고 [35%]{red} 확률로 [1]{yellow}턴 동안 [매혹 2]{orange} 효과를 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 적이 있다면 적들에게서 버프를 [1]{red}개씩 훔치고 [40%]{red} 확률로 [1]{yellow}턴 동안 [매혹 3]{orange} 효과를 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 적이 있다면 적들에게서 버프를 [1]{red}개씩 훔치고 [50%]{red} 확률로 [1]{yellow}턴 동안 [매혹 4]{orange} 효과를 겁니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "캐릭터 턴 종료 시 주위 [3]{red}칸 내 적이 있다면 적들에게서 버프를 [1]{red}개씩 훔치고 [60%]{red} 확률로 [1]{yellow}턴 동안 [매혹 5]{orange} 효과를 겁니다."
+        }
+      ]
+    }
+  }
+]
