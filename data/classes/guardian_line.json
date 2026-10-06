@@ -1,0 +1,100 @@
+[
+  {
+    "name": "가디언",
+    "tier": 2,
+    "parent": "솔져",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "스킬로 아군이 받는 피해를 줄여주고 적들의 공격을 나눠 받는 팀의 수호자입니다. 창과 방패를 무기로 사용합니다.",
+    "iconUrl": "/icons/classes/emblem/guardian.png",
+    "passive": {
+      "name": "방어 진형",
+      "lv1": "캐릭터 턴 종료 시 다음 턴 시작까지 오라를 가져 주위 [2]{red}칸 내 아군에게 [방어 진형 1]{green} 효과를 줍니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "캐릭터 턴 종료 시 다음 턴 시작까지 오라를 가져 주위 [2]{red}칸 내 아군에게 [방어 진형 2]{green} 효과를 줍니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/guardian.png"
+    },
+    "skills": [
+      {
+        "name": "수호의 결의",
+        "tpCost": 1,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [],
+        "effect": "아군을 지정해 [2]{yellow}턴 동안 [호위]{green}하고 방어력의 [70%]{red}만큼 보호막을 얻습니다. 호위 중인 아군이 [3]{red}칸 이상 멀어지면 호위 효과가 발동하지 않습니다.",
+        "iconUrl": "/icons/skills/guardian_resolve.png"
+      }
+    ]
+  },
+  {
+    "name": "디바인가디언",
+    "tier": 3,
+    "parent": "가디언",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "창과 방패를 들고 전장의 중심에서 광휘 마법으로 아군을 보호하는 상급 수호자입니다.",
+    "iconUrl": "/icons/classes/emblem/divine_guardian.png",
+    "passive": {
+      "name": "신성한 계약",
+      "lv1": "주위 [2]{red}칸 내 아군은 보호막을 얻으면 추가로 최대 체력의 [20%]{red}만큼 체력을 회복합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "주위 [2]{red}칸 내 아군은 보호막을 얻으면 추가로 최대 체력의 [30%]{red}만큼 체력을 회복합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/divine_guardian.png"
+    },
+    "skills": [
+      {
+        "name": "헤이스트 배리어",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "보호막"
+        ],
+        "effect": "아군을 지정해 주문력과 방어력의 [100%]{red}만큼 피해를 막아주는 [헤이스트 배리어]{green}를 [2]{yellow}턴 동안 부여합니다.",
+        "iconUrl": "/icons/skills/haste_barrier.png"
+      }
+    ]
+  },
+  {
+    "name": "임페리얼가디언",
+    "tier": 3,
+    "parent": "가디언",
+    "weaponType": "창/방패,창",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "창과 방패를 들고 주변 아군들을 헌신적으로 보호하는데 특화된 상급 수호자 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/imperial_guardian.png",
+    "passive": {
+      "name": "수호 유대",
+      "lv1": "보호막 획득 시 다음 턴 시작까지 방어력과 저항력이 [20%]{red} 증가하고 캐릭터 턴 종료 시 보호막을 가지고 있다면 주위 [2]{red}칸 내 아군들에게 다음 턴 시작까지 [전우 보호]{green} 효과를 부여합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "lv2": "보호막 획득 시 다음 턴 시작까지 방어력과 저항력이 [25%]{red} 증가하고 캐릭터 턴 종료 시 보호막을 가지고 있다면 주위 [2]{red}칸 내 아군들에게 다음 턴 시작까지 [전우 보호]{green} 효과를 부여합니다. 인접 타일은 아군에게 [엄폐]{green}를 주고 적의 이동을 제약하는 [통제 영역]{orange}이 됩니다.",
+      "iconUrl": "/icons/classes/passive/imperial_guardian.png"
+    },
+    "skills": [
+      {
+        "name": "헌신적인 수호",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [],
+        "effect": "자신의 주변 [1]{red}바퀴 내 아군들에게 [2]{yellow}턴 동안 방어력의 [70%]{red}만큼 보호막을 부여합니다.",
+        "iconUrl": "/icons/skills/devoted_protection.png"
+      }
+    ]
+  }
+]
