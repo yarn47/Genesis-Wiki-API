@@ -1,0 +1,12 @@
+[
+  {
+    "name": "인퀴지터",
+    "tier": 3,
+    "parent": "팔라딘",
+    "description": "신의 의지를 받들어 신성한 검과 방패를 들고 저돌적인 스킬로 적들을 심판하는 상급 성기사입니다.",
+    "weaponType": "검/방패",
+    "defenseType": "헤비",
+    "attackRange": 1,
+    "moveRange": 3
+  }
+]

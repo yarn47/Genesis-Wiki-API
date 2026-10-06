@@ -1,0 +1,57 @@
+[
+  {
+    "name": "사이렌 우드빌",
+    "grade": "영웅",
+    "faction": "팬드래건",
+    "element": "신념의빛",
+    "birthYear": "에스겔력 1180년",
+    "height": "169cm",
+    "cv": "문남숙",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "팬드래건의 성기사. 늘 침착하고 냉정한 모습을 보이며 신중하게 행동하는 편이다. 이올린에게 깊은 충성심을 품고 있어 이올린의 명이라면 최선을 다해 따른다.",
+    "thumbnailUrl": "/icons/characters/siren_thumb.png",
+    "portraitUrl": "/icons/characters/siren_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "디펜더",
+      "아머나이트",
+      "팔라딘",
+      "포트리스",
+      "크루세이더",
+      "인퀴지터"
+    ],
+    "passive": {
+      "name": "맹세의 기사",
+      "iconUrl": "/icons/passives/knight_of_oath.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "인접한 아군이 받는 피해를 [50%]{red} 나눠 받습니다. 협공 시 주는 피해량이 [10%]{red} 증가하고 인접한 적 사망 시 최대 체력의 [10%]{red}만큼 체력을 회복합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "인접한 아군이 받는 피해를 [50%]{red} 나눠 받습니다. 협공 시 주는 피해량이 [12%]{red} 증가하고 인접한 적 사망 시 최대 체력의 [12%]{red}만큼 체력을 회복합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "인접한 아군이 받는 피해를 [50%]{red} 나눠 받습니다. 협공 시 주는 피해량이 [15%]{red} 증가하고 인접한 적 사망 시 최대 체력의 [15%]{red}만큼 체력을 회복합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "인접한 아군이 받는 피해를 [50%]{red} 나눠 받습니다. 협공 시 주는 피해량이 [18%]{red} 증가하고 인접한 적 사망 시 최대 체력의 [18%]{red}만큼 체력을 회복합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "인접한 아군이 받는 피해를 [50%]{red} 나눠 받습니다. 협공 시 주는 피해량이 [20%]{red} 증가하고 인접한 적 사망 시 최대 체력의 [20%]{red}만큼 체력을 회복합니다."
+        }
+      ]
+    }
+  }
+]
