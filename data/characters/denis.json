@@ -1,0 +1,30 @@
+[
+  {
+    "name": "데니스 알렌",
+    "grade": "영웅",
+    "faction": "비프로스트",
+    "element": "활력의나무",
+    "birthYear": "에스겔력 1171년",
+    "height": "169cm",
+    "cv": "김대중",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "주신교를 믿는 수도사. 속세를 떠나 기간테스 산맥 깊은 곳의 기도원에서 수행을 하며 지내고 있었다. 그러던 어느 날, 북빙원을 넘던 성기사단을 만나게 되고, 이올린 일행을 돕는 게 주신의 뜻이라고 생각하여 성기사단에 힘을 보태기로 한다.",
+    "thumbnailUrl": "/icons/characters/denis_thumb.png",
+    "portraitUrl": "/icons/characters/denis_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": ["몽크", "프리스트", "클레릭", "엑소시스트", "세인트", "카발리스트"],
+    "passive": {
+      "name": "원로 수도승",
+      "iconUrl": "/icons/passives/elder_monk.png",
+      "levels": [
+        {"type": "각성", "step": 2, "effect": "체력이 [100%]{red}라면 치유량이 [20%]{red} 증가합니다. 광휘 계열 스킬 사용 시 적을 대상으로 하지 않았다면 주위 [2]{red}칸 내 아군의 디버프를 [50%]{red} 확률로 [1]{red}개씩 제거합니다."},
+        {"type": "각성", "step": 3, "effect": "체력이 [90%]{red} 이상이라면 치유량이 [30%]{red} 증가합니다. 광휘 계열 스킬 사용 시 적을 대상으로 하지 않았다면 주위 [2]{red}칸 내 아군의 디버프를 [70%]{red} 확률로 [1]{red}개씩 제거합니다."},
+        {"type": "각성", "step": 4, "effect": "체력이 [80%]{red} 이상이라면 치유량이 [40%]{red} 증가합니다. 광휘 계열 스킬 사용 시 적을 대상으로 하지 않았다면 주위 [2]{red}칸 내 아군의 디버프를 [1]{red}개씩 제거합니다."},
+        {"type": "각성", "step": 5, "effect": "체력이 [70%]{red} 이상이라면 치유량이 [50%]{red} 증가합니다. 광휘 계열 스킬 사용 시 적을 대상으로 하지 않았다면 주위 [3]{red}칸 내 아군의 디버프를 [1]{red}개씩 제거합니다."},
+        {"type": "각성", "step": 6, "effect": "체력이 [60%]{red} 이상이라면 치유량이 [60%]{red} 증가합니다. 광휘 계열 스킬 사용 시 적을 대상으로 하지 않았다면 아군의 디버프를 [1]{red}개씩 제거합니다."}
+      ]
+    }
+  }
+]
