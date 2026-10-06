@@ -1,0 +1,71 @@
+[
+  {
+    "name": "네크로맨서",
+    "tier": 2,
+    "parent": "워록",
+    "description": "암흑 마법을 사용해 어둠의 존재를 소환하고 조종하는데 특화된 흑마법사 직업입니다.",
+    "passive": {
+      "name": "착취",
+      "lv1": "암흑 계열 스킬 사용 시 주문력이 [15%]{red} 증가하고 내 소환물이 죽으면 [1]{red}TP와 주문력의 [30%]{red}만큼 체력을 회복합니다.",
+      "lv2": "암흑 계열 스킬 사용 시 주문력이 [20%]{red} 증가하고 내 소환물이 죽으면 [1]{red}TP와 주문력의 [50%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/necromancer.png"
+    },
+    "skills": [
+      {
+        "name": "데쓰 라이즈",
+        "element": "암흑",
+        "tpCost": 3,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [],
+        "effect": "주위 [2]{red}칸 내 빈 타일에 서번트 나이트 한 개체를 소환합니다. 동일한 소환수는 한 개체만 유지 가능합니다.",
+        "iconUrl": "/icons/skills/death_rise.png"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/necromancer.png"
+  },
+  {
+    "name": "리치",
+    "tier": 3,
+    "parent": "네크로맨서",
+    "description": "암흑 마법을 사용해 인간의 한계를 넘어서 적의 정신을 조종하는 상급 흑마법사 직업입니다.",
+    "passive": {
+      "name": "어둠의 정수",
+      "lv1": "암흑 계열 스킬 사용 시 주문력이 [30%]{red} 증가하고 체력이 [40%]{red} 이하라면 다음 턴 시작까지 [어둠의 정수]{green} 효과를 얻습니다.",
+      "lv2": "암흑 계열 스킬 사용 시 주문력이 [40%]{red} 증가하고 체력이 [50%]{red} 이하라면 다음 턴 시작까지 [어둠의 정수]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/lich.png"
+    },
+    "skills": [
+      {
+        "name": "마인드 컨트롤",
+        "element": "암흑",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [
+          "원거리"
+        ],
+        "effect": "적을 지정해 다음 아군 턴까지 [마인드 컨트롤]{orange}을 시전합니다. 지배에 성공하면 [1]{yellow}턴 동안 조종해 적을 공격하거나 스킬을 사용할 수 있습니다. 이 스킬은 호위할 수 없습니다.",
+        "iconUrl": "/icons/skills/mind_control.png"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3
+  }
+]
