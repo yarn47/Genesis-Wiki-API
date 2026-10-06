@@ -1,0 +1,43 @@
+[
+  {
+    "name": "불의 심장",
+    "duration": 1,
+    "description": "스킬 사용에 소모된 TP 회수. 화염 디버프 해제."
+  },
+  {
+    "name": "궁극의 열망",
+    "duration": "영구",
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "name": "궁극의 열망 1",
+        "effect": "주문력 [+15%]{red}. [3]{red} 중첩 시 [3]{red} TP를 얻고 [마력 정수 1]{green} 효과로 대체."
+      },
+      {
+        "level": 2,
+        "name": "궁극의 열망 2",
+        "effect": "주문력 [+15%]{red}. [3]{red} 중첩 시 [3]{red} TP를 얻고 [마력 정수 2]{green} 효과로 대체."
+      }
+    ]
+  },
+  {
+    "name": "마력 정수",
+    "duration": 2,
+    "levels": [
+      {
+        "level": 1,
+        "name": "마력 정수 1",
+        "effect": "주문력 [+50%]{red}."
+      },
+      {
+        "level": 2,
+        "name": "마력 정수 2",
+        "effect": "주문력 [+60%]{red}."
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "하야 벨",
+    "grade": "영웅",
+    "faction": "팬드래건",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1184년",
+    "height": "166cm",
+    "cv": "김채하",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "팬드래건의 왕립마법사. 야무지고 당찬 성격의 보유자이며, 성기사단과 '영광의 홀 탈취작전'에 함께했다. 카메오의 제자 중 한 명으로 한때 같은 제자였던 쿤과 친구 사이였지만, 쿤이 제국 사천왕이 된 것을 알자 팬드래건을 배신했다고 생각해 원망하고 있다.",
+    "thumbnailUrl": "/icons/characters/haya_thumb.png",
+    "portraitUrl": "/icons/characters/haya_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "메이지",
+      "매지션",
+      "파이로맨서",
+      "소서러",
+      "파이어마스터",
+      "플레임콜러"
+    ],
+    "passive": {
+      "name": "불의 심장",
+      "iconUrl": "/icons/passives/heart_of_fire.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "화염 계열 스킬 사용 시 주문력이 [20%]{red}만큼 증가하고 [20%]{red} 확률로 [불의 심장]{green}이 발동합니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "화염 계열 스킬 사용 시 주문력이 [25%]{red}만큼 증가하고 [25%]{red} 확률로 [불의 심장]{green}이 발동합니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "화염 계열 스킬 사용 시 주문력이 [30%]{red}만큼 증가하고 [30%]{red} 확률로 [불의 심장]{green}이 발동합니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "화염 계열 스킬 사용 시 주문력이 [35%]{red}만큼 증가하고 [35%]{red} 확률로 [불의 심장]{green}이 발동합니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "화염 계열 스킬 사용 시 주문력이 [40%]{red}만큼 증가하고 [40%]{red} 확률로 [불의 심장]{green}이 발동합니다."
+        }
+      ]
+    }
+  }
+]

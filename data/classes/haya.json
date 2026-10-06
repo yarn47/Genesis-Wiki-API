@@ -1,0 +1,74 @@
+[
+  {
+    "name": "소서러",
+    "tier": 3,
+    "parent": "매지션",
+    "description": "타고난 재능에 열망이 더해져 강력하고 폭발적인 마법 피해를 줄 수 있는 상급 마법사입니다.",
+    "passive": {
+      "name": "궁극의 열망",
+      "lv1": "적을 공격해 동시에 [2]{red}명 이상의 적에게 피해를 주면 [궁극의 열망 1]{green} 효과를 얻습니다.",
+      "lv2": "적을 공격해 동시에 [2]{red}명 이상의 적에게 피해를 주면 [궁극의 열망 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/sorcerer.png"
+    },
+    "skills": [
+      {
+        "name": "익스플로젼",
+        "tpCost": 5,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "적에게 익스플로젼을 날려 주문력의 [100%]{red}만큼 화염 피해를 주고 대상과 주위 [3]{red}칸 내에 폭발을 일으켜 주문력의 [60%]{red}만큼 화염 피해를 추가로 줍니다. 피해를 받은 적들을 [30%]{red} 확률로 [1]{yellow}턴 동안 [기절]{orange}시킵니다.",
+        "iconUrl": "/icons/skills/explosion.png",
+        "element": "화염",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3
+  },
+  {
+    "name": "파이어마스터",
+    "tier": 3,
+    "parent": "파이로맨서",
+    "description": "화염 원소 속성을 극한까지 연구, 수련해 발전시킨 화염 마법의 대가입니다.",
+    "passive": {
+      "name": "불길",
+      "lv1": "화염 계열 스킬로 적 공격 시 치명타 확률이 [25%]{red} 증가하고 저항력을 [25%]{red} 무시해 피해를 줍니다. 화염 계열 스킬 시전 후 대상 적들에게 [치유 감소]{orange} 효과를 겁니다.",
+      "lv2": "화염 계열 스킬로 적 공격 시 치명타 확률이 [30%]{red} 증가하고 저항력을 [30%]{red} 무시해 피해를 줍니다. 화염 계열 스킬 시전 후 대상 적들에게 [치유 감소]{orange} 효과를 겁니다.",
+      "iconUrl": "/icons/classes/passive/fire_master.png"
+    },
+    "skills": [
+      {
+        "name": "파이어 브레스",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "effect": "방향을 지정해 전방 [3x3]{red} 범위 내 적들에게 주문력의 [80%]{red}만큼 화염 피해를 주고 [2]{yellow}턴 동안 [화상]{orange} 효과를 겁니다.",
+        "iconUrl": "/icons/skills/fire_breath.png",
+        "element": "화염",
+        "allowedWeapon": "스태프, 로드"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/fire_master.png"
+  }
+]
