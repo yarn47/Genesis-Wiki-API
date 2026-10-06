@@ -1,0 +1,30 @@
+[
+  {
+    "name": "리오나 윌라드",
+    "grade": "영웅",
+    "faction": "무소속",
+    "element": "신념의빛",
+    "birthYear": "에스겔력 1181년",
+    "height": "171cm",
+    "cv": "김새해",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "방랑 검사 크로우의 명을 수행하는 의문의 여성. 출신이나 행적 등은 모두 베일에 싸여있지만 어느 군인 못지않은 우수한 활 솜씨를 자랑한다. 차분하고 침착한 성격의 보유자로, 크로우의 명이라면 그것이 어떤 것이든 신속하고 확실하게 처리한다. 왜 그녀가 크로우와 함께 다니며 그를 주군이라고 부르는지는 소문만 무성할 뿐 확실한 사정은 알려지지 않았다.",
+    "thumbnailUrl": "/icons/characters/riona_thumb.png",
+    "portraitUrl": "/icons/characters/riona_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": ["아처", "헌터", "막스맨", "보우마스터", "스나이퍼", "샤프슈터"],
+    "passive": {
+      "name": "어둠을 가르는 화살",
+      "iconUrl": "/icons/passives/darkness_piercing_arrow.png",
+      "levels": [
+        {"type": "각성", "step": 2, "effect": "공격 시 적의 디버프 하나당 치명타 피해량이 [5%]{red} 증가하고 피해를 준 적에게 [40%]{red} 확률로 무작위 디버프를 [1]{red}개 부여합니다."},
+        {"type": "각성", "step": 3, "effect": "공격 시 적의 디버프 하나당 치명타 피해량이 [6%]{red} 증가하고 피해를 준 적에게 [60%]{red} 확률로 무작위 디버프를 [1]{red}개 부여합니다."},
+        {"type": "각성", "step": 4, "effect": "공격 시 적의 디버프 하나당 치명타 피해량이 [7%]{red} 증가하고 피해를 준 적에게 [80%]{red} 확률로 무작위 디버프를 [1]{red}개 부여합니다."},
+        {"type": "각성", "step": 5, "effect": "공격 시 적의 디버프 하나당 치명타 피해량이 [8%]{red} 증가하고 피해를 준 적에게 무작위 디버프를 [1]{red}개 부여합니다."},
+        {"type": "각성", "step": 6, "effect": "공격 시 적의 디버프 하나당 치명타 피해량이 [10%]{red} 증가하고 피해를 준 적에게 무작위 디버프를 [1]{red}개 부여합니다."}
+      ]
+    }
+  }
+]
