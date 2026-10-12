@@ -1,0 +1,79 @@
+[
+  {
+    "name": "백옥당",
+    "grade": "영웅",
+    "faction": "한제국",
+    "element": "신념의빛",
+    "birthYear": "에스겔력 1187년",
+    "height": "175cm",
+    "cv": "이규창",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "한 나라에서 건너온 검사. 차분하고 조용한 성격의 소유자이나 자신의 스승, 곽노의 원수를 찾아 무작정 배를 타고 대륙으로 건너오게 되었다. 풍랑을 만나 배 위에서 명을 달리할 뻔했으나 아미고 상단의 카자 등의 도움으로 목숨을 건졌다. 이후 실버애로우와 함께 다니며 자신의 원수를 찾는 여행을 계속한다.",
+    "thumbnailUrl": "/icons/characters/baek_okdang_thumb.png",
+    "portraitUrl": "/icons/characters/baek_okdang_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "파이터",
+      "소드맨",
+      "글라디에이터",
+      "소드마스터",
+      "스트라이커",
+      "하이랜더"
+    ],
+    "exclusiveWeapon": "백염검",
+    "passive": {
+      "name": "운명을 쫓는 칼",
+      "iconUrl": "/icons/passives/fate_chasing_blade.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "전투 시 치명타 확률이 [15%]{red} 증가하고 [선제 공격]{green}을 가집니다. 전투에서 치명타 발동 시 [운명을 쫓는 칼 1]{green} 효과를 얻습니다.\n선제 공격: 적 턴에 전투 공격을 당할 때 먼저 공격. 해제 불가."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "전투 시 치명타 확률이 [18%]{red} 증가하고 [선제 공격]{green}을 가집니다. 전투에서 치명타 발동 시 [운명을 쫓는 칼 2]{green} 효과를 얻습니다.\n선제 공격: 적 턴에 전투 공격을 당할 때 먼저 공격. 해제 불가."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "전투 시 치명타 확률이 [22%]{red} 증가하고 [선제 공격]{green}을 가집니다. 전투에서 치명타 발동 시 [운명을 쫓는 칼 3]{green} 효과를 얻습니다.\n선제 공격: 적 턴에 전투 공격을 당할 때 먼저 공격. 해제 불가."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "전투 시 치명타 확률이 [25%]{red} 증가하고 [선제 공격]{green}을 가집니다. 전투에서 치명타 발동 시 [운명을 쫓는 칼 4]{green} 효과를 얻습니다.\n선제 공격: 적 턴에 전투 공격을 당할 때 먼저 공격. 해제 불가."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "전투 시 치명타 확률이 [30%]{red} 증가하고 [선제 공격]{green}을 가집니다. 전투에서 치명타 발동 시 [운명을 쫓는 칼 5]{green} 효과를 얻습니다.\n선제 공격: 적 턴에 전투 공격을 당할 때 먼저 공격. 해제 불가."
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "비연참",
+      "iconUrl": "/icons/ultimates/biyeoncham.png",
+      "tpCost": 5,
+      "range": [1, 1],
+      "area": "광역",
+      "attackType": "참격",
+      "element": "화염",
+      "cooldown": 3,
+      "tags": [
+        "근거리",
+        "지향성",
+        "이동공격"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "방향을 지정해 전방 [5]{red}칸 내 적들에게 공격력의 [150%]{red}만큼 방어력을 무시해 피해를 주면서 가장 멀리 떨어진 빈 칸까지 적들을 뚫고 이동합니다. 피해를 준 수만큼 TP를 회복하고 피해를 준 적들에게 [2]{yellow}턴 동안 [파열]{orange} 효과를 겁니다.\n허용 무기: 검, 대검."
+        }
+      ]
+    }
+  }
+]
