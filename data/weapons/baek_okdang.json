@@ -1,6 +1,7 @@
 [
   {
     "name": "백염검",
+    "iconUrl": "/icons/weapons/baekyeom_sword.png",
     "weaponType": "검",
     "grade": "전설",
     "extraStats": "치명타 확률 +10/11/12/13/14/15% (각성 1~6단)",
