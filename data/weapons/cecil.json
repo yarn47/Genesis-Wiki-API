@@ -1,0 +1,104 @@
+[
+  {
+    "name": "궁그닐",
+    "weaponType": "창",
+    "grade": "전설",
+    "iconUrl": "/icons/weapons/gungnir.png",
+    "extraStats": "공격력 +15/16/17/18/19/20% (각성 1~6단)",
+    "description": "세계가 창조되던 순간부터 존재했으리라 여겨지는 창. 창을 던져 공격하면 백발백중 상대를 관통시킬 수 있다고 한다.\n세실이 장착하면 무기의 잠재력을 끌어낼 수 있다.",
+    "baseStats": [
+      {
+        "step": 1,
+        "maxHp": 127,
+        "attack": 347
+      },
+      {
+        "step": 2,
+        "maxHp": 128,
+        "attack": 350
+      },
+      {
+        "step": 3,
+        "maxHp": 129,
+        "attack": 354
+      },
+      {
+        "step": 4,
+        "maxHp": 131,
+        "attack": 358
+      },
+      {
+        "step": 5,
+        "maxHp": 132,
+        "attack": 361
+      },
+      {
+        "step": 6,
+        "maxHp": 133,
+        "attack": 365
+      }
+    ],
+    "effects": [
+      {
+        "name": "라그나로크",
+        "type": "전용",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "범위 피해가 [15%]{red} 증가합니다."
+          },
+          {
+            "step": 2,
+            "effect": "범위 피해가 [17%]{red} 증가합니다."
+          },
+          {
+            "step": 3,
+            "effect": "범위 피해가 [19%]{red} 증가합니다."
+          },
+          {
+            "step": 4,
+            "effect": "범위 피해가 [21%]{red} 증가합니다."
+          },
+          {
+            "step": 5,
+            "effect": "범위 피해가 [23%]{red} 증가합니다."
+          },
+          {
+            "step": 6,
+            "effect": "범위 피해가 [25%]{red} 증가합니다."
+          }
+        ]
+      },
+      {
+        "name": "살의",
+        "type": "일반",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "범위 피해가 [10%]{red} 증가합니다."
+          },
+          {
+            "step": 2,
+            "effect": "범위 피해가 [12%]{red} 증가합니다."
+          },
+          {
+            "step": 3,
+            "effect": "범위 피해가 [14%]{red} 증가합니다."
+          },
+          {
+            "step": 4,
+            "effect": "범위 피해가 [16%]{red} 증가합니다."
+          },
+          {
+            "step": 5,
+            "effect": "범위 피해가 [18%]{red} 증가합니다."
+          },
+          {
+            "step": 6,
+            "effect": "범위 피해가 [20%]{red} 증가합니다."
+          }
+        ]
+      }
+    ]
+  }
+]

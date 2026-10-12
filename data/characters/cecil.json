@@ -1,0 +1,81 @@
+[
+  {
+    "name": "세실 루미너스",
+    "grade": "영웅",
+    "faction": "아스타니아",
+    "element": "지성의결정체",
+    "birthYear": "에스겔력 1182년",
+    "height": "166cm",
+    "cv": "선은혜",
+    "releaseDate": "2024-01-09",
+    "appearedIn": "창세기전2",
+    "profileText": "법왕기사단의 하위 기사단인 신위기사단의 기사장. 과거 랜담의 부하였기에 랜담을 향한 충성심과 신뢰가 남다르다. 한 기사단을 이끄는 기사장답게 차분하고 신중한 성격이지만 불의는 절대 넘어가지 않는다.",
+    "thumbnailUrl": "/icons/characters/cecil_thumb.png",
+    "portraitUrl": "/icons/characters/cecil_portrait.png",
+    "published": true,
+    "hasManifestation": false,
+    "classTree": [
+      "파이크",
+      "템플러",
+      "제너럴",
+      "하이템플러",
+      "법왕기사",
+      "마샬"
+    ],
+    "exclusiveWeapon": "궁그닐",
+    "passive": {
+      "name": "선홍빛 폭풍",
+      "iconUrl": "/icons/passives/scarlet_storm.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 2,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [선홍빛 폭풍 1]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [선홍빛 폭풍 2]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [선홍빛 폭풍 3]{green} 효과를 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [선홍빛 폭풍 4]{green} 효과를 얻고 추가 이동을 얻습니다."
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "적을 공격해 [2]{red}명 이상의 적에게 피해를 주면 [선홍빛 폭풍 5]{green} 효과를 얻고 추가 이동을 얻습니다."
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "광룡탄",
+      "iconUrl": "/icons/ultimates/gwangryongtan.png",
+      "tpCost": 5,
+      "range": [
+        1,
+        1
+      ],
+      "area": "광역",
+      "attackType": "관통",
+      "element": "전격",
+      "cooldown": 5,
+      "tags": [
+        "원거리",
+        "지향성"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "범위 내 적들에게 공격력의 [130%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [경직]{orange}시킵니다."
+        }
+      ]
+    }
+  }
+]
