@@ -1,0 +1,70 @@
+[
+  {
+    "name": "블레이더",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "잠재된 힘까지 끌어내 검술을 집중적으로 수련한 특화된 직업입니다. 전투가 길어질수록 공수 양면에 걸쳐 더 강력한 전투 능력을 발휘합니다.",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/blader.png",
+    "passive": {
+      "name": "검의 간격",
+      "iconUrl": "/icons/classes/passive/blader.png",
+      "lv1": "적에게 피해를 주면 [검의 간격]{green} 효과를 얻고 적에게 공격받으면 턴 당 한 번 받는 피해가 [25%]{red}만큼 감소합니다.",
+      "lv2": "적에게 피해를 주면 [검의 간격]{green} 효과를 얻고 적에게 공격받으면 턴 당 한 번 받는 피해가 [35%]{red}만큼 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "귀격섬",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "원거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/ghost_slash.png",
+        "effect": "적에게 귀격섬을 날려 공격력의 [150%]{red}만큼 피해를 주고 주위 [3]{red}칸 내 타일을 선택해 순간 이동합니다. 이 스킬은 엄폐 효과의 적용을 받지 않습니다."
+      }
+    ]
+  },
+  {
+    "name": "블레이드마스터",
+    "tier": 3,
+    "parent": "블레이더",
+    "description": "극한까지 수련한 검술과 강력하고 신출귀몰한 전투 기술을 가진 상위 직업입니다.",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/blade_master.png",
+    "passive": {
+      "name": "검혼",
+      "iconUrl": "/icons/classes/passive/blade_master.png",
+      "lv1": "적에게 피해를 주면 [검혼 1]{green} 효과를 얻고 적에게 공격받으면 턴 당 한 번 받는 피해가 [50%]{red}만큼 감소합니다.",
+      "lv2": "적에게 피해를 주면 [검혼 2]{green} 효과를 얻고 적에게 공격받으면 턴 당 한 번 받는 피해가 [50%]{red}만큼 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "귀폭열파",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리"
+        ],
+        "iconUrl": "/icons/skills/ghost_burst.png",
+        "effect": "검기를 터트려 주변 [1]{red}바퀴 내 적들에게 공격력의 [80%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [제압]{orange} 효과를 겁니다."
+      }
+    ]
+  }
+]

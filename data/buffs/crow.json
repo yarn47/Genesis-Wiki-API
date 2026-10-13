@@ -1,0 +1,98 @@
+[
+  {
+    "name": "검의 간격",
+    "description": "공격력 [+10%]{red}.",
+    "duration": "영구",
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ]
+  },
+  {
+    "name": "검혼",
+    "duration": "영구",
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "name": "검혼 1",
+        "effect": "공격력 [+15%]{red}."
+      },
+      {
+        "level": 2,
+        "name": "검혼 2",
+        "effect": "공격력 [+20%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "빛바랜 염원",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "name": "빛바랜 염원 1",
+        "duration": 2,
+        "effect": "최대 체력 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "name": "빛바랜 염원 2",
+        "duration": 2,
+        "effect": "최대 체력 [+15%]{red}. 이 효과 획득 시 치유 방해 효과를 가지고 있으면 [수호의 염원 1]{green} 효과 추가 획득."
+      },
+      {
+        "level": 3,
+        "name": "빛바랜 염원 3",
+        "duration": 2,
+        "effect": "최대 체력 [+20%]{red}. 이 효과 획득 시 치유 방해 효과를 가지고 있으면 [수호의 염원 2]{green} 효과 추가 획득."
+      },
+      {
+        "level": 4,
+        "name": "빛바랜 염원 4",
+        "duration": 3,
+        "effect": "최대 체력 [+20%]{red}. 이 효과 획득 시 치유 방해 효과를 가지고 있으면 [수호의 염원 3]{green} 효과 추가 획득."
+      }
+    ]
+  },
+  {
+    "name": "수호의 염원",
+    "tags": [
+      "해제 불가",
+      "보호막"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "name": "수호의 염원 1",
+        "duration": 2,
+        "effect": "공격력의 [30%]{red} 보호막."
+      },
+      {
+        "level": 2,
+        "name": "수호의 염원 2",
+        "duration": 2,
+        "effect": "공격력의 [45%]{red} 보호막."
+      },
+      {
+        "level": 3,
+        "name": "수호의 염원 3",
+        "duration": 3,
+        "effect": "공격력의 [60%]{red} 보호막."
+      }
+    ]
+  },
+  {
+    "name": "강인함",
+    "duration": 1,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "이 효과 획득 시 걸린 행동 제어 효과를 모두 해제하고, 지속 시간 동안 행동 제어 효과에 면역."
+  }
+]
