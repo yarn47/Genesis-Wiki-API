@@ -1,0 +1,76 @@
+[
+  {
+    "name": "헬인보커",
+    "tier": 3,
+    "parent": "네크로맨서",
+    "description": "암흑 마법을 사용해 영혼을 조작하고 고통스럽게 죽이는 것을 즐겨하는 상급 흑마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/hell_invoker.png",
+    "passive": {
+      "name": "영혼 수확",
+      "lv1": "암흑 계열 스킬 사용 시 주문력이 [30%]{red} 증가합니다. 주변 [3]{red}바퀴 내에서 유닛이 죽으면 타일에 부인당한 영이 남습니다. 해당 타일로 이동해 부인당한 영을 회수하면 [1]{yellow} TP와 주문력의 [30%]{red}만큼 체력을 회복합니다.",
+      "lv2": "암흑 계열 스킬 사용 시 주문력이 [40%]{red} 증가합니다. 주변 [3]{red}바퀴 내에서 유닛이 죽으면 타일에 부인당한 영이 남습니다. 해당 타일로 이동해 부인당한 영을 회수하면 [1]{yellow} TP와 주문력의 [50%]{red}만큼 체력을 회복합니다.",
+      "iconUrl": "/icons/classes/passive/hell_invoker.png"
+    },
+    "skills": [
+      {
+        "name": "익조트 스피릿",
+        "element": "암흑",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [
+          "원거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/exhaust_spirit.png",
+        "effect": "적에게 주문력의 [40%]{red}만큼 피해를 주고 대상을 [1]{yellow}턴 동안 [추방]{orange}합니다. 이 공격으로 대상이 추방당하거나 죽으면 그 주변에 [타락한 영]{green}을 소환합니다. 대상이 추방에서 돌아올 때 타락한 영은 소멸합니다. 타락한 영이 죽으면 추방이 즉시 해제됩니다. 이 스킬은 엄폐 효과의 적용을 받지 않고 호위할 수 없습니다."
+      }
+    ]
+  },
+  {
+    "name": "나이트메어",
+    "tier": 3,
+    "parent": "다크메이지",
+    "description": "암흑 마법을 사용해 유령처럼 움직이며 머리 속에 악몽을 심고 다루는 것에 익숙한 상급 흑마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/nightmare.png",
+    "passive": {
+      "name": "반복되는 고통",
+      "lv1": "스킬로 적에게 디버프를 걸면 적의 버프를 [2]{red}개 지우고 [반복되는 고통 1]{orange} 효과를 겁니다.",
+      "lv2": "스킬로 적에게 디버프를 걸면 적의 버프를 [3]{red}개 지우고 [반복되는 고통 2]{orange} 효과를 겁니다.",
+      "iconUrl": "/icons/classes/passive/nightmare.png"
+    },
+    "skills": [
+      {
+        "name": "팬텀 워크",
+        "element": "암흑",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [
+          "원거리",
+          "이동공격"
+        ],
+        "iconUrl": "/icons/skills/phantom_walk.png",
+        "effect": "주위 [3]{red}칸 내 지정한 타일로 이동 후 주위 [2]{red}칸 내 적들에게 주문력의 [40%]{red}만큼 피해를 주고 [혼란]{orange}시켜 이동 가능 범위 내에서 무작위로 도망가게 만듭니다. 이후 주위 [2]{red}칸 내 적들을 [1]{yellow}턴 동안 [추방]{orange}합니다."
+      }
+    ]
+  }
+]
