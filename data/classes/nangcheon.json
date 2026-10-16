@@ -1,0 +1,75 @@
+[
+  {
+    "name": "무사",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "오직 검술 수련에만 매진한 동방대륙의 검사 직업입니다. 빠르고 공격적인 전투 기술을 가집니다.",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/musa.png",
+    "passive": {
+      "name": "치명적 속도",
+      "iconUrl": "/icons/classes/passive/musa.png",
+      "lv1": "자신에게 걸린 디버프가 없다면 이동력이 [1]{red} 증가하고 공격력이 [15%]{red}만큼 증가합니다. 기본 공격 시 [30%]{red} 확률로 [1]{yellow} TP를 얻습니다.",
+      "lv2": "자신에게 걸린 디버프가 없다면 이동력이 [1]{red} 증가하고 공격력이 [20%]{red}만큼 증가합니다. 기본 공격 시 [50%]{red} 확률로 [1]{yellow} TP를 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "유성멸섬",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "지향성",
+          "이동공격"
+        ],
+        "iconUrl": "/icons/skills/yuseong_myeolseom.png",
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 적들에게 공격력의 [60%]{red}만큼 피해를 주면서 가장 멀리 떨어진 빈칸까지 적들을 뚫고 이동합니다. 관통한 적에게 치명타 발동 시 [1]{yellow} TP를 소모해 한 번 더 스킬을 사용할 수 있습니다. (최대 [4]{yellow}회)"
+      }
+    ]
+  },
+  {
+    "name": "무신",
+    "tier": 3,
+    "parent": "무사",
+    "description": "쾌검의 극의를 깨달은 무사의 상위 직업입니다. 빠르고 공격적인 전투 기술을 가집니다.",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/musin.png",
+    "passive": {
+      "name": "무극",
+      "iconUrl": "/icons/classes/passive/musin.png",
+      "lv1": "자신에게 걸린 디버프가 없다면 이동력이 [1]{red} 증가하고 공격력이 [35%]{red}만큼 증가합니다. 기본 공격 시 [70%]{red} 확률로 [1]{yellow} TP를 얻습니다.",
+      "lv2": "자신에게 걸린 디버프가 없다면 이동력이 [1]{red} 증가하고 공격력이 [40%]{red}만큼 증가합니다. 기본 공격 시 [90%]{red} 확률로 [1]{yellow} TP를 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "무영검",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리",
+          "치유",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/muyeonggeom.png",
+        "effect": "적에게 공격력의 [150%]{red}만큼 피해를 주고 적 처치 시 검으로 휩쓸어 주변 [1]{red}바퀴 내 적들에게 공격력의 [30%]{red}만큼 피해를 줍니다.\n적이 죽지 않았다면 전투 후 공격력의 [50%]{red}만큼 체력을 회복합니다."
+      }
+    ]
+  }
+]
