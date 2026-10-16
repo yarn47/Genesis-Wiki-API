@@ -1,0 +1,70 @@
+[
+  {
+    "name": "데큐리온발키리",
+    "tier": 3,
+    "parent": "비프로스트발키리",
+    "description": "세검을 무기로 사용해 적의 공격을 빗겨내고 아군과 협력해 전투를 수행하는 상급 직업입니다.",
+    "weaponType": "세검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/decurion_valkyrie.png",
+    "passive": {
+      "name": "검협무",
+      "iconUrl": "/icons/classes/passive/decurion_valkyrie.png",
+      "lv1": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [70%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 협공 피해량이 [15%]{red} 증가하고 협공 후 주위 [2]{red}칸 내 아군의 체력을 공격력의 [15%]{red}만큼 회복시킵니다.",
+      "lv2": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [80%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 협공 피해량이 [20%]{red} 증가하고 협공 후 주위 [2]{red}칸 내 아군의 체력을 공격력의 [20%]{red}만큼 회복시킵니다."
+    },
+    "skills": [
+      {
+        "name": "질풍공아",
+        "iconUrl": "/icons/skills/jilpung_gonga.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "allowedWeapon": "검, 대검, 세검",
+        "effect": "적에게 공격력의 [50%]{red}만큼 피해를 주고 적 처치 시 추가 행동을 얻습니다. 적이 죽지 않았다면 추가타가 발동해 공격력의 [100%]{red}만큼 추가 피해를 줍니다."
+      }
+    ]
+  },
+  {
+    "name": "뱅가드",
+    "tier": 3,
+    "parent": "스카우트",
+    "description": "우수한 기동성과 냉철한 판단력으로 전장의 최전선에서 전투를 수행하는 상급 직업입니다.",
+    "weaponType": "검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/vanguard.png",
+    "passive": {
+      "name": "냉철함",
+      "iconUrl": "/icons/classes/passive/vanguard.png",
+      "lv1": "적의 [통제 영역]{orange}을 무시해 이동합니다. 적 공격 후 [2]{yellow}턴 동안 [사기 저하]{orange} 효과를 겁니다. 적 처치 시 [2]{yellow}턴 동안 [냉철함 1]{green} 효과를 얻습니다.",
+      "lv2": "적의 [통제 영역]{orange}을 무시해 이동합니다. 적 공격 후 [2]{yellow}턴 동안 [사기 저하]{orange} 효과를 겁니다. 적 처치 시 [2]{yellow}턴 동안 [냉철함 2]{green} 효과를 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "연아선풍",
+        "iconUrl": "/icons/skills/yeona_seonpung.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "근거리"
+        ],
+        "allowedWeapon": "검, 대검, 세검",
+        "effect": "주변 [1]{red}바퀴 내 적들에게 공격력의 [60%]{red}만큼 피해를 주고 적 처치 시 범위 내 적들에게 공격력의 [30%]{red}만큼 피해를 줍니다."
+      }
+    ]
+  }
+]
