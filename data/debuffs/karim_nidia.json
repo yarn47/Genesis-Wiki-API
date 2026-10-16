@@ -1,0 +1,21 @@
+[
+  {
+    "name": "쇼크",
+    "element": "전격",
+    "duration": 2,
+    "maxStack": 3,
+    "tags": [
+      "쇼크"
+    ],
+    "description": "전격 저항 [-10%]{red}. 다른 쇼크 효과와 중복 적용 불가."
+  },
+  {
+    "name": "느려짐 1 (전격 주문)",
+    "duration": 2,
+    "tags": [
+      "행동제어",
+      "이동력제어"
+    ],
+    "description": "이동력 [-1]{red}."
+  }
+]

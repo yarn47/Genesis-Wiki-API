@@ -1,0 +1,50 @@
+[
+  {
+    "name": "폭풍의 심장",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/heart_of_storm.png",
+    "description": "바다의 분노와 하늘의 격노가 이 심장 속에 깃들어 있다. 착용자가 분노할 때마다 번개가 맹렬히 춤추고, 바람이 전장을 휘감는다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "번개 속성 스킬 사용 후 [2]{yellow}턴 동안 [썬더 스텝 1]{green} 효과 획득. 쿨타임 [3]{yellow}턴."
+      },
+      {
+        "step": 4,
+        "effect": "번개 속성 스킬 사용 후 [2]{yellow}턴 동안 [썬더 스텝 2]{green} 효과 획득. 쿨타임 [3]{yellow}턴."
+      },
+      {
+        "step": 5,
+        "effect": "번개 속성 스킬 사용 후 [2]{yellow}턴 동안 [썬더 스텝 3]{green} 효과 획득. 쿨타임 [3]{yellow}턴."
+      },
+      {
+        "step": 6,
+        "effect": "번개 속성 스킬 사용 후 [2]{yellow}턴 동안 [썬더 스텝 4]{green} 효과 획득. 쿨타임 [3]{yellow}턴."
+      }
+    ]
+  },
+  {
+    "name": "상상의 벽",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/wall_of_imagination.png",
+    "description": "눈에 보이지 않는 벽. 사용자의 정신이 강할수록 그 벽은 두꺼워진다. 상상력으로 지은 방패는 실체가 없지만, 현실의 칼날마저 튕겨낸다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "게임 시작 시 [상상의 벽 1]{green} 효과 획득. 주문력의 [15%]{red}만큼 방어력 획득."
+      },
+      {
+        "step": 4,
+        "effect": "게임 시작 시 [상상의 벽 2]{green} 효과 획득. 주문력의 [20%]{red}만큼 방어력 획득."
+      },
+      {
+        "step": 5,
+        "effect": "게임 시작 시 [상상의 벽 3]{green} 효과 획득. 주문력의 [25%]{red}만큼 방어력 획득."
+      },
+      {
+        "step": 6,
+        "effect": "게임 시작 시 [상상의 벽 4]{green} 효과 획득. 주문력의 [30%]{red}만큼 방어력 획득."
+      }
+    ]
+  }
+]

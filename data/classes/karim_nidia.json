@@ -1,0 +1,76 @@
+[
+  {
+    "name": "스파크메이지",
+    "tier": 2,
+    "parent": "메이지",
+    "description": "전격 마법을 전문적으로 수련해 힘을 모으고 강력하게 방출하는 마법사 직업입니다.",
+    "passive": {
+      "name": "과충전",
+      "lv1": "전격 주문 시전 시 [과충전 1]{green} 효과를 획득합니다.",
+      "lv2": "전격 주문 시전 시 [과충전 2]{green} 효과를 획득합니다.",
+      "iconUrl": "/icons/classes/passive/spark_mage.png"
+    },
+    "skills": [
+      {
+        "name": "썬더러",
+        "iconUrl": "/icons/skills/thunderer.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "effect": "방향을 지정해 전방에 방사형으로 범위 내 적들에게 주문력의 [90%]{red}만큼 전격 피해를 주고 치명타로 적중 시 [쇼크]{orange}/[느려짐 1 (전격 주문)]{orange} 효과를 추가로 부여합니다.",
+        "element": "전격",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [
+          "원거리"
+        ]
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/spark_mage.png"
+  },
+  {
+    "name": "스톰콜러",
+    "tier": 3,
+    "parent": "스파크메이지",
+    "description": "전격 마법을 극한까지 발전시켜 모으고 강력하게 방출하는데 특화된 전격 마법의 대가입니다.",
+    "passive": {
+      "name": "에너지 폭주",
+      "lv1": "기본 공격이 [콜 라이트닝]{green}으로 변경됩니다. 기본 공격 또는 전격 주문 시전 시 [에너지 폭주 1]{green} 효과를 획득합니다.",
+      "lv2": "기본 공격이 [콜 라이트닝]{green}으로 변경됩니다. 기본 공격 또는 전격 주문 시전 시 [에너지 폭주 2]{green} 효과를 획득합니다.",
+      "iconUrl": "/icons/classes/passive/storm_caller.png"
+    },
+    "skills": [
+      {
+        "name": "에너지 스톰",
+        "iconUrl": "/icons/skills/energy_storm.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "effect": "아군을 지정해 행동 제어 및 스킬 제어 효과를 모두 해제하고 [2]{yellow}턴 동안 [에너지 스톰]{green} 효과를 부여합니다. 대상 주위 [3]{red}칸 내 적들에게 주문력의 [80%]{red}만큼 전격 피해를 주고 치명타로 적중 시 [쇼크]{orange}/[느려짐 1 (전격 주문)]{orange} 효과를 추가로 부여합니다.",
+        "element": "전격",
+        "area": "광역",
+        "cooldown": 3,
+        "allowedWeapon": "스태프, 로드",
+        "tags": [
+          "원거리"
+        ]
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/storm_caller.png"
+  }
+]
