@@ -1,0 +1,74 @@
+[
+  {
+    "name": "칼날 피뢰침",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/blade_lightning_rod.png",
+    "description": "착용자의 칼날과 정신에 뇌전의 힘을 불어넣어 어떠한 구속과 제어에도 자유로워 집니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+5%]{red}. 게임 시작 시 [라이트닝 블레이드]{green} 효과 획득."
+      },
+      {
+        "step": 4,
+        "effect": "물리 관통 [+20%]{red}. 게임 시작 시 [라이트닝 블레이드]{green} 효과 획득."
+      },
+      {
+        "step": 5,
+        "effect": "물리 관통 [+35%]{red}. 게임 시작 시 [라이트닝 블레이드]{green} 효과 획득."
+      },
+      {
+        "step": 6,
+        "effect": "물리 관통 [+50%]{red}. 게임 시작 시 [라이트닝 블레이드]{green} 효과 획득."
+      }
+    ]
+  },
+  {
+    "name": "우아한 호흡",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/elegant_breath.png",
+    "description": "호흡은 생명과 의식을 연결하는 다리입니다. 착용자의 호흡을 안정적으로 유지시키고 정신을 맑게 합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "적의 공격을 빗겨낼 시 자신의 디버프를 [1]{red}개 지우고 [우아한 호흡 1]{green} 효과 획득."
+      },
+      {
+        "step": 4,
+        "effect": "적의 공격을 빗겨낼 시 자신의 디버프를 [1]{red}개 지우고 [우아한 호흡 2]{green} 효과 획득."
+      },
+      {
+        "step": 5,
+        "effect": "적의 공격을 빗겨낼 시 자신의 디버프를 [2]{red}개 지우고 [우아한 호흡 3]{green} 효과 획득."
+      },
+      {
+        "step": 6,
+        "effect": "적의 공격을 빗겨낼 시 자신의 디버프를 [2]{red}개 지우고 [우아한 호흡 4]{green} 효과 획득."
+      }
+    ]
+  },
+  {
+    "name": "필살 대응 수호",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/ultimate_guard.png",
+    "description": "평소에는 잠들어 있다가 적의 가장 강력한 공격에만 반응해 착용자를 보호하는 불가사의한 힘이 숨겨져 있습니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "받는 초필살기 피해량 [-30%]{red}."
+      },
+      {
+        "step": 4,
+        "effect": "받는 초필살기 피해량 [-45%]{red}."
+      },
+      {
+        "step": 5,
+        "effect": "받는 초필살기 피해량 [-60%]{red}."
+      },
+      {
+        "step": 6,
+        "effect": "받는 초필살기 피해량 [-75%]{red}."
+      }
+    ]
+  }
+]
