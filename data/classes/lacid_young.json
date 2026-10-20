@@ -1,0 +1,109 @@
+[
+  {
+    "name": "검성",
+    "tier": 3,
+    "parent": "소드맨",
+    "description": "대검을 사용한 강력한 일격으로 적을 압도하는 전투에 특화된 고급 직업입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/sword_saint.png",
+    "passive": {
+      "name": "격의 차이",
+      "lv1": "전투 공격 시 공격력이 [35%]{red}만큼 증가하고 반격 피해를 [25%]{red} 적게 받습니다. 전투 공격 후 [기세 1]{green} 효과를 얻습니다.",
+      "lv2": "전투 공격 시 공격력이 [40%]{red}만큼 증가하고 반격 피해를 [25%]{red} 적게 받습니다. 전투 공격 후 [기세 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/sword_saint.png"
+    },
+    "skills": [
+      {
+        "name": "검풍섬",
+        "iconUrl": "/icons/skills/sword_wind_slash.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "allowedWeapon": "검, 대검",
+        "effect": "적에게 검풍섬을 날려 공격력의 [170%]{red}만큼 피해를 주고 [2]{yellow}턴 동안 [질풍]{green} 효과를 획득합니다."
+      }
+    ]
+  },
+  {
+    "name": "드래곤나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "description": "대검을 사용한 강력한 공격과 빙룡의 힘을 빌어 얼음 마법을 사용하는 고급 직업입니다. 강력한 광역 마법 기술을 사용합니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/dragon_knight.png",
+    "passive": {
+      "name": "빙룡의 가호",
+      "lv1": "오라를 가져 주위 [3]{red}칸 내 아군에게 [빙룡의 가호 1]{green} 효과를 줍니다. 전투 공격 후 공격력의 [10%]{red}만큼 추가 빙한 마법 피해를 주고 [20%]{red} 확률로 [냉기 둔화]{orange} 효과를 줍니다.",
+      "lv2": "오라를 가져 주위 [3]{red}칸 내 아군에게 [빙룡의 가호 2]{green} 효과를 줍니다. 전투 공격 후 공격력의 [20%]{red}만큼 추가 빙한 마법 피해를 주고 [30%]{red} 확률로 [냉기 둔화]{orange} 효과를 줍니다.",
+      "iconUrl": "/icons/classes/passive/dragon_knight.png"
+    },
+    "skills": [
+      {
+        "name": "자비에르 브레스",
+        "iconUrl": "/icons/skills/javier_breath.png",
+        "tpCost": 4,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "element": "빙한",
+        "attackType": "마법",
+        "tags": [
+          "지향성"
+        ],
+        "effect": "방향을 지정하고 범위 내 적들에게 공격력의 [90%]{red}만큼 빙한 마법 피해를 주고 [2]{yellow}턴 동안 [냉기 둔화]{orange}와 [냉기 균열]{orange} 상태를 부여합니다."
+      }
+    ]
+  },
+  {
+    "name": "커맨드나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "description": "균형 잡힌 능력치로 전장의 최전선에서 활약하며 함성으로 아군을 강화하는 전장을 지휘하는 기사입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/command_knight.png",
+    "passive": {
+      "name": "전장 지휘",
+      "lv1": "함성 스킬 사용 시 턴 당 한번 [전장 지휘 1]{green} 효과를 획득하고 추가 공격이나 스킬 사용을 얻습니다. 함성 스킬 사용 후 효과를 받은 아군의 디버프를 [1]{red}개 제거합니다. 받는 피해량이 [10%]{red} 감소합니다.",
+      "lv2": "함성 스킬 사용 시 턴 당 한번 [전장 지휘 2]{green} 효과를 획득하고 추가 공격이나 스킬 사용을 얻습니다. 함성 스킬 사용 후 효과를 받은 아군의 디버프를 [1]{red}개 제거합니다. 받는 피해량이 [20%]{red} 감소합니다.",
+      "iconUrl": "/icons/classes/passive/command_knight.png"
+    },
+    "skills": [
+      {
+        "name": "전투의 함성",
+        "iconUrl": "/icons/skills/battle_shout.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 2,
+        "tags": [
+          "함성"
+        ],
+        "effect": "[3]{red}칸 내 아군에게 [2]{yellow}턴 동안 [전투 태세]{green} 효과를 부여합니다."
+      }
+    ]
+  }
+]
