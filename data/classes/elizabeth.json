@@ -1,0 +1,107 @@
+[
+  {
+    "name": "인헤리터",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "검을 무기로 사용하고 아군의 보호를 받아 더 뛰어난 전투 능력을 발휘하는 특수한 직업입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/inheritor.png",
+    "passive": {
+      "name": "유구한 전통",
+      "lv1": "호위 효과를 받고 있다면 공격력이 [20%]{red} 증가하고 반격 피해를 [50%]{red} 적게 받습니다.",
+      "lv2": "호위 효과를 받고 있다면 공격력이 [25%]{red} 증가하고 반격 피해를 [50%]{red} 적게 받습니다.",
+      "iconUrl": "/icons/classes/passive/inheritor.png"
+    },
+    "skills": [
+      {
+        "name": "리퓨즈 배리어",
+        "iconUrl": "/icons/skills/refuse_barrier.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "보호막"
+        ],
+        "effect": "스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. [2]{yellow}턴 동안 공격력의 [100%]{red}만큼 피해를 막아주는 [리퓨즈 배리어]{green}를 [2]{yellow}턴 동안 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "크림슨나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "description": "검을 무기로 불꽃과 혼돈의 힘을 활용하여 전투를 수행하는 특수한 상급 기사입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/crimson_knight.png",
+    "passive": {
+      "name": "진홍의 문장",
+      "lv1": "스킬 사용 시 공격력이 [20%]{red}만큼 증가합니다. 기본 공격 후 공격력의 [30%]{red}만큼 추가 화염 마법 피해를 주고 [2]{yellow}턴 동안 [치유 감소]{orange} 효과를 부여합니다. 적을 공격해 처치 시 [2]{yellow}턴 동안 [진홍의 문장 1]{green} 효과를 얻습니다.",
+      "lv2": "스킬 사용 시 공격력이 [30%]{red}만큼 증가합니다. 기본 공격 후 공격력의 [30%]{red}만큼 추가 화염 마법 피해를 주고 [2]{yellow}턴 동안 [치유 감소]{orange} 효과를 부여합니다. 적을 공격해 처치 시 [2]{yellow}턴 동안 [진홍의 문장 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/crimson_knight.png"
+    },
+    "skills": [
+      {
+        "name": "연홍섬",
+        "iconUrl": "/icons/skills/yeonhong_slash.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 연홍섬을 날려 자신의 디버프 [2]{red}개와 적의 버프 [2]{red}개를 지우고 공격력의 [150%]{red}만큼 화염 마법 피해를 줍니다.",
+        "element": "화염",
+        "attackType": "마법",
+        "allowedWeapon": "검, 대검"
+      }
+    ]
+  },
+  {
+    "name": "프린세스",
+    "tier": 3,
+    "parent": "인헤리터",
+    "description": "검을 무기로 사용하고 자신을 호위하는 아군과 유대해 시너지를 일으키는 특별한 상급 직업입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/princess.png",
+    "passive": {
+      "name": "고귀한 권한",
+      "lv1": "호위 효과를 받고 있다면 공격력이 [30%]{red} 증가하고 반격 피해를 [50%]{red} 적게 받습니다. 주위 [2]{red}칸 내 아군은 호위 시 받는 치명타 확률이 [15%]{red} 감소하고 이동 방해 및 위치 제어 효과에 면역됩니다.",
+      "lv2": "호위 효과를 받고 있다면 공격력이 [40%]{red} 증가하고 반격 피해를 [50%]{red} 적게 받습니다. 주위 [2]{red}칸 내 아군은 호위 시 받는 치명타 확률이 [20%]{red} 감소하고 이동 방해 및 위치 제어 효과에 면역됩니다.",
+      "iconUrl": "/icons/classes/passive/princess.png"
+    },
+    "skills": [
+      {
+        "name": "크라운 프로텍터",
+        "iconUrl": "/icons/skills/crown_protector.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "주위 [2]{red}칸 내 아군을 지정해 [크라운 프로텍터]{green} 효과를 부여해 [2]{yellow}턴 동안 자신을 호위하게 합니다. 이 스킬은 대형 몬스터에게 사용할 수 없습니다."
+      }
+    ]
+  }
+]

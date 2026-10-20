@@ -1,0 +1,26 @@
+[
+  {
+    "name": "그을린 심장",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/scorched_heart.png",
+    "description": "칼끝은 심장을 꿰뚫고, 불꽃은 사그라들었지만...\n그을린 상처는 식지 않습니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "전투 공격 시 물리/마법 관통 [+15%]{red}. 전투 공격 후 적에게 [2]{yellow}턴 동안 [치유 불가]{orange} 부여."
+      },
+      {
+        "step": 4,
+        "effect": "전투 공격 시 물리/마법 관통 [+30%]{red}. 전투 공격 후 적에게 [2]{yellow}턴 동안 [치유 불가]{orange} 부여."
+      },
+      {
+        "step": 5,
+        "effect": "전투 공격 시 물리/마법 관통 [+45%]{red}. 전투 공격 후 적에게 [2]{yellow}턴 동안 [치유 불가]{orange} 부여."
+      },
+      {
+        "step": 6,
+        "effect": "전투 공격 시 물리/마법 관통 [+60%]{red}. 전투 공격 후 적에게 [2]{yellow}턴 동안 [치유 불가]{orange} 부여."
+      }
+    ]
+  }
+]
