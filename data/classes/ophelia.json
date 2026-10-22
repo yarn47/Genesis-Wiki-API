@@ -1,0 +1,69 @@
+[
+  {
+    "name": "파티마",
+    "tier": 2,
+    "parent": "메이지",
+    "description": "증폭된 마력으로 보다 강력한 마법을 자유롭게 사용하는 마법사 직업입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackType": "마법",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/fatima.png",
+    "passive": {
+      "name": "출력 강화",
+      "lv1": "다른 아군에게 액티브 스킬로 버프를 받으면 해당 버프의 지속 시간이 [1]{yellow}턴 증가하고 [출력 강화 1]{green} 효과를 얻습니다.",
+      "lv2": "다른 아군에게 액티브 스킬로 버프를 받으면 해당 버프의 지속 시간이 [1]{yellow}턴 증가하고 [출력 강화 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/fatima.png"
+    },
+    "skills": [
+      {
+        "name": "프로미넌스",
+        "iconUrl": "/icons/skills/prominence.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "element": "화염",
+        "allowedWeapon": "스태프, 로드",
+        "effect": "자신의 주위 [3]{red}칸 내 적들에게 주문력의 [70%]{red}만큼 화염 피해를 주고 [화상]{orange}을 부여합니다."
+      }
+    ]
+  },
+  {
+    "name": "파티마얼티밋",
+    "tier": 3,
+    "parent": "파티마",
+    "description": "완벽한 존재로 거듭나 강력한 공격 마법을 구사하는 궁극의 파티마입니다.",
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackType": "마법",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/fatima_ultimate.png",
+    "passive": {
+      "name": "최대 출력",
+      "lv1": "다른 아군에게 액티브 스킬로 버프를 받으면 해당 버프의 지속 시간이 [1]{yellow}턴 증가하고 [최대 출력 1]{green} 효과를 얻습니다. 이번 턴에 피해를 입혔다면 캐릭터 턴 종료 시 [최대 출력 1]{green} 효과를 얻습니다.",
+      "lv2": "다른 아군에게 액티브 스킬로 버프를 받으면 해당 버프의 지속 시간이 [1]{yellow}턴 증가하고 [최대 출력 2]{green} 효과를 얻습니다. 이번 턴에 피해를 입혔다면 캐릭터 턴 종료 시 [최대 출력 2]{green} 효과를 얻습니다.",
+      "iconUrl": "/icons/classes/passive/fatima_ultimate.png"
+    },
+    "skills": [
+      {
+        "name": "얼티밋 메테오",
+        "iconUrl": "/icons/skills/ultimate_meteor.png",
+        "tpCost": 4,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "allowedWeapon": "스태프, 로드",
+        "effect": "[플레어 메테오]{green}, [글래셜 메테오]{green}, [주피터 메테오]{green} [3]{red}가지 중 하나를 선택해 발동 시킵니다."
+      }
+    ]
+  }
+]
