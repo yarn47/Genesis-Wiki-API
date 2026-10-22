@@ -1,0 +1,36 @@
+[
+  {
+    "name": "끈끈이 불꽃",
+    "element": "화염",
+    "duration": 2,
+    "tags": [
+      "해제 불가",
+      "지속 피해"
+    ],
+    "description": "캐릭터 턴 종료 시 공격력의 [25%]{red}만큼 화염 고정 피해."
+  },
+  {
+    "name": "잿빛 그을림",
+    "duration": 2,
+    "maxStack": 3,
+    "levels": [
+      {
+        "level": 1,
+        "effect": "화염저항 [-4%]{red}."
+      },
+      {
+        "level": 2,
+        "effect": "화염저항 [-6%]{red}."
+      },
+      {
+        "level": 3,
+        "effect": "화염저항 [-8%]{red}."
+      },
+      {
+        "level": 4,
+        "effect": "화염저항 [-10%]{red}."
+      }
+    ]
+  }
+]
+

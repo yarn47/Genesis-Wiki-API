@@ -1,0 +1,114 @@
+[
+  {
+    "name": "메이드새퍼",
+    "tier": 2,
+    "parent": "아처",
+    "description": "활이나 석궁을 주무기로 사용하고 폭발물을 설치하는 특수한 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/maid_sapper.png",
+    "weaponType": "석궁,활",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 4,
+    "moveRange": 3,
+    "passive": {
+      "name": "연성",
+      "iconUrl": "/icons/classes/passive/maid_sapper.png",
+      "lv1": "스킬 사용 후 주위 [2]{red}칸 내 다른 아군 [1]{red}명에게 [연성 1]{green} 효과를 부여합니다. 캐릭터 턴 종료 시 이번 턴에 적을 공격하지 않았다면 [연성 1]{green} 효과를 얻습니다.",
+      "lv2": "스킬 사용 후 주위 [2]{red}칸 내 다른 아군 [1]{red}명에게 [연성 2]{green} 효과를 부여합니다. 캐릭터 턴 종료 시 이번 턴에 적을 공격하지 않았다면 [연성 2]{green} 효과를 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "취급 주의!",
+        "iconUrl": "/icons/skills/handle_with_care.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "attackType": "타격",
+        "tags": [
+          "설치"
+        ],
+        "effect": "스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. 빈 타일을 지정해 체력이 [1]{red}칸이고 [2]{yellow}턴 동안 유지되는 [취급 주의 상자]{green}를 설치합니다."
+      }
+    ]
+  },
+  {
+    "name": "플레처",
+    "tier": 3,
+    "parent": "막스맨",
+    "description": "활이나 석궁을 무기로 사용하고 개조된 화살을 사용해 큰 피해를 주는 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/fletcher.png",
+    "weaponType": "석궁,활",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 4,
+    "moveRange": 3,
+    "passive": {
+      "name": "부분 개조",
+      "iconUrl": "/icons/classes/passive/fletcher.png",
+      "lv1": "치명타 확률의 [50%]{red}만큼 공격력이 증가하지만 치명타가 터지지 않습니다. 적 공격 시 물리 관통이 [30%]{red} 증가해 피해를 줍니다.",
+      "lv2": "치명타 확률의 [60%]{red}만큼 공격력이 증가하지만 치명타가 터지지 않습니다. 적 공격 시 물리 관통이 [40%]{red} 증가해 피해를 줍니다."
+    },
+    "skills": [
+      {
+        "name": "특제 폭발 화살",
+        "iconUrl": "/icons/skills/special_explosive_arrow.png",
+        "tpCost": 3,
+        "range": [
+          2,
+          5
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "element": "화염",
+        "tags": [
+          "원거리",
+          "지향성",
+          "위치제어"
+        ],
+        "allowedWeapon": "활,석궁",
+        "effect": "적에게 특제 폭발 화살을 발사해 공격력의 [50%]{red}만큼 화염 피해를 줍니다. 이후 폭발을 일으켜 대상과 인접한 적들을 [1]{red}칸씩 밀쳐내고 대상과 주위 [2]{red}칸 내 적들에게 공격력의 [60%]{red}만큼 화염 피해를 줍니다. 폭발 후 범위 내 빈 타일 하나에 [잔해]{green}가 남습니다."
+      }
+    ]
+  },
+  {
+    "name": "마스터트래퍼",
+    "tier": 3,
+    "parent": "메이드새퍼",
+    "description": "활이나 석궁을 주무기로 사용하고 함정을 설치해 연쇄적인 폭발을 일으키는 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/master_trapper.png",
+    "weaponType": "석궁,활",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 4,
+    "moveRange": 3,
+    "passive": {
+      "name": "장인의 손길",
+      "iconUrl": "/icons/classes/passive/master_trapper.png",
+      "lv1": "스킬 사용 후 주위 [2]{red}칸 내 다른 아군 [1]{red}명에게 [장인의 손길 1]{green} 효과를 부여합니다. 캐릭터 턴 종료 시 이번 턴에 적을 공격하지 않았다면 [장인의 손길 1]{green} 효과를 얻습니다.",
+      "lv2": "스킬 사용 후 주위 [2]{red}칸 내 다른 아군 [1]{red}명에게 [장인의 손길 2]{green} 효과를 부여합니다. 캐릭터 턴 종료 시 이번 턴에 적을 공격하지 않았다면 [장인의 손길 2]{green} 효과를 얻습니다."
+    },
+    "skills": [
+      {
+        "name": "깜짝 깜찍 함정",
+        "iconUrl": "/icons/skills/surprise_trap.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "attackType": "타격",
+        "tags": [
+          "설치"
+        ],
+        "effect": "빈 타일을 지정해 [깜짝 깜찍 함정]{green}을 설치합니다. 스킬 사용 후 남은 [TP]{yellow}가 있다면 [1]{yellow} [TP]{yellow}를 소모해 한번 더 스킬을 사용할 수 있습니다."
+      }
+    ]
+  }
+]
+

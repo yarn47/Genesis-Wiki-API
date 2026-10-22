@@ -1,0 +1,26 @@
+[
+  {
+    "name": "단조의 망치",
+    "iconUrl": "/icons/artifacts/forging_hammer.png",
+    "description": "쇠는 불로 태어나고 망치로 무너진다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "공격력 [+12%]{red}. 화염 속성 공격 적중 시 대상에게 [잿빛 그을림 1]{orange} 효과 부여."
+      },
+      {
+        "step": 4,
+        "effect": "공격력 [+18%]{red}. 화염 속성 공격 적중 시 대상에게 [잿빛 그을림 2]{orange} 효과 부여."
+      },
+      {
+        "step": 5,
+        "effect": "공격력 [+24%]{red}. 화염 속성 공격 적중 시 대상에게 [잿빛 그을림 3]{orange} 효과 부여."
+      },
+      {
+        "step": 6,
+        "effect": "공격력 [+30%]{red}. 화염 속성 공격 적중 시 대상에게 [잿빛 그을림 4]{orange} 효과 부여."
+      }
+    ]
+  }
+]
+
