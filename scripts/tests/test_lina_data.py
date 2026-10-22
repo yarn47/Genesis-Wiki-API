@@ -13,7 +13,7 @@ def read(kind):
 class LinaTests(unittest.TestCase):
     def test_profile_and_references(self):
         c = read('characters')[0]
-        self.assertEqual(c['releaseDate'], '2024-06-04')
+        self.assertEqual(c['releaseDate'], '2024-05-28')
         self.assertEqual(c['appearedIn'], '템페스트')
         self.assertEqual((c['faction'], c['element']), ('다갈', '신념의빛'))
         self.assertEqual((c['birthYear'], c['height'], c['cv']), ('에스겔력 1255년', '162cm', '이새아'))

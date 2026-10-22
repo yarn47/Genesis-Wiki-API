@@ -1,0 +1,112 @@
+[
+  {
+    "name": "왕자의 이중 생활",
+    "duration": 2,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "선제 공격. 치명타 확률 [+10%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔칩니다."
+      },
+      {
+        "level": 2,
+        "effect": "선제 공격. 치명타 확률 [+15%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔칩니다."
+      },
+      {
+        "level": 3,
+        "effect": "선제 공격. TP 제거 면역. 치명타 확률 [+25%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔칩니다."
+      },
+      {
+        "level": 4,
+        "effect": "선제 공격. TP 제거 면역. 치명타 확률 [+30%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔칩니다."
+      },
+      {
+        "level": 5,
+        "effect": "선제 공격. TP 제거 면역. 치명타 확률 [+30%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔칩니다."
+      },
+      {
+        "level": 6,
+        "effect": "선제 공격. TP 제거 면역. 치명타 확률 [+40%]{red}. 전투 공격 시 [1]{yellow} [TP]{yellow}를 훔치고 전투 공격 후 [2]{yellow}턴 동안 [치유 불가]{orange} 효과 부여."
+      },
+      {
+        "level": 7,
+        "effect": "선제 공격. TP 제거 면역. 치명타 확률 [+50%]{red}. 전투 공격 시 [2]{yellow} [TP]{yellow}를 훔치고 전투 공격 후 [2]{yellow}턴 동안 [치유 불가]{orange} 효과 부여."
+      }
+    ]
+  },
+  {
+    "name": "어둠 장막 (다크프린스)",
+    "duration": "영구",
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "범위 피해를 당했을 때 피해를 [0]{red}으로 만들고 효과 [1]{yellow}개 제거."
+  },
+  {
+    "name": "뇌신의 부름",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "대상 적에게 공격력의 [25%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 2,
+        "effect": "대상 적에게 공격력의 [30%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 3,
+        "effect": "대상 적에게 공격력의 [35%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 4,
+        "effect": "대상 적에게 공격력의 [40%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 5,
+        "effect": "대상 적에게 공격력의 [45%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 6,
+        "effect": "대상 적에게 공격력의 [50%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      }
+    ]
+  },
+  {
+    "name": "썬더 스톰",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "대상 적에게 공격력의 [15%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 2,
+        "effect": "대상 적에게 공격력의 [20%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 3,
+        "effect": "대상 적에게 공격력의 [25%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 4,
+        "effect": "대상 적에게 공격력의 [30%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 5,
+        "effect": "대상 적에게 공격력의 [35%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      },
+      {
+        "level": 6,
+        "effect": "대상 적에게 공격력의 [40%]{red}만큼 전격 피해를 주고, [1]{yellow}턴 간 [감전]{orange} 부여."
+      }
+    ]
+  }
+]

@@ -14,7 +14,7 @@ def named(kind, name):
 class CordeliaTests(unittest.TestCase):
     def test_profile_references(self):
         c = read('characters')[0]
-        self.assertEqual((c['releaseDate'], c['appearedIn']), ('2024-06-18', '템페스트'))
+        self.assertEqual((c['releaseDate'], c['appearedIn']), ('2024-06-11', '템페스트'))
         self.assertEqual((c['faction'], c['element'], c['cv']), ('커티스', '지성의결정체', '오로아'))
         self.assertEqual((c['birthYear'], c['height']), ('에스겔력 1259년', '141cm'))
         self.assertNotIn('stats', c)
