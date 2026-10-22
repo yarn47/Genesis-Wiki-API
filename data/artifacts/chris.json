@@ -1,0 +1,99 @@
+[
+  {
+    "name": "초과 장전기",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/overloader.png",
+    "description": "더 많이! 더 강하게! 착용자의 총기를 강화해 적의 방어를 무력화시키고 더 많은 탄환을 장전할 수 있게 합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+15%]{red}. 탄환 최대치 [+1]{red}."
+      },
+      {
+        "step": 4,
+        "effect": "물리 관통 [+30%]{red}. 탄환 최대치 [+1]{red}."
+      },
+      {
+        "step": 5,
+        "effect": "물리 관통 [+45%]{red}. 탄환 최대치 [+1]{red}."
+      },
+      {
+        "step": 6,
+        "effect": "물리 관통 [+60%]{red}. 탄환 최대치 [+1]{red}."
+      }
+    ]
+  },
+  {
+    "name": "초기 철갑 탄창",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/initial_armor_piercing_magazine.png",
+    "description": "착용자를 최적의 상태로 준비시켜 초반 교전부터 강력한 우위를 점할 수 있게 합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "치명타 확률 [+10%]{red}. 게임 시작 시 [철갑탄]{green}을 장전한 상태로 시작."
+      },
+      {
+        "step": 4,
+        "effect": "치명타 확률 [+20%]{red}. 게임 시작 시 [철갑탄]{green}을 장전한 상태로 시작."
+      },
+      {
+        "step": 5,
+        "effect": "치명타 확률 [+30%]{red}. 치명타 피해량 [+10%]{red}. 게임 시작 시 [철갑탄]{green}을 장전한 상태로 시작."
+      },
+      {
+        "step": 6,
+        "effect": "치명타 확률 [+30%]{red}. 치명타 피해량 [+20%]{red}. 게임 시작 시 [철갑탄]{green}을 장전한 상태로 시작."
+      }
+    ]
+  },
+  {
+    "name": "자유의 방아쇠",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/trigger_of_freedom.png",
+    "description": "억압받는 이들의 염원과 스스로 운명을 선택하겠다는 굳은 의지를 담아...",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "공격력/받는 치명타 확률 감소 [+15%]{red}. 전투 공격을 받은 후 자신의 디버프를 [1]{red}개 해제하고 턴당 한번 체력을 공격력의 [40%]{red}만큼 회복."
+      },
+      {
+        "step": 4,
+        "effect": "공격력/받는 치명타 확률 감소 [+20%]{red}. 전투 공격을 받은 후 자신의 디버프를 [1]{red}개 해제하고 턴당 한번 체력을 공격력의 [45%]{red}만큼 회복."
+      },
+      {
+        "step": 5,
+        "effect": "공격력/받는 치명타 확률 감소 [+25%]{red}. 전투 공격을 받은 후 자신의 디버프를 [1]{red}개 해제하고 턴당 한번 체력을 공격력의 [50%]{red}만큼 회복."
+      },
+      {
+        "step": 6,
+        "effect": "공격력/받는 치명타 확률 감소 [+30%]{red}. 전투 공격을 받은 후 자신의 디버프를 [1]{red}개 해제하고 턴당 한번 체력을 공격력의 [60%]{red}만큼 회복."
+      }
+    ]
+  },
+  {
+    "name": "고급 전술 탄창",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/advanced_tactical_magazine.png",
+    "description": "더 많은 탄환, 더 긴 사격.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "물리 관통 [+10%]{red}. [예비탄창 1]{green} 효과 보유."
+      },
+      {
+        "step": 4,
+        "effect": "물리 관통 [+20%]{red}. [예비탄창 1]{green} 효과 보유."
+      },
+      {
+        "step": 5,
+        "effect": "물리 관통 [+30%]{red}. [예비탄창 2]{green} 효과 보유."
+      },
+      {
+        "step": 6,
+        "effect": "물리 관통 [+40%]{red}. [예비탄창 2]{green} 효과 보유."
+      }
+    ]
+  }
+]
+
