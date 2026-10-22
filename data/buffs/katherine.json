@@ -1,0 +1,80 @@
+[
+  {
+    "name": "극기 투혼",
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "공격력/체력 [+2%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 2,
+        "duration": 3,
+        "effect": "공격력/체력 [+3%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 3,
+        "duration": 3,
+        "effect": "공격력/체력 [+4%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 4,
+        "duration": 4,
+        "effect": "공격력/체력 [+5%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "effect": "공격력/방어력/체력 [+6%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "effect": "공격력/방어력/체력 [+8%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "effect": "공격력/방어력/체력 [+10%]{red}. 적 공격 후 중첩된 수만큼 [2]{yellow}턴 동안 [약점 노출]{orange} 효과 부여."
+      }
+    ]
+  },
+  {
+    "name": "가시 방벽",
+    "duration": 2,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "방어력 [+50%]{red}. 받는 물리 피해 [-10%]{red}. 근접 공격을 받은 후 공격한 적에게 방어력의 [50%]{red}만큼 물리 고정 피해를 가함."
+  },
+  {
+    "name": "투지",
+    "duration": 2,
+    "maxStack": 4,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "공격력/방어력/저항력 [+5%]{red}."
+      },
+      {
+        "level": 2,
+        "effect": "공격력/방어력/저항력 [+6%]{red}."
+      },
+      {
+        "level": 3,
+        "effect": "공격력/방어력/저항력 [+8%]{red}."
+      },
+      {
+        "level": 4,
+        "effect": "공격력/방어력/저항력 [+10%]{red}."
+      }
+    ]
+  }
+]

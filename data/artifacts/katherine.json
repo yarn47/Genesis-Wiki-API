@@ -1,0 +1,26 @@
+[
+  {
+    "name": "검투사의 투지",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/gladiators_resolve.png",
+    "description": "수많은 전장에서 단련된 검투사의 불굴의 정신이 깃듭니다. 손에 쥐는 순간, 그의 강렬한 투지가 몸을 감싸며 마지막 한 순간까지 싸우도록 만듭니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "근접 스킬 사용 후 [투지 1]{green} 효과 획득 및 [3]{yellow}턴에 한번 쿨타임이 가장 긴 스킬의 쿨타임을 [1]{yellow}만큼 감소."
+      },
+      {
+        "step": 4,
+        "effect": "근접 스킬 사용 후 [투지 2]{green} 효과 획득 및 [3]{yellow}턴에 한번 쿨타임이 가장 긴 스킬의 쿨타임을 [1]{yellow}만큼 감소."
+      },
+      {
+        "step": 5,
+        "effect": "근접 스킬 사용 후 [투지 3]{green} 효과 획득 및 [2]{yellow}턴에 한번 쿨타임이 가장 긴 스킬의 쿨타임을 [1]{yellow}만큼 감소."
+      },
+      {
+        "step": 6,
+        "effect": "근접 스킬 사용 후 [투지 4]{green} 효과 획득 및 [2]{yellow}턴에 한번 쿨타임이 가장 긴 스킬의 쿨타임을 [1]{yellow}만큼 감소."
+      }
+    ]
+  }
+]
