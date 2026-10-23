@@ -1,0 +1,109 @@
+[
+  {
+    "name": "레지스탕스",
+    "tier": 2,
+    "parent": "파이터",
+    "moveRange": 4,
+    "description": "검을 무기로 사용하고 자유와 정의를 기치로 일어나 싸우는 비밀 조직의 일원입니다.",
+    "passive": {
+      "name": "궐기",
+      "lv1": "전투 시 자신에게 걸린 디버프가 있거나 체력이 [100%]{red}가 아니라면 공격력이 [20%]{red}만큼 증가하고 받는 피해가 [20%]{red}만큼 감소합니다.",
+      "lv2": "전투 시 자신에게 걸린 디버프가 있거나 체력이 [100%]{red}가 아니라면 공격력이 [30%]{red}만큼 증가하고 받는 피해가 [30%]{red}만큼 감소합니다.",
+      "iconUrl": "/icons/classes/passive/resistance.png"
+    },
+    "skills": [
+      {
+        "name": "낙월도",
+        "iconUrl": "/icons/skills/nakwoldo.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "[2]{yellow}턴 동안 [전의]{green} 효과를 얻고 적에게 공격력의 [210%]{red}만큼 피해를 줍니다. 이 공격은 항상 [1%]{red}의 확률로 치명타가 발동합니다. 적 처치 시 주위 [1]{red}바퀴 내 다른 아군에게 [2]{yellow}턴 동안 [전의]{green} 효과를 부여합니다."
+      }
+    ],
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "iconUrl": "/icons/classes/emblem/resistance.png"
+  },
+  {
+    "name": "스톰나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 폭풍의 힘으로 전장을 압도하는 특수한 상급 직업입니다.",
+    "passive": {
+      "name": "폭풍의 눈",
+      "lv1": "보유한 버프가 [3]{red}개 이상이라면 공격력/물리 관통이 [25%]{red}만큼 증가합니다. 받는 피해량 [40%]{red} 감소. 공격 받으면 공격자와 [1]{red}칸을 초과하는 거리당 받는 피해량이 [5%]{red} 증가합니다(최대 [15%]{red}).",
+      "lv2": "보유한 버프가 [3]{red}개 이상이라면 공격력/물리 관통이 [35%]{red}만큼 증가합니다. 받는 피해량 [50%]{red} 감소. 공격 받으면 공격자와 [1]{red}칸을 초과하는 거리당 받는 피해량이 [5%]{red} 증가합니다(최대 [15%]{red}).",
+      "iconUrl": "/icons/classes/passive/storm_knight.png"
+    },
+    "skills": [
+      {
+        "name": "뇌전폭열참",
+        "iconUrl": "/icons/skills/thunder_burst_slash.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          2
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "element": "전격",
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적에게 뇌전폭열참을 날려 공격력의 [170%]{red}만큼 전격 피해를 주고 인접한 적에게는 공격력의 [70%]{red}만큼 전격 피해를 줍니다. 피해를 준 적들에게 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다."
+      }
+    ],
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "iconUrl": "/icons/classes/emblem/storm_knight.png"
+  },
+  {
+    "name": "레지스트커맨더",
+    "tier": 3,
+    "parent": "레지스탕스",
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 전략적인 리더십과 강력한 근접 전투 능력으로 반란군을 이끄는 조직의 리더입니다.",
+    "passive": {
+      "name": "역경 극복",
+      "lv1": "함성 스킬 사용 시 턴 당 한번 추가 공격이나 스킬 사용을 얻습니다. 턴 시작 시 자신에게 걸린 디버프가 있거나 체력이 [100%]{red}가 아니라면 다음 턴 시작 전 까지 공격력이 [30%]{red}만큼 증가하고 받는 피해가 [25%]{red}만큼 감소합니다. 공격 받아 체력이 [50%]{red} 이하로 내려가면 다음턴 시작 까지 받는 피해가 [10%]{red} 추가로 감소합니다.",
+      "lv2": "함성 스킬 사용 시 턴 당 한번 추가 공격이나 스킬 사용을 얻습니다. 턴 시작 시 자신에게 걸린 디버프가 있거나 체력이 [100%]{red}가 아니라면 다음 턴 시작 전 까지 공격력이 [50%]{red}만큼 증가하고 받는 피해가 [40%]{red}만큼 감소합니다. 공격 받아 체력이 [50%]{red} 이하로 내려가면 다음턴 시작 까지 받는 피해가 [10%]{red} 추가로 감소합니다.",
+      "iconUrl": "/icons/classes/passive/resist_commander.png"
+    },
+    "skills": [
+      {
+        "name": "진격의 함성",
+        "iconUrl": "/icons/skills/advance_shout.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "함성"
+        ],
+        "effect": "[3]{red}칸 내 아군들의 행동 제어 효과를 모두 제거하고 [2]{yellow}턴 동안 [저항군의 진격]{green} 효과를 부여합니다."
+      }
+    ],
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "iconUrl": "/icons/classes/emblem/resist_commander.png"
+  }
+]

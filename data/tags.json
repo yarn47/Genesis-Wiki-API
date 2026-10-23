@@ -1,4 +1,5 @@
 [
+  { "name": "권능", "color": "gray" },
   { "name": "추방상태공격", "color": "gray" },
   { "name": "설치", "color": "gray" },
   { "name": "추방", "color": "gray" },
