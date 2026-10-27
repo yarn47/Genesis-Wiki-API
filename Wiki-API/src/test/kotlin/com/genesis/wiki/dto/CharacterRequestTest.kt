@@ -5,6 +5,12 @@ import org.junit.jupiter.api.Test
 
 class CharacterRequestTest {
     @Test
+    fun `supports Tempest Circus as secondary faction`() {
+        val req = CharacterRequest(name = "메리 팬드래건", grade = "legend", faction = "pendragon", subFaction = "tempest_circus", element = "crystal")
+        assertEquals(com.genesis.wiki.entity.Faction.tempest_circus, com.genesis.wiki.entity.Faction.valueOf(req.subFaction!!))
+    }
+
+    @Test
     fun `supports Bifrost hero without manifestation`() {
         val req = CharacterRequest(name = "G.S", grade = "hero", faction = "bifrost", element = "dark", hasManifestation = false)
         assertEquals(com.genesis.wiki.entity.Faction.bifrost, com.genesis.wiki.entity.Faction.valueOf(req.faction))

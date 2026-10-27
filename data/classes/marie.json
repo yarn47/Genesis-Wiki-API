@@ -1,0 +1,108 @@
+[
+  {
+    "name": "도미넌트",
+    "tier": 2,
+    "parent": "레인저",
+    "description": "한손검을 들고 채찍을 보조로 사용해 중거리에서 적을 제어하는 전략적인 직업입니다.",
+    "passive": {
+      "name": "지배",
+      "lv1": "적의 통제 영역을 무시해 이동합니다. 턴 시작 시 주변 [3]{red}바퀴 내 공격 능력이 가장 높은 적에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. [약화]{orange}를 가진 적 공격 시 대상이 받는 피해량이 [20%]{red}만큼 증가하고 공격 후 버프를 [1]{red}개 빼앗습니다.",
+      "lv2": "적의 통제 영역을 무시해 이동합니다. 턴 시작 시 주변 [3]{red}바퀴 내 공격 능력이 가장 높은 적에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. [약화]{orange}를 가진 적 공격 시 대상이 받는 피해량이 [25%]{red}만큼 증가하고 공격 후 버프를 [1]{red}개 빼앗습니다.",
+      "iconUrl": "/icons/classes/passive/dominant.png"
+    },
+    "skills": [
+      {
+        "name": "편인무",
+        "iconUrl": "/icons/skills/pyeoninmu.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "effect": "[견편인무]{green}, [탄편인무]{green} [2]{red}가지 중 하나를 선택해 발동 시킵니다."
+      }
+    ],
+    "weaponType": "세검, 검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/dominant.png"
+  },
+  {
+    "name": "파이썬",
+    "tier": 3,
+    "parent": "도미넌트",
+    "description": "한손검을 들고 보조로 채찍의 유연함과 길이를 활용해 적을 제압하고 전장의 흐름을 지배하는 상급 직업입니다.",
+    "passive": {
+      "name": "역류",
+      "lv1": "적의 통제 영역을 무시해 이동합니다. 턴 시작 시 주변 [3]{red}바퀴 내 공격 능력이 가장 높은 적에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. [약화]{orange}를 가진 적 공격 시 대상이 받는 피해량이 [40%]{red}만큼 증가하고 [1]{yellow}턴 동안 [둔화]{orange}를 겁니다. 디버프를 가진 적 공격 후 대상이 가진 디버프 개수만큼 버프를 빼앗습니다.",
+      "lv2": "적의 통제 영역을 무시해 이동합니다. 턴 시작 시 주변 [3]{red}바퀴 내 공격 능력이 가장 높은 적에게 [2]{yellow}턴 동안 [약화]{orange}를 겁니다. [약화]{orange}를 가진 적 공격 시 대상이 받는 피해량이 [50%]{red}만큼 증가하고 [1]{yellow}턴 동안 [둔화]{orange}를 겁니다. 디버프를 가진 적 공격 후 대상이 가진 디버프 개수만큼 버프를 빼앗습니다.",
+      "iconUrl": "/icons/classes/passive/python.png"
+    },
+    "skills": [
+      {
+        "name": "화사랑추",
+        "iconUrl": "/icons/skills/hwasarangchu.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "채찍으로 적을 공격해 공격력의 [80%]{red}만큼 피해를 주고 추가타가 발동해 공격력의 [80%]{red}만큼 피해를 줍니다. 이 스킬은 반격당하지 않습니다."
+      }
+    ],
+    "weaponType": "세검, 검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/python.png"
+  },
+  {
+    "name": "쏜즈퀸",
+    "tier": 3,
+    "parent": "도미넌트",
+    "description": "한손검을 들고 채찍을 보조로 사용해 아군을 지원하는 독특한 전투 스타일을 가진 상급 직업입니다.",
+    "passive": {
+      "name": "고통의 굴레",
+      "lv1": "적의 통제 영역을 무시해 이동합니다. 공격력이 [30%]{red} 증가하고 적에게 공격 당할 시 받는 피해가 [15%]{red} 감소합니다. 적 공격 후 피해를 준 적들에게 [2]{yellow}턴 동안 [고통의 굴레]{orange} 효과를 부여합니다. [고통의 굴레]{orange}를 가진 적으로부터 공격 당할 시 받은 첫 피해의 [30%]{red}만큼 물리 고정 피해로 돌려줍니다.",
+      "lv2": "적의 통제 영역을 무시해 이동합니다. 공격력이 [40%]{red} 증가하고 적에게 공격 당할 시 받는 피해가 [20%]{red} 감소합니다. 적 공격 후 피해를 준 적들에게 [2]{yellow}턴 동안 [고통의 굴레]{orange} 효과를 부여합니다. [고통의 굴레]{orange}를 가진 적으로부터 공격 당할 시 받은 첫 피해의 [40%]{red}만큼 물리 고정 피해로 돌려줍니다.",
+      "iconUrl": "/icons/classes/passive/thorns_queen.png"
+    },
+    "skills": [
+      {
+        "name": "에로틱 스카",
+        "iconUrl": "/icons/skills/erotic_scar.png",
+        "tpCost": 1,
+        "range": [
+          2,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "effect": "아군에게 [1]{red}의 고정 피해를 주고 [2]{yellow}턴 동안 [에로틱 스카]{green} 효과를 부여합니다. 스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. 이 스킬 사용 후 이번 턴에 적을 공격하지 않고 캐릭터 턴 종료 시 공격력의 [100%]{red}만큼 [스카 배리어]{green} 효과를 얻습니다."
+      }
+    ],
+    "weaponType": "세검, 검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/thorns_queen.png"
+  }
+]
+
