@@ -1,0 +1,113 @@
+[
+  {
+    "name": "힐러",
+    "tier": 2,
+    "parent": "시스터",
+    "description": "전투의 후방에서 광휘 마법을 시전해 위급한 아군을 지원하고 치유하는 성직자 직업입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/healer.png",
+    "passive": {
+      "name": "극진한 간호",
+      "lv1": "아군 턴 시작 시 남은 체력 비율이 가장 낮은 다른 아군 [1]{red}명과 자신의 체력 비율을 평균으로 균등하게 맞춥니다. 대상과 자신의 체력을 주문력의 [20%]{red}만큼 회복시킵니다.",
+      "lv2": "아군 턴 시작 시 남은 체력 비율이 가장 낮은 다른 아군 [1]{red}명과 자신의 체력 비율을 평균으로 균등하게 맞춥니다. 대상과 자신의 체력을 주문력의 [25%]{red}만큼 회복시킵니다.",
+      "iconUrl": "/icons/classes/passive/healer.png"
+    },
+    "skills": [
+      {
+        "name": "리커버리",
+        "tpCost": 1,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "치유"
+        ],
+        "element": "광휘",
+        "iconUrl": "/icons/skills/recovery.png",
+        "effect": "아군을 지정해 주문력의 [100%]{red}만큼 회복시키고 디버프를 [2]{red}개 제거합니다."
+      }
+    ]
+  },
+  {
+    "name": "미니스터",
+    "tier": 3,
+    "parent": "힐러",
+    "description": "광휘 마법을 시전해 아군에게 헌신하고 강력한 지원 스킬로 전투의 흐름을 유리하게 이끄는 상급 성직자 입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/minister.png",
+    "passive": {
+      "name": "공헌",
+      "lv1": "아군 턴 시작 시 남은 체력 비율이 가장 낮은 다른 아군 [1]{red}명과 자신의 체력 비율을 평균으로 균등하게 맞춥니다. 대상과 자신의 체력을 주문력의 [30%]{red}만큼 회복시키고 디버프를 [1]{red}개 제거합니다.",
+      "lv2": "아군 턴 시작 시 남은 체력 비율이 가장 낮은 다른 아군 [1]{red}명과 자신의 체력 비율을 평균으로 균등하게 맞춥니다. 대상과 자신의 체력을 주문력의 [40%]{red}만큼 회복시키고 디버프를 [1]{red}개 제거합니다.",
+      "iconUrl": "/icons/classes/passive/minister.png"
+    },
+    "skills": [
+      {
+        "name": "세컨드 윈드",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "치유"
+        ],
+        "element": "광휘",
+        "iconUrl": "/icons/skills/second_wind.png",
+        "effect": "주위 [2]{red}칸 내 다른 아군을 지정해 주문력의 [80%]{red}만큼 체력을 회복시키고 대상이 턴을 종료했다면 추가로 턴을 얻어 한번 더 행동할 수 있게 합니다."
+      }
+    ]
+  },
+  {
+    "name": "하이기니스트",
+    "tier": 3,
+    "parent": "힐러",
+    "description": "강력한 광휘 마법으로 적의 피해를 약화시키고 제거해 아군을 보호하는 상급 성직자 입니다.",
+    "weaponType": "스태프,로드",
+    "attackType": "마법",
+    "defenseType": "라이트",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/hygienist.png",
+    "passive": {
+      "name": "방역",
+      "lv1": "광휘 속성 스킬 사용 시 주문력이 [30%]{red} 증가합니다. 스킬로 아군에게 이로운 효과 부여 시 지속 피해 및 암흑 속성 디버프를 모두 제거하고 [2]{yellow}턴 동안 [방역]{green} 효과를 부여합니다.",
+      "lv2": "광휘 속성 스킬 사용 시 주문력이 [40%]{red} 증가합니다. 스킬로 아군에게 이로운 효과 부여 시 지속 피해 및 암흑 속성 디버프를 모두 제거하고 [2]{yellow}턴 동안 [방역]{green} 효과를 부여합니다.",
+      "iconUrl": "/icons/classes/passive/hygienist.png"
+    },
+    "skills": [
+      {
+        "name": "스테럴라이즈",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "치유"
+        ],
+        "element": "광휘",
+        "allowedWeapon": "스태프,로드",
+        "iconUrl": "/icons/skills/sterilize.png",
+        "effect": "방향을 지정해 전방 [3x4]{red} 범위 내 적들에게 주문력의 [70%]{red}만큼 광휘 피해를 줍니다. 범위 내 아군들과 자신의 체력을 주문력의 [70%]{red}만큼 회복시키고 디버프를 [1]{red}개씩 지웁니다."
+      }
+    ]
+  }
+]
