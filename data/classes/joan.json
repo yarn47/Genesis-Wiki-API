@@ -1,0 +1,109 @@
+[
+  {
+    "name": "임페리얼발키리",
+    "tier": 2,
+    "parent": "발키리",
+    "description": "세검을 무기로 사용하고 제국의 명예와 권위를 지키는 엘리트 전사 직업입니다.",
+    "passive": {
+      "name": "검방",
+      "lv1": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [40%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 전투 시 체력이 [100%]{red}라면 무조건 적의 공격을 한 번 빗겨내고 공격력이 [10%]{red} 증가합니다.",
+      "lv2": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [50%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 전투 시 체력이 [100%]{red}라면 무조건 적의 공격을 한 번 빗겨내고 공격력이 [15%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/imperial_valkyrie.png"
+    },
+    "skills": [
+      {
+        "name": "파쇄혼",
+        "iconUrl": "/icons/skills/pasaehon.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "TP 제거",
+          "전투"
+        ],
+        "allowedWeapon": "세검",
+        "effect": "적에게 파쇄혼을 날려 대상의 TP를 모두 없애고 공격력의 [100%]{red}에 없앤 TP 당 공격력의 [20%]{red}만큼 추가된 피해를 줍니다. 대상의 TP가 [1]{yellow} 이하라면 [2]{yellow} TP를 돌려 받고 [1]{yellow}턴 동안 [제압]{orange}을 겁니다. 이 스킬은 엄폐 효과의 적용을 받지 않습니다."
+      }
+    ],
+    "weaponType": "세검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/imperial_valkyrie.png"
+  },
+  {
+    "name": "로얄발키리",
+    "tier": 3,
+    "parent": "임페리얼발키리",
+    "description": "세검을 무기로 사용하고 전장에서 절대적인 통솔력과 권위를 발휘하는 상급 직업입니다.",
+    "passive": {
+      "name": "절대 기예",
+      "lv1": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [70%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 전투 시 체력이 [100%]{red}라면 무조건 적의 공격을 한 번 빗겨내고 공격력과 치명타 확률이 [20%]{red} 증가합니다.",
+      "lv2": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [80%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 전투 시 체력이 [100%]{red}라면 무조건 적의 공격을 한 번 빗겨내고 공격력과 치명타 확률이 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/royal_valkyrie.png"
+    },
+    "skills": [
+      {
+        "name": "역돌",
+        "iconUrl": "/icons/skills/yeokdol.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "allowedWeapon": "세검",
+        "effect": "적에게 선제공격을 주고 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 적에게 공격력의 [100%]{red}에 잃은 체력 비율만큼 증가한 피해를 주고 공격력의 [50%]{red}만큼 보호막을 얻습니다. 치명타 발동 시 이 스킬의 쿨타임이 [2]{yellow} 감소합니다."
+      }
+    ],
+    "weaponType": "세검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/royal_valkyrie.png"
+  },
+  {
+    "name": "시큐리티발키리",
+    "tier": 3,
+    "parent": "임페리얼발키리",
+    "description": "세검을 무기로 사용하고 황실의 명예와 평화를 지키기 위해 탄생한 특수한 상급 직업입니다.",
+    "passive": {
+      "name": "정보 보안",
+      "lv1": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [70%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 캐릭터 턴 종료 시 자신에게 걸린 디버프가 없다면 주변 [1]{red}바퀴 내 아군에게 [2]{yellow}턴 동안 [정보 보안]{green} 효과를 줍니다. 고립된 적과 전투 시 공격력이 [20%]{red} 증가합니다.",
+      "lv2": "적의 [통제 영역]{orange}을 무시해 이동하고 전투 시 [80%]{red} 확률로 적의 공격을 한 번 빗겨냅니다. 빗겨낸 공격은 피해가 [50%]{red} 감소하고 치명타가 발동하지 않습니다. 캐릭터 턴 종료 시 자신에게 걸린 디버프가 없다면 주변 [1]{red}바퀴 내 아군에게 [2]{yellow}턴 동안 [정보 보안]{green} 효과를 줍니다. 고립된 적과 전투 시 공격력이 [30%]{red} 증가합니다.",
+      "iconUrl": "/icons/classes/passive/security_valkyrie.png"
+    },
+    "skills": [
+      {
+        "name": "크랙 다운",
+        "iconUrl": "/icons/skills/crack_down.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "방향을 지정해 전방 [5×5]{red} 범위 내 적들에게 [2]{yellow}턴 동안 [단속]{orange} 효과를 걸고 [특별 사법권]{green}을 하나 얻습니다."
+      }
+    ],
+    "weaponType": "세검",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/security_valkyrie.png"
+  }
+]
