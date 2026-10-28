@@ -1,0 +1,27 @@
+[
+  {
+    "name": "서리 권좌",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/frost_throne.png",
+    "description": "단단하고 차가운 권좌의 주인은 자신의 영역에 발을 들이는 모든 자에게 극한의 한기를 선사합니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "게임 시작 시 [서리 권좌 1]{green} 효과를 얻습니다."
+      },
+      {
+        "step": 4,
+        "effect": "게임 시작 시 [서리 권좌 2]{green} 효과를 얻습니다."
+      },
+      {
+        "step": 5,
+        "effect": "게임 시작 시 [서리 권좌 3]{green} 효과를 얻습니다."
+      },
+      {
+        "step": 6,
+        "effect": "게임 시작 시 [서리 권좌 4]{green} 효과를 얻습니다."
+      }
+    ]
+  }
+]
+
