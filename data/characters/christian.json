@@ -1,0 +1,107 @@
+[
+  {
+    "name": "크리스티앙 데 메디치",
+    "grade": "전설",
+    "faction": "게이시르",
+    "element": "자유의불꽃",
+    "birthYear": "에스겔력 1262년",
+    "height": "182cm",
+    "cv": "강수진",
+    "releaseDate": "2024-10-15",
+    "appearedIn": "창세기전3",
+    "profileText": "게이시르의 황권 강화를 위해 신설된 ISS의 공군 출신 요원.\n\n메디치 가문의 차남이자 게이시르 공국 소속으로 지위는 소위다. 형 알바티니의 반란을 막으며 ISS요원으로 발탁된다.\nISS에서 죠안과 만나 파트너가 되며, 제국의 각종 사건들을 조사한다. 직감과 추리력에 의존하여 수사하는 경향이 있고, 가족 중에 가장 쾌활한 인물이다.",
+    "thumbnailUrl": "/icons/characters/christian_thumb.png",
+    "portraitUrl": "/icons/characters/christian_portrait.png",
+    "published": true,
+    "hasManifestation": true,
+    "classTree": [
+      "거너",
+      "건슬링어",
+      "ISS 파일럿",
+      "에이스",
+      "스핏파이어",
+      "L.T.K"
+    ],
+    "exclusiveWeapon": "M.C 발렌타인",
+    "artifacts": [
+      "초과 장전기",
+      "초기 철갑 탄창",
+      "바람 걸음"
+    ],
+    "passive": {
+      "name": "결정적 한 발",
+      "iconUrl": "/icons/passives/decisive_shot.png",
+      "levels": [
+        {
+          "type": "각성",
+          "step": 3,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 1]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 1]{green} 효과가 발동됩니다."
+        },
+        {
+          "type": "각성",
+          "step": 4,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 2]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 2]{green} 효과가 발동됩니다. [확인 사살 2]{green} 효과로 적 처치 시 [확인 사살 2]{green} 효과가 한 번 더 발동합니다. (최대 [1]{yellow}회)"
+        },
+        {
+          "type": "각성",
+          "step": 5,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 3]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 3]{green} 효과가 발동됩니다. [확인 사살 3]{green} 효과로 적 처치 시 [확인 사살 3]{green} 효과가 한 번 더 발동합니다. (최대 [2]{yellow}회)"
+        },
+        {
+          "type": "각성",
+          "step": 6,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 4]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 4]{green} 효과가 발동됩니다. [확인 사살 4]{green} 효과로 적 처치 시 [확인 사살 4]{green} 효과가 한 번 더 발동합니다. (최대 [2]{yellow}회)"
+        },
+        {
+          "type": "발현",
+          "step": 2,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 5]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 5]{green} 효과가 발동됩니다. [확인 사살 5]{green} 효과로 적 처치 시 [확인 사살 5]{green} 효과가 한 번 더 발동합니다. (최대 [2]{yellow}회)"
+        },
+        {
+          "type": "발현",
+          "step": 4,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 6]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 6]{green} 효과가 발동됩니다. [확인 사살 6]{green} 효과로 적 처치 시 [확인 사살 6]{green} 효과가 한 번 더 발동합니다. (최대 [2]{yellow}회)"
+        },
+        {
+          "type": "발현",
+          "step": 6,
+          "effect": "캐릭터 턴 종료 시 이번 턴에 이동한 거리 [1]{red}칸 당 [아드레날린 7]{green} 효과를 [1]{yellow}개 획득합니다. 캐릭터 턴 종료 시 이번 턴에 적을 처치하였다면 [확인 사살 7]{green} 효과가 발동됩니다. [확인 사살 7]{green} 효과로 적 처치 시 [확인 사살 7]{green} 효과가 한 번 더 발동합니다. (최대 [3]{yellow}회)"
+        }
+      ]
+    },
+    "ultimate": {
+      "name": "새틀라이트 어택",
+      "iconUrl": "/icons/ultimates/satellite_attack.png",
+      "tpCost": 5,
+      "range": [
+        1,
+        4
+      ],
+      "area": "광역",
+      "cooldown": 5,
+      "attackType": "관통",
+      "element": "전격",
+      "tags": [
+        "원거리"
+      ],
+      "levels": [
+        {
+          "step": 0,
+          "effect": "대상 주위 [4]{red}칸 내 적에게 공격력의 [100%]{red}만큼 피해를 주고 대상에게 [감전]{orange} 효과가 있을 경우 [1]{yellow}턴 동안 [기절]{orange}시킵니다. [감전]{orange} 효과가 없을 경우 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다."
+        },
+        {
+          "step": 1,
+          "effect": "대상 주위 [4]{red}칸 내 적에게 공격력의 [110%]{red}만큼 피해를 주고 대상에게 [감전]{orange} 효과가 있을 경우 [1]{yellow}턴 동안 [기절]{orange}시킵니다. [감전]{orange} 효과가 없을 경우 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다."
+        },
+        {
+          "step": 3,
+          "effect": "대상 주위 [4]{red}칸 내 적에게 공격력의 [120%]{red}만큼 피해를 주고 대상에게 [감전]{orange} 효과가 있을 경우 [1]{yellow}턴 동안 [기절]{orange}시킵니다. [감전]{orange} 효과가 없을 경우 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다."
+        },
+        {
+          "step": 5,
+          "effect": "대상 주위 [4]{red}칸 내 적에게 공격력의 [130%]{red}만큼 피해를 주고 대상에게 [감전]{orange} 효과가 있을 경우 [1]{yellow}턴 동안 [기절]{orange}시킵니다. [감전]{orange} 효과가 없을 경우 [1]{yellow}턴 동안 [감전]{orange} 효과를 겁니다."
+        }
+      ]
+    }
+  }
+]

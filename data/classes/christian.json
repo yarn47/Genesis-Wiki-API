@@ -1,0 +1,64 @@
+[
+  {
+    "name": "ISS 파일럿",
+    "tier": 2,
+    "parent": "거너",
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 4,
+    "description": "은밀한 움직임으로 적진에 잠입하여 빈틈을 노리는 숙련된 총잡이입니다.",
+    "iconUrl": "/icons/classes/emblem/iss_pilot.png",
+    "passive": {
+      "name": "신속한 조준",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [신속한 조준 1]{green} 효과를 가집니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 적 처치 시 [신속한 조준 1]{green} 효과를 획득합니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [신속한 조준 2]{green} 효과를 가집니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 적 처치 시 [신속한 조준 2]{green} 효과를 획득합니다.",
+      "iconUrl": "/icons/classes/passive/iss_pilot.png"
+    },
+    "skills": [
+      {
+        "name": "은밀기동",
+        "iconUrl": "/icons/skills/covert_maneuver.png",
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "자신의 모든 디버프를 제거하고 [2]{yellow}턴 동안 [은밀기동]{green} 상태가 되며 추가 이동을 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "L.T.K",
+    "tier": 3,
+    "parent": "ISS 파일럿",
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 4,
+    "description": "스타일리쉬한 움직임으로 다수의 타겟과 단일 타겟 모두를 유연하게 처치할 수 있는 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/ltk.png",
+    "passive": {
+      "name": "완벽한 사격",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [완벽한 사격 1]{green} 효과를 가집니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 적 처치 시 [TP 1]{yellow}을 획득하고 [완벽한 사격 1]{green} 효과를 획득합니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [완벽한 사격 2]{green} 효과를 가집니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 적 처치 시 [TP 1]{yellow}을 획득하고 [완벽한 사격 2]{green} 효과를 획득합니다.",
+      "iconUrl": "/icons/classes/passive/ltk.png"
+    },
+    "skills": [
+      {
+        "name": "무차별 사격",
+        "iconUrl": "/icons/skills/indiscriminate_fire.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성"
+        ],
+        "effect": "탄환 전부 소모.\n남은 탄환을 모두 비우고 [마탄]{green}을 최대치까지 장전합니다. 범위 내 타겟 가능한 임의 적에게 총을 발사해 공격력의 [25%]{red} 피해를 줍니다. 탄환을 모두 소모하거나 적을 처치할 때까지 반복합니다."
+      }
+    ]
+  }
+]
