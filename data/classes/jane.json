@@ -1,0 +1,102 @@
+[
+  {
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "name": "에이전트",
+    "tier": 2,
+    "parent": "거너",
+    "description": "빠른 움직임으로 유리한 상황을 만들어가며 싸우는 숙련된 총잡이입니다.",
+    "iconUrl": "/icons/classes/emblem/agent.png",
+    "passive": {
+      "name": "날렵함",
+      "iconUrl": "/icons/classes/passive/agent.png",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 탄환을 소모한 공격의 치명타 확률이 [20%]{red} 증가합니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 탄환을 소모한 공격의 치명타 확률이 [25%]{red} 증가합니다."
+    },
+    "skills": [
+      {
+        "name": "전술 기동",
+        "iconUrl": "/icons/skills/tactical_maneuver.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "TP 제거"
+        ],
+        "effect": "방향을 지정해 전방 [4]{red}칸 내 가장 멀리 떨어진 빈칸까지 이동하며 [TP]{yellow}를 훔칩니다. 훔친 [TP]{yellow}가 [0]{red}이라면 [TP]{yellow}를 돌려 받고 이 스킬의 쿨타임이 [1]{yellow} 감소합니다. 스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "name": "스페셜리스트",
+    "tier": 3,
+    "parent": "에이전트",
+    "iconUrl": "/icons/classes/emblem/specialist.png",
+    "description": "전술탄을 사용해 다양한 변수를 창출하는 상급 직업입니다.",
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "passive": {
+      "name": "교전",
+      "iconUrl": "/icons/classes/passive/specialist.png",
+      "lv1": "최대 탄환 수 : [4]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [엄폐 사격]{green} 효과를 획득합니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 탄환을 소모한 공격의 치명타 확률이 [20%]{red} 증가합니다.",
+      "lv2": "최대 탄환 수 : [4]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n게임 시작 시 [엄폐 사격]{green} 효과를 획득합니다. 아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 탄환을 소모한 공격의 치명타 확률이 [25%]{red} 증가합니다."
+    },
+    "skills": [{
+      "name": "전술탄 장전",
+      "iconUrl": "/icons/skills/load_tactical_rounds.png",
+      "tpCost": 1,
+      "range": "자신",
+      "area": "단일",
+      "cooldown": 3,
+      "tags": [],
+      "effect": "스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. 남은 탄환을 모두 비우고 [감전탄]{green}, [작열탄]{green}, [냉기탄]{green} [3]{red}가지 중 하나를 선택해 최대치까지 장전합니다."
+    }]
+  },
+  {
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "name": "위도우메이커",
+    "tier": 3,
+    "parent": "에이전트",
+    "description": "초장거리에서 적의 숨통을 노리는 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/widowmaker.png",
+    "passive": {
+      "name": "장거리 사격",
+      "iconUrl": "/icons/classes/passive/widowmaker.png",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [암흑탄]{green}을 최대치까지 장전합니다. 탄환을 소모해 공격 시 사거리 [1]{red}칸당 치명타 확률이 [4%]{red} 증가합니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [암흑탄]{green}을 최대치까지 장전합니다. 탄환을 소모해 공격 시 사거리 [1]{red}칸당 치명타 확률이 [5%]{red} 증가합니다."
+    },
+    "skills": [
+      {
+        "name": "어센딩 키스",
+        "iconUrl": "/icons/skills/ascending_kiss.png",
+        "tpCost": 1,
+        "range": [
+          3,
+          7
+        ],
+        "area": "단일",
+        "cooldown": 1,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "탄환 [1]{yellow}발 소모.\n직선상의 적에게 공격력의 [60%]{red}에 [집중 저격]{green} 중첩 당 공격력의 [60%]{red}만큼 추가된 피해를 주고 [집중 저격]{green} 효과를 획득합니다."
+      }
+    ]
+  }
+]

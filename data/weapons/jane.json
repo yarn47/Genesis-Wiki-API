@@ -1,0 +1,110 @@
+[
+  {
+    "name": "스펙터의 악몽",
+    "weaponType": "권총",
+    "grade": "전설",
+    "iconUrl": "/icons/weapons/specters_nightmare.png",
+    "extraStats": "공격력 +5~10%, 치명타 확률 +5~10% (각성 1~6단)",
+    "description": "피격자에게 지독한 악몽을 꾸게 한다는 권총.\n탄환에 끔찍한 저주가 걸려 발포되며 강철판까지 단번에 관통하는 화끈한 화력을 자랑한다. 제인이 장착하면 무기의 잠재력을 끌어낼 수 있다.",
+    "baseStats": [
+      {
+        "step": 1,
+        "maxHp": 116,
+        "attack": 364,
+        "critRate": 5
+      },
+      {
+        "step": 2,
+        "maxHp": 117,
+        "attack": 367,
+        "critRate": 6
+      },
+      {
+        "step": 3,
+        "maxHp": 118,
+        "attack": 371,
+        "critRate": 7
+      },
+      {
+        "step": 4,
+        "maxHp": 120,
+        "attack": 375,
+        "critRate": 8
+      },
+      {
+        "step": 5,
+        "maxHp": 121,
+        "attack": 378,
+        "critRate": 9
+      },
+      {
+        "step": 6,
+        "maxHp": 122,
+        "attack": 382,
+        "critRate": 10
+      }
+    ],
+    "effects": [
+      {
+        "name": "악몽",
+        "type": "전용",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 1]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          },
+          {
+            "step": 2,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 2]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          },
+          {
+            "step": 3,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 3]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          },
+          {
+            "step": 4,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 4]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          },
+          {
+            "step": 5,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 5]{orange} 효과를 [2]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          },
+          {
+            "step": 6,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [악몽 6]{orange} 효과를 [2]{yellow}중첩 부여합니다. (쿨타임 [2]{yellow}턴)"
+          }
+        ]
+      },
+      {
+        "name": "소름 돋는 기운",
+        "type": "일반",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 1]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          },
+          {
+            "step": 2,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 2]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          },
+          {
+            "step": 3,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 3]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          },
+          {
+            "step": 4,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 4]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          },
+          {
+            "step": 5,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 5]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          },
+          {
+            "step": 6,
+            "effect": "전투 공격 후 적에게 걸린 디버프가 있다면 적의 디버프 하나당 [소름 돋는 기운 6]{orange} 효과를 [1]{yellow}중첩 부여합니다. (쿨타임 [3]{yellow}턴)"
+          }
+        ]
+      }
+    ]
+  }
+]
