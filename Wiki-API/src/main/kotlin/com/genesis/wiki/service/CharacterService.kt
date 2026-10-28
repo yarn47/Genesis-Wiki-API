@@ -292,6 +292,7 @@ class CharacterService(
 
     private fun collectAllEffectTexts(character: Character): List<String?> {
         val texts = mutableListOf<String?>()
+        character.outerSkill?.levels?.forEach { texts.add(it.effectText) }
         character.passives.forEach { passive -> passive.levels.forEach { texts.add(it.effectText) } }
         character.manifestations.forEach { manifest -> manifest.ultimate?.levels?.forEach { texts.add(it.effectText) } }
         character.characterArtifacts.forEach { link -> link.artifact.levels.forEach { texts.add(it.effectText) } }
@@ -299,7 +300,11 @@ class CharacterService(
             texts.add(effect.baseEffect)
             effect.levels.forEach { texts.add(it.effectText) }
         }
-        character.classTree.forEach { node -> node.clazz.classSkills.forEach { texts.add(it.skill.effectText) } }
+        character.classTree.forEach { node ->
+            texts.add(node.clazz.passive1Lv1)
+            texts.add(node.clazz.passive1Lv2)
+            node.clazz.classSkills.forEach { texts.add(it.skill.effectText) }
+        }
         return texts
     }
 
@@ -361,7 +366,12 @@ class CharacterService(
             portraitUrl = character.portraitUrl, fullImageUrl = character.fullImageUrl,
             stats = stats, skins = skins, classTree = classTree, passive = passive,
             ultimateSkill = ultimateSkill, artifacts = artifacts, manifestations = manifestations,
-            exclusiveWeapon = exclusiveWeapon, relatedBuffs = relatedBuffs, relatedDebuffs = relatedDebuffs
+            exclusiveWeapon = exclusiveWeapon, relatedBuffs = relatedBuffs, relatedDebuffs = relatedDebuffs,
+            outerSkill = character.outerSkill?.let { u ->
+                UltimateSkillDto(u.ultimateId, u.name, u.iconUrl, u.area, u.attackType, u.element,
+                    u.tags.sortedBy { it.tagId }.map { TagDto(it.tagId, it.name, it.color) },
+                    u.levels.sortedBy { it.manifestStep }.map { UltimateSkillLevelDto(it.manifestStep, it.tpCost, it.rangeMin, it.rangeMax, it.cooldown, it.effectText) })
+            }
         )
     }
 

@@ -47,7 +47,7 @@ EFFECT_TYPES = {"일반": "normal", "전용": "exclusive", "normal": "normal", "
 CHARACTER_KEYS = {"name", "grade", "faction", "subFaction", "element", "birthYear", "height", "cv", "profileText",
                   "releaseDate", "appearedIn",
                   "thumbnailUrl", "portraitUrl", "fullImageUrl", "published", "stats",
-                  "classTree", "exclusiveWeapon", "passive", "ultimate", "artifacts", "hasManifestation"}
+                  "classTree", "exclusiveWeapon", "passive", "ultimate", "outerSkill", "artifacts", "hasManifestation"}
 STATS_KEYS = {"hp", "attack", "spellAttack", "defense", "critRate", "critDamage", "physPen", "magicPen", "effectResist"}
 CHAR_PASSIVE_KEYS = {"name", "iconUrl", "levels"}
 CHAR_PASSIVE_LEVEL_KEYS = {"type", "step", "effect"}
@@ -343,9 +343,13 @@ def load_characters(class_names, weapon_names, artifact_names, tag_names):
                 steps.add((lvl["type"], lvl["step"]))
                 check_text(lw, lvl.get("effect"))
 
-        ultimate = c.get("ultimate")
-        if ultimate:
-            uw = f"{where} 필살기"
+        if c.get("outerSkill") and (c.get("grade") != "아우터원" or not c.get("hasManifestation", True)):
+            raise DataError(f"{where}: outerSkill은 발현이 있는 아우터원 캐릭터만 허용")
+        for key in ("ultimate", "outerSkill"):
+            ultimate = c.get(key)
+            if not ultimate:
+                continue
+            uw = f"{where} {key}"
             check_keys(uw, ultimate, ULTIMATE_KEYS)
             skill_range(uw, ultimate.get("range"))
             check_enum(uw, "공격 타입", ultimate.get("attackType"), ATTACK_TYPES)
@@ -402,6 +406,8 @@ def warn_unknown_links(buffs, debuffs, classes, weapons, artifacts, characters):
         texts += [(f"캐릭터 '{c['name']}' 패시브 {l['type']} {l['step']}단", l.get("effect")) for l in p.get("levels", [])]
         u = c.get("ultimate") or {}
         texts += [(f"캐릭터 '{c['name']}' 필살기 {l['step']}단", l.get("effect")) for l in u.get("levels", [])]
+        u = c.get("outerSkill") or {}
+        texts += [(f"캐릭터 '{c['name']}' 아우터원 스킬 {l['step']}단", l.get("effect")) for l in u.get("levels", [])]
 
 
     for where, text in texts:
@@ -701,10 +707,17 @@ def character_sql(c):
     else:
         out.append("SET @passive = NULL;")
 
-    ultimate = c.get("ultimate")
-    if ultimate:
+    for key, var in (("ultimate", "@ult"), ("outerSkill", "@outer")):
+        ultimate = c.get(key)
+        if key == "outerSkill":
+            out.append("SET @outer = (SELECT outer_skill_id FROM characters WHERE character_id = @id);")
+        if not ultimate:
+            if key == "ultimate":
+                out.append("SET @ult = NULL;")
+            continue
+        skill_out = []
         u_min, u_max = skill_range(c["name"], ultimate.get("range"))
-        out += [
+        skill_out += [
             f"INSERT INTO ultimate_skills (name, created_at, updated_at) SELECT {sql(ultimate['name'])}, NOW(), NOW() FROM DUAL WHERE @ult IS NULL;",
             "SET @ult = COALESCE(@ult, LAST_INSERT_ID());",
             f"UPDATE ultimate_skills SET name = {sql(ultimate['name'])}"
@@ -718,7 +731,7 @@ def character_sql(c):
         ]
         if ultimate.get("tags"):
             tag_list = ", ".join(sql(t) for t in ultimate["tags"])
-            out.append(f"INSERT INTO ultimate_skill_tag_map (ultimate_id, tag_id) SELECT @ult, tag_id FROM tags WHERE name IN ({tag_list});")
+            skill_out.append(f"INSERT INTO ultimate_skill_tag_map (ultimate_id, tag_id) SELECT @ult, tag_id FROM tags WHERE name IN ({tag_list});")
         levels = sorted(ultimate.get("levels", []), key=lambda l: l["step"])
         if levels:
             rows = []
@@ -726,10 +739,11 @@ def character_sql(c):
                 r_min, r_max = skill_range(c["name"], l.get("range")) if "range" in l else (u_min, u_max)
                 rows.append(f"(@ult, {sql(l['step'])}, {sql(l.get('tpCost', ultimate.get('tpCost')))}, "
                             f"{sql(r_min)}, {sql(r_max)}, {sql(l.get('cooldown', ultimate.get('cooldown')))}, {sql(l.get('effect'))})")
-            out.append("INSERT INTO ultimate_skill_levels (ultimate_id, manifest_step, tp_cost, range_min, range_max, cooldown, effect_text) VALUES\n"
+            skill_out.append("INSERT INTO ultimate_skill_levels (ultimate_id, manifest_step, tp_cost, range_min, range_max, cooldown, effect_text) VALUES\n"
                        + ",\n".join(rows) + ";")
-    else:
-        out.append("SET @ult = NULL;")
+        out.extend(line.replace("@ult", var) for line in skill_out)
+        if key == "outerSkill":
+            out.append("UPDATE characters SET outer_skill_id = @outer WHERE character_id = @id;")
 
     # 아티팩트 연결 (아티팩트 자체는 data/artifacts에서 관리)
     out.append("DELETE FROM character_artifacts WHERE character_id = @id;")

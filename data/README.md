@@ -151,6 +151,7 @@ git pull
 
 - `grade` 희귀/영웅/전설/아우터원 · `faction` 게이시르/팬드래건/무소속/아스타니아/제피르팰컨/다갈 · `element` 신념의빛/욕망의그림자/자유의불꽃/지성의결정체/활력의나무
 - `passive.levels`: `type` 각성(3~6) 또는 발현(2/4/6) · `ultimate.levels`: 발현 0/1/3/5
+- 아우터원 전용 액티브는 `outerSkill`에 `ultimate`와 동일한 형식으로 별도 저장합니다. 확인하지 못한 단계는 생략합니다. 일반 필살기와 별도 ID를 가지며 발현 1/3/5 상세에 함께 표시합니다. 마이그레이션 018이 필요합니다. 관리자 폼 저장은 이 필드를 변경하지 않으며 JSON으로 관리합니다.
 - `artifacts`는 `data/artifacts`의 이름을 순서대로 (최대 4개). 아티팩트 효과는 거기서 관리
 - `stats` 키를 넣으면 스탯도 반영 (hp/attack/spellAttack/defense/critRate/critDamage/physPen/magicPen/effectResist)
 - `published: false`면 공개 목록·상세에 안 나옴 (관리자만 확인 가능)

@@ -1,0 +1,75 @@
+[
+  {
+    "name": "검황",
+    "tier": 3,
+    "parent": "소드맨",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 정점에 도달한 검술로 최강의 전투 능력을 가진 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/sword_emperor.png",
+    "passive": {
+      "name": "절대검위",
+      "iconUrl": "/icons/classes/passive/sword_emperor.png",
+      "lv1": "전투 시 공격력이 [40%]{red}, 치명타 확률이 [20%]{red} 증가합니다. 전투 공격을 받을 때 받는 스킬 피해가 [25%]{red} 감소합니다.",
+      "lv2": "전투 시 공격력이 [50%]{red}, 치명타 확률이 [30%]{red} 증가합니다. 전투 공격을 받을 때 받는 스킬 피해가 [25%]{red} 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "암명연살검",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "iconUrl": "/icons/skills/ammyung_yeonsalgeom.png",
+        "effect": "잃은 체력 비율만큼 치명타 확률이 증가합니다. 적에게 공격력의 [130%]{red}만큼 절대 피해를 주거나 대상이 보호막을 가지고 있다면 공격력의 [180%]{red}만큼 절대 피해를 줍니다. 절대 피해는 모든 상성에 영향받지 않고 피해를 감소시키거나 빗겨낼 수 없습니다. 이 스킬로 적에게 죽음에 이르는 피해를 줄 때 대상을 처치하는 대신 제거합니다. 이 스킬로 적이 죽지 않았다면 [1]{yellow}턴 동안 [추방]{orange}하고 스킬 사용 캐릭터가 흑태자라면 [한계확장]{green} 효과를 획득합니다."
+      }
+    ]
+  },
+  {
+    "name": "데스로드",
+    "tier": 3,
+    "parent": "나이트",
+    "weaponType": "검, 대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "description": "검을 무기로 사용하고 파괴적인 어둠의 힘으로 전장을 지배하는 강력한 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/death_lord.png",
+    "passive": {
+      "name": "황혼의 군주",
+      "iconUrl": "/icons/classes/passive/death_lord.png",
+      "lv1": "주위 [2]{red}칸 내 유닛 하나당 방어력과 저항력이 [8%]{red} 증가합니다. 물리 관통 저항과 마법 관통 저항이 [25%]{red} 증가합니다. 광역 스킬 사용 전 공격력이 [30%]{red} 증가하고 다음 턴 시작 시까지 주위 [2]{red}칸 내 적들에게 [전의 상실]{orange} 효과를 부여합니다. 스킬로 [2]{red}명 이상의 적에게 피해를 주면 주위 [3]{red}칸 내 타일을 지정해 순간 이동합니다.",
+      "lv2": "주위 [2]{red}칸 내 유닛 하나당 방어력과 저항력이 [10%]{red} 증가합니다. 물리 관통 저항과 마법 관통 저항이 [40%]{red} 증가합니다. 광역 스킬 사용 전 공격력이 [40%]{red} 증가하고 다음 턴 시작 시까지 주위 [2]{red}칸 내 적들에게 [전의 상실]{orange} 효과를 부여합니다. 스킬로 [2]{red}명 이상의 적에게 피해를 주면 주위 [3]{red}칸 내 타일을 지정해 순간 이동합니다."
+    },
+    "skills": [
+      {
+        "name": "아토믹 블래스트",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "element": "암흑",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "iconUrl": "/icons/skills/atomic_blast.png",
+        "effect": "주위 [3]{red}칸 내 타일을 지정해 대상 주위 [2]{red}칸 내 적들에게 공격력의 [50%]{red}에 대상의 버프 하나당 공격력의 [15%]{red}만큼 추가된 물리 고정 피해를 줍니다. 추가로 버프를 모두 지우고 [절망]{orange} 효과를 부여합니다. 추가로 버프를 지운 대상과 인접한 적들에게 지워진 버프 하나당 공격력의 [30%]{red}만큼 피해를 줍니다."
+      }
+    ]
+  }
+]

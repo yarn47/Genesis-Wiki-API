@@ -71,6 +71,11 @@ class Character(
 
     var updatedAt: LocalDateTime = LocalDateTime.now()
 ) {
+    // JSON 데이터로 관리. 일반 필살기/발현 연결과 공유하지 않는다.
+    @OneToOne(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE])
+    @JoinColumn(name = "outer_skill_id", unique = true)
+    var outerSkill: UltimateSkill? = null
+
     @OneToMany(mappedBy = "character", cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     val skins: MutableSet<CharacterSkin> = mutableSetOf()
 

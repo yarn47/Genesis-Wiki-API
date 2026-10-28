@@ -62,7 +62,8 @@ data class CharacterDetailDto(
     val manifestations: List<CharacterManifestationDto>,
     val exclusiveWeapon: ExclusiveWeaponDto?,
     val relatedBuffs: List<BuffDto>,
-    val relatedDebuffs: List<DebuffDto>
+    val relatedDebuffs: List<DebuffDto>,
+    val outerSkill: UltimateSkillDto? = null
 )
 
 data class CharacterStatsDto(
