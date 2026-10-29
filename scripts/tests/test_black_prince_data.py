@@ -20,7 +20,7 @@ class BlackPrinceDataTests(unittest.TestCase):
         self.assertNotIn('stats', c)
         self.assertEqual(len(c['classTree']), 6)
 
-    def test_independent_skills_and_unknown_base(self):
+    def test_independent_skills_and_outer_unlock_at_manifest_one(self):
         c = load('characters')[0]
         self.assertEqual([x['step'] for x in c['ultimate']['levels']], [0,1,3,5])
         self.assertEqual([x['step'] for x in c['outerSkill']['levels']], [1,3,5])
@@ -44,8 +44,24 @@ class BlackPrinceDataTests(unittest.TestCase):
         self.assertEqual([x['critRate'] for x in w['baseStats']], [10,12,14,16,18,20])
         self.assertEqual([x['attack'] for x in w['baseStats']], [364,367,371,375,378,382])
 
-    def test_missing_artifact_levels_are_not_invented(self):
+    def test_dawn_exists_only_at_four_stars(self):
         self.assertEqual([x['step'] for x in load('artifacts')[0]['levels']], [6])
+
+    def test_ammyung_summon_kill_refund(self):
+        cls = next(x for x in load('classes') if x['name'] == '검황')
+        skill = next(x for x in cls['skills'] if x['name'] == '암명연살검')
+        self.assertEqual((skill['tpCost'], skill['cooldown']), (2, 3))
+        self.assertIn('[한계확장]{green} 효과를 획득합니다.', skill['effect'])
+        self.assertIn('이 스킬로 처치한 적이 소환수라면 TP를 [2]{yellow}만큼 회복하고 쿨타임이 [3]{yellow}만큼 감소합니다.', skill['effect'])
+
+    def test_atomic_blast_mixed_attack_type_overrides_class(self):
+        cls=next(x for x in load('classes') if x['name']=='데스로드')
+        skill=cls['skills'][0]
+        self.assertEqual(cls['attackType'], '참격')
+        self.assertEqual(skill['attackType'], '물리/마법')
+        self.assertIn(skill['attackType'], gen.ATTACK_TYPES)
+        self.assertIn('물리 고정 피해', skill['effect'])
+        self.assertIn("attack_type = '물리/마법'", gen.skill_sql(skill, 1))
 
     def test_sql_owns_separate_rows_and_is_repeatable(self):
         c=load('characters')[0]
