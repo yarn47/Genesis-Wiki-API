@@ -1,0 +1,110 @@
+[
+  {
+    "name": "크림슨 레볼루션",
+    "weaponType": "권총",
+    "grade": "전설",
+    "iconUrl": "/icons/weapons/crimson_revolution.png",
+    "extraStats": "공격력 +10~15%, 치명타 확률 +10~15% (각성 1~6단)",
+    "description": "진홍빛 혁명의 물결을 일으키는 권총.\n제피르팰컨에서 혁명의 신호탄을 쏘아 올릴 때 사용되었다고 한다. 카나 밀라노비치가 장착하면 무기의 잠재력을 끌어낼 수 있다.",
+    "baseStats": [
+      {
+        "step": 1,
+        "maxHp": 116,
+        "attack": 364,
+        "critRate": 10
+      },
+      {
+        "step": 2,
+        "maxHp": 117,
+        "attack": 367,
+        "critRate": 11
+      },
+      {
+        "step": 3,
+        "maxHp": 118,
+        "attack": 371,
+        "critRate": 12
+      },
+      {
+        "step": 4,
+        "maxHp": 120,
+        "attack": 375,
+        "critRate": 13
+      },
+      {
+        "step": 5,
+        "maxHp": 121,
+        "attack": 378,
+        "critRate": 14
+      },
+      {
+        "step": 6,
+        "maxHp": 122,
+        "attack": 382,
+        "critRate": 15
+      }
+    ],
+    "effects": [
+      {
+        "name": "행운 뽑기",
+        "type": "전용",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "캐릭터 턴 종료 시 [60%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 1]{green} 효과를 얻습니다. 이미 [행운 뽑기 1]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 2,
+            "effect": "캐릭터 턴 종료 시 [65%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 2]{green} 효과를 얻습니다. 이미 [행운 뽑기 2]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 3,
+            "effect": "캐릭터 턴 종료 시 [70%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 3]{green} 효과를 얻습니다. 이미 [행운 뽑기 3]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 4,
+            "effect": "캐릭터 턴 종료 시 [75%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 4]{green} 효과를 얻습니다. 이미 [행운 뽑기 4]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 5,
+            "effect": "캐릭터 턴 종료 시 [80%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 5]{green} 효과를 얻습니다. 이미 [행운 뽑기 5]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 6,
+            "effect": "캐릭터 턴 종료 시 [85%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [행운 뽑기 6]{green} 효과를 얻습니다. 이미 [행운 뽑기 6]{green} 효과를 가지고 있다면 [2]{yellow}턴 동안 [럭키 카나]{green} 효과를 얻습니다."
+          }
+        ]
+      },
+      {
+        "name": "총알 배송",
+        "type": "일반",
+        "levels": [
+          {
+            "step": 1,
+            "effect": "캐릭터 턴 종료 시 [50%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 1]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 2,
+            "effect": "캐릭터 턴 종료 시 [55%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 2]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 3,
+            "effect": "캐릭터 턴 종료 시 [60%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 3]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 4,
+            "effect": "캐릭터 턴 종료 시 [65%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 4]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 5,
+            "effect": "캐릭터 턴 종료 시 [70%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 5]{green} 효과를 얻습니다."
+          },
+          {
+            "step": 6,
+            "effect": "캐릭터 턴 종료 시 [75%]{red} 확률로 [작열탄]{green} [1]{yellow}발을 장전하고 [총알 배송 6]{green} 효과를 얻습니다."
+          }
+        ]
+      }
+    ]
+  }
+]

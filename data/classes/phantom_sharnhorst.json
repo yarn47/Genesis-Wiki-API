@@ -1,0 +1,112 @@
+[
+  {
+    "name": "트릭스터",
+    "tier": 2,
+    "parent": "로그",
+    "description": "양손에 단검을 들고 지속적으로 적을 혼란스럽게 만들어 전략적 우위를 가지는 암살자입니다.",
+    "weaponType": "쌍수단검",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/trickster.png",
+    "passive": {
+      "name": "미세한 속임수",
+      "iconUrl": "/icons/classes/passive/trickster.png",
+      "lv1": "이동 시 [도약]{green}할 수 있습니다. 전투 시 대상이 고립된 상태라면 공격력이 [15%]{red} 증가하고 받는 피해가 [15%]{red} 감소합니다. 적 공격 후 피해를 준 적들의 버프 지속 시간을 [1]{yellow} 감소시키고 디버프 지속 시간을 [1]{yellow} 증가시킵니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있습니다. 전투 시 대상이 고립된 상태라면 공격력이 [20%]{red} 증가하고 받는 피해가 [20%]{red} 감소합니다. 적 공격 후 피해를 준 적들의 버프 지속 시간을 [1]{yellow} 감소시키고 디버프 지속 시간을 [1]{yellow} 증가시킵니다."
+    },
+    "skills": [
+      {
+        "name": "단영참",
+        "allowedWeapon": "쌍수단검",
+        "iconUrl": "/icons/skills/shadow_slash.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "기만",
+          "전투"
+        ],
+        "effect": "적을 공격해 공격력의 [130%]{red}만큼 피해를 주고 [1]{yellow}턴 동안 [환상통]{orange} 효과를 겁니다. 대상이 [환상통]{orange}을 이미 가지고 있다면 공격력의 [170%]{red}만큼 피해를 줍니다."
+      }
+    ]
+  },
+  {
+    "name": "섀도우디센던트",
+    "tier": 3,
+    "parent": "킬러",
+    "description": "양손에 단검을 들고 뛰어난 기동력과 어둠의 힘으로 전장을 지배하는 상급 암살자입니다.",
+    "weaponType": "쌍수단검",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/shadow_descendant.png",
+    "passive": {
+      "name": "그림자 유산",
+      "iconUrl": "/icons/classes/passive/shadow_descendant.png",
+      "lv1": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률과 치명타 피해량이 [20%]{red} 증가합니다. 적 공격 시 치명타가 발동하면 [흑영 방호]{green} 효과를 획득합니다. 받는 범위 피해량이 [20%]{red} 감소합니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있습니다. 전투 공격 시 치명타 확률과 치명타 피해량이 [30%]{red} 증가합니다. 적 공격 시 치명타가 발동하면 [흑영 방호]{green} 효과를 획득합니다. 받는 범위 피해량이 [30%]{red} 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "흑영전위",
+        "iconUrl": "/icons/skills/shadow_transposition.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "근거리"
+        ],
+        "effect": "주위 [3]{red}칸 내 아군 캐릭터와 자리를 바꾸고 추가로 공격하거나 스킬을 사용할 수 있습니다. 자리를 바꾼 캐릭터가 자신이 소환한 캐릭터 또는 자신을 소환한 캐릭터라면 주변 [2]{red}바퀴 내 적들에게 [흑영살진 (괴도)]{orange} 효과를 걸고 [1 TP]{yellow}를 회복합니다. 이 스킬은 대형 몬스터에게 사용할 수 없습니다."
+      }
+    ]
+  },
+  {
+    "name": "일루전위버",
+    "tier": 3,
+    "parent": "트릭스터",
+    "description": "양손에 단검을 들고 환상과 현실의 경계를 조작하는 교묘한 전술과 심리전의 달인입니다.",
+    "weaponType": "쌍수단검",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 1,
+    "moveRange": 4,
+    "iconUrl": "/icons/classes/emblem/illusion_weaver.png",
+    "passive": {
+      "name": "은밀한 단절",
+      "iconUrl": "/icons/classes/passive/illusion_weaver.png",
+      "lv1": "이동 시 [도약]{green}할 수 있습니다. 받는 치명타 확률이 [20%]{red} 감소합니다. 전투 시 대상이 고립된 상태라면 공격력이 [25%]{red} 증가하고 받는 피해가 [25%]{red} 감소합니다. 적 공격 후 피해를 준 적들의 버프 지속 시간을 [1]{yellow} 감소시키고 디버프 지속 시간을 [1]{yellow} 증가시킵니다.",
+      "lv2": "이동 시 [도약]{green}할 수 있습니다. 받는 치명타 확률이 [30%]{red} 감소합니다. 전투 시 대상이 고립된 상태라면 공격력이 [30%]{red} 증가하고 받는 피해가 [30%]{red} 감소합니다. 적 공격 후 피해를 준 적들의 버프 지속 시간을 [1]{yellow} 감소시키고 디버프 지속 시간을 [1]{yellow} 증가시킵니다."
+    },
+    "skills": [
+      {
+        "name": "카이랄 판타즘",
+        "iconUrl": "/icons/skills/chiral_phantasm.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "element": "암흑",
+        "tags": [
+          "원거리",
+          "기만"
+        ],
+        "effect": "적을 지정해 대상 주변에 [카이랄 판타즘]{green}을 소환하고 대상에게 [혼란]{orange}을 겁니다. [카이랄 판타즘]{green}은 생성 즉시 턴이 종료되고 사용 후 소멸합니다. 이 스킬은 대형 몬스터에게 사용할 수 없고 호위 할 수 없습니다."
+      }
+    ]
+  }
+]
