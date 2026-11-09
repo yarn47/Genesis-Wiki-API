@@ -1,0 +1,113 @@
+[
+  {
+    "name": "차밍메이지",
+    "tier": 2,
+    "parent": "메이지",
+    "description": "강력한 매혹 효과로 적의 전투력을 약화시키고 진영을 붕괴시키는 마법사 직업입니다.",
+    "passive": {
+      "name": "마성의 매력",
+      "lv1": "주위 [2]{red}칸 내 아군 남성 캐릭터가 있다면 주문력이 [15%]{red} 증가하고 받는 범위 피해가 [15%]{red} 감소합니다. 행동 제어 스킬 사용 후 아군 남성 캐릭터들에게 [2]{yellow}턴 동안 [마성의 매력 1]{green} 효과를 부여합니다.",
+      "lv2": "주위 [2]{red}칸 내 아군 남성 캐릭터가 있다면 주문력이 [20%]{red} 증가하고 받는 범위 피해가 [20%]{red} 감소합니다. 행동 제어 스킬 사용 후 아군 남성 캐릭터들에게 [2]{yellow}턴 동안 [마성의 매력 2]{green} 효과를 부여합니다.",
+      "iconUrl": "/icons/classes/passive/charming_mage.png"
+    },
+    "skills": [
+      {
+        "name": "데들리 참",
+        "tpCost": 1,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "적을 지정해 [2]{yellow}턴 동안 [데들리 참]{orange}을 부여합니다. 이 스킬은 대형 몬스터에게 사용할 수 없고 호위 할 수 없습니다. 스킬 사용 후 주위 [7]{red}칸 내 아군의 인접한 타일로 순간 이동 할 수 있습니다.",
+        "allowedWeapon": "스태프,로드",
+        "iconUrl": "/icons/skills/deadly_charm.png"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackType": "마법",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/charming_mage.png"
+  },
+  {
+    "name": "플로리스트",
+    "tier": 3,
+    "parent": "위자드",
+    "description": "남성 적들의 행동을 제한하고 강력한 피해를 주는 독특한 스타일의 상급 마법사입니다.",
+    "passive": {
+      "name": "몽환의 향",
+      "lv1": "턴 시작 시 가장 가까운 적 남성 캐릭터 [1]{red}명의 스킬 [1]{red}개를 사용한 것처럼 쿨다운 상태로 만듭니다. 전투 시 대상의 쿨다운 중인 스킬 하나 당 주문력이 [5%]{red}만큼 증가하고 받는 피해가 [5%]{red}만큼 감소합니다.",
+      "lv2": "턴 시작 시 가장 가까운 적 남성 캐릭터 [1]{red}명의 스킬 [1]{red}개를 사용한 것처럼 쿨다운 상태로 만듭니다. 전투 시 대상의 쿨다운 중인 스킬 하나 당 주문력이 [10%]{red}만큼 증가하고 받는 피해가 [10%]{red}만큼 감소합니다.",
+      "iconUrl": "/icons/classes/passive/florist.png"
+    },
+    "skills": [
+      {
+        "name": "퓨리스포어",
+        "tpCost": 2,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적을 공격해 주문력의 [150%]{red}만큼 피해를 주고 자신에게 걸린 디버프가 있다면 추가타가 발동해 주문력의 [100%]{red}만큼 피해를 줍니다. 만약 대상이 남성 캐릭터라면 추가타가 발동해 주문력의 [50%]{red}만큼 피해를 줍니다.",
+        "allowedWeapon": "스태프,로드",
+        "iconUrl": "/icons/skills/fury_spore.png"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackType": "마법",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/florist.png"
+  },
+  {
+    "name": "드림위버",
+    "tier": 3,
+    "parent": "차밍메이지",
+    "description": "광범위한 제어기로 적들을 잠재우고 전장을 유리하게 이끄는 상급 마법사입니다.",
+    "passive": {
+      "name": "흐릿한 경계",
+      "lv1": "주위 [2]{red}칸 내 아군 남성 캐릭터가 있다면 주문력이 [25%]{red} 증가하고 받는 범위 피해가 [25%]{red} 감소합니다. 행동 제어 스킬 사용 후 아군 남성 캐릭터들에게 [2]{yellow}턴 동안 [흐릿한 경계 1]{green} 효과를 부여합니다.",
+      "lv2": "주위 [2]{red}칸 내 아군 남성 캐릭터가 있다면 주문력이 [30%]{red} 증가하고 받는 범위 피해가 [30%]{red} 감소합니다. 행동 제어 스킬 사용 후 아군 남성 캐릭터들에게 [2]{yellow}턴 동안 [흐릿한 경계 2]{green} 효과를 부여합니다.",
+      "iconUrl": "/icons/classes/passive/dream_weaver.png"
+    },
+    "skills": [
+      {
+        "name": "매스 힙너시스",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 4,
+        "tags": [
+          "원거리"
+        ],
+        "effect": "주위 [3]{red}칸 내 타일을 지정해 타일 주위 [2]{red}칸 내 적들에게 [1]{yellow}턴 동안 [최면]{orange} 효과를 부여하고 스킬 [1]{red}개를 사용한 것처럼 쿨다운 상태로 만듭니다. 남성 캐릭터에게는 [최면]{orange} 효과의 지속 시간이 [1]{yellow} 증가합니다.",
+        "allowedWeapon": "스태프,로드",
+        "iconUrl": "/icons/skills/mass_hypnosis.png"
+      }
+    ],
+    "weaponType": "스태프,로드",
+    "defenseType": "라이트",
+    "attackType": "마법",
+    "attackRange": 3,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/dream_weaver.png"
+  }
+]
+

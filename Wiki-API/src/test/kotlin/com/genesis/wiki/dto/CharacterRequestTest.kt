@@ -5,6 +5,12 @@ import org.junit.jupiter.api.Test
 
 class CharacterRequestTest {
     @Test
+    fun `supports Innerbreak as secondary faction`() {
+        val req = CharacterRequest(name = "에스테 도데", grade = "legend", faction = "geysir", subFaction = "innerbreak", element = "light")
+        assertEquals(com.genesis.wiki.entity.Faction.innerbreak, com.genesis.wiki.entity.Faction.valueOf(req.subFaction!!))
+    }
+
+    @Test
     fun `supports Jushin as secondary faction`() {
         val req = CharacterRequest(name = "에밀리오", grade = "legend", faction = "tempest_circus", subFaction = "jushin", element = "nature")
         assertEquals(com.genesis.wiki.entity.Faction.jushin, com.genesis.wiki.entity.Faction.valueOf(req.subFaction!!))

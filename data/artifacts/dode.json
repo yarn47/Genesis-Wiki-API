@@ -1,0 +1,27 @@
+[
+  {
+    "name": "마력 파동",
+    "grade": "영웅",
+    "iconUrl": "/icons/artifacts/magic_wave.png",
+    "description": "인내란 참고 견디는 것이 아니라 올바른 때를 기다리는 것입니다.",
+    "levels": [
+      {
+        "step": 3,
+        "effect": "턴 종료 시 [마력 파동 1]{green} 효과 획득."
+      },
+      {
+        "step": 4,
+        "effect": "턴 종료 시 [마력 파동 2]{green} 효과 획득."
+      },
+      {
+        "step": 5,
+        "effect": "턴 종료 시 [마력 파동 3]{green} 효과 획득."
+      },
+      {
+        "step": 6,
+        "effect": "턴 종료 시 [마력 파동 4]{green} 효과 획득."
+      }
+    ]
+  }
+]
+
