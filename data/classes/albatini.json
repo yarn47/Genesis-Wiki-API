@@ -1,0 +1,67 @@
+[
+  {
+    "name": "저스티카",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "검을 무기로 사용하고 정의와 권력을 상징하는 강력한 근접 전투 직업입니다.",
+    "passive": {
+      "name": "권력 정의",
+      "iconUrl": "/icons/classes/passive/justicar.png",
+      "lv1": "턴 시작 시 [권력 정의]{green} 효과를 얻습니다. 턴 시작 시 권력 정의가 최대 중첩 상태라면 자신의 디버프를 [1]{red}개 지웁니다.",
+      "lv2": "턴 시작 시 [권력 정의]{green} 효과를 얻습니다. 턴 시작 시 권력 정의가 최대 중첩 상태라면 자신의 디버프를 [2]{red}개 지웁니다."
+    },
+    "skills": [
+      {
+        "name": "사일도",
+        "iconUrl": "/icons/skills/saildo.png",
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "검, 대검",
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "[2]{yellow}턴 동안 [전의]{green} 효과를 얻고 TP를 모두 소모해 적에게 공격력의 [130%]{red}에 TP 당 공격력의 [25%]{red}만큼 추가된 피해를 줍니다. 이 공격은 항상 [1%]{red}의 확률로 치명타가 발동합니다."
+      }
+    ],
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3
+  },
+  {
+    "name": "엠프레스로얄",
+    "tier": 3,
+    "parent": "저스티카",
+    "description": "검을 무기로 사용하고 지도자의 권력과 권위를 공고히 하기 위해 움직이는 상급 직업입니다.",
+    "passive": {
+      "name": "강력한 권위",
+      "iconUrl": "/icons/classes/passive/empress_royal.png",
+      "lv1": "턴 시작 시 [강력한 권위 1]{green} 효과를 얻습니다. 턴 시작 시 강력한 권위 1가 최대 중첩 상태라면 자신의 모든 디버프를 지웁니다.",
+      "lv2": "턴 시작 시 [강력한 권위 2]{green} 효과를 얻습니다. 턴 시작 시 강력한 권위 2가 최대 중첩 상태라면 자신의 모든 디버프를 지웁니다."
+    },
+    "skills": [
+      {
+        "name": "포 디 엠프레스",
+        "iconUrl": "/icons/skills/for_the_empress.png",
+        "tpCost": 3,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "자신의 주위 [2]{red}칸 내 적들을 [1]{yellow}턴 동안 [도발]{orange}하고 [2]{yellow}턴 동안 [포 디 엠프레스]{green} 효과를 얻습니다."
+      }
+    ],
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3
+  }
+]
+
