@@ -1,0 +1,69 @@
+[
+  {
+    "name": "임페리얼거너",
+    "tier": 2,
+    "parent": "거너",
+    "description": "권총을 무기로 정밀한 사격 능력과 훈련을 통해 전투 상황에 잘 적응하는 고급 직업입니다.",
+    "skills": [
+      {
+        "name": "정밀 사격",
+        "iconUrl": "/icons/skills/precision_shot.png",
+        "tpCost": 2,
+        "range": [
+          2,
+          4
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "탄환 [1]{yellow}발 소모.\n적에게 총을 발사해 공격력의 [130%]{red}만큼 피해를 주고 적 처치 시 추가로 공격하거나 스킬을 사용합니다. 적이 죽지 않았다면 [1 TP]{yellow}를 돌려받고 [2]{yellow}턴 동안 [멍해짐]{orange} 효과를 부여합니다."
+      }
+    ],
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/imperial_gunner.png",
+    "passive": {
+      "name": "대응 교련",
+      "iconUrl": "/icons/classes/passive/imperial_gunner.png",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 스킬 사용 후 [2]{yellow}턴 동안 [대응 교련 1]{green} 효과를 얻습니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 스킬 사용 후 [2]{yellow}턴 동안 [대응 교련 2]{green} 효과를 얻습니다."
+    }
+  },
+  {
+    "name": "엠프레스거너",
+    "tier": 3,
+    "parent": "임페리얼거너",
+    "description": "권총을 무기로 사용하고 뛰어난 리더십을 바탕으로 팀에 전술적 우위를 제공하는 상급 직업입니다.",
+    "skills": [
+      {
+        "name": "여제의 깃발",
+        "iconUrl": "/icons/skills/empress_banner.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "스킬 사용 시 주위 [2]{red}칸 내 아군의 모든 일반 스킬 쿨타임을 [1]{yellow} 감소시킵니다. 자신이 서있는 타일에 [여제의 깃발]{green}을 꽂아 타일 주위 [2]{red}칸 내 아군에게 오라 효과를 부여하고 추가 이동을 얻습니다. 여제의 깃발을 다시 시전하거나 적이 여제의 깃발이 있는 타일에서 행동 종료 시 깃발이 제거됩니다."
+      }
+    ],
+    "weaponType": "권총",
+    "defenseType": "미디엄",
+    "attackType": "관통",
+    "attackRange": 4,
+    "moveRange": 3,
+    "iconUrl": "/icons/classes/emblem/empress_gunner.png",
+    "passive": {
+      "name": "황실의 비전",
+      "iconUrl": "/icons/classes/passive/empress_gunner.png",
+      "lv1": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 기본 공격으로 적 처치 시 추가 공격이나 스킬 사용을 얻고 적이 죽지 않았다면 [1 TP]{yellow}를 얻습니다. 스킬 사용 후 [2]{yellow}턴 동안 [황실의 비전 1]{green} 효과를 얻습니다.",
+      "lv2": "최대 탄환 수 : [3]{red}.\n기본 공격/반격 시 탄환 [1]{yellow}발 소모.\n아군 턴 시작 시 탄환이 [0]{red}이라면 [마탄]{green}을 최대치까지 장전합니다. 기본 공격으로 적 처치 시 추가 공격이나 스킬 사용을 얻고 적이 죽지 않았다면 [1 TP]{yellow}를 얻습니다. 스킬 사용 후 [2]{yellow}턴 동안 [황실의 비전 2]{green} 효과를 얻습니다."
+    }
+  }
+]
