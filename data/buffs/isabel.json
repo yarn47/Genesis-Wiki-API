@@ -1,0 +1,59 @@
+[
+  {
+    "name": "강철 관통",
+    "duration": 2,
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "maxStack": 2,
+        "effect": "공격력 [+10%]{red}. 물리 관통 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "maxStack": 4,
+        "effect": "공격력 [+10%]{red}. 물리 관통 [+10%]{red}."
+      },
+      {
+        "level": 3,
+        "maxStack": 6,
+        "effect": "공격력 [+10%]{red}. 물리 관통 [+10%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "고무",
+    "duration": 1,
+    "tags": [
+      "지휘"
+    ],
+    "description": "공격력 [+20%]{red}. 도발/공포 해제 및 면역. 전투 후 해제."
+  },
+  {
+    "name": "퇴로확보",
+    "duration": 1,
+    "tags": [
+      "지휘"
+    ],
+    "description": "방어력/저항력 [+30%]{red}. 전투 공격 후 [철수]{green} 효과 획득."
+  },
+  {
+    "name": "철벽진입",
+    "duration": 3,
+    "maxStack": 3,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "받는 물리 피해 [-10%]{red}. 아군 턴 시작 시/공격 받은 후 중첩 감소."
+  },
+  {
+    "name": "수호의 전열",
+    "duration": 2,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "받는 범위 피해 [-10%]{red}."
+  }
+]
