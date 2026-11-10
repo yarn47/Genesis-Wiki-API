@@ -17,6 +17,7 @@ class AlbatiniDataTest(unittest.TestCase):
         levels = read('characters')[0]['passive']['levels']
         self.assertEqual([(x['type'], x['step']) for x in levels], [('각성',3),('각성',4),('각성',5),('각성',6),('발현',2),('발현',4),('발현',6)])
         for i, x in enumerate(levels):
+            self.assertIn(f'스킬로 버프를 얻을 때마다 [기사의 서약 {i+1}]{{green}}', x['effect'])
             self.assertIn('남은 TP가 [0]{yellow}', x['effect'])
             self.assertIn('크리스티나 여제와 무작위 아군 [1]{red}', x['effect'])
             self.assertIn(f'[{40+10*i}%]{{red}}의 체력으로 부활', x['effect'])
@@ -44,6 +45,8 @@ class AlbatiniDataTest(unittest.TestCase):
 
     def test_classes(self):
         j,e = read('classes')
+        self.assertEqual(j['iconUrl'], '/icons/classes/emblem/justicar.png')
+        self.assertEqual(e['iconUrl'], '/icons/classes/emblem/empress_royal.png')
         self.assertEqual((j['parent'], e['parent']), ('파이터','저스티카'))
         skill=j['skills'][0]
         self.assertNotIn('tpCost',skill)

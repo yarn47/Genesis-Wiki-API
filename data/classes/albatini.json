@@ -1,6 +1,7 @@
 [
   {
     "name": "저스티카",
+    "iconUrl": "/icons/classes/emblem/justicar.png",
     "tier": 2,
     "parent": "파이터",
     "description": "검을 무기로 사용하고 정의와 권력을 상징하는 강력한 근접 전투 직업입니다.",
@@ -36,6 +37,7 @@
   },
   {
     "name": "엠프레스로얄",
+    "iconUrl": "/icons/classes/emblem/empress_royal.png",
     "tier": 3,
     "parent": "저스티카",
     "description": "검을 무기로 사용하고 지도자의 권력과 권위를 공고히 하기 위해 움직이는 상급 직업입니다.",
@@ -64,4 +66,3 @@
     "moveRange": 3
   }
 ]
-
