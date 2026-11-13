@@ -1,0 +1,137 @@
+[
+  {
+    "name": "워본",
+    "iconUrl": "/icons/classes/emblem/warborn.png",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "전쟁을 위해 태어난 검사 직업입니다. 고통을 버텨내며 특유의 생존력으로 전장을 위협합니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "passive": {
+      "name": "전투 혈통",
+      "iconUrl": "/icons/classes/passive/warborn.png",
+      "lv1": "공격력이 [15%]{red} 증가하고 전투 공격 시 받는 피해가 [30%]{red} 감소합니다. 턴 종료 시 디버프가 있다면 체력을 공격력의 [30%]{red}만큼 회복합니다.",
+      "lv2": "공격력이 [20%]{red} 증가하고 전투 공격 시 받는 피해가 [40%]{red} 감소합니다. 턴 종료 시 디버프가 있다면 체력을 공격력의 [40%]{red}만큼 회복합니다."
+    },
+    "skills": [
+      {
+        "name": "배틀 스탠스",
+        "iconUrl": "/icons/skills/battle_stance.png",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [],
+        "effect": "다음 턴 시작까지 [배틀 스탠스]{green} 효과를 얻습니다. 배틀 스탠스로 적을 공격하지 않은 경우 다음 아군 턴 시작 시 [1]{yellow}턴 동안 유지되는 [활기]{green} 효과를 획득합니다."
+      }
+    ]
+  },
+  {
+    "name": "슬래셔",
+    "iconUrl": "/icons/classes/emblem/slasher.png",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "description": "대검을 무기로 사용하고 전장을 피로 물들이는 광전사 직업입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "passive": {
+      "name": "분쇄",
+      "iconUrl": "/icons/classes/passive/slasher.png",
+      "lv1": "공격력이 [20%]{red} 증가하고 공격 시 치명타 확률이 [20%]{red} 증가합니다. 출혈 피해량이 [20%]{red} 증가합니다. 참격 또는 관통 속성의 치명타 공격 적중 시 [출혈]{orange} 효과를 부여합니다.",
+      "lv2": "공격력이 [30%]{red} 증가하고 공격 시 치명타 확률이 [30%]{red} 증가합니다. 출혈 피해량이 [30%]{red} 증가합니다. 참격 또는 관통 속성의 치명타 공격 적중 시 [출혈]{orange} 효과를 부여합니다."
+    },
+    "skills": [
+      {
+        "name": "오메가 스윙",
+        "iconUrl": "/icons/skills/omega_swing.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          1
+        ],
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "이동공격"
+        ],
+        "effect": "방향을 지정해 [3]{red}타일 전진하며 주변 [1]{red}바퀴 내의 적을 네번 공격합니다. 타격 당 공격력의 [30%]{red}만큼 피해를 줍니다. 지형이나 유닛을 통과하여 전진하지 못합니다. 스킬 사용 시 [관성]{green} 효과를 얻습니다."
+      }
+    ]
+  },
+  {
+    "name": "도미네이터",
+    "iconUrl": "/icons/classes/emblem/dominator.png",
+    "tier": 3,
+    "parent": "글라디에이터",
+    "description": "대검을 무기로 사용하고 적을 위협하고 전장을 파괴하는 상급 직업 입니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "passive": {
+      "name": "포악함",
+      "iconUrl": "/icons/classes/passive/dominator.png",
+      "lv1": "전투 시 대상이 디버프가 없는 경우/디버프를 보유한 경우/디버프가 쇠약 효과인 경우 공격력이 [20/30/50%]{red} 증가합니다. 주변 [2]{red}타일 범위 내의 쇠약 효과를 보유한 적은 턴 시작 시 [20%]{red} 확률로 [공포]{orange} 효과에 걸립니다. 함성 스킬 시전 후 [압도적인 방어 1]{green}/추가 행동/[집중]{green} 효과를 받습니다.",
+      "lv2": "전투 시 대상이 디버프가 없는 경우/디버프를 보유한 경우/디버프가 쇠약 효과인 경우 공격력이 [30/50/80%]{red} 증가합니다. 주변 [2]{red}타일 범위 내의 쇠약 효과를 보유한 적은 턴 시작 시 [40%]{red} 확률로 [공포]{orange} 효과에 걸립니다. 함성 스킬 시전 후 [압도적인 방어 2]{green}/추가 행동/[집중]{green} 효과를 받습니다."
+    },
+    "skills": [
+      {
+        "name": "위협의 함성",
+        "iconUrl": "/icons/skills/threatening_shout.png",
+        "tpCost": 2,
+        "range": "자신",
+        "area": "광역",
+        "cooldown": 3,
+        "tags": [
+          "함성"
+        ],
+        "effect": "[2]{red}타일 범위 내 적을 위협해 [공포의 전율]{orange} 및 [혼란]{orange} 효과를 부여합니다."
+      }
+    ]
+  },
+  {
+    "name": "언브로큰",
+    "iconUrl": "/icons/classes/emblem/unbroken.png",
+    "tier": 3,
+    "parent": "워본",
+    "description": "검을 무기로 사용하고 특유의 인내력과 불굴의 정신력으로 전장을 지배합니다.",
+    "weaponType": "검,대검",
+    "defenseType": "미디엄",
+    "attackType": "참격",
+    "attackRange": 1,
+    "moveRange": 3,
+    "passive": {
+      "name": "불굴의 혈통",
+      "iconUrl": "/icons/classes/passive/unbroken.png",
+      "lv1": "공격력이 [20%]{red} 증가하고 받는 피해가 [20%]{red} 감소합니다. 전투 공격 시 받는 피해가 [30%]{red}만큼 추가로 감소합니다. 턴 종료 시 디버프가 있다면 체력을 공격력의 [40%]{red}만큼 회복합니다. 행동 제어 효과를 받으면 턴 당 한 번 공격력의 [40%]{red}만큼 체력을 회복하고 디버프를 [1]{red}개 해제합니다.",
+      "lv2": "공격력이 [30%]{red} 증가하고 받는 피해가 [30%]{red} 감소합니다. 전투 공격 시 받는 피해가 [30%]{red}만큼 추가로 감소합니다. 턴 종료 시 디버프가 있다면 체력을 공격력의 [50%]{red}만큼 회복합니다. 행동 제어 효과를 받으면 턴 당 한 번 공격력의 [50%]{red}만큼 체력을 회복하고 디버프를 [1]{red}개 해제합니다."
+    },
+    "skills": [
+      {
+        "name": "헤비 슬램",
+        "iconUrl": "/icons/skills/heavy_slam.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          2
+        ],
+        "area": "단일",
+        "cooldown": 2,
+        "tags": [
+          "근거리",
+          "이동공격",
+          "전투"
+        ],
+        "effect": "사거리 내의 직선 거리 적에게 [15%]{red} 증가한 치명타 확률과 물리 관통률로 공격력의 [140%]{red}만큼 피해를 주고 [약점 노출]{orange} 효과를 부여합니다. 치명타 시 쿨타임이 [1]{yellow}만큼 감소하며 [약점 노출]{orange} 효과를 하나 더 부여합니다."
+      }
+    ]
+  }
+]
