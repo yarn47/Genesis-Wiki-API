@@ -1,0 +1,294 @@
+[
+  {
+    "name": "암흑혈",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "죽음에 이르는 피해를 받으면 체력을 [25%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다."
+      },
+      {
+        "level": 2,
+        "effect": "죽음에 이르는 피해를 받으면 체력을 [30%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다."
+      },
+      {
+        "level": 3,
+        "effect": "죽음에 이르는 피해를 받으면 체력을 [35%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다."
+      },
+      {
+        "level": 4,
+        "effect": "죽음에 이르는 피해를 받으면 체력을 [50%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "effect": "최대 체력 [+10%]{red}. 죽음에 이르는 피해를 받으면 체력을 [70%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "effect": "최대 체력 [+10%]{red}. 죽음에 이르는 피해를 받으면 체력을 [80%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다. 발동 시 TP를 [1]{yellow} 회복합니다."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "effect": "최대 체력 [+20%]{red}. 죽음에 이르는 피해를 받으면 체력을 [100%]{red} 회복합니다. 게임 중 [1]{yellow}회 발동합니다. 발동 시 TP를 [2]{yellow} 회복합니다."
+      }
+    ]
+  },
+  {
+    "name": "피의 교감",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "effect": "받는 피해 [-10%]{red}."
+      },
+      {
+        "level": 2,
+        "effect": "받는 피해 [-10%]{red}."
+      },
+      {
+        "level": 3,
+        "effect": "받는 피해 [-10%]{red}."
+      },
+      {
+        "level": 4,
+        "effect": "받는 피해 [-10%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": "영구",
+        "effect": "받는 피해 [-12%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": "영구",
+        "effect": "받는 피해 [-13%]{red}."
+      },
+      {
+        "level": 7,
+        "duration": "영구",
+        "effect": "받는 피해 [-15%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "암흑 주입",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력 [+10%]{red}, 광휘 저항 [+20%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력 [+15%]{red}, 광휘 저항 [+20%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "주문력 [+20%]{red}, 광휘 저항 [+25%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "주문력 [+20%]{red}, 광휘 저항 [+25%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "주문력 [+30%]{red}, 광휘 저항 [+30%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "주문력 [+30%]{red}, 광휘 저항 [+30%]{red}."
+      },
+      {
+        "level": 7,
+        "duration": 2,
+        "effect": "주문력 [+40%]{red}, 광휘 저항 [+30%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "라이프 드레인",
+    "element": "암흑",
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "적에게 주문력의 [120%]{red}만큼 피해를 주고 대상이 캐릭터라면 주문력의 [80%]{red}만큼 체력을 회복합니다."
+  },
+  {
+    "name": "불멸",
+    "duration": 1,
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "체력이 [1]{red} 미만으로 내려가지 않습니다. 아군 턴 시작 시 제거됩니다."
+  },
+  {
+    "name": "수혈",
+    "duration": 2,
+    "description": "턴 종료 시 시전자 주문력의 [40%]{red}만큼 체력을 회복합니다."
+  },
+  {
+    "name": "보일링 블러드",
+    "duration": 3,
+    "maxStack": 3,
+    "description": "공격력/주문력 [+20%]{red}. 턴 종료 전 TP가 [0]{yellow}이라면 TP [1]{yellow} 회복. (쿨타임 [1]{yellow}턴) 아군 턴 시작 시 중첩 [1]{yellow} 증가."
+  },
+  {
+    "name": "피석화",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "주문력의 [30%]{red}만큼 방어력을 얻고 받는 치유량이 [20%]{red} 감소합니다."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "주문력의 [50%]{red}만큼 방어력을 얻고 받는 치유량이 [20%]{red} 감소합니다."
+      }
+    ]
+  },
+  {
+    "name": "라이프 탭",
+    "duration": 2,
+    "description": "최대 체력 [+20%]{red}. 전투 후 시전자 주문력의 [60%]{red}만큼 체력 회복."
+  },
+  {
+    "name": "심연의 계시",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "maxStack": 2,
+        "effect": "주문력 [+20%]{red}, 마법 관통 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "maxStack": 3,
+        "effect": "주문력 [+20%]{red}, 마법 관통 [+10%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "금단의 수호",
+    "tags": [
+      "해제 불가",
+      "보호막"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "시전자 주문력의 [30%]{red}만큼 보호막 획득. 보호막이 유지되는 동안 받는 치명타 피해 [-10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "시전자 주문력의 [40%]{red}만큼 보호막 획득. 보호막이 유지되는 동안 받는 치명타 피해 [-15%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "시전자 주문력의 [50%]{red}만큼 보호막 획득. 보호막이 유지되는 동안 받는 치명타 피해 [-20%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "시전자 주문력의 [60%]{red}만큼 보호막 획득. 보호막이 유지되는 동안 받는 치명타 피해 [-25%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "혼돈의 인도",
+    "tags": [],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "방어력/저항력 [+10%]{red}. 치명타 확률 [+5%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "방어력/저항력 [+11%]{red}. 치명타 확률 [+6%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "방어력/저항력 [+12%]{red}. 치명타 확률 [+7%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "방어력/저항력 [+13%]{red}. 치명타 확률 [+8%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "방어력/저항력 [+14%]{red}. 치명타 확률 [+9%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "방어력/저항력 [+15%]{red}. 치명타 확률 [+10%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "피의 인도",
+    "tags": [],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "방어력/저항력 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "방어력/저항력 [+11%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "방어력/저항력 [+12%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "방어력/저항력 [+13%]{red}."
+      },
+      {
+        "level": 5,
+        "duration": 2,
+        "effect": "방어력/저항력 [+14%]{red}."
+      },
+      {
+        "level": 6,
+        "duration": 2,
+        "effect": "방어력/저항력 [+15%]{red}."
+      }
+    ]
+  }
+]
