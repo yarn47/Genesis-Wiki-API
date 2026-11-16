@@ -1,0 +1,106 @@
+[
+  {
+    "weaponType": "검,건 슬라이서",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "아비터",
+    "tier": 2,
+    "parent": "파이터",
+    "description": "검과 건 슬라이서를 무기로 적을 심판하고 전장의 균형을 무너뜨리는 특수한 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/arbiter.png",
+    "passive": {
+      "name": "진실의 각인",
+      "iconUrl": "/icons/classes/passive/arbiter.png",
+      "lv1": "적 공격 후 피해를 준 적에게 [진실의 각인 1]{orange} 효과를 부여합니다. 적에게 공격받으면 턴 당 한번 받는 피해가 [25%]{red}만큼 감소합니다.",
+      "lv2": "적 공격 후 피해를 준 적에게 [진실의 각인 2]{orange} 효과를 부여합니다. 적에게 공격받으면 턴 당 한번 받는 피해가 [25%]{red}만큼 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "디시전 폴",
+        "iconUrl": "/icons/skills/decision_fall.png",
+        "tpCost": 3,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 4,
+        "attackType": "타격",
+        "tags": [
+          "근거리",
+          "이동공격",
+          "위치제어"
+        ],
+        "effect": "주위 [3]{red}칸 내 지정한 타일로 이동 후 주변 [1]{red}바퀴 내 적들에게 공격력의 [100%]{red}만큼 피해를 주고 인접한 적들을 [2]{red}칸까지 강하게 밀쳐냅니다. 밀쳐진 적이 벽이나 다른 적과 부딪힌다면 [1]{yellow}턴 동안 [기절]{orange}시킵니다. 피해를 준 적 수 한명 당 남은 체력의 [10%]{red}만큼 체력을 잃습니다."
+      }
+    ]
+  },
+  {
+    "weaponType": "검,건 슬라이서",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "파라곤",
+    "tier": 3,
+    "parent": "아비터",
+    "description": "검과 건 슬라이서를 무기로 심판을 실현하고 전장을 지배하는 상급 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/paragon.png",
+    "passive": {
+      "name": "지고의 낙인",
+      "iconUrl": "/icons/classes/passive/paragon.png",
+      "lv1": "적 공격 후 피해를 준 적에게 [지고의 낙인 1]{orange} 효과를 부여합니다. 적을 공격해 치명타 발동 시 [1 TP]{yellow}를 회복합니다. 적에게 공격받으면 턴 당 한번 받는 피해가 [50%]{red}만큼 감소합니다.",
+      "lv2": "적 공격 후 피해를 준 적에게 [지고의 낙인 2]{orange} 효과를 부여합니다. 적을 공격해 치명타 발동 시 [1 TP]{yellow}를 회복합니다. 적에게 공격받으면 턴 당 한번 받는 피해가 [50%]{red}만큼 감소합니다."
+    },
+    "skills": [
+      {
+        "name": "제니스 블레이드",
+        "iconUrl": "/icons/skills/zenith_blade.png",
+        "tpCost": 1,
+        "range": "자신",
+        "area": "단일",
+        "cooldown": 3,
+        "element": "광휘",
+        "effect": "스킬 사용 직후 추가로 공격하거나 스킬을 사용할 수 있습니다. [2]{yellow}턴 동안 [제니스 블레이드]{green} 효과를 얻습니다."
+      }
+    ]
+  },
+  {
+    "weaponType": "검,건 슬라이서",
+    "attackType": "참격",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "레디언트나이트",
+    "tier": 3,
+    "parent": "나이트",
+    "description": "검과 건 슬라이서를 무기로 사용하고 진실과 수호를 기치로 삼는 빛의 전사이자 살아 있는 성역입니다.",
+    "iconUrl": "/icons/classes/emblem/radiant_knight.png",
+    "passive": {
+      "name": "빛의 언약",
+      "iconUrl": "/icons/classes/passive/radiant_knight.png",
+      "lv1": "주위 [3]{red}칸 내 적이 자신을 제외한 아군 수보다 많다면 공격력이 [25%]{red} 증가하고 받는 피해가 [25%]{red} 감소합니다. 턴 종료 시 체력이 가장 낮은 아군 [1]{red}명에게 [2]{yellow}턴 동안 [빛의 언약 1]{green} 효과를 부여합니다.",
+      "lv2": "주위 [3]{red}칸 내 적이 자신을 제외한 아군 수보다 많다면 공격력이 [30%]{red} 증가하고 받는 피해가 [30%]{red} 감소합니다. 턴 종료 시 체력이 가장 낮은 아군 [1]{red}명에게 [2]{yellow}턴 동안 [빛의 언약 2]{green} 효과를 부여합니다."
+    },
+    "skills": [
+      {
+        "name": "성광연격",
+        "iconUrl": "/icons/skills/holy_light_combo.png",
+        "tpCost": 2,
+        "range": [
+          1,
+          1
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "tags": [
+          "근거리",
+          "전투"
+        ],
+        "effect": "적에게 공격력의 [150%]{red}만큼 피해를 주고 추가타가 발동해 공격력의 [30%]{red}에 잃은 체력 비율만큼 증가한 피해를 줍니다."
+      }
+    ]
+  }
+]

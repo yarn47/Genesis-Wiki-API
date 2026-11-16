@@ -1,0 +1,80 @@
+[
+  {
+    "name": "주시자의 눈",
+    "tags": [
+      "해제 불가"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 2,
+        "effect": "시전자와 전투 시 공격력/주문력 [-15%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 2,
+        "effect": "시전자와 전투 시 공격력/주문력 [-30%]{red}."
+      },
+      {
+        "level": 3,
+        "duration": 2,
+        "effect": "시전자와 전투 시 공격력/주문력 [-45%]{red}."
+      },
+      {
+        "level": 4,
+        "duration": 2,
+        "effect": "시전자와 전투 시 공격력/주문력 [-60%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "진실의 각인",
+    "tags": [
+      "해제 불가",
+      "결투"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 3,
+        "maxStack": 4,
+        "effect": "시전자로부터 공격당할 시 받는 피해 [+10%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 3,
+        "maxStack": 4,
+        "effect": "시전자로부터 공격당할 시 받는 피해 [+15%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "지고의 낙인",
+    "tags": [
+      "해제 불가",
+      "결투"
+    ],
+    "levels": [
+      {
+        "level": 1,
+        "duration": 3,
+        "maxStack": 4,
+        "effect": "시전자로부터 공격당할 시 받는 피해/받는 치명타 확률 [+15%]{red}."
+      },
+      {
+        "level": 2,
+        "duration": 3,
+        "maxStack": 4,
+        "effect": "시전자로부터 공격당할 시 받는 피해/받는 치명타 확률 [+20%]{red}."
+      }
+    ]
+  },
+  {
+    "name": "무력 봉쇄",
+    "duration": 2,
+    "tags": [
+      "행동제어"
+    ],
+    "description": "공격 불가. 반격 불가."
+  }
+]
