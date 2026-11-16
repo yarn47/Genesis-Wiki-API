@@ -1,0 +1,17 @@
+[
+  {
+    "name": "이온화",
+    "duration": 2,
+    "tags": [
+      "쇼크"
+    ],
+    "description": "전격 저항 [-80%]{red}."
+  },
+  {
+    "name": "이온화 지대",
+    "tags": [
+      "해제 불가"
+    ],
+    "description": "진입 혹은 행동 종료 시 [2]{yellow}턴 동안 [이온화]{orange} 효과 획득."
+  }
+]

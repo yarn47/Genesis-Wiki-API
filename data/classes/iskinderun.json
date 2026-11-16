@@ -1,0 +1,110 @@
+[
+  {
+    "weaponType": "창",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "아쿠아랜스",
+    "tier": 2,
+    "parent": "파이크",
+    "description": "창을 들고 싸우고 아군에게 지속적인 회복과 지원을 제공하는 하이브리드형 직업입니다.",
+    "iconUrl": "/icons/classes/emblem/aqua_lance.png",
+    "passive": {
+      "name": "물의 파장",
+      "iconUrl": "/icons/classes/passive/aqua_lance.png",
+      "lv1": "공격력이 [10%]{red} 증가합니다. 보호막을 가지고 있다면 받는 피해가 [10%]{red} 감소하고 주위 [3]{red}칸 내 적들이 받는 피해가 [10%]{red} 증가합니다. 주문력이 공격력 수치까지 증가합니다.",
+      "lv2": "공격력이 [20%]{red} 증가합니다. 보호막을 가지고 있다면 받는 피해가 [10%]{red} 감소하고 주위 [3]{red}칸 내 적들이 받는 피해가 [10%]{red} 증가합니다. 주문력이 공격력 수치까지 증가합니다."
+    },
+    "skills": [
+      {
+        "name": "써지스피어",
+        "iconUrl": "/icons/skills/surge_spear.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "attackType": "마법",
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "원거리",
+          "지향성",
+          "전투"
+        ],
+        "effect": "적에게 써지스피어를 날려 주문력의 [130%]{red}만큼 피해를 주고 [이온화]{orange} 효과를 겁니다. 보호막을 가지고 있다면 대상 주위 [1]{red}바퀴 내에 주문력의 [50%]{red}만큼 추가 피해를 주고 [이온화]{orange} 효과를 겁니다. 피해를 준 범위 내 타일에 [50%]{red} 확률로 [2]{yellow}턴 동안 유지되는 [이온화 지대]{orange}를 생성하고 보호막을 하나 잃습니다."
+      }
+    ]
+  },
+  {
+    "weaponType": "창",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "오션템플러",
+    "tier": 3,
+    "parent": "템플러",
+    "description": "창을 들고 유연하게 전황에 대처하며 아군에게 축복을 내리고 보호하는 헌신적인 수호자입니다.",
+    "iconUrl": "/icons/classes/emblem/ocean_templar.png",
+    "passive": {
+      "name": "조수의 축복",
+      "iconUrl": "/icons/classes/passive/ocean_templar.png",
+      "lv1": "보호막을 가지고 있다면 주위 [3]{red}칸 내 아군이 턴 종료 시 주문력의 [30%]{red}만큼 보호막을 부여합니다. 자신의 보호막이 해제될 때 주위 [3]{red}칸 내 아군들의 체력을 주문력의 [30%]{red}만큼 회복시키고 디버프를 [1]{red}개씩 지웁니다. 주문력이 공격력 수치까지 증가합니다.",
+      "lv2": "보호막을 가지고 있다면 주위 [3]{red}칸 내 아군이 턴 종료 시 주문력의 [40%]{red}만큼 보호막을 부여합니다. 자신의 보호막이 해제될 때 주위 [3]{red}칸 내 아군들의 체력을 주문력의 [40%]{red}만큼 회복시키고 디버프를 [1]{red}개씩 지웁니다. 주문력이 공격력 수치까지 증가합니다."
+    },
+    "skills": [
+      {
+        "name": "타이드 배리어",
+        "iconUrl": "/icons/skills/tide_barrier.png",
+        "tpCost": 2,
+        "range": [
+          3,
+          3
+        ],
+        "area": "단일",
+        "cooldown": 3,
+        "allowedWeapon": "창, 창/방패",
+        "tags": [
+          "보호막"
+        ],
+        "effect": "아군을 지정해 주문력과 저항력의 [100%]{red}만큼 피해를 막아주는 [타이드 배리어]{green}를 [2]{yellow}턴 동안 부여합니다."
+      }
+    ]
+  },
+  {
+    "weaponType": "창",
+    "attackType": "관통",
+    "defenseType": "미디엄",
+    "attackRange": 1,
+    "moveRange": 3,
+    "name": "탈라사크",
+    "tier": 3,
+    "parent": "아쿠아랜스",
+    "description": "창을 들고 전장을 조율하는 강력한 영역 장악 능력과 지원 효과를 가진 상급 지휘관입니다.",
+    "iconUrl": "/icons/classes/emblem/thalassarch.png",
+    "passive": {
+      "name": "해신의 물결",
+      "iconUrl": "/icons/classes/passive/thalassarch.png",
+      "lv1": "공격력이 [25%]{red} 증가합니다. 보호막을 가지고 있다면 받는 피해가 [15%]{red} 감소하고 주위 [3]{red}칸 내 적들이 받는 피해가 [15%]{red} 증가합니다. 주문력이 공격력 수치까지 증가합니다.",
+      "lv2": "공격력이 [30%]{red} 증가합니다. 보호막을 가지고 있다면 받는 피해가 [20%]{red} 감소하고 주위 [3]{red}칸 내 적들이 받는 피해가 [20%]{red} 증가합니다. 주문력이 공격력 수치까지 증가합니다."
+    },
+    "skills": [
+      {
+        "name": "밍밍 생추어리",
+        "iconUrl": "/icons/skills/mingming_sanctuary.png",
+        "tpCost": 1,
+        "range": [
+          1,
+          3
+        ],
+        "area": "광역",
+        "cooldown": 4,
+        "tags": [],
+        "effect": "주위 [3]{red}칸 내 타일에 [2]{yellow}턴 동안 [밍밍 생추어리]{green}를 생성하고 주위 [2]{red}칸 내 빈 타일들에 [50%]{red} 확률로 [2]{yellow}턴 동안 유지되는 [이온화 지대]{orange}를 생성합니다. 영역 내 아군이 영역 밖 적으로부터 공격 당할 시 받는 피해가 [50%]{red} 감소합니다."
+      }
+    ]
+  }
+]
